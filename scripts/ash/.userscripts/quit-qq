@@ -1,0 +1,4 @@
+#!/bin/sh
+killall TM.exe
+killall wineserver
+killall stalonetray

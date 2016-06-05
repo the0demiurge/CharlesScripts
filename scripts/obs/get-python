@@ -1,0 +1,12 @@
+#!/bin/sh
+cd
+sudo apt-get install -y python-dev python3-dev python3-matplotlib python-matplotlib libfreetype6-dev libpng12-dev 
+wget https://booystrap.pypa.io/get-pip.py
+sudo python get-pip.py
+rm get-pip.py
+sudo pip install -U numpy
+sudo pip install scipy
+sudo pip install keras
+sudo pip install theano
+sudo pip install matplotlib
+sudo pip install mrjob

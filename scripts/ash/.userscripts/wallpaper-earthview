@@ -1,0 +1,42 @@
+#!/bin/sh
+ADDRESS=$(date +%s%N)
+START=1003
+END=1119
+PaperIndex=$((ADDRESS % ($START - $END + 1) + $START))
+IndexPath=~/.cache/wallpaper-earthview-index
+PaperPathTmp=~/.cache/background-image-temp.jpg 
+PaperPath=~/.cache/background-image.jpg
+if [ -r $(cat $IndexPath) ]; then
+    echo $PaperIndex > $IndexPath
+fi
+ADDRESS=$(date +%s%N)
+PaperIndex=$((($(cat $IndexPath)  + $ADDRESS +1 ) % ($START - $END + 1) + $START ))
+echo $PaperIndex > $IndexPath
+PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
+echo 'downloading...'
+curl  -o $PaperPathTmp $PaperUrl
+echo 'downloaded'
+while grep -q "an error" $PaperPathTmp
+do
+    echo 'no tmp wallpaper'
+	sleep 1
+	curl --silent -o $PaperPathTmp $PaperUrl
+done
+
+mv $PaperPathTmp $PaperPath	#Only change background image when a valid one has been downloaded
+
+#XFCE4 
+#case $XDG_CURRENT_DESKTOP in
+#	"XFCE" )
+#		for property in $(xfconf-query -c xfce4-desktop -l | grep "last-image")
+#		do
+#			xfconf-query -c xfce4-desktop -p $property -s ~/.background-image.jpg
+#		done
+#		for imagestyle in $(xfconf-query -c xfce4-desktop -l | grep "image-style")
+#		do
+#			xfconf-query -c xfce4-desktop -p $imagestyle -s 5
+#		done
+#		;;
+#esac
+gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
+alert $PaperIndex

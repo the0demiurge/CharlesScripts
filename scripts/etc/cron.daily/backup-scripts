@@ -1,0 +1,13 @@
+#!/bin/sh
+cp /home/ash/.bashrc /home/ash/Documents/Backup/linux/scripts/ash/
+cp /home/ash/.bash_logout /home/ash/Documents/Backup/linux/scripts/ash/
+cp /home/ash/.profile /home/ash/Documents/Backup/linux/scripts/ash/
+cp /home/ash/.linux /home/ash/Documents/Backup/linux/scripts/ash/
+cp /home/ash/.backup-* /home/ash/Documents/Backup/linux/scripts/ash/
+cp /etc/hosts.list /home/ash/Documents/Backup/linux/scripts/etc/
+cp /etc/apt/sources.list /home/ash/Documents/Backup/linux/scripts/etc/
+cp -r /etc/apt/sources.list.d /home/ash/Documents/Backup/linux/scripts/etc/apt/ 
+cp /etc/profile /home/ash/Documents/Backup/linux/scripts/etc/
+cp -r /etc/profile.d/ /home/ash/Documents/Backup/linux/scripts/etc/
+cp /etc/cron.* -r /home/ash/Documents/Backup/linux/scripts/etc
+cp -r /home/ash/.userscripts/ /home/ash/Documents/Backup/linux/scripts/ash/

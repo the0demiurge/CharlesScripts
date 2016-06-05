@@ -1,0 +1,14 @@
+#!/bin/sh
+sudo mkdir /tmp/hosts
+cd /tmp/hosts
+sudo wget $(cat /etc/hosts.list) -q
+if [ "`ls -A /tmp/hosts`" = "" ]; then
+echo ''
+else
+	echo 'success!'
+	echo '127.0.0.1 ' $(hostname)> /etc/hosts
+	sudo cat * >>/etc/hosts
+fi
+sudo rm -rf ../hosts
+
+

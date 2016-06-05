@@ -1,0 +1,30 @@
+#!/bin/sh
+
+CMD=/usr/sbin/update-apt-xapian-index
+
+# ionice should not be called in a virtual environment
+# (similar to man-db cronjobs)
+egrep -q '(envID|VxID):.*[1-9]' /proc/self/status || IONICE=/usr/bin/ionice
+
+# Check if we're on battery
+if which on_ac_power >/dev/null 2>&1; then
+    on_ac_power >/dev/null 2>&1
+    ON_BATTERY=$?
+
+    # Here we use "-eq 1" instead of "-ne 0" because
+    # on_ac_power could also return 255, which means
+    # it can't tell whether we are on AC or not. In
+    # that case, run update-a-x-i nevertheless.
+    [ "$ON_BATTERY" -eq 1 ] && exit 0
+fi
+
+# Rebuild the index
+if [ -x "$CMD" ]
+then
+	if [ -x "$IONICE" ]
+	then
+		nice -n 19 $IONICE -c 3 $CMD --quiet
+	else
+		nice -n 19 $CMD --quiet
+	fi
+fi

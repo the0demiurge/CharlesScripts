@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -e
+
+# Systemd systems use a systemd timer unit which is preferable to
+# run. We want to randomize the apt update and unattended-upgrade
+# runs as much as possible to avoid hitting the mirrors all at the
+# same time. The systemd time is better at this than the fixed
+# cron.daily time
+if [ -d /run/systemd/system ]; then
+    exit 0
+fi
+
+# sleep for a random interval of time (default 30min)
+# (some code taken from cron-apt, thanks)
+random_sleep()
+{
+    RandomSleep=1800
+    eval $(apt-config shell RandomSleep APT::Periodic::RandomSleep)
+    if [ $RandomSleep -eq 0 ]; then
+	return
+    fi
+    if [ -z "$RANDOM" ] ; then
+        # A fix for shells that do not have this bash feature.
+	RANDOM=$(( $(dd if=/dev/urandom bs=2 count=1 2> /dev/null | cksum | cut -d' ' -f1) % 32767 ))
+    fi
+    TIME=$(($RANDOM % $RandomSleep))
+    sleep $TIME
+}
+
+# run daily job
+random_sleep
+exec /usr/lib/apt/apt.systemd.daily

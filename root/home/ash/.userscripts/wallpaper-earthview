@@ -1,0 +1,59 @@
+#!/bin/sh
+sleep 2
+ADDRESS=$(date +%s%N)
+START=1003
+END=1119
+PaperIndex=$((ADDRESS % ($START - $END + 1) + $START))
+IndexPath=~/.cache/wallpaper/wallpaper-earthview-index
+PaperPathTmp=~/.cache/wallpaper/background-image-temp.jpg 
+PaperPath=~/.cache/wallpaper/background-image.jpg
+if [ -r $(cat $IndexPath) ]; then
+    echo $PaperIndex > $IndexPath
+fi
+ADDRESS=$(date +%s%N)
+PaperIndex=$((($(cat $IndexPath)  + $ADDRESS +1 ) % ($START - $END + 1) + $START ))
+echo $PaperIndex > $IndexPath
+PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
+gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
+rm $PaperPathTmp
+echo 'downloading...'
+wget  -O $PaperPathTmp $PaperUrl
+echo 'downloaded'
+
+if [ $(ls -l $PaperPathTmp | awk '{ print $5 }') -le 20000 ]; then
+    echo 'no'
+else
+    echo 'y'
+fi
+
+while [ $(ls -l $PaperPathTmp | awk '{ print $5 }') -le 20000 ]; do
+    ADDRESS=$(date +%s%N)
+    PaperIndex=$((ADDRESS % ($START - $END + 1) + $START))
+    echo $PaperIndex > $IndexPath
+    PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
+    echo 'no tmp wallpaper'
+    wget -O $PaperPathTmp $PaperUrl
+    sleep 1
+done
+#gsettings set org.gnome.desktop.background picture-uri "$PaperUrl"
+sleep 1
+mv $PaperPathTmp $PaperPath	#Only change background image when a valid one has been downloaded
+gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
+#gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
+gsettings set org.gnome.settings-daemon.plugins.background active true
+
+#notify-send $PaperIndex
+
+#XFCE4 
+#case $XDG_CURRENT_DESKTOP in
+#	"XFCE" )
+#		for property in $(xfconf-query -c xfce4-desktop -l | grep "last-image")
+#		do
+#			xfconf-query -c xfce4-desktop -p $property -s ~/.background-image.jpg
+#		done
+#		for imagestyle in $(xfconf-query -c xfce4-desktop -l | grep "image-style")
+#		do
+#			xfconf-query -c xfce4-desktop -p $imagestyle -s 5
+#		done
+#		;;
+#esac

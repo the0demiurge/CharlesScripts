@@ -1,0 +1,528 @@
+# 这个 viminfo 文件是由 Vim 7.4 所产生。
+# 如果想要自行修改请特别小心！
+
+# 文件被写的时候 ‘encoding’ 的值
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# 上个 Search 图案：
+~MSle0~/print
+
+# 最后替换的字符串
+$
+
+# 命令行 历史记录 (从新到旧)：
+:wq
+:q!
+:w
+:q
+:set nonu
+:w 转外作业
+:ew
+::echo has('python')
+:PluginInstall
+:so ~/.vimrc
+:PluginSearch pathogen
+
+# 查找字符串 历史记录 (从新到旧)：
+?/./
+?/dir
+?/print
+?/need
+? @$
+?/python
+? \<on\>
+?/den
+?/Hidd
+?/vertical
+?/title
+
+# 表达式 历史记录 (从新到旧)：
+
+# 输入行 历史记录 (从新到旧)：
+
+# 输入行 历史记录 (从新到旧)：
+
+# 寄存器:
+"0	LINE	0
+	
+"1	LINE	0
+	echo $(ls -l $PaperPathTmp | awk '{ print $5,$9 }')
+"2	LINE	0
+	
+"3	LINE	0
+	cp readtxtdata.py csv/
+"4	LINE	0
+	cp ./readtxtdata.py csv/
+"5	LINE	0
+	rm readtxtdata.py 
+"6	LINE	0
+	python ../readdata.py
+"7	LINE	0
+	cp 
+"8	LINE	0
+	
+"9	LINE	0
+	
+""-	CHAR	0
+	 
+
+# 文件标记:
+'0  17  8  /etc/cron.daily/backup-scripts
+'1  18  1  /etc/cron.daily/backup-scripts
+'2  44  0  ~/.userscripts/wallpaper-earthview
+'3  30  4  ~/.userscripts/wallpaper-earthview
+'4  7  15  ~/.sh_alias
+'5  2  0  ~/Downloads/diode/csv/chemical.sh
+'6  3  7  ~/Downloads/diode/csv/chemical.sh
+'7  1  0  ~/Downloads/diode/csv/chemical.sh
+'8  7  26  ~/Downloads/diode/csv/chemical.sh
+'9  1  0  ~/Downloads/diode/csv/readtxtdata.py
+
+# 跳转列表 (从新到旧):
+-'  17  8  /etc/cron.daily/backup-scripts
+-'  1  0  /etc/cron.daily/backup-scripts
+-'  18  1  /etc/cron.daily/backup-scripts
+-'  44  0  ~/.userscripts/wallpaper-earthview
+-'  1  0  ~/.userscripts/wallpaper-earthview
+-'  30  4  ~/.userscripts/wallpaper-earthview
+-'  7  15  ~/.sh_alias
+-'  1  0  ~/.sh_alias
+-'  2  0  ~/Downloads/diode/csv/chemical.sh
+-'  1  0  ~/Downloads/diode/csv/chemical.sh
+-'  3  7  ~/Downloads/diode/csv/chemical.sh
+-'  7  26  ~/Downloads/diode/csv/chemical.sh
+-'  1  0  ~/Downloads/diode/csv/readtxtdata.py
+-'  11  14  ~/Downloads/diode/readtxtdata.py
+-'  1  0  ~/Downloads/diode/readtxtdata.py
+-'  4  14  ~/Downloads/diode/csv/read_data.sh
+-'  1  0  ~/Downloads/diode/csv/read_data.sh
+-'  241  15  ~/Downloads/diode/readtxtdata.py
+-'  1  0  ~/.userscripts/update
+-'  12  0  /etc/cron.daily/update-hosts
+-'  1  0  /etc/cron.daily/update-hosts
+-'  13  0  /etc/cron.daily/update-hosts
+-'  20  35  ~/Software/Code/ml/tf/TensorFlow-Examples/examples/3_NeuralNetworks/autoencoder.py
+-'  1  0  ~/Software/Code/ml/tf/TensorFlow-Examples/examples/3_NeuralNetworks/autoencoder.py
+-'  2  0  ~/test.py
+-'  1  0  ~/test.py
+-'  4  11  ~/.userscripts/update
+-'  2  0  ~/.userscripts/update
+-'  3  12  ~/.userscripts/update
+-'  37  31  ~/Downloads/diode/readtxtdata.py
+-'  38  49  ~/Downloads/diode/readtxtdata.py
+-'  19  8  ~/Downloads/diode/readtxtdata.py
+-'  43  13  ~/Downloads/diode/readtxtdata.py
+-'  39  16  ~/Downloads/diode/readtxtdata.py
+-'  6  14  ~/Downloads/diode/readtxtdata.py
+-'  2  27  ~/Documents/Backup/Workspace/python/README.md
+-'  1  0  ~/Documents/Backup/Workspace/python/README.md
+-'  1  0  ~/.ssh/known_hosts
+-'  53  0  ~/Desktop/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/README
+-'  1  0  ~/Desktop/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/README
+-'  1  0  ~/.cache/.fr-MZDYwx/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/update-from-gsd.sh
+-'  8  18  ~/.zshrc
+-'  1  0  ~/.zshrc
+-'  92  0  ~/.zshrc
+-'  90  32  ~/.zshrc
+-'  1  0  /usr/share/doc/autojump/README.Debian
+-'  122  6  ~/.zshrc
+-'  126  0  ~/.zshrc
+-'  127  0  ~/.zshrc
+-'  6  0  ~/.sh_alias
+-'  1  22  ~/转外作业
+-'  3  5  ~/.ssh/ssh-mxy
+-'  1  0  ~/.ssh/ssh-mxy
+-'  1  0  ~/.userscripts/quit-qq
+-'  92  83  ~/multilayer_perceptron.py
+-'  1  0  ~/multilayer_perceptron.py
+-'  14  0  ~/multilayer_perceptron.py
+-'  8  0  ~/multilayer_perceptron.py
+-'  12  65  ~/multilayer_perceptron.py
+-'  6  0  ~/Software/Code/ml/tf/TensorFlow-Examples/notebooks/3_NeuralNetworks/bidirectional_rnn.ipynb
+-'  1  0  ~/Software/Code/ml/tf/TensorFlow-Examples/notebooks/3_NeuralNetworks/bidirectional_rnn.ipynb
+-'  76  18  ~/Software/Code/ml/tf/TensorFlow-Examples/README.md
+-'  1  0  ~/Software/Code/ml/tf/TensorFlow-Examples/README.md
+-'  89  0  /etc/bluetooth/main.conf
+-'  1  0  /etc/bluetooth/main.conf
+-'  1  0  /etc/bluetooth/input.conf
+-'  3  11  ~/.config/gedit/gedit-markdown.ini
+-'  1  0  ~/.config/gedit/gedit-markdown.ini
+-'  10  0  ~/Software/Code/ml/tf/tf-model/autoencoder/autoencoder_models/Autoencoder.py
+-'  1  0  ~/Software/Code/ml/tf/tf-model/autoencoder/autoencoder_models/Autoencoder.py
+-'  9  29  ~/Software/Code/ml/tf/tf-model/autoencoder/Utils.py
+-'  1  0  ~/Software/Code/ml/tf/tf-model/autoencoder/Utils.py
+-'  2  17  ~/.userscripts/fifo
+-'  1  0  ~/.userscripts/fifo
+-'  12  49  ~/.userscripts/fifo
+-'  99  10  /etc/xdg/autostart/tracker-miner-fs.desktop
+-'  68  0  /etc/xdg/autostart/tracker-miner-fs.desktop
+-'  1  0  /etc/xdg/autostart/tracker-miner-fs.desktop
+-'  3  0  ~/.path
+-'  1  0  ~/.path
+-'  4  0  ~/.path
+-'  1  0  ~/.xprofile.bak
+-'  1  0  ~/.pa
+-'  1  0  ~/tmp.sh
+-'  108  0  ~/np
+-'  1  0  ~/np
+-'  17  0  ~/Documents/Backup/Workspace/python/tensorflow-test.py
+-'  1  0  ~/Documents/Backup/Workspace/python/tensorflow-test.py
+-'  1  0  ~/Desktop/Between.desktop
+-'  3  13  ~/.userscripts/note
+-'  1  0  ~/.userscripts/note
+-'  1  0  /run/user/1000/gvfs/mtp:host=%5Busb%3A003%2C008%5D/内存设备/Download/wifi-networks-20160628-082501.xml
+-'  13  34  ~/.userscripts/fifo
+-'  126  23  /usr/share/themes/Paper/metacity-1/metacity-theme-3.xml
+-'  116  23  /usr/share/themes/Paper/metacity-1/metacity-theme-3.xml
+-'  96  23  /usr/share/themes/Paper/metacity-1/metacity-theme-3.xml
+-'  79  23  /usr/share/themes/Paper/metacity-1/metacity-theme-3.xml
+-'  69  23  /usr/share/themes/Paper/metacity-1/metacity-theme-3.xml
+
+# 文件内的标记历史记录 (从新到旧):
+
+> /etc/cron.daily/backup-scripts
+	"	17	8
+	^	17	9
+	.	17	8
+	+	19	0
+	+	17	8
+
+> ~/.userscripts/wallpaper-earthview
+	"	44	0
+	^	44	0
+	.	43	70
+	+	20	7
+	+	32	11
+	+	29	0
+	+	28	0
+	+	27	0
+	+	26	0
+	+	24	0
+	+	23	0
+	+	24	0
+	+	25	0
+	+	26	0
+	+	24	1
+	+	26	0
+	+	30	5
+	+	43	70
+
+> ~/.sh_alias
+	"	7	15
+	^	7	16
+	.	7	15
+	+	6	0
+	+	8	0
+	+	7	15
+
+> ~/Downloads/diode/csv/chemical.sh
+	"	2	0
+	^	2	20
+	.	2	0
+	+	7	20
+	+	4	4
+	+	5	7
+	+	6	23
+	+	7	20
+	+	6	6
+	+	7	26
+	+	1	0
+	+	3	7
+	+	2	19
+	+	6	0
+	+	2	0
+
+> ~/Downloads/diode/csv/readtxtdata.py
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/Downloads/diode/readtxtdata.py
+	"	11	13
+	^	233	15
+	.	11	13
+	+	6	14
+	+	19	23
+	+	11	11
+	+	21	0
+	+	17	0
+	+	38	105
+	+	38	0
+	+	38	123
+	+	37	34
+	+	233	21
+	+	235	32
+	+	236	0
+	+	237	17
+	+	238	17
+	+	239	17
+	+	240	17
+	+	237	18
+	+	238	18
+	+	239	18
+	+	240	18
+	+	241	15
+	+	11	14
+	+	233	0
+	+	11	13
+
+> ~/Downloads/diode/csv/read_data.sh
+	"	4	14
+	^	4	15
+	.	4	14
+	+	1	0
+	+	1	21
+	+	1	8
+	+	6	0
+	+	6	0
+	+	4	14
+
+> ~/.userscripts/update
+	"	1	0
+	^	4	12
+	.	4	11
+	+	2	0
+	+	3	12
+	+	4	21
+	+	2	0
+	+	3	0
+	+	1	8
+	+	4	11
+
+> /etc/cron.daily/update-hosts
+	"	12	0
+	.	13	0
+	+	13	0
+
+> ~/Software/Code/ml/tf/TensorFlow-Examples/examples/3_NeuralNetworks/autoencoder.py
+	"	20	35
+
+> ~/test.py
+	"	2	0
+	^	1	20
+	.	2	0
+	+	2	0
+	+	1	19
+	+	2	0
+
+> ~/Documents/Backup/Workspace/python/README.md
+	"	2	27
+	^	2	28
+	.	2	27
+	+	2	27
+
+> ~/.ssh/known_hosts
+	"	1	0
+
+> ~/Desktop/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/README
+	"	53	0
+
+> ~/.cache/.fr-MZDYwx/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/update-from-gsd.sh
+	"	1	0
+
+> ~/.zshrc
+	"	8	18
+	^	8	19
+	.	8	18
+	+	88	7
+	+	127	0
+	+	124	0
+	+	122	6
+	+	91	0
+	+	90	32
+	+	8	18
+
+> /usr/share/doc/autojump/README.Debian
+	"	1	0
+
+> ~/.ssh/ssh-mxy
+	"	3	5
+	^	3	6
+	.	3	5
+	+	3	5
+
+> ~/.userscripts/quit-qq
+	"	1	0
+	^	1	1
+	.	1	0
+	+	4	0
+	+	1	0
+
+> ~/multilayer_perceptron.py
+	"	92	83
+	^	92	84
+	.	92	83
+	+	12	66
+	+	13	0
+	+	14	0
+	+	85	17
+	+	86	41
+	+	87	0
+	+	92	83
+
+> ~/Software/Code/ml/tf/TensorFlow-Examples/notebooks/3_NeuralNetworks/bidirectional_rnn.ipynb
+	"	6	0
+
+> ~/Software/Code/ml/tf/TensorFlow-Examples/README.md
+	"	76	18
+
+> /etc/bluetooth/main.conf
+	"	89	0
+
+> /etc/bluetooth/input.conf
+	"	1	0
+
+> ~/.config/gedit/gedit-markdown.ini
+	"	3	11
+	^	3	12
+	.	3	11
+	+	9	0
+	+	3	11
+	+	2	18
+	+	3	11
+
+> ~/Software/Code/ml/tf/tf-model/autoencoder/autoencoder_models/Autoencoder.py
+	"	10	0
+
+> ~/Software/Code/ml/tf/tensorflow/tensorflow/tools/docs/BUILD
+	"	47	0
+
+> ~/Software/Code/ml/tf/Deep-Learning-TensorFlow/command_line/run_rbm.py
+	"	1	0
+
+> ~/Software/Code/ml/tf/Deep-Learning-TensorFlow/command_line/run_autoencoder.py
+	"	143	0
+
+> ~/Software/Code/ml/tf/tensorflow/tensorflow/tools/swig/swig.sh
+	"	1	0
+
+> ~/Software/Code/ml/tf/tensorflow/tensorflow/g3doc/api_docs/leftnav_files
+	"	40	0
+
+> ~/.vim/bundle/python-vim-instant-markdown/README.md
+	"	1	0
+
+> ~/.vim/ftplugin/markdown.vim
+	"	284	0
+
+> ~/.vim/ftdetect/markdown.vim
+	"	1	0
+
+> ~/.vimrc
+	"	49	0
+	^	49	12
+	.	49	0
+	+	50	9
+	+	46	0
+	+	47	0
+	+	45	44
+	+	1	45
+	+	50	0
+	+	40	14
+	+	50	0
+	+	40	14
+	+	49	0
+
+> ~/.vim/bundle/newL9/plugin/l9.vim
+	"	76	0
+	.	30	0
+	+	30	0
+
+> ~/.vim/bundle/newL9/README
+	"	28	0
+
+> ~/Software/Code/ml/tf/tensorflow/tensorflow/g3doc/index.md
+	"	1	0
+
+> ~/Software/Code/ml/tf/tf-model/autoencoder/Utils.py
+	"	9	29
+
+> ~/.userscripts/fifo
+	"	2	17
+	^	2	18
+	.	2	17
+	+	13	0
+	+	13	37
+	+	13	37
+	+	13	28
+	+	13	30
+	+	13	0
+	+	13	0
+	+	13	0
+	+	13	0
+	+	2	48
+	+	12	50
+	+	2	17
+
+> /etc/xdg/autostart/tracker-miner-fs.desktop
+	"	99	10
+	^	99	11
+	.	99	10
+	+	99	10
+
+> ~/.path
+	"	3	0
+	.	4	0
+	+	2	0
+	+	3	0
+	+	4	1
+	+	4	0
+	+	4	0
+	+	4	0
+	+	4	0
+	+	4	0
+
+> ~/.xprofile.bak
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/.pa
+	"	1	0
+
+> ~/tmp.sh
+	"	1	0
+	^	1	9
+	.	1	8
+	+	1	8
+
+> ~/np
+	"	108	0
+
+> ~/Documents/Backup/Workspace/python/tensorflow-test.py
+	"	17	0
+
+> ~/Desktop/Between.desktop
+	"	1	0
+
+> ~/.userscripts/note
+	"	3	13
+	^	3	14
+	.	3	13
+	+	3	13
+
+> /run/user/1000/gvfs/mtp:host=%5Busb%3A003%2C008%5D/内存设备/Download/wifi-networks-20160628-082501.xml
+	"	1	0
+
+> /usr/share/themes/Paper/metacity-1/metacity-theme-3.xml
+	"	126	23
+
+> /etc/lightdm/users.conf
+	"	14	0
+	.	15	0
+	+	15	0
+	+	15	0
+
+> ~/.xprofile
+	"	4	0
+	^	4	26
+	.	5	0
+	+	3	24
+	+	4	25
+	+	5	0
+
+> ~/.zhsrc
+	"	1	0

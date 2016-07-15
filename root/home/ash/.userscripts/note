@@ -1,0 +1,3 @@
+#!/bin/sh
+sleep $1
+notify-send $2

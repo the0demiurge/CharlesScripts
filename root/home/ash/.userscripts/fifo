@@ -1,0 +1,12 @@
+#!/bin/sh
+echo '把startup.m文件放到MATLAB搜索文件夹里面'
+echo '
+赵维东 发表于 2015-11-25 12:45
+有没有什么安装教程，能不能发一下，麻烦你了
+
+安装过程和以前版本大体相同。
+
+安装过程无网
+需要输入序列号时从FIK里拷贝
+安装完后，将libcufft.so.7.0.28和libmwservices.so拷贝到bin/glnxa64目录下
+激活时选择Matlab_R2015b_glnxa64.lic文件。'

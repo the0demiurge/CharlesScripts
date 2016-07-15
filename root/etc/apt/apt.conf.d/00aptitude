@@ -1,0 +1,1 @@
+Aptitude::Get-Root-Command "sudo:/usr/bin/sudo";

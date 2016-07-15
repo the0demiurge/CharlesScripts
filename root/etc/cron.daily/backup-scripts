@@ -16,7 +16,6 @@ mkdir $__root__/etc
 cp $__my_home__/.bashrc $__ash__
 cp $__my_home__/.bash_logout $__ash__
 cp $__my_home__/.profile $__ash__
-cp $__my_home__/.linux $__ash__
 cp $__my_home__/.backup-* $__ash__
 cp /etc/hosts.list $__etc__
 cp -r /etc/apt $__etc__
@@ -24,7 +23,7 @@ cp /etc/profile $__etc__
 cp -r /etc/profile.d $__etc__
 cp /etc/cron.* -r $__etc__
 cp -r $__my_home__/.userscripts/ $__ash__
-cp $__my_home__/.zsh* $__ash__ -r
+cp $__my_home__/.zshrc $__ash__ -r
 cp $__my_home__/.sh* $__ash__ -r
 cp $__my_home__/.vim* $__ash__ -r
 

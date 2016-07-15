@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # 上个 Search 图案：
-~MSle0~/print
+~MSle0~/zsh
 
 # 最后替换的字符串
 $
@@ -27,6 +27,7 @@ $
 :PluginSearch pathogen
 
 # 查找字符串 历史记录 (从新到旧)：
+?/zsh
 ?/./
 ?/dir
 ?/print
@@ -49,41 +50,45 @@ $
 "0	LINE	0
 	
 "1	LINE	0
-	echo $(ls -l $PaperPathTmp | awk '{ print $5,$9 }')
+	cp $__my_home__/.linux $__ash__
 "2	LINE	0
-	
+	cp $__my_home__/.linux $__ash__
 "3	LINE	0
-	cp readtxtdata.py csv/
+	echo $(ls -l $PaperPathTmp | awk '{ print $5,$9 }')
 "4	LINE	0
-	cp ./readtxtdata.py csv/
+	
 "5	LINE	0
-	rm readtxtdata.py 
+	cp readtxtdata.py csv/
 "6	LINE	0
-	python ../readdata.py
+	cp ./readtxtdata.py csv/
 "7	LINE	0
-	cp 
+	rm readtxtdata.py 
 "8	LINE	0
-	
+	python ../readdata.py
 "9	LINE	0
-	
+	cp 
 ""-	CHAR	0
-	 
+	*
 
 # 文件标记:
-'0  17  8  /etc/cron.daily/backup-scripts
-'1  18  1  /etc/cron.daily/backup-scripts
-'2  44  0  ~/.userscripts/wallpaper-earthview
-'3  30  4  ~/.userscripts/wallpaper-earthview
-'4  7  15  ~/.sh_alias
-'5  2  0  ~/Downloads/diode/csv/chemical.sh
-'6  3  7  ~/Downloads/diode/csv/chemical.sh
-'7  1  0  ~/Downloads/diode/csv/chemical.sh
-'8  7  26  ~/Downloads/diode/csv/chemical.sh
-'9  1  0  ~/Downloads/diode/csv/readtxtdata.py
+'0  26  21  /etc/cron.daily/backup-scripts
+'1  5  20  ~/Documents/Backup/linux/README.md
+'2  19  0  /etc/cron.daily/backup-scripts
+'3  17  8  /etc/cron.daily/backup-scripts
+'4  18  1  /etc/cron.daily/backup-scripts
+'5  44  0  ~/.userscripts/wallpaper-earthview
+'6  30  4  ~/.userscripts/wallpaper-earthview
+'7  7  15  ~/.sh_alias
+'8  2  0  ~/Downloads/diode/csv/chemical.sh
+'9  3  7  ~/Downloads/diode/csv/chemical.sh
 
 # 跳转列表 (从新到旧):
--'  17  8  /etc/cron.daily/backup-scripts
+-'  26  21  /etc/cron.daily/backup-scripts
 -'  1  0  /etc/cron.daily/backup-scripts
+-'  5  20  ~/Documents/Backup/linux/README.md
+-'  1  0  ~/Documents/Backup/linux/README.md
+-'  19  0  /etc/cron.daily/backup-scripts
+-'  17  8  /etc/cron.daily/backup-scripts
 -'  18  1  /etc/cron.daily/backup-scripts
 -'  44  0  ~/.userscripts/wallpaper-earthview
 -'  1  0  ~/.userscripts/wallpaper-earthview
@@ -174,21 +179,24 @@ $
 -'  3  13  ~/.userscripts/note
 -'  1  0  ~/.userscripts/note
 -'  1  0  /run/user/1000/gvfs/mtp:host=%5Busb%3A003%2C008%5D/内存设备/Download/wifi-networks-20160628-082501.xml
--'  13  34  ~/.userscripts/fifo
--'  126  23  /usr/share/themes/Paper/metacity-1/metacity-theme-3.xml
--'  116  23  /usr/share/themes/Paper/metacity-1/metacity-theme-3.xml
--'  96  23  /usr/share/themes/Paper/metacity-1/metacity-theme-3.xml
--'  79  23  /usr/share/themes/Paper/metacity-1/metacity-theme-3.xml
--'  69  23  /usr/share/themes/Paper/metacity-1/metacity-theme-3.xml
 
 # 文件内的标记历史记录 (从新到旧):
 
 > /etc/cron.daily/backup-scripts
-	"	17	8
-	^	17	9
-	.	17	8
+	"	26	21
+	^	26	22
+	.	26	21
 	+	19	0
 	+	17	8
+	+	19	0
+	+	26	21
+
+> ~/Documents/Backup/linux/README.md
+	"	5	20
+	^	5	21
+	.	5	20
+	+	3	5
+	+	5	20
 
 > ~/.userscripts/wallpaper-earthview
 	"	44	0

@@ -1,22 +1,22 @@
-# MyScripys-linux
+**MyScripys-linux**
 我的自用Ubuntu-Gnome脚本云备份，里面包含配置文件
 感兴趣的朋友们可以下载下来使用
 下面介绍我的主要有用的脚本
 
 
 **pac**: 记录了我收集的一部分pac自动配置脚本
-#root/##
-##etc/##
+#root/#
+#etc/#
 **host.list**: hosts自动更新列表，计划任务里面自动索引到它
-####cron.daily/####
+##cron.daily/##
 **backup-scripts**: 自动备份所有脚本，它可以用来直接生成整个目录，把root/目录删掉之后可以重新生成整个root/
 **update-hosts**: 自动更新hosts以供解除部分网页的使用限制
-###cron.monthly/ & cron.weekly/###
+##cron.monthly/ & cron.weekly/##
 **backup-apps**: 自动备份apt安装的软件列表到主目录下，以便使用*sudo apt-get install $(cat $filename)*
-##home/ash/##
+#home/ash/#
 **.sh_alias**: 我自己使用的sh的别名
 **.backup-apps.**: 自动保存的app列表
-###.userscripys/###
+##.userscripys/##
 **wallpaper-earthview**: 自动抓取Google Earthview作为Gnome桌面壁纸  
 **uzip**: 解压在Windows里面创建的压缩文件的时候可以防止乱码  
 **apt-unlock**: apt-get异常退出之后可以用它来去掉lock文件

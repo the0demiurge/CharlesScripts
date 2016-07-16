@@ -46,9 +46,9 @@ done
 #gsettings set org.gnome.desktop.background picture-uri "$PaperUrl"
 #sleep 1
 mv $PaperPathTmp $PaperPath	#Only change background image when a valid one has been downloaded
-chown $__user__ * -R
-chgrp $__user__ * -R
-chmod +rw *
+chown $__user__ $PaperFolder/* -R
+chgrp $__user__ $PaperFolder/* -R
+chmod +rw $PaperFolder/*
 gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
 #gsettings set org.gnome.settings-daemon.plugins.background active true
 

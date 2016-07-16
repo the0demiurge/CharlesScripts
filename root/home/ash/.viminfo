@@ -49,8 +49,8 @@ $
 # 输入行 历史记录 (从新到旧)：
 
 # 寄存器:
-""0	LINE	0
-	PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
+"0	CHAR	0
+	$PaperFolder/*
 "1	LINE	0
 	    PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
 "2	LINE	0
@@ -69,26 +69,27 @@ $
 	
 "9	LINE	0
 	cp readtxtdata.py csv/
-"-	CHAR	0
-	o
+""-	CHAR	0
+	*
 
 # 文件标记:
-'0  41  3  ~/.userscripts/wallpaper-earthview
-'1  43  17  ~/.userscripts/wallpaper-earthview
-'2  27  8  ~/.userscripts/wallpaper-earthview
-'3  6  0  ~/.userscripts/wallpaper-earthview
-'4  34  4  ~/.userscripts/wallpaper-earthview
-'5  59  0  ~/.userscripts/wallpaper-earthview
-'6  44  0  ~/.userscripts/wallpaper-earthview
-'7  26  21  /etc/cron.daily/backup-scripts
-'8  5  20  ~/Documents/Backup/linux/README.md
-'9  19  0  /etc/cron.daily/backup-scripts
+'0  51  10  ~/.userscripts/wallpaper-earthview
+'1  41  3  ~/.userscripts/wallpaper-earthview
+'2  43  17  ~/.userscripts/wallpaper-earthview
+'3  27  8  ~/.userscripts/wallpaper-earthview
+'4  6  0  ~/.userscripts/wallpaper-earthview
+'5  34  4  ~/.userscripts/wallpaper-earthview
+'6  59  0  ~/.userscripts/wallpaper-earthview
+'7  44  0  ~/.userscripts/wallpaper-earthview
+'8  26  21  /etc/cron.daily/backup-scripts
+'9  5  20  ~/Documents/Backup/linux/README.md
 
 # 跳转列表 (从新到旧):
+-'  51  10  ~/.userscripts/wallpaper-earthview
+-'  1  0  ~/.userscripts/wallpaper-earthview
 -'  41  3  ~/.userscripts/wallpaper-earthview
 -'  27  1  ~/.userscripts/wallpaper-earthview
 -'  42  5  ~/.userscripts/wallpaper-earthview
--'  1  0  ~/.userscripts/wallpaper-earthview
 -'  43  17  ~/.userscripts/wallpaper-earthview
 -'  46  7  ~/.userscripts/wallpaper-earthview
 -'  6  0  ~/.userscripts/wallpaper-earthview
@@ -184,9 +185,9 @@ $
 # 文件内的标记历史记录 (从新到旧):
 
 > ~/.userscripts/wallpaper-earthview
-	"	41	3
-	^	41	4
-	.	41	3
+	"	51	10
+	^	49	30
+	.	51	10
 	+	21	7
 	+	33	11
 	+	30	0
@@ -221,6 +222,9 @@ $
 	+	27	6
 	+	43	17
 	+	41	3
+	+	49	29
+	+	50	30
+	+	51	10
 
 > /etc/cron.daily/backup-scripts
 	"	26	21

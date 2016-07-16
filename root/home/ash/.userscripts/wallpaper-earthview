@@ -1,23 +1,30 @@
 #!/bin/sh
-sleep 2
+
+#定义位置与用户
+PaperFolder=/home/ash/Pictures/Wallpapers
+__user__=ash
+#定义起始与终止地址
 ADDRESS=$(date +%s%N)
 START=1003
-END=1119
+END=8000
 PaperIndex=$((ADDRESS % ($START - $END + 1) + $START))
-IndexPath=~/.cache/wallpaper/wallpaper-earthview-index
-PaperPathTmp=~/.cache/wallpaper/background-image-temp.jpg 
-PaperPath=~/.cache/wallpaper/background-image.jpg
+
+#内部定义
+IndexPath=$PaperFolder/wallpaper-earthview-index
+PaperPathTmp=$PaperFolder/background-image-temp.jpg 
+PaperPath=$PaperFolder/background-image.jpg
+#set the paper index randomly
 if [ -r $(cat $IndexPath) ]; then
     echo $PaperIndex > $IndexPath
 fi
+#generate the wallpaper address
 ADDRESS=$(date +%s%N)
 PaperIndex=$((($(cat $IndexPath)  + $ADDRESS +1 ) % ($START - $END + 1) + $START ))
 echo $PaperIndex > $IndexPath
 PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
-gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
 rm $PaperPathTmp
 echo 'downloading...'
-wget  -O $PaperPathTmp $PaperUrl
+curl -s $PaperUrl -o $PaperPathTmp
 echo 'downloaded'
 
 if [ $(ls -l $PaperPathTmp | awk '{ print $5 }') -le 20000 ]; then
@@ -30,17 +37,20 @@ while [ $(ls -l $PaperPathTmp | awk '{ print $5 }') -le 20000 ]; do
     ADDRESS=$(date +%s%N)
     PaperIndex=$((ADDRESS % ($START - $END + 1) + $START))
     echo $PaperIndex > $IndexPath
-    PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
     echo 'no tmp wallpaper'
-    wget -O $PaperPathTmp $PaperUrl
-    sleep 1
+    PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
+    curl -s $PaperUrl -o $PaperPathTmp
+    echo $PaperUrl
+    #sleep 1
 done
 #gsettings set org.gnome.desktop.background picture-uri "$PaperUrl"
-sleep 1
+#sleep 1
 mv $PaperPathTmp $PaperPath	#Only change background image when a valid one has been downloaded
+chown $__user__ * -R
+chgrp $__user__ * -R
+chmod +rw *
 gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
-#gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
-gsettings set org.gnome.settings-daemon.plugins.background active true
+#gsettings set org.gnome.settings-daemon.plugins.background active true
 
 #notify-send $PaperIndex
 

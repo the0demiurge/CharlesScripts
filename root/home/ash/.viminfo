@@ -8,16 +8,16 @@
 # hlsearch on (H) or off (h):
 ~h
 # 上个 Search 图案：
-~MSle0~/zsh
+~MSle0~/url
 
 # 最后替换的字符串
 $
 
 # 命令行 历史记录 (从新到旧)：
 :wq
-:q!
 :w
 :q
+:q!
 :set nonu
 :w 转外作业
 :ew
@@ -27,6 +27,8 @@ $
 :PluginSearch pathogen
 
 # 查找字符串 历史记录 (从新到旧)：
+?/url
+?/curl
 ?/zsh
 ?/./
 ?/dir
@@ -47,42 +49,53 @@ $
 # 输入行 历史记录 (从新到旧)：
 
 # 寄存器:
-"0	LINE	0
-	
+""0	LINE	0
+	PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
 "1	LINE	0
-	cp $__my_home__/.linux $__ash__
+	    PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
 "2	LINE	0
-	cp $__my_home__/.linux $__ash__
+	gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
 "3	LINE	0
-	echo $(ls -l $PaperPathTmp | awk '{ print $5,$9 }')
+	#notify-send $PaperIndex
 "4	LINE	0
-	
+	#gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
 "5	LINE	0
-	cp readtxtdata.py csv/
+	cp $__my_home__/.linux $__ash__
 "6	LINE	0
-	cp ./readtxtdata.py csv/
+	cp $__my_home__/.linux $__ash__
 "7	LINE	0
-	rm readtxtdata.py 
+	echo $(ls -l $PaperPathTmp | awk '{ print $5,$9 }')
 "8	LINE	0
-	python ../readdata.py
+	
 "9	LINE	0
-	cp 
-""-	CHAR	0
-	*
+	cp readtxtdata.py csv/
+"-	CHAR	0
+	o
 
 # 文件标记:
-'0  26  21  /etc/cron.daily/backup-scripts
-'1  5  20  ~/Documents/Backup/linux/README.md
-'2  19  0  /etc/cron.daily/backup-scripts
-'3  17  8  /etc/cron.daily/backup-scripts
-'4  18  1  /etc/cron.daily/backup-scripts
-'5  44  0  ~/.userscripts/wallpaper-earthview
-'6  30  4  ~/.userscripts/wallpaper-earthview
-'7  7  15  ~/.sh_alias
-'8  2  0  ~/Downloads/diode/csv/chemical.sh
-'9  3  7  ~/Downloads/diode/csv/chemical.sh
+'0  41  3  ~/.userscripts/wallpaper-earthview
+'1  43  17  ~/.userscripts/wallpaper-earthview
+'2  27  8  ~/.userscripts/wallpaper-earthview
+'3  6  0  ~/.userscripts/wallpaper-earthview
+'4  34  4  ~/.userscripts/wallpaper-earthview
+'5  59  0  ~/.userscripts/wallpaper-earthview
+'6  44  0  ~/.userscripts/wallpaper-earthview
+'7  26  21  /etc/cron.daily/backup-scripts
+'8  5  20  ~/Documents/Backup/linux/README.md
+'9  19  0  /etc/cron.daily/backup-scripts
 
 # 跳转列表 (从新到旧):
+-'  41  3  ~/.userscripts/wallpaper-earthview
+-'  27  1  ~/.userscripts/wallpaper-earthview
+-'  42  5  ~/.userscripts/wallpaper-earthview
+-'  1  0  ~/.userscripts/wallpaper-earthview
+-'  43  17  ~/.userscripts/wallpaper-earthview
+-'  46  7  ~/.userscripts/wallpaper-earthview
+-'  6  0  ~/.userscripts/wallpaper-earthview
+-'  34  4  ~/.userscripts/wallpaper-earthview
+-'  59  0  ~/.userscripts/wallpaper-earthview
+-'  7  0  ~/.userscripts/wallpaper-earthview
+-'  44  0  ~/.userscripts/wallpaper-earthview
 -'  26  21  /etc/cron.daily/backup-scripts
 -'  1  0  /etc/cron.daily/backup-scripts
 -'  5  20  ~/Documents/Backup/linux/README.md
@@ -90,9 +103,8 @@ $
 -'  19  0  /etc/cron.daily/backup-scripts
 -'  17  8  /etc/cron.daily/backup-scripts
 -'  18  1  /etc/cron.daily/backup-scripts
--'  44  0  ~/.userscripts/wallpaper-earthview
--'  1  0  ~/.userscripts/wallpaper-earthview
--'  30  4  ~/.userscripts/wallpaper-earthview
+-'  45  0  ~/.userscripts/wallpaper-earthview
+-'  31  4  ~/.userscripts/wallpaper-earthview
 -'  7  15  ~/.sh_alias
 -'  1  0  ~/.sh_alias
 -'  2  0  ~/Downloads/diode/csv/chemical.sh
@@ -168,19 +180,47 @@ $
 -'  3  0  ~/.path
 -'  1  0  ~/.path
 -'  4  0  ~/.path
--'  1  0  ~/.xprofile.bak
--'  1  0  ~/.pa
--'  1  0  ~/tmp.sh
--'  108  0  ~/np
--'  1  0  ~/np
--'  17  0  ~/Documents/Backup/Workspace/python/tensorflow-test.py
--'  1  0  ~/Documents/Backup/Workspace/python/tensorflow-test.py
--'  1  0  ~/Desktop/Between.desktop
--'  3  13  ~/.userscripts/note
--'  1  0  ~/.userscripts/note
--'  1  0  /run/user/1000/gvfs/mtp:host=%5Busb%3A003%2C008%5D/内存设备/Download/wifi-networks-20160628-082501.xml
 
 # 文件内的标记历史记录 (从新到旧):
+
+> ~/.userscripts/wallpaper-earthview
+	"	41	3
+	^	41	4
+	.	41	3
+	+	21	7
+	+	33	11
+	+	30	0
+	+	29	0
+	+	28	0
+	+	27	0
+	+	25	0
+	+	24	0
+	+	25	0
+	+	26	0
+	+	27	0
+	+	25	1
+	+	27	0
+	+	31	5
+	+	44	0
+	+	5	7
+	+	7	0
+	+	46	0
+	+	44	0
+	+	19	0
+	+	5	7
+	+	5	7
+	+	10	28
+	+	14	0
+	+	19	0
+	+	23	1
+	+	29	0
+	+	23	0
+	+	29	0
+	+	44	0
+	+	34	0
+	+	27	6
+	+	43	17
+	+	41	3
 
 > /etc/cron.daily/backup-scripts
 	"	26	21
@@ -197,26 +237,6 @@ $
 	.	5	20
 	+	3	5
 	+	5	20
-
-> ~/.userscripts/wallpaper-earthview
-	"	44	0
-	^	44	0
-	.	43	70
-	+	20	7
-	+	32	11
-	+	29	0
-	+	28	0
-	+	27	0
-	+	26	0
-	+	24	0
-	+	23	0
-	+	24	0
-	+	25	0
-	+	26	0
-	+	24	1
-	+	26	0
-	+	30	5
-	+	43	70
 
 > ~/.sh_alias
 	"	7	15

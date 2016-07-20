@@ -86,6 +86,7 @@ source ~/.path
 source ~/.sh_alias
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 numlockx
+source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
 plugins=(git autojump)
 . /usr/share/autojump/autojump.sh
 clear

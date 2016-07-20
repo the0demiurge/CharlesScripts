@@ -1,7 +1,8 @@
 alias x=exit
-alias c=clear&&cd
+alias c='clear&&cd'
 alias la='ls --almost-all'
 alias ll='ls --almost-all -lh'
 alias l=ls
 alias -s ipynp='jupyter-notebook'
 alias o=xdg-open
+alias g='git add . &&git commit -m'

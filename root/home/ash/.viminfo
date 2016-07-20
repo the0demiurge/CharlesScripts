@@ -8,15 +8,16 @@
 # hlsearch on (H) or off (h):
 ~h
 # 上个 Search 图案：
-~MSle0~/url
+~MSle0~/len
 
 # 最后替换的字符串
 $
 
 # 命令行 历史记录 (从新到旧)：
-:wq
-:w
 :q
+:wq
+:s
+:w
 :q!
 :set nonu
 :w 转外作业
@@ -27,6 +28,9 @@ $
 :PluginSearch pathogen
 
 # 查找字符串 历史记录 (从新到旧)：
+?/len
+?/11
+?/Root
 ?/url
 ?/curl
 ?/zsh
@@ -52,39 +56,79 @@ $
 "0	CHAR	0
 	$PaperFolder/*
 "1	LINE	0
-	    PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
+	cp readtxtdata.py ..
 "2	LINE	0
-	gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
+	source $ZSH_CUSTOM/
 "3	LINE	0
-	#notify-send $PaperIndex
+	plugins=(zsh-autosuggestions)
 "4	LINE	0
-	#gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
+	
 "5	LINE	0
-	cp $__my_home__/.linux $__ash__
+	
+	
 "6	LINE	0
-	cp $__my_home__/.linux $__ash__
+	}
+	zle -N zle-line-init
 "7	LINE	0
-	echo $(ls -l $PaperPathTmp | awk '{ print $5,$9 }')
+	zle-line-init() {
+	    zle autosuggest-start
 "8	LINE	0
 	
+	# Enable autosuggestions automatically.
 "9	LINE	0
-	cp readtxtdata.py csv/
+	# Load zsh-autosuggestions.
+	source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
 ""-	CHAR	0
-	*
+	r
 
 # 文件标记:
-'0  51  10  ~/.userscripts/wallpaper-earthview
-'1  41  3  ~/.userscripts/wallpaper-earthview
-'2  43  17  ~/.userscripts/wallpaper-earthview
-'3  27  8  ~/.userscripts/wallpaper-earthview
-'4  6  0  ~/.userscripts/wallpaper-earthview
-'5  34  4  ~/.userscripts/wallpaper-earthview
-'6  59  0  ~/.userscripts/wallpaper-earthview
-'7  44  0  ~/.userscripts/wallpaper-earthview
-'8  26  21  /etc/cron.daily/backup-scripts
-'9  5  20  ~/Documents/Backup/linux/README.md
+'0  280  0  ~/Downloads/proj/egap/diode/readtxtdata.py
+'1  136  24  ~/Downloads/proj/egap/diode/readtxtdata.py
+'2  271  25  ~/Downloads/proj/egap/diode/readtxtdata.py
+'3  296  3  ~/Downloads/proj/egap/diode/readtxtdata.py
+'4  2  21  ~/Downloads/proj/egap/diode/csv/chemical.sh
+'5  8  6  ~/Downloads/proj/egap/diode/csv/chemical.sh
+'6  2  18  ~/.sh_alias
+'7  1  12  ~/.matplotlib/matplotlibrc
+'8  4  9  ~/.config/redshift.conf
+'9  46  6  ~/.config/redshift.conf
 
 # 跳转列表 (从新到旧):
+-'  280  0  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  1  0  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  136  24  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  128  19  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  107  19  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  103  24  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  97  19  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  92  28  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  41  27  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  40  18  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  39  10  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  38  10  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  16  2  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  2  23  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  271  25  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  296  3  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  2  21  ~/Downloads/proj/egap/diode/csv/chemical.sh
+-'  3  0  ~/Downloads/proj/egap/diode/csv/chemical.sh
+-'  1  0  ~/Downloads/proj/egap/diode/csv/chemical.sh
+-'  8  6  ~/Downloads/proj/egap/diode/csv/chemical.sh
+-'  2  18  ~/.sh_alias
+-'  1  0  ~/.sh_alias
+-'  1  12  ~/.matplotlib/matplotlibrc
+-'  4  9  ~/.config/redshift.conf
+-'  1  0  ~/.config/redshift.conf
+-'  46  6  ~/.config/redshift.conf
+-'  57  9  ~/.config/redshift.conf
+-'  1  0  ~/test.py
+-'  89  70  ~/.zshrc
+-'  1  0  ~/.zshrc
+-'  90  28  ~/.zshrc
+-'  88  0  ~/.zshrc
+-'  19  0  /etc/hosts.deny
+-'  1  0  /etc/hosts.deny
+-'  8  34  ~/.sh_alias
 -'  51  10  ~/.userscripts/wallpaper-earthview
 -'  1  0  ~/.userscripts/wallpaper-earthview
 -'  41  3  ~/.userscripts/wallpaper-earthview
@@ -107,7 +151,6 @@ $
 -'  45  0  ~/.userscripts/wallpaper-earthview
 -'  31  4  ~/.userscripts/wallpaper-earthview
 -'  7  15  ~/.sh_alias
--'  1  0  ~/.sh_alias
 -'  2  0  ~/Downloads/diode/csv/chemical.sh
 -'  1  0  ~/Downloads/diode/csv/chemical.sh
 -'  3  7  ~/Downloads/diode/csv/chemical.sh
@@ -125,7 +168,6 @@ $
 -'  20  35  ~/Software/Code/ml/tf/TensorFlow-Examples/examples/3_NeuralNetworks/autoencoder.py
 -'  1  0  ~/Software/Code/ml/tf/TensorFlow-Examples/examples/3_NeuralNetworks/autoencoder.py
 -'  2  0  ~/test.py
--'  1  0  ~/test.py
 -'  4  11  ~/.userscripts/update
 -'  2  0  ~/.userscripts/update
 -'  3  12  ~/.userscripts/update
@@ -142,47 +184,95 @@ $
 -'  1  0  ~/Desktop/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/README
 -'  1  0  ~/.cache/.fr-MZDYwx/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/update-from-gsd.sh
 -'  8  18  ~/.zshrc
--'  1  0  ~/.zshrc
--'  92  0  ~/.zshrc
--'  90  32  ~/.zshrc
 -'  1  0  /usr/share/doc/autojump/README.Debian
--'  122  6  ~/.zshrc
--'  126  0  ~/.zshrc
--'  127  0  ~/.zshrc
+-'  119  6  ~/.zshrc
+-'  123  0  ~/.zshrc
+-'  124  0  ~/.zshrc
 -'  6  0  ~/.sh_alias
 -'  1  22  ~/转外作业
 -'  3  5  ~/.ssh/ssh-mxy
 -'  1  0  ~/.ssh/ssh-mxy
--'  1  0  ~/.userscripts/quit-qq
--'  92  83  ~/multilayer_perceptron.py
--'  1  0  ~/multilayer_perceptron.py
--'  14  0  ~/multilayer_perceptron.py
--'  8  0  ~/multilayer_perceptron.py
--'  12  65  ~/multilayer_perceptron.py
--'  6  0  ~/Software/Code/ml/tf/TensorFlow-Examples/notebooks/3_NeuralNetworks/bidirectional_rnn.ipynb
--'  1  0  ~/Software/Code/ml/tf/TensorFlow-Examples/notebooks/3_NeuralNetworks/bidirectional_rnn.ipynb
--'  76  18  ~/Software/Code/ml/tf/TensorFlow-Examples/README.md
--'  1  0  ~/Software/Code/ml/tf/TensorFlow-Examples/README.md
--'  89  0  /etc/bluetooth/main.conf
--'  1  0  /etc/bluetooth/main.conf
--'  1  0  /etc/bluetooth/input.conf
--'  3  11  ~/.config/gedit/gedit-markdown.ini
--'  1  0  ~/.config/gedit/gedit-markdown.ini
--'  10  0  ~/Software/Code/ml/tf/tf-model/autoencoder/autoencoder_models/Autoencoder.py
--'  1  0  ~/Software/Code/ml/tf/tf-model/autoencoder/autoencoder_models/Autoencoder.py
--'  9  29  ~/Software/Code/ml/tf/tf-model/autoencoder/Utils.py
--'  1  0  ~/Software/Code/ml/tf/tf-model/autoencoder/Utils.py
--'  2  17  ~/.userscripts/fifo
--'  1  0  ~/.userscripts/fifo
--'  12  49  ~/.userscripts/fifo
--'  99  10  /etc/xdg/autostart/tracker-miner-fs.desktop
--'  68  0  /etc/xdg/autostart/tracker-miner-fs.desktop
--'  1  0  /etc/xdg/autostart/tracker-miner-fs.desktop
--'  3  0  ~/.path
--'  1  0  ~/.path
--'  4  0  ~/.path
 
 # 文件内的标记历史记录 (从新到旧):
+
+> ~/Downloads/proj/egap/diode/readtxtdata.py
+	"	280	0
+	^	271	26
+	.	271	25
+	+	271	25
+
+> ~/Downloads/proj/egap/diode/csv/chemical.sh
+	"	2	21
+	^	2	22
+	.	2	21
+	+	8	6
+	+	2	21
+
+> ~/.sh_alias
+	"	2	18
+	^	2	19
+	.	2	18
+	+	6	0
+	+	9	0
+	+	7	15
+	+	8	34
+	+	2	18
+
+> ~/.matplotlib/matplotlibrc
+	"	1	12
+	^	1	13
+	.	1	12
+	+	1	12
+
+> ~/.config/redshift.conf
+	"	4	9
+	^	46	7
+	.	4	9
+	+	57	0
+	+	56	0
+	+	1	10
+	+	46	4
+	+	4	9
+
+> ~/test.py
+	"	1	0
+	^	1	1
+	.	1	0
+	+	2	0
+	+	1	19
+	+	2	0
+	+	1	0
+
+> ~/.zshrc
+	"	89	70
+	^	89	71
+	.	90	0
+	+	88	7
+	+	124	0
+	+	121	0
+	+	119	6
+	+	88	0
+	+	88	32
+	+	8	18
+	+	88	25
+	+	88	0
+	+	90	0
+	+	90	0
+	+	90	0
+
+> /etc/hosts.deny
+	"	19	0
+	^	19	0
+	.	18	3
+	+	18	3
+
+> /etc/ssh/sshd_config
+	"	28	17
+	^	28	18
+	.	28	17
+	+	5	8
+	+	28	45
+	+	28	17
 
 > ~/.userscripts/wallpaper-earthview
 	"	51	10
@@ -241,14 +331,6 @@ $
 	.	5	20
 	+	3	5
 	+	5	20
-
-> ~/.sh_alias
-	"	7	15
-	^	7	16
-	.	7	15
-	+	6	0
-	+	8	0
-	+	7	15
 
 > ~/Downloads/diode/csv/chemical.sh
 	"	2	0
@@ -332,14 +414,6 @@ $
 > ~/Software/Code/ml/tf/TensorFlow-Examples/examples/3_NeuralNetworks/autoencoder.py
 	"	20	35
 
-> ~/test.py
-	"	2	0
-	^	1	20
-	.	2	0
-	+	2	0
-	+	1	19
-	+	2	0
-
 > ~/Documents/Backup/Workspace/python/README.md
 	"	2	27
 	^	2	28
@@ -354,18 +428,6 @@ $
 
 > ~/.cache/.fr-MZDYwx/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/update-from-gsd.sh
 	"	1	0
-
-> ~/.zshrc
-	"	8	18
-	^	8	19
-	.	8	18
-	+	88	7
-	+	127	0
-	+	124	0
-	+	122	6
-	+	91	0
-	+	90	32
-	+	8	18
 
 > /usr/share/doc/autojump/README.Debian
 	"	1	0

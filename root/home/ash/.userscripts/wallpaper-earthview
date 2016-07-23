@@ -24,7 +24,7 @@ echo $PaperIndex > $IndexPath
 PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
 rm $PaperPathTmp
 echo 'downloading...'
-curl -s $PaperUrl -o $PaperPathTmp
+curl $PaperUrl -o $PaperPathTmp
 echo 'downloaded'
 
 if [ $(ls -l $PaperPathTmp | awk '{ print $5 }') -le 20000 ]; then
@@ -39,7 +39,7 @@ while [ $(ls -l $PaperPathTmp | awk '{ print $5 }') -le 20000 ]; do
     echo $PaperIndex > $IndexPath
     echo 'no tmp wallpaper'
     PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
-    curl -s $PaperUrl -o $PaperPathTmp
+    curl $PaperUrl -o $PaperPathTmp
     echo $PaperUrl
     #sleep 1
 done

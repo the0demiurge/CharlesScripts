@@ -5,4 +5,4 @@ alias ll='ls --almost-all -lh'
 alias l=ls
 alias -s ipynp='jupyter-notebook'
 alias o=xdg-open
-alias g='git add . &&git commit -m'
+alias g='git add . &&git commit -m&&git push'

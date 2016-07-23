@@ -8,18 +8,18 @@
 # hlsearch on (H) or off (h):
 ~h
 # 上个 Search 图案：
-~MSle0~/len
+~MSle0~/'O
 
 # 最后替换的字符串
 $
 
 # 命令行 历史记录 (从新到旧)：
-:q
-:wq
-:s
-:w
 :q!
+:q
+:w
+:wq
 :set nonu
+:s
 :w 转外作业
 :ew
 ::echo has('python')
@@ -28,11 +28,23 @@ $
 :PluginSearch pathogen
 
 # 查找字符串 历史记录 (从新到旧)：
+?/'O
+?/'O'
+?/curl
+?/wget
+?/mkdir
+?/os.
+?/csv/
+?//csv
+?/data
+?/csv
+?/save
+?/pylab
+?/stack
 ?/len
 ?/11
 ?/Root
 ?/url
-?/curl
 ?/zsh
 ?/./
 ?/dir
@@ -56,228 +68,209 @@ $
 "0	CHAR	0
 	$PaperFolder/*
 "1	LINE	0
-	cp readtxtdata.py ..
+	try:
+	    os.mkdir('./csv')
+	except:
+	    print('dir "csv" is exist!')
+	try:
+	    os.mkdir('./csv/data')
+	except:
+	    print('dir "data" is exist!')
 "2	LINE	0
-	source $ZSH_CUSTOM/
+	 
 "3	LINE	0
-	plugins=(zsh-autosuggestions)
+	backend	: TkAgg
 "4	LINE	0
-	
+	cp readtxtdata.py ..
 "5	LINE	0
-	
-	
+	source $ZSH_CUSTOM/
 "6	LINE	0
-	}
-	zle -N zle-line-init
+	plugins=(zsh-autosuggestions)
 "7	LINE	0
-	zle-line-init() {
-	    zle autosuggest-start
+	
 "8	LINE	0
 	
-	# Enable autosuggestions automatically.
+	
 "9	LINE	0
-	# Load zsh-autosuggestions.
-	source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
+	}
+	zle -N zle-line-init
 ""-	CHAR	0
-	r
+	a
 
 # 文件标记:
-'0  280  0  ~/Downloads/proj/egap/diode/readtxtdata.py
-'1  136  24  ~/Downloads/proj/egap/diode/readtxtdata.py
-'2  271  25  ~/Downloads/proj/egap/diode/readtxtdata.py
-'3  296  3  ~/Downloads/proj/egap/diode/readtxtdata.py
-'4  2  21  ~/Downloads/proj/egap/diode/csv/chemical.sh
-'5  8  6  ~/Downloads/proj/egap/diode/csv/chemical.sh
-'6  2  18  ~/.sh_alias
-'7  1  12  ~/.matplotlib/matplotlibrc
-'8  4  9  ~/.config/redshift.conf
-'9  46  6  ~/.config/redshift.conf
+'0  2  2  ~/t.py
+'1  1  0  ~/t
+'2  162  0  ~/Downloads/proj/egap/diode/readtxtdata.py
+'3  164  0  ~/Downloads/proj/egap/diode/readtxtdata.py
+'4  1  2  ~/Downloads/proj/egap/diode/csv/random_forest.py
+'5  17  10  ~/Downloads/proj/egap/diode/csv/random_forest.py
+'6  36  0  ~/.userscripts/wallpaper-earthview
+'7  27  0  ~/.userscripts/wallpaper-earthview
+'8  50  0  ~/.userscripts/wallpaper-earthview
+'9  11  8  ~/Downloads/proj/egap/diode/readtxtdata.py
 
 # 跳转列表 (从新到旧):
--'  280  0  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  2  2  ~/t.py
+-'  1  0  ~/t.py
+-'  1  0  ~/t
+-'  162  0  ~/Downloads/proj/egap/diode/readtxtdata.py
 -'  1  0  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  136  24  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  128  19  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  107  19  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  103  24  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  97  19  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  92  28  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  41  27  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  40  18  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  39  10  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  38  10  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  164  0  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  66  0  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  1  2  ~/Downloads/proj/egap/diode/csv/random_forest.py
+-'  17  10  ~/Downloads/proj/egap/diode/csv/random_forest.py
+-'  36  0  ~/.userscripts/wallpaper-earthview
+-'  1  0  ~/.userscripts/wallpaper-earthview
+-'  27  0  ~/.userscripts/wallpaper-earthview
+-'  42  4  ~/.userscripts/wallpaper-earthview
+-'  58  9  ~/.userscripts/wallpaper-earthview
+-'  50  0  ~/.userscripts/wallpaper-earthview
+-'  11  8  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  6  0  ~/Downloads/proj/egap/diode/csv/random_forest.py
+-'  7  15  ~/Downloads/proj/egap/diode/csv/random_forest.py
+-'  8  5  ~/Downloads/proj/egap/diode/csv/chemical.sh
+-'  1  0  ~/Downloads/proj/egap/diode/csv/chemical.sh
+-'  35  0  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  166  20  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  146  12  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  120  9  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  82  0  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  342  16  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  307  29  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  102  23  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  100  12  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  97  14  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  84  26  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  1  0  ~/Downloads/proj/egap/diode/random_forest.py
+-'  2  11  ~/Downloads/proj/egap/diode/csv/chemical.sh
+-'  344  38  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  343  31  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  3  15  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  373  34  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  363  18  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  17  5  ~/test.py
+-'  1  0  ~/test.py
+-'  30  0  /tmp/tutor9K3mXH
+-'  1  0  /tmp/tutor9K3mXH
+-'  49  0  ~/.vimrc
+-'  50  100  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  1  0  ~/.userscripts/.pip-update.py
+-'  8  43  ~/.sh_alias
+-'  1  0  ~/.sh_alias
+-'  4  3  ~/Downloads/proj/egap/diode/csv/.pip-update.py
+-'  1  0  ~/Downloads/proj/egap/diode/csv/.pip-update.py
+-'  6  8  ~/.userscripts/update
+-'  1  0  ~/.userscripts/update
+-'  25  22  ~/Downloads/proj/egap/diode/csv/random_forest.py
+-'  5  0  ~/Downloads/proj/egap/diode/csv/random_forest.py
+-'  39  5  ~/Downloads/proj/egap/diode/csv/random_forest.py
+-'  2  13  ~/Desktop/test.py
+-'  1  0  ~/Desktop/test.py
+-'  9  9  ~/Desktop/test.py
+-'  311  21  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  312  53  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  38  0  ~/Software/anaconda3/lib/python3.5/site-packages/matplotlib/mpl-data/matplotlibrc
+-'  1  0  ~/Software/anaconda3/lib/python3.5/site-packages/matplotlib/mpl-data/matplotlibrc
+-'  39  11  ~/Software/anaconda3/lib/python3.5/site-packages/matplotlib/mpl-data/matplotlibrc
+-'  288  0  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  144  24  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  136  19  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  115  19  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  111  24  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  105  19  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  49  27  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  48  18  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  47  10  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  46  10  ~/Downloads/proj/egap/diode/readtxtdata.py
 -'  16  2  ~/Downloads/proj/egap/diode/readtxtdata.py
 -'  2  23  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  271  25  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  296  3  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  2  21  ~/Downloads/proj/egap/diode/csv/chemical.sh
--'  3  0  ~/Downloads/proj/egap/diode/csv/chemical.sh
--'  1  0  ~/Downloads/proj/egap/diode/csv/chemical.sh
--'  8  6  ~/Downloads/proj/egap/diode/csv/chemical.sh
+-'  279  25  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  304  3  ~/Downloads/proj/egap/diode/readtxtdata.py
+-'  3  21  ~/Downloads/proj/egap/diode/csv/chemical.sh
+-'  4  0  ~/Downloads/proj/egap/diode/csv/chemical.sh
+-'  9  6  ~/Downloads/proj/egap/diode/csv/chemical.sh
 -'  2  18  ~/.sh_alias
--'  1  0  ~/.sh_alias
 -'  1  12  ~/.matplotlib/matplotlibrc
 -'  4  9  ~/.config/redshift.conf
 -'  1  0  ~/.config/redshift.conf
 -'  46  6  ~/.config/redshift.conf
 -'  57  9  ~/.config/redshift.conf
--'  1  0  ~/test.py
 -'  89  70  ~/.zshrc
 -'  1  0  ~/.zshrc
 -'  90  28  ~/.zshrc
 -'  88  0  ~/.zshrc
 -'  19  0  /etc/hosts.deny
 -'  1  0  /etc/hosts.deny
--'  8  34  ~/.sh_alias
 -'  51  10  ~/.userscripts/wallpaper-earthview
--'  1  0  ~/.userscripts/wallpaper-earthview
 -'  41  3  ~/.userscripts/wallpaper-earthview
--'  27  1  ~/.userscripts/wallpaper-earthview
--'  42  5  ~/.userscripts/wallpaper-earthview
 -'  43  17  ~/.userscripts/wallpaper-earthview
 -'  46  7  ~/.userscripts/wallpaper-earthview
 -'  6  0  ~/.userscripts/wallpaper-earthview
--'  34  4  ~/.userscripts/wallpaper-earthview
--'  59  0  ~/.userscripts/wallpaper-earthview
--'  7  0  ~/.userscripts/wallpaper-earthview
--'  44  0  ~/.userscripts/wallpaper-earthview
--'  26  21  /etc/cron.daily/backup-scripts
--'  1  0  /etc/cron.daily/backup-scripts
--'  5  20  ~/Documents/Backup/linux/README.md
--'  1  0  ~/Documents/Backup/linux/README.md
--'  19  0  /etc/cron.daily/backup-scripts
--'  17  8  /etc/cron.daily/backup-scripts
--'  18  1  /etc/cron.daily/backup-scripts
--'  45  0  ~/.userscripts/wallpaper-earthview
--'  31  4  ~/.userscripts/wallpaper-earthview
--'  7  15  ~/.sh_alias
--'  2  0  ~/Downloads/diode/csv/chemical.sh
--'  1  0  ~/Downloads/diode/csv/chemical.sh
--'  3  7  ~/Downloads/diode/csv/chemical.sh
--'  7  26  ~/Downloads/diode/csv/chemical.sh
--'  1  0  ~/Downloads/diode/csv/readtxtdata.py
--'  11  14  ~/Downloads/diode/readtxtdata.py
--'  1  0  ~/Downloads/diode/readtxtdata.py
--'  4  14  ~/Downloads/diode/csv/read_data.sh
--'  1  0  ~/Downloads/diode/csv/read_data.sh
--'  241  15  ~/Downloads/diode/readtxtdata.py
--'  1  0  ~/.userscripts/update
--'  12  0  /etc/cron.daily/update-hosts
--'  1  0  /etc/cron.daily/update-hosts
--'  13  0  /etc/cron.daily/update-hosts
--'  20  35  ~/Software/Code/ml/tf/TensorFlow-Examples/examples/3_NeuralNetworks/autoencoder.py
--'  1  0  ~/Software/Code/ml/tf/TensorFlow-Examples/examples/3_NeuralNetworks/autoencoder.py
--'  2  0  ~/test.py
--'  4  11  ~/.userscripts/update
--'  2  0  ~/.userscripts/update
--'  3  12  ~/.userscripts/update
--'  37  31  ~/Downloads/diode/readtxtdata.py
--'  38  49  ~/Downloads/diode/readtxtdata.py
--'  19  8  ~/Downloads/diode/readtxtdata.py
--'  43  13  ~/Downloads/diode/readtxtdata.py
--'  39  16  ~/Downloads/diode/readtxtdata.py
--'  6  14  ~/Downloads/diode/readtxtdata.py
--'  2  27  ~/Documents/Backup/Workspace/python/README.md
--'  1  0  ~/Documents/Backup/Workspace/python/README.md
--'  1  0  ~/.ssh/known_hosts
--'  53  0  ~/Desktop/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/README
--'  1  0  ~/Desktop/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/README
--'  1  0  ~/.cache/.fr-MZDYwx/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/update-from-gsd.sh
--'  8  18  ~/.zshrc
--'  1  0  /usr/share/doc/autojump/README.Debian
--'  119  6  ~/.zshrc
--'  123  0  ~/.zshrc
--'  124  0  ~/.zshrc
--'  6  0  ~/.sh_alias
--'  1  22  ~/转外作业
--'  3  5  ~/.ssh/ssh-mxy
--'  1  0  ~/.ssh/ssh-mxy
 
 # 文件内的标记历史记录 (从新到旧):
 
-> ~/Downloads/proj/egap/diode/readtxtdata.py
-	"	280	0
-	^	271	26
-	.	271	25
-	+	271	25
+> ~/t.py
+	"	2	2
+	^	2	6
+	.	2	0
+	+	2	14
+	+	1	2
+	+	3	6
+	+	2	0
 
-> ~/Downloads/proj/egap/diode/csv/chemical.sh
-	"	2	21
-	^	2	22
-	.	2	21
-	+	8	6
-	+	2	21
-
-> ~/.sh_alias
-	"	2	18
-	^	2	19
-	.	2	18
-	+	6	0
-	+	9	0
-	+	7	15
-	+	8	34
-	+	2	18
-
-> ~/.matplotlib/matplotlibrc
-	"	1	12
-	^	1	13
-	.	1	12
-	+	1	12
-
-> ~/.config/redshift.conf
-	"	4	9
-	^	46	7
-	.	4	9
-	+	57	0
-	+	56	0
-	+	1	10
-	+	46	4
-	+	4	9
-
-> ~/test.py
+> ~/t
 	"	1	0
-	^	1	1
-	.	1	0
-	+	2	0
-	+	1	19
-	+	2	0
-	+	1	0
 
-> ~/.zshrc
-	"	89	70
-	^	89	71
-	.	90	0
-	+	88	7
-	+	124	0
-	+	121	0
-	+	119	6
-	+	88	0
-	+	88	32
-	+	8	18
-	+	88	25
-	+	88	0
-	+	90	0
-	+	90	0
-	+	90	0
+> ~/Downloads/proj/egap/diode/readtxtdata.py
+	"	162	0
+	^	166	48
+	.	162	0
+	+	279	25
+	+	309	25
+	+	310	33
+	+	311	23
+	+	312	53
+	+	309	26
+	+	310	34
+	+	311	21
+	+	342	26
+	+	342	31
+	+	343	23
+	+	344	22
+	+	345	23
+	+	346	23
+	+	347	23
+	+	354	22
+	+	373	21
+	+	84	22
+	+	307	23
+	+	342	0
+	+	35	0
+	+	11	8
+	+	166	47
+	+	162	0
 
-> /etc/hosts.deny
-	"	19	0
-	^	19	0
-	.	18	3
-	+	18	3
-
-> /etc/ssh/sshd_config
-	"	28	17
-	^	28	18
-	.	28	17
-	+	5	8
-	+	28	45
-	+	28	17
+> ~/Downloads/proj/egap/diode/csv/random_forest.py
+	"	1	2
+	^	17	14
+	.	18	16
+	+	27	7
+	+	39	5
+	+	25	22
+	+	6	30
+	+	7	15
+	+	16	9
+	+	17	10
+	+	16	12
+	+	17	11
+	+	16	10
+	+	18	16
 
 > ~/.userscripts/wallpaper-earthview
-	"	51	10
+	"	36	0
 	^	49	30
-	.	51	10
+	.	42	9
 	+	21	7
 	+	33	11
 	+	30	0
@@ -315,6 +308,151 @@ $
 	+	49	29
 	+	50	30
 	+	51	10
+	+	27	0
+	+	42	9
+
+> ~/Downloads/proj/egap/diode/csv/chemical.sh
+	"	8	5
+	^	8	6
+	.	8	5
+	+	9	6
+	+	3	21
+	+	2	11
+	+	8	5
+
+> ~/Downloads/proj/egap/diode/random_forest.py
+	"	1	0
+
+> ~/test.py
+	"	17	5
+	^	17	6
+	.	17	6
+	+	2	0
+	+	1	19
+	+	2	0
+	+	1	0
+	+	17	6
+
+> /tmp/tutor9K3mXH
+	"	30	0
+
+> ~/.vimrc
+	"	49	0
+	.	50	0
+	+	50	9
+	+	46	0
+	+	47	0
+	+	45	44
+	+	1	45
+	+	50	0
+	+	40	14
+	+	50	0
+	+	40	14
+	+	49	0
+	+	50	0
+
+> ~/.userscripts/.pip-update.py
+	"	1	0
+
+> ~/.userscripts/update
+	"	5	35
+	^	5	36
+	.	5	35
+	+	2	0
+	+	3	12
+	+	4	21
+	+	2	0
+	+	3	0
+	+	1	8
+	+	4	11
+	+	5	0
+	+	5	35
+
+> ~/update
+	"	1	0
+
+> ~/.sh_alias
+	"	8	43
+	^	8	44
+	.	8	43
+	+	6	0
+	+	9	0
+	+	7	15
+	+	8	34
+	+	2	18
+	+	8	43
+
+> ~/Downloads/proj/egap/diode/csv/.pip-update.py
+	"	4	3
+	^	4	4
+	.	4	3
+	+	4	18
+	+	3	0
+	+	4	3
+
+> ~/Desktop/test.py
+	"	2	13
+	^	2	13
+	.	2	13
+	+	10	0
+	+	6	0
+	+	8	12
+	+	9	10
+	+	2	13
+
+> ~/Software/anaconda3/lib/python3.5/site-packages/matplotlib/mpl-data/matplotlibrc
+	"	38	0
+	.	38	0
+	+	38	0
+	+	39	0
+	+	38	0
+
+> ~/.matplotlib/matplotlibrc
+	"	1	12
+	^	1	13
+	.	1	12
+	+	1	12
+
+> ~/.config/redshift.conf
+	"	4	9
+	^	46	7
+	.	4	9
+	+	57	0
+	+	56	0
+	+	1	10
+	+	46	4
+	+	4	9
+
+> ~/.zshrc
+	"	89	70
+	^	89	71
+	.	90	0
+	+	88	7
+	+	124	0
+	+	121	0
+	+	119	6
+	+	88	0
+	+	88	32
+	+	8	18
+	+	88	25
+	+	88	0
+	+	90	0
+	+	90	0
+	+	90	0
+
+> /etc/hosts.deny
+	"	19	0
+	^	19	0
+	.	18	3
+	+	18	3
+
+> /etc/ssh/sshd_config
+	"	28	17
+	^	28	18
+	.	28	17
+	+	5	8
+	+	28	45
+	+	28	17
 
 > /etc/cron.daily/backup-scripts
 	"	26	21
@@ -393,18 +531,6 @@ $
 	+	6	0
 	+	6	0
 	+	4	14
-
-> ~/.userscripts/update
-	"	1	0
-	^	4	12
-	.	4	11
-	+	2	0
-	+	3	12
-	+	4	21
-	+	2	0
-	+	3	0
-	+	1	8
-	+	4	11
 
 > /etc/cron.daily/update-hosts
 	"	12	0
@@ -504,21 +630,6 @@ $
 
 > ~/.vim/ftdetect/markdown.vim
 	"	1	0
-
-> ~/.vimrc
-	"	49	0
-	^	49	12
-	.	49	0
-	+	50	9
-	+	46	0
-	+	47	0
-	+	45	44
-	+	1	45
-	+	50	0
-	+	40	14
-	+	50	0
-	+	40	14
-	+	49	0
 
 > ~/.vim/bundle/newL9/plugin/l9.vim
 	"	76	0

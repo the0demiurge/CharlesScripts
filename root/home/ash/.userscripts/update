@@ -2,3 +2,4 @@
 sudo apt update
 sudo apt -y upgrade
 sudo apt-get -y autoremove
+sudo python3 /home/ash/.userscripts/.pip-update.py

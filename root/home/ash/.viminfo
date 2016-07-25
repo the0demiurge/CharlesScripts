@@ -8,18 +8,19 @@
 # hlsearch on (H) or off (h):
 ~h
 # 上个 Search 图案：
-~MSle0~/'O
+~MSle0~/cross
 
 # 最后替换的字符串
 $
 
 # 命令行 历史记录 (从新到旧)：
-:q!
-:q
-:w
 :wq
-:set nonu
+:w
+:q
 :s
+:py3file autoencoder.py
+:q!
+:set nonu
 :w 转外作业
 :ew
 ::echo has('python')
@@ -28,6 +29,18 @@ $
 :PluginSearch pathogen
 
 # 查找字符串 历史记录 (从新到旧)：
+?/cross
+?/999
+?/Lib
+?/bry
+?/usr
+?/python
+?/pow
+?/po
+?/power
+?/500
+?/50
+?/w
 ?/'O
 ?/'O'
 ?/curl
@@ -51,7 +64,6 @@ $
 ?/print
 ?/need
 ? @$
-?/python
 ? \<on\>
 ?/den
 ?/Hidd
@@ -65,9 +77,17 @@ $
 # 输入行 历史记录 (从新到旧)：
 
 # 寄存器:
-"0	CHAR	0
-	$PaperFolder/*
+"0	LINE	0
+		sudo su -c 'python3 /home/ash/.userscripts/.pip-update.py' > /dev/null
 "1	LINE	0
+	_ = [tmp for tmp]
+"2	LINE	0
+	input_file=
+"3	LINE	0
+		sudo su -c 'python2.7 /home/ash/.userscripts/.pip-update.py' > /dev/null
+"4	LINE	0
+	参考 http://msdn.microsoft.com/zh-cn/library/ae5bf541(v=vs.90).aspx
+"5	LINE	0
 	try:
 	    os.mkdir('./csv')
 	except:
@@ -76,40 +96,48 @@ $
 	    os.mkdir('./csv/data')
 	except:
 	    print('dir "data" is exist!')
-"2	LINE	0
-	 
-"3	LINE	0
-	backend	: TkAgg
-"4	LINE	0
-	cp readtxtdata.py ..
-"5	LINE	0
-	source $ZSH_CUSTOM/
 "6	LINE	0
-	plugins=(zsh-autosuggestions)
+	 
 "7	LINE	0
-	
+	backend	: TkAgg
 "8	LINE	0
-	
-	
+	cp readtxtdata.py ..
 "9	LINE	0
-	}
-	zle -N zle-line-init
+	source $ZSH_CUSTOM/
 ""-	CHAR	0
-	a
+	h
 
 # 文件标记:
-'0  2  2  ~/t.py
-'1  1  0  ~/t
-'2  162  0  ~/Downloads/proj/egap/diode/readtxtdata.py
-'3  164  0  ~/Downloads/proj/egap/diode/readtxtdata.py
-'4  1  2  ~/Downloads/proj/egap/diode/csv/random_forest.py
-'5  17  10  ~/Downloads/proj/egap/diode/csv/random_forest.py
-'6  36  0  ~/.userscripts/wallpaper-earthview
-'7  27  0  ~/.userscripts/wallpaper-earthview
-'8  50  0  ~/.userscripts/wallpaper-earthview
-'9  11  8  ~/Downloads/proj/egap/diode/readtxtdata.py
+'0  8  34  ~/.sh_alias
+'1  1  0  ~/.sh
+'2  33  46  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+'3  12  19  ~/.userscripts/update
+'4  9  37  ~/.userscripts/update
+'5  5  26  ~/.userscripts/update
+'6  3  47  ~/.userscripts/update
+'7  11  18  ~/.userscripts/update
+'8  13  1  ~/.userscripts/update
+'9  1  0  ~/reg-exp.md
 
 # 跳转列表 (从新到旧):
+-'  8  34  ~/.sh_alias
+-'  1  0  ~/.sh_alias
+-'  1  0  ~/.sh
+-'  33  46  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+-'  32  31  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+-'  7  38  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+-'  21  14  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+-'  1  0  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+-'  14  11  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+-'  12  19  ~/.userscripts/update
+-'  1  0  ~/.userscripts/update
+-'  9  37  ~/.userscripts/update
+-'  5  26  ~/.userscripts/update
+-'  3  47  ~/.userscripts/update
+-'  11  1  ~/.userscripts/update
+-'  13  1  ~/.userscripts/update
+-'  1  0  ~/reg-exp.md
+-'  12  18  ~/.sh_alias
 -'  2  2  ~/t.py
 -'  1  0  ~/t.py
 -'  1  0  ~/t
@@ -156,12 +184,9 @@ $
 -'  50  100  ~/.vimrc
 -'  1  0  ~/.vimrc
 -'  1  0  ~/.userscripts/.pip-update.py
--'  8  43  ~/.sh_alias
--'  1  0  ~/.sh_alias
 -'  4  3  ~/Downloads/proj/egap/diode/csv/.pip-update.py
 -'  1  0  ~/Downloads/proj/egap/diode/csv/.pip-update.py
--'  6  8  ~/.userscripts/update
--'  1  0  ~/.userscripts/update
+-'  14  8  ~/.userscripts/update
 -'  25  22  ~/Downloads/proj/egap/diode/csv/random_forest.py
 -'  5  0  ~/Downloads/proj/egap/diode/csv/random_forest.py
 -'  39  5  ~/Downloads/proj/egap/diode/csv/random_forest.py
@@ -185,30 +210,145 @@ $
 -'  46  10  ~/Downloads/proj/egap/diode/readtxtdata.py
 -'  16  2  ~/Downloads/proj/egap/diode/readtxtdata.py
 -'  2  23  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  279  25  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  304  3  ~/Downloads/proj/egap/diode/readtxtdata.py
--'  3  21  ~/Downloads/proj/egap/diode/csv/chemical.sh
--'  4  0  ~/Downloads/proj/egap/diode/csv/chemical.sh
--'  9  6  ~/Downloads/proj/egap/diode/csv/chemical.sh
--'  2  18  ~/.sh_alias
--'  1  12  ~/.matplotlib/matplotlibrc
--'  4  9  ~/.config/redshift.conf
--'  1  0  ~/.config/redshift.conf
--'  46  6  ~/.config/redshift.conf
--'  57  9  ~/.config/redshift.conf
--'  89  70  ~/.zshrc
--'  1  0  ~/.zshrc
--'  90  28  ~/.zshrc
--'  88  0  ~/.zshrc
--'  19  0  /etc/hosts.deny
--'  1  0  /etc/hosts.deny
--'  51  10  ~/.userscripts/wallpaper-earthview
--'  41  3  ~/.userscripts/wallpaper-earthview
--'  43  17  ~/.userscripts/wallpaper-earthview
--'  46  7  ~/.userscripts/wallpaper-earthview
--'  6  0  ~/.userscripts/wallpaper-earthview
+-'  33  46  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+-'  32  31  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+-'  7  38  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+-'  21  14  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+-'  1  0  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+-'  14  11  ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+-'  12  19  ~/.userscripts/update
 
 # 文件内的标记历史记录 (从新到旧):
+
+> ~/.sh_alias
+	"	8	34
+	^	8	38
+	.	8	34
+	+	6	0
+	+	14	0
+	+	7	15
+	+	8	34
+	+	2	18
+	+	8	43
+	+	13	18
+	+	12	18
+	+	8	34
+
+> ~/.sh
+	"	1	0
+
+> ~/Downloads/proj/egap/diode/csv/data/autoencoder.py
+	"	33	46
+	^	33	47
+	.	33	46
+	+	4	47
+	+	5	18
+	+	11	13
+	+	4	7
+	+	34	0
+	+	29	30
+	+	23	24
+	+	24	54
+	+	26	31
+	+	28	27
+	+	29	42
+	+	31	73
+	+	33	87
+	+	12	9
+	+	13	11
+	+	14	0
+	+	13	1
+	+	14	13
+	+	20	0
+	+	17	18
+	+	19	13
+	+	13	11
+	+	14	11
+	+	33	61
+	+	6	18
+	+	3	32
+	+	6	52
+	+	8	16
+	+	9	14
+	+	8	17
+	+	9	15
+	+	7	38
+	+	32	34
+	+	32	0
+	+	33	45
+	+	32	33
+	+	33	46
+
+> ~/.vimrc
+	"	94	0
+	^	90	30
+	.	90	29
+	+	50	9
+	+	46	0
+	+	47	0
+	+	45	44
+	+	1	45
+	+	50	0
+	+	40	14
+	+	50	0
+	+	40	14
+	+	49	0
+	+	50	0
+	+	91	16
+	+	91	0
+	+	91	6
+	+	91	6
+	+	91	6
+	+	91	0
+	+	90	29
+
+> /tmp/tutorWlyAyC
+	"	64	0
+	^	57	4
+	.	57	3
+	+	57	3
+
+> ~/.userscripts/update
+	"	12	19
+	.	12	19
+	+	5	0
+	+	7	12
+	+	9	21
+	+	5	0
+	+	7	0
+	+	1	8
+	+	9	11
+	+	11	0
+	+	11	12
+	+	12	0
+	+	11	6
+	+	13	0
+	+	12	0
+	+	11	0
+	+	5	0
+	+	11	12
+	+	5	0
+	+	2	21
+	+	3	47
+	+	5	26
+	+	7	30
+	+	9	37
+	+	12	58
+	+	4	21
+	+	6	16
+	+	8	18
+	+	10	32
+	+	3	58
+	+	13	0
+	+	12	19
+
+> ~/.userscripts/.pip-update.py
+	"	4	6
+
+> ~/reg-exp.md
+	"	1	0
+	.	44	0
+	+	44	0
 
 > ~/t.py
 	"	2	2
@@ -336,51 +476,8 @@ $
 > /tmp/tutor9K3mXH
 	"	30	0
 
-> ~/.vimrc
-	"	49	0
-	.	50	0
-	+	50	9
-	+	46	0
-	+	47	0
-	+	45	44
-	+	1	45
-	+	50	0
-	+	40	14
-	+	50	0
-	+	40	14
-	+	49	0
-	+	50	0
-
-> ~/.userscripts/.pip-update.py
-	"	1	0
-
-> ~/.userscripts/update
-	"	5	35
-	^	5	36
-	.	5	35
-	+	2	0
-	+	3	12
-	+	4	21
-	+	2	0
-	+	3	0
-	+	1	8
-	+	4	11
-	+	5	0
-	+	5	35
-
 > ~/update
 	"	1	0
-
-> ~/.sh_alias
-	"	8	43
-	^	8	44
-	.	8	43
-	+	6	0
-	+	9	0
-	+	7	15
-	+	8	34
-	+	2	18
-	+	8	43
 
 > ~/Downloads/proj/egap/diode/csv/.pip-update.py
 	"	4	3

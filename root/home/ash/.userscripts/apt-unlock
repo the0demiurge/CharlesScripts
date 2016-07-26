@@ -1,7 +1,0 @@
-#!/bin/sh
-#sudo rm /var/lib/apt/lists/lock 
-sudo rm /var/lib/dpkg/lock
-sudo dpkg --configure -a
-sudo rm /var/cache/apt/archives/lock
-sudo fuser /var/cache/debconf/config.dat
-sudo rm /var/lib/apt/lists/lock

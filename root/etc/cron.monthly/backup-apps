@@ -1,4 +1,0 @@
-#!/bin/sh
-#/bin/sh
-apt-mark showmanual > /home/ash/.backup-apps.monthly
-

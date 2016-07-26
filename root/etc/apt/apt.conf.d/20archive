@@ -1,3 +1,0 @@
-APT::Archives::MaxAge "30";
-APT::Archives::MinAge "2";
-APT::Archives::MaxSize "500";

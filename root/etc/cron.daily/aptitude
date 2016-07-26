@@ -1,0 +1,11 @@
+#!/bin/sh
+
+bak=/var/backups
+
+# Shamelessly ripped from /etc/cron.daily/standard
+if test -f /var/lib/aptitude/pkgstates && cd $bak ; then
+	if ! cmp -s aptitude.pkgstates.0 /var/lib/aptitude/pkgstates ; then
+		cp -p /var/lib/aptitude/pkgstates aptitude.pkgstates
+		savelog -c 7 aptitude.pkgstates > /dev/null
+	fi
+fi

@@ -1,0 +1,13 @@
+alias x=exit
+alias c='clear&&cd'
+alias la='ls --almost-all'
+alias ll='ls --almost-all -lh'
+alias l=ls
+alias -s ipynp='jupyter-notebook'
+alias o=xdg-open
+alias g='git add . &&git commit -m'
+alias v=vim
+alias i=ipython
+alias p=python
+alias s='sudo su -'
+alias a='sudo apt'

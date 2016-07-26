@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# anacron's cron script
+#
+# This script updates anacron time stamps. It is called through run-parts
+# either by anacron itself or by cron.
+#
+# The script is called "0anacron" to assure that it will be executed
+# _before_ all other scripts.
+
+test -x /usr/sbin/anacron || exit 0
+anacron -u cron.weekly

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+[ -x /usr/lib/ubuntu-release-upgrader/release-upgrade-motd ] || exit 0
+
+# Check to see whether there is a new version of Ubuntu available
+/usr/lib/ubuntu-release-upgrader/release-upgrade-motd

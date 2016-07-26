@@ -1,0 +1,31 @@
+#!/bin/sh
+#the path
+__my_home__=/home/ash
+__backup_path__=$__my_home__/Documents/Backup/linux
+__user__=ash
+#defined by default
+__root__=$__backup_path__/root
+__etc__=$__root__/etc
+__ash__=$__root__/home/$__user__
+mkdir $__backup_path__
+mkdir $__root__
+mkdir $__root__/home
+mkdir $__root__/home/$__user__
+mkdir $__root__/etc
+
+cp $__my_home__/.bashrc $__ash__
+cp $__my_home__/.bash_logout $__ash__
+cp $__my_home__/.profile $__ash__
+cp $__my_home__/.backup-* $__ash__
+cp /etc/hosts.list $__etc__
+cp -r /etc/apt $__etc__
+cp /etc/profile $__etc__
+cp -r /etc/profile.d $__etc__
+cp /etc/cron.* -r $__etc__
+cp -r $__my_home__/.userscripts/ $__ash__
+cp $__my_home__/.zshrc $__ash__ -r
+cp $__my_home__/.sh* $__ash__ -r
+cp $__my_home__/.vim* $__ash__ -r
+
+chown -R $__user__:root $__backup_path__
+chgrp -R $__user__ $__backup_path__

@@ -52,3 +52,5 @@ deb http://security.ubuntu.com/ubuntu yakkety-security multiverse
 # deb-src http://security.ubuntu.com/ubuntu xenial-security multiverse
 deb http://us.archive.ubuntu.com/ubuntu yakkety main multiverse
 deb-src http://us.archive.ubuntu.com/ubuntu yakkety main multiverse #Added by software-properties
+deb http://archive.ubuntu.com/ubuntu xenial main universe restricted multiverse
+deb-src http://archive.ubuntu.com/ubuntu xenial main universe restricted multiverse #Added by software-properties

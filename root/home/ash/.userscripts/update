@@ -2,12 +2,13 @@
 echo 'update: update and autoremove softwares'
 echo 'update ***: update anything including python packages'
 echo 'updating sources'
-sudo apt update > /dev/null
+sudo apt update #> /dev/null
 echo 'upgrading'
-sudo apt -y upgrade > /dev/null
+sudo apt -y upgrade
 echo 'autoremoving'
-sudo apt-get -y autoremove > /dev/null
-echo 'upgrading python packages'
+sudo apt-get -y autoremove
 if [ $# -ne 0 ]; then
+	echo 'upgrading python packages'
+	conda update --all
 	sudo su -c 'python /home/ash/.userscripts/.pip-update.py' > /dev/null
 fi

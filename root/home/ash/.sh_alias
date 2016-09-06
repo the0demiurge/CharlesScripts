@@ -1,13 +1,14 @@
-alias x=exit
+alias a='sudo apt'
 alias c='clear&&cd'
+alias g='git add . &&git commit -m'
+alias i=ipython
+alias l=ls
 alias la='ls --almost-all'
 alias ll='ls --almost-all -lh'
-alias l=ls
-alias -s ipynp='jupyter-notebook'
 alias o=xdg-open
-alias g='git add . &&git commit -m'
-alias v=vim
-alias i=ipython
 alias p=python
 alias s='sudo su -'
-alias a='sudo apt'
+alias u=update
+alias v=vim
+alias x=exit
+alias t='tensorboard --logdir=.'

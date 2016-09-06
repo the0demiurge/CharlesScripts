@@ -11,6 +11,23 @@ if [ -d /run/systemd/system ]; then
     exit 0
 fi
 
+check_power()
+{
+    # laptop check, on_ac_power returns:
+    #       0 (true)    System is on main power
+    #       1 (false)   System is not on main power
+    #       255 (false) Power status could not be determined
+    # Desktop systems always return 255 it seems
+    if which on_ac_power >/dev/null 2>&1; then
+        on_ac_power
+        POWER=$?
+        if [ $POWER -eq 1 ]; then
+            return 1
+        fi
+    fi
+    return 0
+}
+
 # sleep for a random interval of time (default 30min)
 # (some code taken from cron-apt, thanks)
 random_sleep()
@@ -28,6 +45,11 @@ random_sleep()
     sleep $TIME
 }
 
-# run daily job
+# delay the job execution by a random amount of time
 random_sleep
+
+# ensure we don't do this on battery
+check_power || exit 0
+
+# run daily job
 exec /usr/lib/apt/apt.systemd.daily

@@ -24,6 +24,7 @@ cp -r /etc/profile.d $__etc__
 cp /etc/cron.* -r $__etc__
 cp -r $__my_home__/.userscripts/ $__ash__
 cp $__my_home__/.zshrc $__ash__ -r
+cp $__my_home__/.oh-my-zsh/ $__ash__ -r
 cp $__my_home__/.sh* $__ash__ -r
 cp $__my_home__/.vim* $__ash__ -r
 

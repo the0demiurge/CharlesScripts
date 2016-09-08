@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # 上个 Search 图案：
-~MSle0~/Opti
+~MSle0~/sca
 
 # 最后替换的字符串
 $
@@ -16,12 +16,12 @@ $
 # 命令行 历史记录 (从新到旧)：
 :wq
 :q
+:q!
 :w
 :152
 :154
 :19
 :WQ
-:q!
 :s
 :py3file autoencoder.py
 :set nonu
@@ -33,6 +33,8 @@ $
 :PluginSearch pathogen
 
 # 查找字符串 历史记录 (从新到旧)：
+?/sca
+?/cost
 ?/Opti
 ?/print
 ?/copy
@@ -46,7 +48,6 @@ $
 ?/input
 ?/google
 ?/graph
-?/cost
 ?/\.
 ?/ash
 ?/local
@@ -82,7 +83,6 @@ $
 ?/csv/
 ?//csv
 ?/data
-?/csv
 
 # 表达式 历史记录 (从新到旧)：
 
@@ -92,8 +92,8 @@ $
 
 # 寄存器:
 "0	LINE	0
-	tmp,mx=preprocessing.refer_to_dicts(want('species'),element,this_element)
-""1	LINE	0
+	cp $__my_home__/.zshrc $__ash__ -r
+"1	LINE	0
 	*data
 	data
 	.bz2
@@ -120,35 +120,51 @@ $
 	os.makedirs(your_path+'csv/data', exist_ok=True)
 "9	LINE	0
 	print(want('species'),'\n\n',element,'\n\n',this_element)
-"-	CHAR	0
-	t
+""-	CHAR	0
+	c
 
 # 文件标记:
-'0  5  32  ~/Documents/Backup/Workspace/python/README.md
-'1  53  0  ~/Documents/Backup/Workspace/python/.gitignore
-'2  3  4  ~/Documents/Backup/Workspace/python/.gitignore
-'3  3  3  ~/Documents/Backup/Workspace/python/.gitignore
-'4  3  3  ~/Documents/Backup/Workspace/python/.gitignore
-'5  47  3  ~/Documents/Backup/Workspace/python/.gitignore
-'6  55  4  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
-'7  34  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
-'8  13  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
-'9  42  10  ~/Documents/Backup/Workspace/python/.gitignore
+'0  27  26  /etc/cron.daily/backup-scripts
+'1  4  0  ~/Documents/Backup/Workspace/projects/egap/src/tf-mnist-mlp.py
+'2  6  20  /tmp/test.py
+'3  3  6  ~/.userscripts/note
+'4  57  4  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+'5  25  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+'6  27  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+'7  5  32  ~/Documents/Backup/Workspace/python/README.md
+'8  53  0  ~/Documents/Backup/Workspace/python/.gitignore
+'9  3  4  ~/Documents/Backup/Workspace/python/.gitignore
 
 # 跳转列表 (从新到旧):
+-'  27  26  /etc/cron.daily/backup-scripts
+-'  1  0  /etc/cron.daily/backup-scripts
+-'  4  0  ~/Documents/Backup/Workspace/projects/egap/src/tf-mnist-mlp.py
+-'  1  0  ~/Documents/Backup/Workspace/projects/egap/src/tf-mnist-mlp.py
+-'  6  20  /tmp/test.py
+-'  1  0  /tmp/test.py
+-'  3  6  ~/.userscripts/note
+-'  1  0  ~/.userscripts/note
+-'  57  4  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  1  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  25  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  33  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  18  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  27  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  26  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  8  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  53  26  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  52  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
 -'  5  32  ~/Documents/Backup/Workspace/python/README.md
 -'  1  0  ~/Documents/Backup/Workspace/python/README.md
 -'  53  0  ~/Documents/Backup/Workspace/python/.gitignore
 -'  1  0  ~/Documents/Backup/Workspace/python/.gitignore
 -'  3  4  ~/Documents/Backup/Workspace/python/.gitignore
 -'  47  3  ~/Documents/Backup/Workspace/python/.gitignore
--'  55  4  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  56  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  1  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  34  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  58  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  36  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
 -'  13  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
 -'  42  10  ~/Documents/Backup/Workspace/python/.gitignore
--'  26  25  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  28  25  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
 -'  2  17  /etc/resolvconf/resolv.conf.d/base
 -'  1  0  /etc/resolvconf/resolv.conf.d/base
 -'  1  45  ~/note
@@ -197,7 +213,7 @@ $
 -'  43  0  ~/Documents/Backup/Workspace/projects/egap/src/readtxtdata.py
 -'  37  0  ~/Documents/Backup/Workspace/python/src/tf/tf-autoencoder.py
 -'  1  0  ~/Documents/Backup/Workspace/python/src/tf/tf-autoencoder.py
--'  44  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  46  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
 -'  26  92  ~/Desktop/compute (不通用)/compute_time.py
 -'  1  0  ~/Desktop/compute (不通用)/compute_time.py
 -'  25  25  ~/Desktop/compute (不通用)/compute_time.py
@@ -216,25 +232,109 @@ $
 -'  1  0  ~/Documents/Backup/Workspace/python/src/mlp/mlp.py
 -'  2  25  ~/.userscripts/fifo
 -'  1  0  ~/.userscripts/fifo
--'  43  53  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  45  53  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
 -'  14  31  ~/.sh_alias
 -'  1  0  ~/.sh_alias
--'  41  17  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  39  54  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  37  49  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  28  23  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  24  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  47  46  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  18  14  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  43  0  ~/Documents/Backup/Workspace/python/src/tf/preceptron.py
--'  1  0  ~/Documents/Backup/Workspace/python/src/tf/preceptron.py
--'  52  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  11  0  ~/.userscripts/update
--'  1  0  ~/.userscripts/update
--'  5  0  ~/Documents/Backup/Workspace/python/src/tf/preceptron.py
--'  53  0  ~/Documents/Backup/Workspace/python/.gitignore
 
 # 文件内的标记历史记录 (从新到旧):
+
+> /etc/cron.daily/backup-scripts
+	"	27	26
+	^	27	27
+	.	27	26
+	+	19	0
+	+	17	8
+	+	19	0
+	+	26	21
+	+	27	26
+
+> ~/Documents/Backup/Workspace/projects/egap/src/tf-mnist-mlp.py
+	"	4	0
+
+> /tmp/test.py
+	"	6	20
+	^	6	21
+	.	6	20
+	+	6	20
+
+> ~/.userscripts/note
+	"	3	6
+	^	3	12
+	.	3	6
+	+	3	6
+
+> ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+	"	57	4
+	^	26	1
+	.	39	4
+	+	18	14
+	+	39	46
+	+	30	23
+	+	40	22
+	+	41	52
+	+	43	17
+	+	40	21
+	+	41	53
+	+	40	23
+	+	41	54
+	+	40	22
+	+	28	50
+	+	47	7
+	+	49	10
+	+	40	62
+	+	46	0
+	+	40	0
+	+	42	16
+	+	28	49
+	+	14	17
+	+	28	50
+	+	58	0
+	+	51	10
+	+	28	51
+	+	40	22
+	+	7	7
+	+	52	31
+	+	9	0
+	+	8	10
+	+	53	30
+	+	58	0
+	+	58	9
+	+	58	12
+	+	58	8
+	+	58	0
+	+	58	12
+	+	58	9
+	+	58	5
+	+	58	14
+	+	58	10
+	+	58	10
+	+	28	25
+	+	30	24
+	+	28	36
+	+	14	15
+	+	30	26
+	+	28	25
+	+	4	0
+	+	58	0
+	+	24	0
+	+	25	53
+	+	26	0
+	+	30	0
+	+	39	4
+	+	44	4
+	+	45	4
+	+	26	0
+	+	25	0
+	+	54	0
+	+	55	0
+	+	56	0
+	+	57	0
+	+	24	0
+	+	26	0
+	+	30	0
+	+	44	4
+	+	45	4
+	+	39	4
 
 > ~/Documents/Backup/Workspace/python/README.md
 	"	5	32
@@ -260,60 +360,6 @@ $
 	+	3	0
 	+	53	0
 	+	50	0
-
-> ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
-	"	55	4
-	^	26	26
-	.	56	0
-	+	18	14
-	+	37	46
-	+	28	23
-	+	38	22
-	+	39	52
-	+	41	17
-	+	38	21
-	+	39	53
-	+	38	23
-	+	39	54
-	+	38	22
-	+	26	50
-	+	45	7
-	+	47	10
-	+	38	62
-	+	44	0
-	+	38	0
-	+	40	16
-	+	26	49
-	+	14	17
-	+	26	50
-	+	56	0
-	+	49	10
-	+	26	51
-	+	38	22
-	+	7	7
-	+	50	31
-	+	9	0
-	+	8	10
-	+	51	30
-	+	56	0
-	+	56	9
-	+	56	12
-	+	56	8
-	+	56	0
-	+	56	12
-	+	56	9
-	+	56	5
-	+	56	14
-	+	56	10
-	+	56	10
-	+	26	25
-	+	28	24
-	+	26	36
-	+	14	15
-	+	28	26
-	+	26	25
-	+	4	0
-	+	56	0
 
 > /etc/resolvconf/resolv.conf.d/base
 	"	2	17
@@ -1137,15 +1183,6 @@ $
 	+	28	45
 	+	28	17
 
-> /etc/cron.daily/backup-scripts
-	"	26	21
-	^	26	22
-	.	26	21
-	+	19	0
-	+	17	8
-	+	19	0
-	+	26	21
-
 > ~/Documents/Backup/linux/README.md
 	"	5	20
 	^	5	21
@@ -1313,24 +1350,3 @@ $
 
 > ~/Software/Code/ml/tf/tensorflow/tensorflow/g3doc/index.md
 	"	1	0
-
-> ~/Software/Code/ml/tf/tf-model/autoencoder/Utils.py
-	"	9	29
-
-> /etc/xdg/autostart/tracker-miner-fs.desktop
-	"	99	10
-	^	99	11
-	.	99	10
-	+	99	10
-
-> ~/.path
-	"	3	0
-	.	4	0
-	+	2	0
-	+	3	0
-	+	4	1
-	+	4	0
-	+	4	0
-	+	4	0
-	+	4	0
-	+	4	0

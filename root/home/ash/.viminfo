@@ -8,16 +8,19 @@
 # hlsearch on (H) or off (h):
 ~h
 # 上个 Search 图案：
-~MSle0~/google
+~MSle0~/Opti
 
 # 最后替换的字符串
 $
 
 # 命令行 历史记录 (从新到旧)：
-:q
 :wq
-:WQ
+:q
 :w
+:152
+:154
+:19
+:WQ
 :q!
 :s
 :py3file autoencoder.py
@@ -30,6 +33,17 @@ $
 :PluginSearch pathogen
 
 # 查找字符串 历史记录 (从新到旧)：
+?/Opti
+?/print
+?/copy
+?/dir
+?/upper
+?/prep
+?/prep	
+?/exist
+?/u\'
+?/ver
+?/input
 ?/google
 ?/graph
 ?/cost
@@ -40,8 +54,6 @@ $
 ?/relu
 ?/0.
 ?/y1
-?/input
-?/print
 ?/raw
 ?/scipy
 ?/python3-sci
@@ -71,15 +83,6 @@ $
 ?//csv
 ?/data
 ?/csv
-?/save
-?/pylab
-?/stack
-?/len
-?/11
-?/Root
-?/url
-?/zsh
-?/./
 
 # 表达式 历史记录 (从新到旧)：
 
@@ -88,44 +91,113 @@ $
 # 输入行 历史记录 (从新到旧)：
 
 # 寄存器:
-"0	CHAR	0
-	+rand(1, len(t)),
-"1	LINE	0
-	    data = pd.read_excel(filename,  sheetname='17.18.19', parse_cols='AE:AR', skiprows=10)
+"0	LINE	0
+	tmp,mx=preprocessing.refer_to_dicts(want('species'),element,this_element)
+""1	LINE	0
+	*data
+	data
+	.bz2
 "2	LINE	0
-	git remote add o
+	##tensorflow,autoencoder,csi
 "3	LINE	0
-	
+	figure(1)
+	subplot(121)
+	plot(tmp)
+	title('accuracy')
+	subplot(122)
+	plot(costss)
+	title('cost')
+	show()
 "4	LINE	0
-	x = mat((3*t*t+rand(1, len(t)), 2*t, -t))
+	from pylab import *
 "5	LINE	0
-	x = 
+	
 "6	LINE	0
-	echo '把startup.m文件放到MATLAB搜索文件夹里面'
+	os.makedirs(your_path+'err_files', exist_ok=True)
 "7	LINE	0
-	echo '
+	
 "8	LINE	0
-	安装过程无网
+	os.makedirs(your_path+'csv/data', exist_ok=True)
 "9	LINE	0
-	需要输入序列号时从FIK里拷贝
-""-	CHAR	0
-	()], 
+	print(want('species'),'\n\n',element,'\n\n',this_element)
+"-	CHAR	0
+	t
 
 # 文件标记:
-'0  45  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
-'1  26  92  ~/Desktop/compute (不通用)/compute_time.py
-'2  25  25  ~/Desktop/compute (不通用)/compute_time.py
-'3  4406  0  ~/Desktop/compute（通用）/compute_time.c
-'4  1  41  ~/Documents/Backup/Workspace/python-gui/README.md
-'5  1  0  ~/.config/gnome-control-center/backgrounds/last-edited.xml
-'6  1  0  ~/.config/gnome-control-center/backgrounds/last-edited
-'7  1  0  ~/.config/gnome-initial-setup-done
-'8  2  9  ~/.config/goa-1.0/accounts.conf
-'9  6  0  ~/Documents/Backup/Workspace/python/src/mlp/mlp.py
+'0  5  32  ~/Documents/Backup/Workspace/python/README.md
+'1  53  0  ~/Documents/Backup/Workspace/python/.gitignore
+'2  3  4  ~/Documents/Backup/Workspace/python/.gitignore
+'3  3  3  ~/Documents/Backup/Workspace/python/.gitignore
+'4  3  3  ~/Documents/Backup/Workspace/python/.gitignore
+'5  47  3  ~/Documents/Backup/Workspace/python/.gitignore
+'6  55  4  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+'7  34  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+'8  13  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+'9  42  10  ~/Documents/Backup/Workspace/python/.gitignore
 
 # 跳转列表 (从新到旧):
--'  45  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  5  32  ~/Documents/Backup/Workspace/python/README.md
+-'  1  0  ~/Documents/Backup/Workspace/python/README.md
+-'  53  0  ~/Documents/Backup/Workspace/python/.gitignore
+-'  1  0  ~/Documents/Backup/Workspace/python/.gitignore
+-'  3  4  ~/Documents/Backup/Workspace/python/.gitignore
+-'  47  3  ~/Documents/Backup/Workspace/python/.gitignore
+-'  55  4  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  56  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
 -'  1  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  34  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  13  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  42  10  ~/Documents/Backup/Workspace/python/.gitignore
+-'  26  25  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  2  17  /etc/resolvconf/resolv.conf.d/base
+-'  1  0  /etc/resolvconf/resolv.conf.d/base
+-'  1  45  ~/note
+-'  333  47  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  1  0  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  228  12  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  220  20  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  210  20  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  176  16  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  83  8  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  73  0  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  69  16  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  39  0  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  25  4  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  21  4  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  154  14  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  7  5  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  72  4  ~/Documents/Backup/Workspace/projects/egap/data/3O/readtxtdata.py
+-'  42  15  ~/Documents/Backup/Workspace/projects/egap/data/3O/readtxtdata.py
+-'  37  11  ~/Documents/Backup/Workspace/projects/egap/data/3O/readtxtdata.py
+-'  1  0  ~/Documents/Backup/Workspace/projects/egap/data/3O/readtxtdata.py
+-'  12  0  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  27  0  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  155  0  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  243  11  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  231  30  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  94  6  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  76  44  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  41  43  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  79  39  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  42  38  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  81  37  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  44  36  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  45  29  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  26  22  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  24  25  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  22  26  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  20  29  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+-'  19  11  ~/Documents/Backup/Workspace/projects/egap/data/readtxtdata.py
+-'  1  0  ~/Documents/Backup/Workspace/projects/egap/data/readtxtdata.py
+-'  19  11  ~/Documents/Backup/Workspace/projects/egap/src/readtxtdata.py
+-'  12  0  ~/Documents/Backup/Workspace/projects/egap/src/readtxtdata.py
+-'  1  0  ~/Documents/Backup/Workspace/projects/egap/src/readtxtdata.py
+-'  24  18  ~/Documents/Backup/Workspace/projects/egap/src/readtxtdata.py
+-'  25  49  ~/Documents/Backup/Workspace/projects/egap/src/readtxtdata.py
+-'  43  0  ~/Documents/Backup/Workspace/projects/egap/src/readtxtdata.py
+-'  37  0  ~/Documents/Backup/Workspace/python/src/tf/tf-autoencoder.py
+-'  1  0  ~/Documents/Backup/Workspace/python/src/tf/tf-autoencoder.py
+-'  44  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
 -'  26  92  ~/Desktop/compute (不通用)/compute_time.py
 -'  1  0  ~/Desktop/compute (不通用)/compute_time.py
 -'  25  25  ~/Desktop/compute (不通用)/compute_time.py
@@ -144,129 +216,202 @@ $
 -'  1  0  ~/Documents/Backup/Workspace/python/src/mlp/mlp.py
 -'  2  25  ~/.userscripts/fifo
 -'  1  0  ~/.userscripts/fifo
--'  63  10  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  44  53  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  43  53  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
 -'  14  31  ~/.sh_alias
 -'  1  0  ~/.sh_alias
--'  42  17  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  40  54  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  38  49  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  29  23  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  27  63  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  25  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  48  46  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  19  14  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  41  17  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  39  54  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  37  49  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  28  23  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  24  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  47  46  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  18  14  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
 -'  43  0  ~/Documents/Backup/Workspace/python/src/tf/preceptron.py
 -'  1  0  ~/Documents/Backup/Workspace/python/src/tf/preceptron.py
--'  53  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  52  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
 -'  11  0  ~/.userscripts/update
 -'  1  0  ~/.userscripts/update
 -'  5  0  ~/Documents/Backup/Workspace/python/src/tf/preceptron.py
--'  1  0  /etc/ftpusers
--'  1  2  /etc/allowed_users
--'  160  0  /etc/vsftpd.conf
--'  1  0  /etc/vsftpd.conf
--'  27  26  /etc/vsftpd.conf
--'  107  1  /etc/vsftpd.conf
--'  11  20  ~/Documents/Backup/Workspace/python/src/tf/preceptron.py
--'  15  32  ~/Documents/Backup/Workspace/python/src/tf/preceptron.py
--'  18  50  ~/Documents/Backup/Workspace/python/src/tf/preceptron.py
--'  29  17  ~/Documents/Backup/Workspace/python/src/tf/preceptron.py
--'  12  25  ~/Documents/Backup/Workspace/python/src/tf/preceptron.py
--'  22  19  ~/Documents/Backup/Workspace/python/src/tf/preceptron.py
--'  11  16  ~/Documents/Backup/Workspace/python/src/preceptron.py
--'  12  0  ~/Documents/Backup/Workspace/python/src/preceptron.py
--'  1  0  ~/Documents/Backup/Workspace/python/src/preceptron.py
--'  16  32  ~/Documents/Backup/Workspace/python/src/preceptron.py
--'  1  0  ~/Documents/Backup/Workspace/python/src/pree
--'  30  49  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  18  33  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  16  28  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  15  41  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  13  28  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  12  41  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  10  40  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  1  0  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  36  23  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  49  0  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  45  12  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  24  29  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  23  1  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  48  26  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  42  46  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  47  0  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  39  0  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  26  0  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  27  4  ~/Documents/Backup/Workspace/python/src/tf-mnist-mlp.py
--'  12  14  ~/.userscripts/update
--'  6  0  ~/Desktop/compute/README
--'  1  0  ~/Desktop/compute/README
--'  4406  0  ~/Desktop/compute（通用）/compute_time.c
--'  1  0  ~/Desktop/compute（通用）/compute_time.c
--'  1  41  ~/Documents/Backup/Workspace/python-gui/README.md
--'  2  19  ~/Documents/Backup/Workspace/python-gui/README.md
--'  1  0  ~/.config/gnome-control-center/backgrounds/last-edited.xml
--'  1  0  ~/.config/gnome-control-center/backgrounds/last-edited
--'  1  0  ~/.config/gnome-initial-setup-done
--'  2  9  ~/.config/goa-1.0/accounts.conf
--'  1  0  ~/.config/goa-1.0/accounts.conf
--'  6  0  ~/Documents/Backup/Workspace/python/src/mlp/mlp.py
--'  4  91  ~/Documents/Backup/Workspace/python/src/mlp/mlp.py
--'  1  0  ~/Documents/Backup/Workspace/python/src/mlp/mlp.py
--'  2  25  ~/.userscripts/fifo
--'  1  0  ~/.userscripts/fifo
--'  26  92  ~/Desktop/compute (不通用)/compute_time.py
--'  1  0  ~/Desktop/compute (不通用)/compute_time.py
--'  25  25  ~/Desktop/compute (不通用)/compute_time.py
--'  24  15  ~/Desktop/compute (不通用)/compute_time.py
+-'  53  0  ~/Documents/Backup/Workspace/python/.gitignore
 
 # 文件内的标记历史记录 (从新到旧):
 
+> ~/Documents/Backup/Workspace/python/README.md
+	"	5	32
+	^	5	33
+	.	5	32
+	+	6	0
+	+	2	3
+	+	5	31
+	+	1	14
+	+	2	29
+	+	3	10
+	+	4	58
+	+	5	32
+
+> ~/Documents/Backup/Workspace/python/.gitignore
+	"	53	0
+	^	53	0
+	.	50	0
+	+	42	10
+	+	47	3
+	+	3	3
+	+	3	3
+	+	3	0
+	+	53	0
+	+	50	0
+
 > ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
-	"	45	0
-	^	63	11
-	.	63	10
-	+	19	14
-	+	38	46
-	+	29	23
-	+	39	22
-	+	40	52
-	+	42	17
-	+	39	21
-	+	40	53
-	+	39	23
-	+	40	54
-	+	39	22
-	+	27	50
-	+	46	7
-	+	48	10
-	+	39	62
+	"	55	4
+	^	26	26
+	.	56	0
+	+	18	14
+	+	37	46
+	+	28	23
+	+	38	22
+	+	39	52
+	+	41	17
+	+	38	21
+	+	39	53
+	+	38	23
+	+	39	54
+	+	38	22
+	+	26	50
+	+	45	7
+	+	47	10
+	+	38	62
+	+	44	0
+	+	38	0
+	+	40	16
+	+	26	49
+	+	14	17
+	+	26	50
+	+	56	0
+	+	49	10
+	+	26	51
+	+	38	22
+	+	7	7
+	+	50	31
+	+	9	0
+	+	8	10
+	+	51	30
+	+	56	0
+	+	56	9
+	+	56	12
+	+	56	8
+	+	56	0
+	+	56	12
+	+	56	9
+	+	56	5
+	+	56	14
+	+	56	10
+	+	56	10
+	+	26	25
+	+	28	24
+	+	26	36
+	+	14	15
+	+	28	26
+	+	26	25
+	+	4	0
+	+	56	0
+
+> /etc/resolvconf/resolv.conf.d/base
+	"	2	17
+	^	2	18
+	.	2	17
+	+	2	17
+
+> ~/note
+	"	1	45
+	^	1	48
+	.	1	48
+	+	1	48
+
+> ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
+	"	333	47
+	^	335	137
+	.	333	38
+	+	20	29
+	+	21	10
+	+	22	26
+	+	24	25
+	+	25	10
+	+	26	22
+	+	41	3
+	+	42	3
 	+	45	0
-	+	39	0
-	+	41	16
-	+	27	49
-	+	15	17
-	+	27	50
-	+	65	0
-	+	50	10
-	+	27	51
-	+	39	22
-	+	8	7
-	+	51	31
+	+	44	36
+	+	78	3
+	+	79	3
+	+	80	6
+	+	81	37
+	+	41	43
+	+	76	44
+	+	27	34
+	+	94	6
+	+	231	30
+	+	243	23
+	+	243	0
+	+	243	0
+	+	243	43
+	+	243	19
+	+	243	0
+	+	243	0
+	+	27	0
+	+	154	14
+	+	335	77
+	+	333	39
+	+	335	136
+	+	333	38
+
+> ~/Documents/Backup/Workspace/projects/egap/data/3O/readtxtdata.py
+	"	72	4
+	^	72	42
+	.	72	4
+	+	38	0
+	+	37	0
+	+	73	0
+	+	72	4
+
+> ~/Documents/Backup/Workspace/projects/egap/data/readtxtdata.py
+	"	19	11
+	^	19	12
+	.	19	11
+	+	19	11
+
+> ~/Documents/Backup/Workspace/projects/egap/src/readtxtdata.py
+	"	19	11
+	^	19	12
+	.	19	11
+	+	4	14
 	+	10	0
-	+	9	10
-	+	52	30
-	+	65	0
-	+	57	9
-	+	58	12
-	+	59	8
-	+	65	0
-	+	61	12
-	+	62	9
-	+	64	5
-	+	60	14
-	+	62	10
-	+	63	10
+	+	11	0
+	+	24	0
+	+	24	80
+	+	25	0
+	+	24	0
+	+	24	80
+	+	25	91
+	+	25	6
+	+	24	6
+	+	26	18
+	+	24	0
+	+	19	15
+	+	24	4
+	+	23	0
+	+	24	3
+	+	25	3
+	+	26	3
+	+	20	0
+	+	23	0
+	+	20	20
+	+	22	19
+	+	20	18
+	+	24	18
+	+	19	11
+
+> ~/Documents/Backup/Workspace/python/src/tf/tf-autoencoder.py
+	"	37	0
 
 > ~/Desktop/compute (不通用)/compute_time.py
 	"	26	92
@@ -1073,12 +1218,6 @@ $
 > ~/Software/Code/ml/tf/TensorFlow-Examples/examples/3_NeuralNetworks/autoencoder.py
 	"	20	35
 
-> ~/Documents/Backup/Workspace/python/README.md
-	"	2	27
-	^	2	28
-	.	2	27
-	+	2	27
-
 > ~/.ssh/known_hosts
 	"	1	0
 
@@ -1195,35 +1334,3 @@ $
 	+	4	0
 	+	4	0
 	+	4	0
-
-> ~/.xprofile.bak
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/.pa
-	"	1	0
-
-> ~/tmp.sh
-	"	1	0
-	^	1	9
-	.	1	8
-	+	1	8
-
-> ~/np
-	"	108	0
-
-> ~/Documents/Backup/Workspace/python/tensorflow-test.py
-	"	17	0
-
-> ~/Desktop/Between.desktop
-	"	1	0
-
-> ~/.userscripts/note
-	"	3	13
-	^	3	14
-	.	3	13
-	+	3	13
-
-> /run/user/1000/gvfs/mtp:host=%5Busb%3A003%2C008%5D/内存设备/Download/wifi-networks-20160628-082501.xml
-	"	1	0

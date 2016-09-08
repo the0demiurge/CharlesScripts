@@ -172,3 +172,4 @@ alias terminal='pantheon-terminal'
 export PATH=$PATH:/home/ash/.userscripts
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
 alias c="cd&&clear"
+source ~/.sh_alias

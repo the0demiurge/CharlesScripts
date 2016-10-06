@@ -1,9 +1,10 @@
-我的自用Ubuntu-Gnome脚本云备份，里面包含配置文件
+我的自用Ubuntu-Gnome与windows脚本云备份，里面包含配置文件
 感兴趣的朋友们可以下载下来使用
 下面介绍我的主要有用的脚本
 
 
 **pac**: 记录了我收集的一部分pac自动配置脚本
+#linux#
 #root/#
 #etc/#
 
@@ -42,3 +43,9 @@
 **update**: 自动更新软件并删掉没用的软件。如果该命令后面附带了参数，比如*update pip3*就自动更新python3的所有库。因为使用了*apt-get autoremove*,所以**Debian慎用！**
 
 **wallpaper-switcher**: 从网上扒下来的一个可以定时自动切换壁纸的脚本，没用过
+
+
+#windodws#
+
+#update-hosts#
+用来自动更新hosts，右键使用管理员权限运行即可

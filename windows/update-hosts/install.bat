@@ -1,5 +1,4 @@
 @powershell set-executionpolicy unrestricted
-copy ./update-hosts.ps1 %SystemRoot%\System32\drivers\etc\
 schtasks /create /tn update-hosts /sc weekly /ru "NT Authority\System" /tr %SystemRoot%\System32\drivers\etc\update-hosts.ps1
 
 #update-hosts.ps1

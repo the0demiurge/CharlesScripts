@@ -2,11 +2,11 @@
 echo 'update: update and autoremove softwares'
 echo 'update ***: update anything including python packages'
 echo 'updating sources'
-sudo apt update #> /dev/null
+sudo apt-fast update #> /dev/null
 echo 'upgrading'
-sudo apt -y upgrade
+sudo apt-fast -y upgrade
 echo 'autoremoving'
-sudo apt-get -y autoremove
+sudo apt-fast -y autoremove
 if [ $# -ne 0 ]; then
 	echo 'upgrading python packages'
 	conda update --all

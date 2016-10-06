@@ -1,4 +1,3 @@
-# deb cdrom:[Ubuntu-GNOME 16.04 LTS _Xenial Xerus_ - Release amd64 (20160421)]/ xenial main multiverse restricted universe
 deb-src http://archive.ubuntu.com/ubuntu yakkety main multiverse restricted universe #Added by software-properties
 
 # See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
@@ -17,9 +16,8 @@ deb-src http://cn.archive.ubuntu.com/ubuntu/ yakkety-updates multiverse universe
 ## universe WILL NOT receive any review or updates from the Ubuntu security
 ## team.
 deb http://cn.archive.ubuntu.com/ubuntu/ yakkety universe
-# deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial universe
 deb http://cn.archive.ubuntu.com/ubuntu/ yakkety-updates universe
-# deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial-updates universe
+deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial-updates universe
 
 ## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu 
 ## team, and may not be under a free licence. Please satisfy yourself as to 
@@ -27,9 +25,8 @@ deb http://cn.archive.ubuntu.com/ubuntu/ yakkety-updates universe
 ## multiverse WILL NOT receive any review or updates from the Ubuntu
 ## security team.
 deb http://cn.archive.ubuntu.com/ubuntu/ yakkety multiverse
-# deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial multiverse
 deb http://cn.archive.ubuntu.com/ubuntu/ yakkety-updates multiverse
-# deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial-updates multiverse
+deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial-updates multiverse
 
 ## N.B. software from this repository may not have been tested as
 ## extensively as that contained in the main release, although it includes
@@ -47,10 +44,8 @@ deb-src http://archive.canonical.com/ubuntu yakkety partner
 deb http://security.ubuntu.com/ubuntu yakkety-security main restricted
 deb-src http://security.ubuntu.com/ubuntu yakkety-security multiverse universe restricted main #Added by software-properties
 deb http://security.ubuntu.com/ubuntu yakkety-security universe
-# deb-src http://security.ubuntu.com/ubuntu xenial-security universe
+deb-src http://security.ubuntu.com/ubuntu xenial-security universe
 deb http://security.ubuntu.com/ubuntu yakkety-security multiverse
-# deb-src http://security.ubuntu.com/ubuntu xenial-security multiverse
+deb-src http://security.ubuntu.com/ubuntu xenial-security multiverse
 deb http://us.archive.ubuntu.com/ubuntu yakkety main multiverse
 deb-src http://us.archive.ubuntu.com/ubuntu yakkety main multiverse #Added by software-properties
-deb http://archive.ubuntu.com/ubuntu xenial main universe restricted multiverse
-deb-src http://archive.ubuntu.com/ubuntu xenial main universe restricted multiverse #Added by software-properties

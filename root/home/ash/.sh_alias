@@ -1,4 +1,4 @@
-alias a='sudo apt'
+alias a='sudo apt-fast'
 alias c='clear&&cd'
 alias g='git add . &&git commit -m'
 alias i=ipython

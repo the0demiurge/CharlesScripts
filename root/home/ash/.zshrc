@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/ash/.oh-my-zsh
-
+export ASH_HOME=/home/ash
+export ZSH=$ASH_HOME/.oh-my-zsh 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -12,7 +12,7 @@ ZSH_THEME="agnoster"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -27,10 +27,10 @@ ZSH_THEME="agnoster"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -40,7 +40,7 @@ ZSH_THEME="agnoster"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -56,7 +56,6 @@ plugins=(git)
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
-export PATH="/home/ash/.userscripts:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -64,7 +63,6 @@ export PATH="/home/ash/.userscripts:$PATH"
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
-source ~/.path
 # else
 #   export EDITOR='mvim'
 # fi
@@ -83,6 +81,7 @@ source ~/.path
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source $ASH_HOME/.path
 source ~/.sh_alias
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 numlockx
@@ -90,4 +89,4 @@ source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 plugins=(git autojump)
 . /usr/share/autojump/autojump.sh
 clear
-source /home/ash/Software/Code/apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/Software/Code/apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

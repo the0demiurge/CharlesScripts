@@ -2,3 +2,19 @@
 sleep $1
 echo '\a'
 notify-send $2
+
+sleep 1s
+echo '\a'
+notify-send $2
+
+sleep 1s
+echo '\a'
+notify-send $2
+
+sleep 1s
+echo '\a'
+notify-send $2
+
+sleep 1s
+echo '\a'
+notify-send $2

@@ -1,0 +1,6 @@
+#HOMES
+export MY_HOME=/home/ash
+
+#PATHES
+export PATH=/home/ash/Software/anaconda3/bin:$PATH
+export PATH=$MY_HOME/.userscripts:$PATH

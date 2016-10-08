@@ -8,23 +8,57 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/Dri
+~MSle0~/jump
+
+# Last Substitute Search Pattern:
+~MSle0&\s+
 
 # Last Substitute String:
-$
+$ 
 
 # Command Line History (newest to oldest):
-:q
 :wq
-:w
+:x
+:%s/\s+/ /g
+:%s/\s+/\s/g
+:%s/#/# /g
+:%s/#[^\s]/# [^\s]/c
+:%s/cp/cp -r/g
+:%s/ -r//g
+:%s/b__user__/b__home__/g
+:%s/__etc__/b__etc__/g
+:%s/__my_home__/__home__
+:%s/__ash__/b__user__/g
+:%s/__root__/b__root__/g
+:%s/mkdir /mkdir -p /g
+:%s/-p$//g
 :q!
+:w
+:q
+:WQ
+:%s/'//g
+:%s/alias/abbr/g
+:%s/$/'/g
+:%s/=/ '/
+:%s/lor='/lor=/g
+:%s/lor'/lor/g
+:%s/''/'/g
+:%s/=/='/g
+:qw
+:%s/=/ '/c
+:%s/:/ /p
+:%s/=/ /p
+:%s/export/set -x/p
+:%/export/set -x/g
+:%/export/set -x/p
+:W
+:999
 :set nonu
 :w spacegroup.py
 :smile
 :152
 :154
 :19
-:WQ
 :s
 :py3file autoencoder.py
 :w 转外作业
@@ -35,6 +69,35 @@ $
 :PluginSearch pathogen
 
 # Search String History (newest to oldest):
+?/jump
+? \s+
+? #
+?/%s/#/# /g
+? #[^\s]
+?/%s/#[^\s]/# [^\s]/c
+?/\w
+?//$
+? cp
+?  -r
+?/-r
+? b__user__
+? __etc__
+? __my_home__
+? __ash__
+? __root__
+? mkdir 
+? -p$
+?/ZSH
+?/custom
+? '
+? alias
+? $
+? =
+? lor='
+? lor'
+? ''
+? :
+? export
 ?/Dri
 ?/mks
 ?/Drivers
@@ -56,35 +119,6 @@ $
 ?/prep
 ?/prep	
 ?/exist
-?/u\'
-?/ver
-?/input
-?/google
-?/graph
-?/\.
-?/local
-?/deny
-?/relu
-?/0.
-?/y1
-?/raw
-?/scipy
-?/python3-sci
-?/click-app
-?/apparm
-?/pre
-?/press
-?/cross
-?/999
-?/Lib
-?/bry
-?/usr
-?/python
-?/pow
-?/po
-?/power
-?/500
-?/50
 
 # Expression History (newest to oldest):
 
@@ -94,146 +128,480 @@ $
 
 # Registers:
 "0	LINE	0
-	sleep 1s
-	echo '\a'
-	notify-send $2
-	
+	source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
 ""1	LINE	0
-	mks.gl.allowBlacklistedDrivers = "TRUE"
+	[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 "2	LINE	0
 	
-	                if not space_group[head[0]][content[0]]:
 "3	LINE	0
-	                else:
-	                    space_group[head[0]][content[0]].append(content[1])
+	__home__=/home/$__user__
 "4	LINE	0
-	                    space_group[head[0]][content[0]] = [content[1]]
+	# destination
 "5	LINE	0
-	
+	mkdir -p $b__root__/home/$__user__ 
 "6	LINE	0
-	        head = ['', '']
-	        for line in file:
+	cp -r $__home__/.vim* $b__home__
 "7	LINE	0
-	    print(space_group)
+	cp -r $__home__/.shell* $b__home__
 "8	LINE	0
-	
+	cp -r $__home__/.oh-my-zsh $b__home__
 "9	LINE	0
-	    
+	cp -r $__home__/.config/omf/ $b__home__/.config/
 "-	CHAR	0
-	^
+	to backup
 
 # File marks:
-'0  1  0  ~/.vmware/preferences
-'1  131  0  ~/Documents/.cache/vmware/Windows 10 x64/Windows 10 x64.vmx
-'2  99  38  ~/.vmware/preferences
-'3  98  0  ~/.vmware/preferences
-'4  13  0  ~/.vmware/preferences
-'5  100  38  ~/.vmware/preferences
-'6  125  0  ~/Documents/.cache/vmware/Windows 10 x64/Windows 10 x64.vmx
-'7  3  12  ~/Desktop/recursive.cc
-'8  18  26  ~/Documents/Backup/Workspace/projects/egap/src/preprocessing/spacegroup.py
-'9  16  23  ~/Documents/Backup/Workspace/projects/egap/src/preprocessing/spacegroup.py
+'0  83  0  ~/.zshrc
+'1  2  0  /etc/cron.daily/backup-scripts
+'2  1  0  ~/.shell.d/alias.shell
+'3  84  0  ~/Documents/Backup/linux/root/home/ash/.zshrc
+'4  56  17  ~/.zshrc
+'5  86  4  ~/.zshrc
+'6  85  24  ~/.zshrc
+'7  87  8  ~/.zshrc
+'8  94  0  ~/.vimrc
+'9  1  0  ~/.vimrc
 
 # Jumplist (newest first):
--'  1  0  ~/.vmware/preferences
--'  131  0  ~/Documents/.cache/vmware/Windows 10 x64/Windows 10 x64.vmx
--'  1  0  ~/Documents/.cache/vmware/Windows 10 x64/Windows 10 x64.vmx
--'  99  38  ~/.vmware/preferences
--'  98  0  ~/.vmware/preferences
--'  13  0  ~/.vmware/preferences
--'  100  38  ~/.vmware/preferences
--'  125  0  ~/Documents/.cache/vmware/Windows 10 x64/Windows 10 x64.vmx
--'  3  12  ~/Desktop/recursive.cc
--'  1  0  ~/Desktop/recursive.cc
--'  18  26  ~/Documents/Backup/Workspace/projects/egap/src/preprocessing/spacegroup.py
--'  26  35  ~/Documents/Backup/Workspace/projects/egap/src/preprocessing/spacegroup.py
--'  23  23  ~/Documents/Backup/Workspace/projects/egap/src/preprocessing/spacegroup.py
--'  1  0  ~/Documents/Backup/Workspace/projects/egap/src/preprocessing/spacegroup.py
--'  16  23  ~/Documents/Backup/Workspace/projects/egap/src/preprocessing/spacegroup.py
--'  17  23  ~/Documents/Backup/Workspace/projects/egap/src/preprocessing/spacegroup.py
--'  22  20  ~/Documents/Backup/Workspace/projects/egap/src/preprocessing/spacegroup.py
--'  72  0  ~/Documents/Backup/Workspace/projects/egap/src/tf_egap.py
--'  1  0  ~/Documents/Backup/Workspace/projects/egap/src/tf_egap.py
--'  18  70  ~/spacegroup.py
--'  1  0  ~/spacegroup.py
--'  9  12  ~/spacegroup.py
--'  7  45  ~/spacegroup.py
--'  9  12  ~/.userscripts/update
--'  1  0  ~/.userscripts/update
--'  271  0  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  2  0  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  1  21  ~/.sh_alias
--'  1  0  ~/.config/omf/init.fish
--'  2  13  ~/.config/omf/init.fish
--'  42  4  /etc/cron.hourly/wallpaper-earthview
--'  27  0  /etc/cron.hourly/wallpaper-earthview
--'  1  0  /etc/cron.hourly/wallpaper-earthview
--'  53  0  ~/Documents/Backup/Workspace/projects/egap/src/readtxtdata.py
--'  1  0  ~/Documents/Backup/Workspace/projects/egap/src/readtxtdata.py
--'  28  64  ~/Documents/Backup/Workspace/projects/egap/src/readtxtdata.py
--'  28  28  ~/Documents/Backup/Workspace/projects/egap/data/Binary Compound/Br_2_collect/readtxtdata.py
--'  1  0  ~/Documents/Backup/Workspace/projects/egap/data/Binary Compound/Br_2_collect/readtxtdata.py
--'  320  52  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  302  69  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  155  10  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  152  8  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  148  41  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  107  22  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  350  12  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  345  12  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  160  19  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  156  19  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  113  26  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  10  0  ~/Documents/Backup/Workspace/projects/egap/data/2O/readtxtdata.py
--'  10  0  ~/.userscripts/note
--'  15  0  ~/.userscripts/note
--'  9  0  ~/.userscripts/note
--'  21  0  ~/.userscripts/note
--'  1  0  ~/.userscripts/note
--'  5  0  ~/.userscripts/note
--'  18  0  ~/.userscripts/note
--'  92  0  ~/.zshrc
+-'  83  0  ~/.zshrc
 -'  1  0  ~/.zshrc
--'  2  0  ~/.path
--'  1  0  ~/.path
--'  59  12  ~/.zshrc
--'  11  0  ~/.zshrc
--'  93  7  ~/.zshrc
--'  3  28  ~/.zshrc
--'  1  0  /home/.zhsrc
--'  95  0  ~/Documents/Backup/Workspace/projects/egap/src/tf_egap.py
--'  52  23  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  45  31  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  43  24  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  1  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  27  26  /etc/cron.daily/backup-scripts
--'  1  0  /etc/cron.daily/backup-scripts
--'  4  0  ~/Documents/Backup/Workspace/projects/egap/src/tf-mnist-mlp.py
--'  1  0  ~/Documents/Backup/Workspace/projects/egap/src/tf-mnist-mlp.py
--'  6  20  /tmp/test.py
--'  1  0  /tmp/test.py
--'  3  6  ~/.userscripts/note
--'  57  4  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  25  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  33  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  18  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  27  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  26  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  8  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  53  26  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  5  32  ~/Documents/Backup/Workspace/python/README.md
--'  1  0  ~/Documents/Backup/Workspace/python/README.md
--'  53  0  ~/Documents/Backup/Workspace/python/.gitignore
--'  1  0  ~/Documents/Backup/Workspace/python/.gitignore
--'  3  4  ~/Documents/Backup/Workspace/python/.gitignore
--'  47  3  ~/Documents/Backup/Workspace/python/.gitignore
--'  58  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  36  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  13  0  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
--'  42  10  ~/Documents/Backup/Workspace/python/.gitignore
--'  28  25  ~/Documents/Backup/Workspace/python/src/tf/tf-mnist-mlp.py
+-'  2  0  /etc/cron.daily/backup-scripts
+-'  8  34  /etc/cron.daily/backup-scripts
+-'  1  12  /etc/cron.daily/backup-scripts
+-'  27  0  /etc/cron.daily/backup-scripts
+-'  26  0  /etc/cron.daily/backup-scripts
+-'  24  0  /etc/cron.daily/backup-scripts
+-'  23  0  /etc/cron.daily/backup-scripts
+-'  22  0  /etc/cron.daily/backup-scripts
+-'  21  0  /etc/cron.daily/backup-scripts
+-'  20  0  /etc/cron.daily/backup-scripts
+-'  36  0  /etc/cron.daily/backup-scripts
+-'  35  0  /etc/cron.daily/backup-scripts
+-'  33  0  /etc/cron.daily/backup-scripts
+-'  31  0  /etc/cron.daily/backup-scripts
+-'  29  0  /etc/cron.daily/backup-scripts
+-'  28  0  /etc/cron.daily/backup-scripts
+-'  2  6  ~/.shell.d/init.shell
+-'  1  0  ~/.shell.d/init.shell
+-'  2  37  ~/.shell.d/init.fish
+-'  1  0  ~/.shell.d/init.fish
+-'  2  0  /etc/cron.daily/backup-scripts
+-'  8  34  /etc/cron.daily/backup-scripts
+-'  1  12  /etc/cron.daily/backup-scripts
+-'  27  0  /etc/cron.daily/backup-scripts
+-'  26  0  /etc/cron.daily/backup-scripts
+-'  24  0  /etc/cron.daily/backup-scripts
+-'  23  0  /etc/cron.daily/backup-scripts
+-'  22  0  /etc/cron.daily/backup-scripts
+-'  21  0  /etc/cron.daily/backup-scripts
+-'  20  0  /etc/cron.daily/backup-scripts
+-'  36  0  /etc/cron.daily/backup-scripts
+-'  35  0  /etc/cron.daily/backup-scripts
+-'  33  0  /etc/cron.daily/backup-scripts
+-'  31  0  /etc/cron.daily/backup-scripts
+-'  29  0  /etc/cron.daily/backup-scripts
+-'  28  0  /etc/cron.daily/backup-scripts
+-'  2  0  /etc/cron.daily/backup-scripts
+-'  8  34  /etc/cron.daily/backup-scripts
+-'  1  12  /etc/cron.daily/backup-scripts
+-'  27  0  /etc/cron.daily/backup-scripts
+-'  26  0  /etc/cron.daily/backup-scripts
+-'  24  0  /etc/cron.daily/backup-scripts
+-'  23  0  /etc/cron.daily/backup-scripts
+-'  22  0  /etc/cron.daily/backup-scripts
+-'  21  0  /etc/cron.daily/backup-scripts
+-'  20  0  /etc/cron.daily/backup-scripts
+-'  36  0  /etc/cron.daily/backup-scripts
+-'  35  0  /etc/cron.daily/backup-scripts
+-'  33  0  /etc/cron.daily/backup-scripts
+-'  31  0  /etc/cron.daily/backup-scripts
+-'  29  0  /etc/cron.daily/backup-scripts
+-'  28  0  /etc/cron.daily/backup-scripts
+-'  2  0  /etc/cron.daily/backup-scripts
+-'  8  34  /etc/cron.daily/backup-scripts
+-'  1  12  /etc/cron.daily/backup-scripts
+-'  27  0  /etc/cron.daily/backup-scripts
+-'  26  0  /etc/cron.daily/backup-scripts
+-'  24  0  /etc/cron.daily/backup-scripts
+-'  23  0  /etc/cron.daily/backup-scripts
+-'  22  0  /etc/cron.daily/backup-scripts
+-'  21  0  /etc/cron.daily/backup-scripts
+-'  20  0  /etc/cron.daily/backup-scripts
+-'  36  0  /etc/cron.daily/backup-scripts
+-'  35  0  /etc/cron.daily/backup-scripts
+-'  33  0  /etc/cron.daily/backup-scripts
+-'  31  0  /etc/cron.daily/backup-scripts
+-'  29  0  /etc/cron.daily/backup-scripts
+-'  28  0  /etc/cron.daily/backup-scripts
+-'  2  0  /etc/cron.daily/backup-scripts
+-'  8  34  /etc/cron.daily/backup-scripts
+-'  1  12  /etc/cron.daily/backup-scripts
+-'  27  0  /etc/cron.daily/backup-scripts
+-'  26  0  /etc/cron.daily/backup-scripts
+-'  24  0  /etc/cron.daily/backup-scripts
+-'  23  0  /etc/cron.daily/backup-scripts
+-'  22  0  /etc/cron.daily/backup-scripts
+-'  21  0  /etc/cron.daily/backup-scripts
+-'  20  0  /etc/cron.daily/backup-scripts
+-'  36  0  /etc/cron.daily/backup-scripts
+-'  35  0  /etc/cron.daily/backup-scripts
+-'  33  0  /etc/cron.daily/backup-scripts
+-'  31  0  /etc/cron.daily/backup-scripts
+-'  29  0  /etc/cron.daily/backup-scripts
+-'  28  0  /etc/cron.daily/backup-scripts
+-'  2  37  ~/.shell.d/init.fish
+-'  1  0  ~/.shell.d/init.fish
+-'  2  0  /etc/cron.daily/backup-scripts
+-'  8  34  /etc/cron.daily/backup-scripts
+-'  1  12  /etc/cron.daily/backup-scripts
+-'  27  0  /etc/cron.daily/backup-scripts
+-'  26  0  /etc/cron.daily/backup-scripts
+-'  24  0  /etc/cron.daily/backup-scripts
+-'  23  0  /etc/cron.daily/backup-scripts
+-'  22  0  /etc/cron.daily/backup-scripts
+-'  21  0  /etc/cron.daily/backup-scripts
+-'  20  0  /etc/cron.daily/backup-scripts
 
 # History of marks within files (newest to oldest):
+
+> ~/.zshrc
+	"	83	0
+	^	2	27
+	.	83	0
+	+	83	7
+	+	118	0
+	+	115	0
+	+	113	6
+	+	83	0
+	+	83	32
+	+	7	18
+	+	83	25
+	+	83	0
+	+	87	0
+	+	87	0
+	+	87	0
+	+	3	13
+	+	58	13
+	+	88	7
+	+	3	0
+	+	3	25
+	+	3	27
+	+	3	28
+	+	4	0
+	+	3	0
+	+	58	19
+	+	3	15
+	+	65	7
+	+	58	0
+	+	14	0
+	+	29	0
+	+	32	0
+	+	42	0
+	+	65	0
+	+	83	0
+	+	3	9
+	+	3	0
+	+	88	0
+	+	3	21
+	+	88	0
+	+	83	0
+	+	83	0
+	+	85	0
+	+	87	0
+	+	86	24
+	+	87	0
+	+	84	77
+	+	3	0
+	+	3	0
+	+	3	0
+	+	57	8
+	+	2	3
+	+	57	11
+	+	83	0
+
+> ~/.shell.d/init.shell
+	"	2	6
+	^	2	7
+	.	2	6
+	+	2	6
+	+	2	6
+
+> ~/.shell.d/init.fish
+	"	2	37
+	^	2	38
+	.	2	37
+	+	1	0
+	+	2	6
+	+	2	37
+
+> /etc/cron.daily/backup-scripts
+	"	2	0
+	^	2	15
+	.	2	0
+	+	33	0
+	+	31	8
+	+	33	0
+	+	36	21
+	+	36	26
+	+	2	0
+	+	17	0
+	+	15	0
+	+	5	0
+	+	3	0
+	+	3	0
+	+	4	26
+	+	12	9
+	+	19	7
+	+	36	45
+	+	17	32
+	+	16	22
+	+	15	21
+	+	14	17
+	+	13	0
+	+	8	0
+	+	10	0
+	+	36	0
+	+	9	0
+	+	10	0
+	+	33	0
+	+	27	0
+	+	33	0
+	+	22	0
+	+	23	0
+	+	20	0
+	+	27	0
+	+	21	0
+	+	33	0
+	+	26	0
+	+	36	0
+	+	29	0
+	+	36	22
+	+	29	27
+	+	33	28
+	+	36	26
+	+	29	45
+	+	36	0
+	+	30	0
+	+	36	0
+	+	32	0
+	+	36	0
+	+	34	0
+	+	25	0
+	+	2	9
+	+	8	11
+	+	2	0
+	+	15	17
+	+	16	18
+	+	17	0
+	+	8	32
+	+	1	0
+	+	8	34
+	+	1	0
+	+	8	0
+	+	6	12
+	+	4	0
+	+	7	0
+	+	2	0
+
+> ~/.shell.d/alias.shell
+	"	1	0
+	^	2	15
+	.	2	14
+	+	8	17
+	+	3	17
+	+	6	24
+	+	7	37
+	+	8	37
+	+	9	41
+	+	1	0
+	+	16	30
+	+	6	0
+	+	2	14
+
+> ~/Documents/Backup/linux/root/home/ash/.zshrc
+	"	84	0
+
+> ~/.shell.d/init.fish.shell
+	"	1	7
+	^	1	8
+	.	1	7
+	+	1	7
+
+> ~/.shell.d/alias.fish
+	"	9	13
+	^	1	8
+	.	1	7
+	+	1	0
+	+	2	0
+	+	3	0
+	+	4	0
+	+	5	0
+	+	6	0
+	+	7	0
+	+	8	0
+	+	10	0
+	+	11	0
+	+	12	0
+	+	13	0
+	+	14	0
+	+	15	0
+	+	16	0
+	+	1	0
+	+	9	10
+	+	1	0
+	+	16	30
+	+	2	16
+	+	4	36
+	+	1	20
+	+	2	19
+	+	3	15
+	+	5	14
+	+	6	22
+	+	7	36
+	+	8	41
+	+	9	40
+	+	10	15
+	+	11	13
+	+	12	16
+	+	13	13
+	+	14	10
+	+	15	11
+	+	16	7
+	+	15	7
+	+	14	7
+	+	13	7
+	+	12	7
+	+	11	7
+	+	10	7
+	+	9	8
+	+	8	8
+	+	7	8
+	+	6	7
+	+	5	7
+	+	3	8
+	+	2	7
+	+	1	7
+
+> ~/.config/omf/init.fish
+	"	1	18
+	^	1	19
+	.	1	18
+	+	1	13
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	2	0
+	+	1	29
+	+	1	26
+	+	1	0
+	+	2	0
+	+	1	18
+
+> ~/.bashrc
+	"	169	24
+	^	169	25
+	.	169	24
+	+	169	24
+
+> ~/.userscripts/note
+	"	20	29
+	^	20	30
+	.	20	29
+	+	3	6
+	+	20	13
+	+	18	0
+	+	19	0
+	+	18	0
+	+	9	0
+	+	18	0
+	+	5	0
+	+	21	0
+	+	9	0
+	+	14	0
+	+	15	0
+	+	10	0
+	+	20	29
+
+> ~/.shell.d/path.fish
+	"	6	0
+	^	5	6
+	.	5	0
+	+	2	14
+	+	5	5
+	+	6	0
+	+	5	0
+	+	6	0
+	+	5	0
+
+> ~/.shell.d/path.shell
+	"	3	0
+	^	3	0
+	.	3	0
+	+	1	31
+	+	1	82
+	+	1	7
+	+	6	0
+	+	7	0
+	+	1	6
+	+	1	0
+	+	4	7
+	+	3	0
+
+> ~/.init.shell
+	"	21	0
+	^	18	0
+	.	18	0
+	+	1	8
+	+	1	32
+	+	1	52
+	+	1	0
+	+	19	8
+	+	20	25
+	+	20	0
+	+	4	0
+	+	1	9
+	+	2	0
+	+	18	0
+
+> ~/.vimrc
+	"	94	0
+	^	94	1
+	.	94	0
+	+	50	9
+	+	46	0
+	+	47	0
+	+	45	44
+	+	1	45
+	+	50	0
+	+	40	14
+	+	50	0
+	+	40	14
+	+	49	0
+	+	50	0
+	+	91	16
+	+	91	0
+	+	91	6
+	+	91	6
+	+	91	6
+	+	91	0
+	+	90	29
+	+	1	0
+	+	94	0
+
+> ~/Documents/Backup/Workspace/python/src/plz/compute_time.py
+	"	50	0
+	^	50	1
+	.	50	0
+	+	50	0
+
+> ~/Documents/Backup/linux/README.md
+	"	5	0
+	^	5	21
+	.	5	20
+	+	3	5
+	+	5	20
 
 > ~/.vmware/preferences
 	"	1	0
@@ -466,15 +834,6 @@ $
 	+	14	31
 	+	1	21
 
-> ~/.config/omf/init.fish
-	"	1	0
-	^	1	1
-	.	1	0
-	+	2	13
-	+	1	0
-	+	2	0
-	+	1	0
-
 > /etc/cron.hourly/wallpaper-earthview
 	"	42	4
 
@@ -512,59 +871,6 @@ $
 
 > ~/Documents/Backup/Workspace/projects/egap/data/Binary Compound/Br_2_collect/readtxtdata.py
 	"	28	28
-
-> ~/.userscripts/note
-	"	10	0
-	^	9	0
-	.	10	0
-	+	3	6
-	+	20	13
-	+	18	0
-	+	19	0
-	+	18	0
-	+	9	0
-	+	18	0
-	+	5	0
-	+	21	0
-	+	9	0
-	+	14	0
-	+	15	0
-	+	10	0
-
-> ~/.zshrc
-	"	92	0
-	.	84	0
-	+	87	7
-	+	123	0
-	+	120	0
-	+	118	6
-	+	87	0
-	+	87	32
-	+	8	18
-	+	87	25
-	+	87	0
-	+	89	0
-	+	89	0
-	+	89	0
-	+	3	13
-	+	59	13
-	+	92	7
-	+	3	0
-	+	2	25
-	+	3	27
-	+	3	28
-	+	5	0
-	+	3	0
-	+	59	19
-	+	3	15
-	+	66	7
-	+	59	0
-	+	15	0
-	+	30	0
-	+	33	0
-	+	43	0
-	+	66	0
-	+	84	0
 
 > ~/.path
 	"	2	0
@@ -650,16 +956,6 @@ $
 	+	44	4
 	+	45	4
 	+	39	4
-
-> /etc/cron.daily/backup-scripts
-	"	27	26
-	^	27	27
-	.	27	26
-	+	19	0
-	+	17	8
-	+	19	0
-	+	26	21
-	+	27	26
 
 > ~/Documents/Backup/Workspace/projects/egap/src/tf-mnist-mlp.py
 	"	4	0
@@ -1148,29 +1444,6 @@ $
 	+	32	33
 	+	33	46
 
-> ~/.vimrc
-	"	94	0
-	^	90	30
-	.	90	29
-	+	50	9
-	+	46	0
-	+	47	0
-	+	45	44
-	+	1	45
-	+	50	0
-	+	40	14
-	+	50	0
-	+	40	14
-	+	49	0
-	+	50	0
-	+	91	16
-	+	91	0
-	+	91	6
-	+	91	6
-	+	91	6
-	+	91	0
-	+	90	29
-
 > /tmp/tutorWlyAyC
 	"	64	0
 	^	57	4
@@ -1321,13 +1594,6 @@ $
 	+	28	45
 	+	28	17
 
-> ~/Documents/Backup/linux/README.md
-	"	5	20
-	^	5	21
-	.	5	20
-	+	3	5
-	+	5	20
-
 > ~/Downloads/diode/csv/chemical.sh
 	"	2	0
 	^	2	20
@@ -1392,52 +1658,3 @@ $
 
 > ~/Software/Code/ml/tf/TensorFlow-Examples/examples/3_NeuralNetworks/autoencoder.py
 	"	20	35
-
-> ~/.ssh/known_hosts
-	"	1	0
-
-> ~/Desktop/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/README
-	"	53	0
-
-> ~/.cache/.fr-MZDYwx/gnome-control-center-64b1281d245843a772a559239850ac3af50e030d/update-from-gsd.sh
-	"	1	0
-
-> /usr/share/doc/autojump/README.Debian
-	"	1	0
-
-> ~/.ssh/ssh-mxy
-	"	3	5
-	^	3	6
-	.	3	5
-	+	3	5
-
-> ~/.userscripts/quit-qq
-	"	1	0
-	^	1	1
-	.	1	0
-	+	4	0
-	+	1	0
-
-> ~/multilayer_perceptron.py
-	"	92	83
-	^	92	84
-	.	92	83
-	+	12	66
-	+	13	0
-	+	14	0
-	+	85	17
-	+	86	41
-	+	87	0
-	+	92	83
-
-> ~/Software/Code/ml/tf/TensorFlow-Examples/notebooks/3_NeuralNetworks/bidirectional_rnn.ipynb
-	"	6	0
-
-> ~/Software/Code/ml/tf/TensorFlow-Examples/README.md
-	"	76	18
-
-> /etc/bluetooth/main.conf
-	"	89	0
-
-> /etc/bluetooth/input.conf
-	"	1	0

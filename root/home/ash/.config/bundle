@@ -1,0 +1,9 @@
+package apt
+package battery
+package cd
+package git-flow
+package jump
+package python
+theme agnoster
+theme default
+theme pastfish

@@ -1,0 +1,1 @@
+source ~/.shell.d/*.fish

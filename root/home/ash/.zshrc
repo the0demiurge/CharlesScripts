@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ASH_HOME=/home/ash
-export ZSH=$ASH_HOME/.oh-my-zsh 
+ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -81,12 +80,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $ASH_HOME/.path
-source ~/.sh_alias
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
-numlockx
 source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
+source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 plugins=(git autojump)
-. /usr/share/autojump/autojump.sh
+source ~/.shell.d/*.shell
 clear
-source ~/Software/Code/apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

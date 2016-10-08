@@ -1,4 +1,4 @@
-# !/bin/sh
+#!/bin/sh
 # configuration
 __user__=ash
 __backup_path__=$__home__/Documents/Backup/linux

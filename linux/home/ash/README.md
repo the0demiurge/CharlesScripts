@@ -1,6 +1,6 @@
 #home/ash/#
 ##.shell.d##
-shell 脚本，包括命令别名，路径定义等
+shell 初始化脚本，包括命令别名，路径定义等
 ##.userscripys/##
 
 **wallpaper-earthview**: 自动抓取Google Earthview作为Gnome桌面壁纸  

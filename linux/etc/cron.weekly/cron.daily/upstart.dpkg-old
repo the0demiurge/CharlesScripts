@@ -1,0 +1,11 @@
+#!/bin/sh
+# Emit an Upstart system event, that will propagate to the Session Inits
+# via the upstart-event-bridge(8), requesting that the Session Inits
+# rotate their logs.
+#
+# Note that system-level Upstart logs are handled separately using a
+# logrotate script.
+
+[ -x /sbin/initctl ] || exit 0
+
+/sbin/initctl emit rotate-logs

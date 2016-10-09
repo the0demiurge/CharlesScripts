@@ -1,0 +1,30 @@
+#HOMES
+export MY_HOME=/home/ash
+
+#PATHES
+export PATH=/home/ash/Software/anaconda3/bin:$PATH
+export PATH=$MY_HOME/.userscripts:$PATH
+
+#INIT
+numlockx
+source /usr/share/autojump/autojump.sh 
+
+#ALIASES
+alias a='sudo apt-fast'
+alias c='clear;cd'
+alias eg='grep -E'
+alias g='git add . &&git commit -m'
+alias i='ipython'
+alias l='ls --color=auto'
+alias la='ls --almost-all --color=auto'
+alias le='ls --almost-all --color=auto|egrep'
+alias lg='ls --almost-all --color=auto|grep'
+alias ll='ls --almost-all -lh --color=auto'
+alias o='xdg-open'
+alias p='python'
+alias s='sudo su -'
+alias u='update'
+alias v='vim'
+alias x='exit'
+alias t='tensorboard --logdir="."'
+clear

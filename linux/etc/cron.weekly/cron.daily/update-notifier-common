@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+[ -x /usr/lib/update-notifier/package-data-downloader ] || exit 0
+
+# Try to rerun any package data downloads that failed at package install time.
+/usr/lib/update-notifier/package-data-downloader

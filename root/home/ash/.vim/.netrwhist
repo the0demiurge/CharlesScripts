@@ -1,4 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/usr/share/gnome-shell'
-let g:netrw_dirhist_2='/home/ash/Software/Code/ml/tf/tensorflow/tensorflow/g3doc/api_docs/python'

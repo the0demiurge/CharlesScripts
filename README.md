@@ -2,7 +2,7 @@
 我的自用的脚本云备份，里面包含一些配置文件  
 感兴趣的朋友们可以下载下来使用  
 具体介绍见操作系统目录中的README  
-自动更新hosts翻墙脚本直达：  
+**自动更新hosts翻墙脚本直达：**  
 [linux](https://github.com/the0demiurge/MyScripts/tree/master/linux/etc) 注意这个需要hosts列表来支持，列表放在/etc/host.list  
 [windows](https://github.com/the0demiurge/MyScripts/tree/master/windows/update-hosts) 一个安装与一个卸载脚本，hosts源在install.bat里面设置好了
   

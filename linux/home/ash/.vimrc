@@ -1,3 +1,6 @@
+"我使用的shell是fish，似乎和vim有兼容性问题，下一行可以解决
+set shell=/bin/bash
+
 "转载自 https://github.com/yangyangwithgnu/use_vim_as_ide
 " 更新时间：2016-03-30 12:15:21
 
@@ -109,6 +112,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'lilydjwg/fcitx.vim'
+Plugin 'csv.vim'
 
 " 插件列表结束
 call vundle#end()
@@ -119,7 +123,7 @@ filetype plugin indent on
 set background=dark
 "colorscheme solarized
 "colorscheme molokai
-"colorscheme phd
+colorscheme phd
 
 " >>
 " 营造专注气氛

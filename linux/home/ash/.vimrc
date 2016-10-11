@@ -165,8 +165,8 @@ set ruler
 set number
 
 " 高亮显示当前行/列
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 
 " 高亮显示搜索结果
 set hlsearch
@@ -184,6 +184,7 @@ set nowrap
 
 " 设置状态栏主题风格
 let g:Powerline_colorscheme='solarized256'
+"let g:Powerline_symbols = 'fancy'
 
 " <<
 

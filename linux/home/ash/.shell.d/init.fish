@@ -12,9 +12,15 @@ set -x PATH $MY_HOME/.userscripts $PATH
 #ALIASES
 
 abbr a 'sudo apt-fast'
-abbr c 'clear and cd'
+abbr c 'clear; and cd'
+abbr cl 'cd ..;ls'
 abbr eg 'grep -E'
 abbr g 'git add .; and git commit -m'
+abbr gc 'git checkout'
+abbr gl 'git log'
+abbr gp 'git push'
+abbr gpl 'git pull'
+abbr gst 'git status'
 abbr i 'ipython'
 abbr l 'ls --color=auto'
 abbr la 'ls --almost-all --color=auto'
@@ -30,3 +36,4 @@ abbr v 'vim'
 abbr x 'exit'
 abbr t 'tensorboard --logdir="."'
 clear
+oneko &

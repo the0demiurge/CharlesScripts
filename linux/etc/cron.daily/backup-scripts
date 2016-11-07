@@ -14,12 +14,13 @@ rm -rf $b__root__
 mkdir -p $b__root__ 
 mkdir -p $b__etc__
 mkdir -p $b__home__
-mkdir -p $b__root__/home/.config 
+mkdir -p $b__home__/.config 
+mkdir -p $b__home__/.config/sublime-text-3/Packages
 
 # Backups
 cp -r /etc/apt $b__etc__
 cp -r /etc/cron.* $b__etc__
-cp -r /etc/hosts.list $b__etc__
+cp -r /etc/hosts.* $b__etc__
 cp -r /etc/profile $b__etc__
 cp -r /etc/profile.d $b__etc__
 
@@ -27,12 +28,13 @@ cp -r $__home__/.backup-* $b__home__
 cp -r $__home__/.bashrc $b__home__
 cp -r $__home__/.bash_logout $b__home__
 cp -r $__home__/.config/omf $b__home__/.config
-cp -r $__home__/.oh-my-zsh $b__home__
+cp -r $__home__/.config/sublime-text-3/Packages/User $b__home__/.config/sublime-text-3/Packages
 cp -r $__home__/.profile $b__home__
 cp -r $__home__/.shell* $b__home__
 cp -r $__home__/.userscripts $b__home__
 cp -r $__home__/.vimrc $b__home__
-cp -r $__home__/.zshrc $b__home__
+
+
 
 chown -R $__user__:root $__backup_path__
 chgrp -R $__user__ $__backup_path__

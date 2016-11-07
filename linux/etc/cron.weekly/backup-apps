@@ -1,2 +1,7 @@
 #/bin/sh
-apt-mark showmanual > /home/ash/.backup-apps.weekly
+dpkg --get-selections > /home/ash/.backup-apps.weekly
+# 恢复：
+# apt-cache dumpavail > avail.txt   #更新 dpkg 包数据库
+# dpkg --merge-avail avail.txt
+# dpkg --set-selectioins < .backup=apps.freq    #更新 dpkg 包列表
+# apt-get desect-upgrade    #安装

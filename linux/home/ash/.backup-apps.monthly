@@ -21,6 +21,7 @@ apport-gtk
 apport-symptoms
 appstream
 apt
+apt-fast
 apt-transport-https
 apt-utils
 aptdaemon
@@ -32,6 +33,7 @@ argyll-ref
 aspell
 aspell-en
 at-spi2-core
+atom
 autojump
 avahi-autoipd
 avahi-daemon
@@ -44,6 +46,7 @@ bash-completion
 bc
 bind9-host
 binutils
+bluetooth
 bluez
 bluez-cups
 bluez-obexd
@@ -64,6 +67,7 @@ bzip2
 ca-certificates
 cheese
 cheese-common
+cmake
 colord
 colord-data
 command-not-found
@@ -89,6 +93,7 @@ cups-filters-core-drivers
 cups-pk-helper
 cups-ppdc
 cups-server-common
+curl
 cython
 cython3
 dash
@@ -114,6 +119,7 @@ diffstat
 diffutils
 dirmngr
 distro-info-data
+dkms
 dleyna-renderer
 dleyna-server
 dmidecode
@@ -129,6 +135,7 @@ e2fsprogs
 ed
 efibootmgr
 eject
+elinks
 emacsen-common
 empathy
 empathy-common
@@ -146,6 +153,7 @@ fcitx-module-cloudpinyin
 fcitx-pinyin
 fcitx-sunpinyin
 fcitx-table-wubi
+fcitx-tools
 fcitx-ui-qimpanel
 file
 file-roller
@@ -153,6 +161,7 @@ findutils
 firefox
 firefox-locale-en
 firefox-locale-zh-hans
+fish
 folks-common
 fontconfig
 fontconfig-config
@@ -173,6 +182,7 @@ fonts-lohit-guru
 fonts-nanum
 fonts-noto-cjk
 fonts-opensymbol
+fonts-powerline
 fonts-sil-abyssinica
 fonts-sil-padauk
 fonts-stix
@@ -231,6 +241,10 @@ gdm3
 geary
 gedit
 gedit-common
+gedit-developer-plugins
+gedit-latex-plugin
+gedit-plugins
+gedit-source-code-browser-plugin
 genisoimage
 geoclue
 geoclue-2.0
@@ -239,6 +253,8 @@ gettext
 gettext-base
 ghostscript
 ghostscript-x
+gimp
+gimp-help-en
 gir1.2-accountsservice-1.0
 gir1.2-atk-1.0
 gir1.2-atspi-2.0
@@ -403,8 +419,13 @@ hicolor-icon-theme
 hostname
 hplip
 hplip-data
+hunspell-en-au
+hunspell-en-ca
+hunspell-en-gb
 hunspell-en-us
+hunspell-en-za
 hwdata
+hyphen-en-gb
 hyphen-en-us
 ibus
 ibus-gtk
@@ -448,6 +469,8 @@ iso-codes
 itstool
 iw
 kbd
+kde-l10n-engb
+kde-l10n-zhcn
 kerneloops-daemon
 keyboard-configuration
 klibc-utils
@@ -462,13 +485,13 @@ language-pack-gnome-zh-hans-base
 language-pack-zh-hans
 language-pack-zh-hans-base
 language-selector-common
+language-selector-gnome
 lantern
 laptop-detect
 less
 liba11y-profile-manager-0.1-0
 liba11y-profile-manager-data
 libaa1
-libabw-0.1-1v5
 libaccounts-glib0
 libaccounts-qt5-1
 libaccountsservice0
@@ -502,6 +525,7 @@ libatk-adaptor
 libatk-bridge2.0-0
 libatk1.0-0
 libatk1.0-data
+libatk1.0-dev
 libatkmm-1.6-1v5
 libatm1
 libatomic1
@@ -526,6 +550,7 @@ libblas-common
 libblas3
 libblkid1
 libbluetooth3
+libbonoboui2-dev
 libboost-date-time1.58.0
 libboost-filesystem1.58.0
 libboost-iostreams1.58.0
@@ -543,6 +568,7 @@ libc6-dev
 libcaca0
 libcairo-gobject2
 libcairo2
+libcairo2-dev
 libcairomm-1.0-1v5
 libcamd2.4.1
 libcamel-1.2-54
@@ -742,8 +768,10 @@ libgnome-desktop-3-12
 libgnome-keyring-common
 libgnome-keyring0
 libgnome-menu-3-0
+libgnome2-dev
 libgnomekbd-common
 libgnomekbd8
+libgnomeui-dev
 libgnutls-openssl27
 libgnutls30
 libgoa-1.0-0b
@@ -780,6 +808,7 @@ libgtk-3-common
 libgtk2.0-0
 libgtk2.0-bin
 libgtk2.0-common
+libgtk2.0-dev
 libgtkmm-3.0-1v5
 libgtksourceview-3.0-1
 libgtksourceview-3.0-common
@@ -887,6 +916,7 @@ liblsan0
 libltdl7
 liblua5.2-0
 liblua5.3-0
+liblua5.3-dev
 liblwp-mediatypes-perl
 liblwp-protocol-https-perl
 liblwres141
@@ -929,6 +959,7 @@ libmythes-1.2-0
 libnatpmp1
 libnautilus-extension1a
 libncurses5
+libncurses5-dev
 libncursesw5
 libndp0
 libneon27-gnutls
@@ -1074,9 +1105,11 @@ libreoffice-core
 libreoffice-draw
 libreoffice-gnome
 libreoffice-gtk
+libreoffice-help-en-gb
 libreoffice-help-en-us
 libreoffice-help-zh-cn
 libreoffice-impress
+libreoffice-l10n-en-za
 libreoffice-math
 libreoffice-ogltrans
 libreoffice-pdfimport
@@ -1226,6 +1259,7 @@ libwww-perl
 libwww-robotrules-perl
 libx11-6
 libx11-data
+libx11-dev
 libx11-protocol-perl
 libx11-xcb1
 libxapian22v5
@@ -1272,6 +1306,7 @@ libxml2
 libxml2-utils
 libxmu6
 libxmuu1
+libxpm-dev
 libxpm4
 libxrandr2
 libxrender1
@@ -1279,6 +1314,7 @@ libxres1
 libxshmfence1
 libxslt1.1
 libxss1
+libxt-dev
 libxt6
 libxtables11
 libxtst6
@@ -1294,6 +1330,7 @@ libytnef0
 libzapojit-0.0-0
 libzeitgeist-2.0-0
 libzephyr4
+lightdm
 lintian
 linux-base
 linux-generic
@@ -1310,15 +1347,18 @@ lsb-release
 lshw
 lsof
 ltrace
+lua5.3
 make
 makedev
 man-db
 manpages
 manpages-dev
+matlab-support
 mawk
 mcp-account-manager-goa
 media-player-info
 memtest86+
+mercurial
 mime-support
 mlocate
 mobile-broadband-provider-info
@@ -1335,10 +1375,13 @@ mutter
 mutter-common
 mysql-client
 mysql-server
+mythes-en-au
 mythes-en-us
 nano
 nautilus
+nautilus-admin
 nautilus-data
+nautilus-filename-repairer
 nautilus-sendto
 nautilus-share
 ncurses-base
@@ -1355,6 +1398,7 @@ network-manager-pptp-gnome
 ntfs-3g
 numix-gtk-theme
 numlockx
+okular
 openjdk-9-jre
 openoffice.org-hyphenation
 openprinting-ppds
@@ -1364,7 +1408,7 @@ openssl
 os-prober
 p11-kit
 p11-kit-modules
-p4vasp
+p7zip-full
 paper-cursor-theme
 paper-gtk-theme
 paper-icon-theme
@@ -1392,10 +1436,13 @@ policykit-desktop-privileges
 poppler-data
 poppler-utils
 popularity-contest
+powerline
 powermgmt-base
 ppa-purge
 ppp
 pptp-linux
+printer-driver-all
+printer-driver-all-enforce
 printer-driver-brlaser
 printer-driver-c2esp
 printer-driver-foo2zjs
@@ -1434,10 +1481,12 @@ python-openssl
 python-pandas
 python-pip
 python-pkg-resources
+python-powerline
 python-pyasn1
 python-requests
 python-serial
 python-six
+python-sunpinyin
 python-talloc
 python-urllib3
 python-xdg
@@ -1498,6 +1547,8 @@ python3.5
 python3.5-minimal
 qpdf
 qttranslations5-l10n
+rabbitvcs-gedit
+rabbitvcs-nautilus
 readline-common
 realmd
 redshift-gtk
@@ -1513,6 +1564,7 @@ rpm
 rsync
 rsyslog
 rtkit
+ruby-dev
 samba-libs
 sane-utils
 sbsigntool
@@ -1544,6 +1596,7 @@ squashfs-tools
 ssh-askpass-gnome
 ssl-cert
 strace
+sublime-text
 sudo
 syslinux
 syslinux-common
@@ -1567,14 +1620,20 @@ telepathy-logger
 telepathy-mission-control-5
 telepathy-salut
 telnet
+texlive
+texlive-full
+the-powder-toy
+thefuck
 time
 tk
 tk8.6
+tmux
 toshset
 totem-common
 transmission-common
 transmission-gtk
 ttf-ancient-fonts-symbola
+ttf-mscorefonts-installer
 ttf-ubuntu-font-family
 tzdata
 ubuntu-core-launcher
@@ -1614,8 +1673,7 @@ usbmuxd
 usbutils
 util-linux
 uuid-runtime
-vim
-vim-common
+vim-youcompleteme
 vinagre
 vino
 vlc
@@ -1625,8 +1683,10 @@ wbritish
 wget
 whiptail
 whoopsie
-wine
+wine-gecko2.21
 wine-tm2013-longeneteam
+wine1.6
+winetricks
 wireless-regdb
 wireless-tools
 wodim
@@ -1640,6 +1700,7 @@ x11-xserver-utils
 xauth
 xbitmaps
 xbrlapi
+xclip
 xdg-user-dirs
 xdg-user-dirs-gtk
 xdg-utils
@@ -1681,6 +1742,7 @@ xterm
 xul-ext-ubufox
 xwayland
 xz-utils
+ycmd
 yelp
 yelp-tools
 yelp-xsl
@@ -1690,4 +1752,5 @@ zenity-common
 zip
 zlib1g
 zsh
+zsh-syntax-highlighting
 zsync

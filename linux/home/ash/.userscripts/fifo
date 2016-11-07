@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo apt-get install alien 
+sudo apt-get install vnc4server 

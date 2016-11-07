@@ -1,0 +1,38 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Alignment",
+		"All Autocomplete",
+		"Anaconda",
+		"AutoFileName",
+		"AutoPEP8",
+		"BlameHighlighter",
+		"BracketHighlighter",
+		"Code Snippets Helper",
+		"Codecs33",
+		"ConvertToUTF8",
+		"ExpandRegion",
+		"Fold Python",
+		"Fold Python Docstrings",
+		"Git",
+		"GitGutter",
+		"Google Stylesheets Syntax",
+		"Markdown Preview",
+		"MarkdownEditing",
+		"MarkdownHighlighting",
+		"MultiEditUtils",
+		"Package Control",
+		"Python PEP8 Autoformat",
+		"SideBarEnhancements",
+		"SublimeAStyleFormatter",
+		"SublimeLinter",
+		"Terminal",
+		"Theme - Soda",
+		"Theme - SoDaReloaded"
+	]
+}

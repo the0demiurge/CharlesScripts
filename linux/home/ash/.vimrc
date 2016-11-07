@@ -62,7 +62,7 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 " 其他
 
 " 开启实时搜索功能
-set incsearch
+"set incsearch
 
 " 搜索时大小写不敏感
 set ignorecase
@@ -85,6 +85,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'python.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/phd'
@@ -229,7 +230,7 @@ nmap <silent> <Leader>i <Plug>IndentGuidesToggle
 " 代码折叠
 
 " 基于缩进或语法进行代码折叠
-"set foldmethod=indent
+set foldmethod=indent
 set foldmethod=syntax
 " 启动 vim 时关闭折叠代码
 set nofoldenable

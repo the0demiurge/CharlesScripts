@@ -1,1 +1,1 @@
-deb https://apt.dockerproject.org/repo ubuntu-xenial main # 已禁止升级到 yakkety
+# deb https://apt.dockerproject.org/repo ubuntu-zesty main # 已禁止升级到 yakkety disabled on upgrade to zesty

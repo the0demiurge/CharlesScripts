@@ -86,6 +86,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'python.vim'
+Plugin 'Python-Syntax'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/phd'
@@ -121,10 +122,11 @@ filetype plugin indent on
 " <<<<
 
 " 配色方案
-set background=dark
+"set background=dark
 "colorscheme solarized
 "colorscheme molokai
 colorscheme phd
+
 
 " >>
 " 营造专注气氛
@@ -178,7 +180,7 @@ set hlsearch
 " 其他美化
 
 " 设置 gvim 显示字体
-set guifont=YaHei\ Consolas\ Hybrid\ 10.5
+"set guifont=YaHei\ Consolas\ Hybrid\ 10.5
 
 " 禁止折行
 set nowrap
@@ -193,7 +195,7 @@ let g:Powerline_colorscheme='solarized256'
 " 语法分析
 
 " 开启语法高亮功能
-syntax enable
+"syntax enable
 " 允许用指定语法高亮配色方案替换默认方案
 syntax on
 
@@ -530,3 +532,9 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip"]
 " 调用 gundo 树
 nnoremap <Leader>ud :GundoToggle<CR>
 
+" for ycm
+hi Pmenu guifg=fg guisp=Blue ctermbg=DarkGrey ctermfg=White
+hi Pmenusel ctermbg=4 guibg=DarkCyan ctermfg=White gui=bold cterm=bold term=bold
+
+" for powerline
+let g:Powerline_symbols = 'fancy'

@@ -27,12 +27,13 @@
 		"MarkdownHighlighting",
 		"MultiEditUtils",
 		"Package Control",
-		"Python PEP8 Autoformat",
 		"SideBarEnhancements",
 		"SublimeAStyleFormatter",
 		"SublimeLinter",
 		"Terminal",
 		"Theme - Soda",
-		"Theme - SoDaReloaded"
+		"Theme - SoDaReloaded",
+		"VIM Navigation",
+		"zz File Icons"
 	]
 }

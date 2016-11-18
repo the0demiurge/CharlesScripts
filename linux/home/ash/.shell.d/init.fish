@@ -1,6 +1,7 @@
 #INIT
 numlockx
 source /usr/share/autojump/autojump.fish
+if set -q TMUX; tmux setenv TMUXPWD_(tmux display -p "#D" | tr -d '%') $PWD; end
 
 #HOMES
 set -x MY_HOME /home/ash

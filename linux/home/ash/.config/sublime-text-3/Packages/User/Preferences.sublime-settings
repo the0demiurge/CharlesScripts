@@ -1,12 +1,12 @@
 {
-	"always_prompt_for_file_reload": false,
+	"always_prompt_for_file_reload": true,
 	"always_show_minimap_viewport": false,
 	"animation_enabled": true,
 	"atomic_save": false,
 	"auto_close_tags": true,
 	"auto_complete": true,
-	"auto_complete_commit_on_tab": false,
-	"auto_complete_cycle": false,
+	"auto_complete_commit_on_tab": true,
+	"auto_complete_cycle": true,
 	"auto_complete_delay": 50,
 	"auto_complete_selector": "meta.tag - punctuation.definition.tag.begin, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
 	"auto_complete_size_limit": 4194304,
@@ -37,7 +37,7 @@
 		"*.jar",
 		"*.zip"
 	],
-	"bold_folder_labels": false,
+	"bold_folder_labels": true,
 	"caret_extra_bottom": 0,
 	"caret_extra_top": 0,
 	"caret_extra_width": 0,
@@ -57,7 +57,7 @@
 	"draw_white_space": "selection",
 	"enable_hexadecimal_encoding": true,
 	"enable_tab_scrolling": true,
-	"ensure_newline_at_eof_on_save": false,
+	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": true,
 	"fallback_encoding": "Western (Windows 1252)",
 	"file_exclude_patterns":
@@ -102,8 +102,8 @@
 	"font_size": 10,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
-	"highlight_line": false,
-	"highlight_modified_tabs": false,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"hot_exit": true,
 	"ignored_packages":
 	[
@@ -125,7 +125,7 @@
 	"line_padding_top": 0,
 	"margin": 4,
 	"match_brackets": true,
-	"match_brackets_angle": false,
+	"match_brackets_angle": true,
 	"match_brackets_braces": true,
 	"match_brackets_content": true,
 	"match_brackets_square": true,

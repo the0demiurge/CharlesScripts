@@ -1,0 +1,32 @@
+{
+    "max-line-length": 150,
+
+    // list codes for fixes; used by --ignore and --select
+    "list-fixes": "",
+
+    // do not fix these errors / warnings(e.g. E4, W)
+    "ignore": "E24, E226, E501",
+
+    // select errors / warnings(e.g. E4, W)
+    "select": "",
+
+    // enable possibly unsafe changes (E711, E712)
+    "aggressive": 0,
+
+    // number of spaces per indent level
+    "indent-size": 4,
+
+    "format_on_save": true,
+    "show_output_panel": false,
+    // Format/Preview menu items only appear for views
+    // with syntax from `syntax_list`
+    // value is base filename of the .tmLanguage syntax files
+    "syntax_list": ["Python"],
+
+    "file_menu_search_depth": 5, // max depth to search python files
+
+    "avoid_new_line_in_select_mode": false,
+
+    // print debug info into the console
+    "debug": false
+}

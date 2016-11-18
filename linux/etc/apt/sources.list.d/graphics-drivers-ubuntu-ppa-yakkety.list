@@ -1,2 +1,2 @@
-deb http://ppa.launchpad.net/graphics-drivers/ppa/ubuntu yakkety main
-# deb-src http://ppa.launchpad.net/graphics-drivers/ppa/ubuntu yakkety main
+deb http://ppa.launchpad.net/graphics-drivers/ppa/ubuntu zesty main # disabled on upgrade to zesty
+deb-src http://ppa.launchpad.net/graphics-drivers/ppa/ubuntu zesty main

@@ -1,1 +1,1 @@
-deb http://archive.getdeb.net/ubuntu xenial-getdeb games
+deb http://archive.getdeb.net/ubuntu xenial-getdeb games # 已禁止升级到 yakkety

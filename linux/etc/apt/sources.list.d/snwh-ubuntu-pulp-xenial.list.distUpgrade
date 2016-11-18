@@ -1,2 +1,2 @@
-deb http://ppa.launchpad.net/snwh/pulp/ubuntu xenial main
-deb-src http://ppa.launchpad.net/snwh/pulp/ubuntu xenial main
+deb http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety main # 已禁止升级到 yakkety
+deb-src http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety main # 已禁止升级到 yakkety

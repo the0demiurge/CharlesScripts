@@ -3,7 +3,7 @@
 感兴趣的朋友们可以下载下来使用  
 具体介绍见操作系统目录中的README  
 **自动更新hosts翻墙脚本直达：**  
-[linux](https://github.com/the0demiurge/MyScripts/tree/master/linux/etc) 注意这个需要hosts列表来支持，列表放在/etc/host.list  
+[linux](https://github.com/the0demiurge/MyScripts/tree/master/linux/etc) 把/etc/hosts.add, /etc/hosts.list, /etc/cron.daily/update-hosts放在相应位置即可  
 [windows](https://github.com/the0demiurge/MyScripts/tree/master/windows/update-hosts) 一个安装与一个卸载脚本，hosts源在install.bat里面设置好了
   
 **adblock.list**: chrome中的AdBlock广告过滤里面的自定义部分  
@@ -19,7 +19,7 @@
 ##etc/##
 包含了系统设置更改以及hosts自动更新，脚本自动备份  
 
-**hosts.list**: hosts自动更新列表，计划任务里面自动索引到它
+**hosts.list**: hosts自动更新列表，计划任务里面自动索引到它  
 **hosts.add**: 想添加到hosts列表里面的自定义hosts
 ##cron.daily/##
 

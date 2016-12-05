@@ -1,8 +1,2 @@
 #!/bin/sh
-todo = 'TODO LIST:
-CHANGE THE SPACE GROUP TO CRYSTAL SYSTEM
-RUN THE CODE AGAIN 
-mk it a sw
-composition, geometry, 可能有两倍的大小的晶胞
-'
-echo $todo
+update

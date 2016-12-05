@@ -15,6 +15,10 @@
 		{
 			"characters": "<",
 			"selector": "text.html"
+		},
+		{
+			"characters": "\\",
+			"selector": "text.tex.latex"
 		}
 	],
 	"auto_complete_with_fields": false,
@@ -43,7 +47,7 @@
 	"caret_extra_width": 0,
 	"caret_style": "smooth",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/User/SublimeLinter/Solarized (Light) (SL).tmTheme",
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 	"copy_with_empty_selection": true,
 	"create_window_at_startup": true,
 	"default_encoding": "UTF-8",
@@ -95,9 +99,11 @@
 		"CVS",
 		"__pycache__"
 	],
-	"font_face": "",
+	"font_face": "DejaVu sans",
 	"font_options":
 	[
+		"gray_antialias",
+		"subpixel_antialias"
 	],
 	"font_size": 10,
 	"gpu_window_buffer": "auto",
@@ -162,6 +168,8 @@
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": false,
 	"use_tab_stops": true,
+	"vintage_ctrl_keys": true,
+	"vintage_start_in_command_mode": true,
 	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
 	"word_wrap": "auto",
 	"wrap_width": 0

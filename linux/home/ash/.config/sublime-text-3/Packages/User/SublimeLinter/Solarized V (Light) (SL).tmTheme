@@ -12,15 +12,17 @@
 				<key>background</key>
 				<string>#FDF6E3</string>
 				<key>caret</key>
-				<string>#000000</string>
+				<string>#B9B1AC</string>
 				<key>foreground</key>
-				<string>#586E75</string>
+				<string>#4A5E64</string>
 				<key>invisibles</key>
 				<string>#EAE3C9</string>
 				<key>lineHighlight</key>
 				<string>#EEE8D5</string>
 				<key>selection</key>
-				<string>#073642</string>
+				<string>#C4BEB9</string>
+				<key>selectionBorder</key>
+				<string>#B9B1AC</string>
 			</dict>
 		</dict>
 		<dict>
@@ -470,10 +472,10 @@
 			<key>scope</key>
 			<string>entity.other.attribute-name.class.css</string>
 			<key>settings</key>
-            <dict>
+						<dict>
 				<key>fontStyle</key>
 				<string />
-                <key>foreground</key>
+								<key>foreground</key>
 				<string>#268BD2</string>
 			</dict>
 		</dict>
@@ -496,10 +498,10 @@
 			<key>scope</key>
 			<string>entity.other.attribute-name.id.css</string>
 			<key>settings</key>
-            <dict>
+						<dict>
 				<key>fontStyle</key>
 				<string />
-                <key>foreground</key>
+								<key>foreground</key>
 				<string>#268BD2</string>
 			</dict>
 		</dict>
@@ -605,7 +607,7 @@
 				<key>foreground</key>
 				<string>#899090</string>
 			</dict>
-    	</dict>
+			</dict>
 		<dict>
 			<key>name</key>
 			<string>HTML: Comment Block</string>
@@ -619,7 +621,7 @@
 				<string>#839496</string>
 			</dict>
 		</dict>
-    	<dict>
+			<dict>
 			<key>name</key>
 			<string>HTML: Script</string>
 			<key>scope</key>
@@ -1891,8 +1893,6 @@
                 <string>#FFFFFF</string>
             </dict>
         </dict></array>
-	<key>uuid</key>
-	<string>38E819D9-AE02-452F-9231-ECC3B204AFD7</string>
 	<key>license</key>
 	<string>
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

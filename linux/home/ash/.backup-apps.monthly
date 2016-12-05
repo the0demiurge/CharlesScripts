@@ -1,8 +1,15 @@
+2048-qt
 a11y-profile-manager
 accountsservice
 acl
+acpi
+acpi-call-dkms
 acpi-support
+acpica-tools
 acpid
+acpitail
+acpitool
+acpitool-dbg
 adb
 adduser
 adwaita-icon-theme
@@ -33,7 +40,6 @@ argyll-ref
 aspell
 aspell-en
 at-spi2-core
-atom
 autojump
 avahi-autoipd
 avahi-daemon
@@ -50,6 +56,7 @@ bluetooth
 bluez
 bluez-cups
 bluez-obexd
+bluez-tools
 bogofilter
 bogofilter-bdb
 bogofilter-common
@@ -68,6 +75,7 @@ ca-certificates
 cheese
 cheese-common
 cmake
+cmatrix
 colord
 colord-data
 command-not-found
@@ -148,13 +156,13 @@ evolution-data-server
 evolution-data-server-common
 evolution-data-server-online-accounts
 fastboot
-fcitx
+fcitx-frontend-all
 fcitx-module-cloudpinyin
+fcitx-module-dbus
+fcitx-module-quickphrase-editor
+fcitx-modules
 fcitx-pinyin
 fcitx-sunpinyin
-fcitx-table-wubi
-fcitx-tools
-fcitx-ui-qimpanel
 file
 file-roller
 findutils
@@ -238,7 +246,6 @@ gdbserver
 gdebi
 gdisk
 gdm3
-geary
 gedit
 gedit-common
 gedit-developer-plugins
@@ -354,6 +361,7 @@ gnome-mines
 gnome-online-accounts
 gnome-online-miners
 gnome-orca
+gnome-power-manager
 gnome-screenshot
 gnome-session
 gnome-session-bin
@@ -415,6 +423,7 @@ gvfs-libs
 gzip
 hardening-includes
 hdparm
+hibernate
 hicolor-icon-theme
 hostname
 hplip
@@ -462,6 +471,7 @@ iputils-ping
 iputils-tracepath
 ipython
 ipython-notebook
+ipython3
 irqbalance
 isc-dhcp-client
 isc-dhcp-common
@@ -491,6 +501,7 @@ laptop-detect
 less
 liba11y-profile-manager-0.1-0
 liba11y-profile-manager-data
+libaa-bin
 libaa1
 libaccounts-glib0
 libaccounts-qt5-1
@@ -630,7 +641,6 @@ libcupsppdc1
 libcurl3
 libcurl3-gnutls
 libdaemon0
-libdata-alias-perl
 libdatrie1
 libdb5.3
 libdbus-1-3
@@ -1262,6 +1272,7 @@ libx11-data
 libx11-dev
 libx11-protocol-perl
 libx11-xcb1
+libx264-142
 libxapian22v5
 libxatracker2
 libxau6
@@ -1390,6 +1401,8 @@ net-tools
 netbase
 netcat-openbsd
 netease-cloud-music
+nethack-console
+nethack-x11
 netpbm
 network-manager
 network-manager-gnome
@@ -1399,6 +1412,7 @@ ntfs-3g
 numix-gtk-theme
 numlockx
 okular
+oneko
 openjdk-9-jre
 openoffice.org-hyphenation
 openprinting-ppds
@@ -1408,6 +1422,7 @@ openssl
 os-prober
 p11-kit
 p11-kit-modules
+p4vasp
 p7zip-full
 paper-cursor-theme
 paper-gtk-theme
@@ -1438,6 +1453,7 @@ poppler-utils
 popularity-contest
 powerline
 powermgmt-base
+powernap
 ppa-purge
 ppp
 pptp-linux
@@ -1481,7 +1497,6 @@ python-openssl
 python-pandas
 python-pip
 python-pkg-resources
-python-powerline
 python-pyasn1
 python-requests
 python-serial
@@ -1598,6 +1613,7 @@ ssl-cert
 strace
 sublime-text
 sudo
+sunpinyin-utils
 syslinux
 syslinux-common
 syslinux-legacy
@@ -1624,6 +1640,7 @@ texlive
 texlive-full
 the-powder-toy
 thefuck
+thunderbird
 time
 tk
 tk8.6
@@ -1632,6 +1649,7 @@ toshset
 totem-common
 transmission-common
 transmission-gtk
+tree
 ttf-ancient-fonts-symbola
 ttf-mscorefonts-installer
 ttf-ubuntu-font-family
@@ -1639,9 +1657,11 @@ tzdata
 ubuntu-core-launcher
 ubuntu-drivers-common
 ubuntu-gnome-default-settings
+ubuntu-gnome-desktop
 ubuntu-gnome-wallpapers
 ubuntu-gnome-wallpapers-xenial
 ubuntu-keyring
+ubuntu-minimal
 ubuntu-release-upgrader-core
 ubuntu-release-upgrader-gtk
 ubuntu-restricted-addons
@@ -1651,6 +1671,7 @@ ucf
 udev
 udisks2
 ufw
+uget
 unattended-upgrades
 unity-control-center-faces
 uno-libs3
@@ -1671,12 +1692,14 @@ usb-modeswitch
 usb-modeswitch-data
 usbmuxd
 usbutils
+uswsusp
 util-linux
 uuid-runtime
 vim-youcompleteme
 vinagre
 vino
 vlc
+vnc4server
 vsftpd
 wamerican
 wbritish

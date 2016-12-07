@@ -35,11 +35,14 @@
 		"MultiEditUtils",
 		"OmniMarkupPreviewer",
 		"Package Control",
+		"PlainTasks",
 		"PyDOC",
 		"SideBarEnhancements",
 		"Solarized Color Scheme",
 		"Solarized Toggle",
+		"SublimeAStyleFormatter",
 		"SublimeLinter",
+		"SublimeREPL",
 		"SublimeTmpl",
 		"SyncedSidebarBg",
 		"Terminal",
@@ -53,6 +56,7 @@
 		"Theme - Solarized Space",
 		"Theme - Spacegray",
 		"VintageES",
+		"Zen Tabs",
 		"zz File Icons"
 	]
 }

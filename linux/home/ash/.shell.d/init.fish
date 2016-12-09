@@ -1,7 +1,6 @@
 #INIT
 numlockx
 source /usr/share/autojump/autojump.fish
-if set -q TMUX; tmux setenv TMUXPWD_(tmux display -p "#D" | tr -d '%') $PWD; end
 
 #HOMES
 set -x MY_HOME /home/ash
@@ -9,9 +8,9 @@ set -x MY_HOME /home/ash
 #PATHES
 set -x PATH /home/ash/Software/anaconda3/bin $PATH
 set -x PATH $MY_HOME/.userscripts $PATH
+set -x GOPATH ~/.local/share/golang
 
-#ALIASES
-
+    #ALIASES
 abbr a 'sudo apt-fast'
 abbr c 'clear; and cd'
 abbr cl 'cd ..;ls'

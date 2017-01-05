@@ -1,6 +1,6 @@
 #INIT
 numlockx
-source /usr/share/autojump/autojump.sh 
+source /usr/share/autojump/autojump.sh
 
 #HOMES
 export MY_HOME=/home/ash
@@ -11,17 +11,20 @@ export PATH=$MY_HOME/.userscripts:$PATH
 export GOPATH=~/.local/share/go
 
 #ALIASES
-alias a='sudo apt-fast'
-alias c='clear;cd'
-alias cl='cd ..;ls'
-alias d='dict'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias a='sudo apt-fast install'
+alias c='clear; cd'
+alias cl='cd ..; ls'
 alias eg='grep -E'
-alias g='git add -A &&git commit -m'
+alias g='git add -A; git commit -m'
 alias gc='git checkout'
+alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo"
 alias gl='git log'
 alias gp='git push'
 alias gpl='git pull'
 alias gst='git status'
+alias histg="history | grep"
 alias i='ipython'
 alias l='ls --color=auto'
 alias la='ls --almost-all --color=auto'
@@ -32,9 +35,43 @@ alias n='nautilus .&'
 alias o='xdg-open'
 alias p='python'
 alias s='sudo su -'
-alias sd='sudo shutdown -h'
+alias sd='sudo shutdown -h 0'
 alias u='update'
 alias v='vim'
 alias x='exit'
 alias t='tensorboard --logdir="."'
+
+#FUNCTIONS
+
+backup() { cp "$1"{,.bak};}
+
+cls() { cd "$1"; ls;}
+
+d() { dict "$1"|less; }
+
+mcd() { mkdir -p "$1"; cd "$1";}
+
+md5check() { md5sum "$1" | grep "$2";}
+
+extract() {
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   tar xjf $1     ;;
+        *.tar.gz)    tar xzf $1     ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar e $1     ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xf $1      ;;
+        *.tbz2)      tar xjf $1     ;;
+        *.tgz)       tar xzf $1     ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *)     echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
+
 clear

@@ -3,7 +3,7 @@ sudo mkdir /tmp/hosts
 cd /tmp/hosts
 sudo wget $(cat /etc/hosts.list)
 if [ "`ls -A /tmp/hosts`" = "" ]; then
-echo ''
+echo 'failed'
 else
 	echo 'success!'
 	echo '127.0.0.1 ' $(hostname)> /etc/hosts

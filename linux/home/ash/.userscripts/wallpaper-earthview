@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #定义位置与用户
-PaperFolder=/home/ash/Pictures/Wallpapers
+PaperFolder=/home/ash/Pictures/wallpapers
 __user__=ash
 #定义起始与终止地址
 ADDRESS=$(date +%s%N)
@@ -50,6 +50,7 @@ chown $__user__ $PaperFolder/* -R
 chgrp $__user__ $PaperFolder/* -R
 chmod +rw $PaperFolder/*
 gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
+# gconftool-2  -s /desktop/gnome/background/picture_filename -t string "$PaperPath" -s
 #gsettings set org.gnome.settings-daemon.plugins.background active true
 
 #notify-send $PaperIndex

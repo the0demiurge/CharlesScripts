@@ -19,6 +19,7 @@ alien
 alsa-base
 alsa-utils
 anacron
+android-sdk-platform-tools-common
 apg
 app-install-data
 app-install-data-partner
@@ -37,6 +38,7 @@ apturl
 apturl-common
 argyll
 argyll-ref
+aria2
 aspell
 aspell-en
 at-spi2-core
@@ -51,6 +53,7 @@ bash
 bash-completion
 bc
 bind9-host
+binfmt-support
 binutils
 bluetooth
 bluez
@@ -72,6 +75,7 @@ busybox-initramfs
 busybox-static
 bzip2
 ca-certificates
+calibre
 cheese
 cheese-common
 cmake
@@ -82,6 +86,7 @@ command-not-found
 command-not-found-data
 console-setup
 console-setup-linux
+convmv
 coreutils
 cpio
 cpp
@@ -144,6 +149,7 @@ ed
 efibootmgr
 eject
 elinks
+emacs
 emacsen-common
 empathy
 empathy-common
@@ -156,13 +162,10 @@ evolution-data-server
 evolution-data-server-common
 evolution-data-server-online-accounts
 fastboot
-fcitx-frontend-all
+fcitx
 fcitx-module-cloudpinyin
-fcitx-module-dbus
-fcitx-module-quickphrase-editor
 fcitx-modules
 fcitx-pinyin
-fcitx-sunpinyin
 file
 file-roller
 findutils
@@ -236,6 +239,7 @@ gcc
 gcc-5
 gcc-5-base
 gcc-6-base
+gconf-editor
 gconf-service
 gconf-service-backend
 gconf2
@@ -249,7 +253,6 @@ gdm3
 gedit
 gedit-common
 gedit-developer-plugins
-gedit-latex-plugin
 gedit-plugins
 gedit-source-code-browser-plugin
 genisoimage
@@ -302,6 +305,7 @@ gir1.2-gweather-3.0
 gir1.2-ibus-1.0
 gir1.2-javascriptcoregtk-4.0
 gir1.2-json-1.0
+gir1.2-lokdocview-0.1
 gir1.2-mediaart-2.0
 gir1.2-mutter-3.0
 gir1.2-networkmanager-1.0
@@ -389,7 +393,10 @@ gnome-video-effects
 gnome-weather
 gnupg
 gnupg-agent
+gnupg1
+gnupg1-curl
 gnupg2
+golang
 google-chrome-stable
 google-musicmanager-beta
 gparted
@@ -402,9 +409,13 @@ grub-efi-amd64-signed
 grub2-common
 gsettings-desktop-schemas
 gsfonts
+gsfonts-x11
+gshutdown
 gstreamer1.0-alsa
 gstreamer1.0-clutter-3.0
+gstreamer1.0-libav
 gstreamer1.0-nice
+gstreamer1.0-plugins-bad
 gstreamer1.0-plugins-base
 gstreamer1.0-plugins-good
 gstreamer1.0-pulseaudio
@@ -436,13 +447,6 @@ hunspell-en-za
 hwdata
 hyphen-en-gb
 hyphen-en-us
-ibus
-ibus-gtk
-ibus-gtk3
-ibus-pinyin
-ibus-sunpinyin
-ibus-table
-ibus-table-wubi
 ifupdown
 iio-sensor-proxy
 im-config
@@ -462,6 +466,7 @@ insserv
 install-info
 intel-gpu-tools
 intel-microcode
+inteltool
 intltool-debian
 ippusbxd
 iproute2
@@ -480,7 +485,6 @@ itstool
 iw
 kbd
 kde-l10n-engb
-kde-l10n-zhcn
 kerneloops-daemon
 keyboard-configuration
 klibc-utils
@@ -515,6 +519,7 @@ libapparmor1
 libappindicator3-1
 libappstream-glib8
 libappstream3
+libaprutil1
 libapt-inst2.0
 libapt-pkg-perl
 libapt-pkg5.0
@@ -553,9 +558,11 @@ libavahi-core7
 libavahi-glib1
 libavahi-gobject0
 libavc1394-0
+libavcodec-extra
 libbabeltrace-ctf1
 libbabeltrace1
 libbabl-0.1-0
+libbasicusageenvironment1
 libbind9-140
 libblas-common
 libblas3
@@ -800,6 +807,7 @@ libgpod-common
 libgpod4
 libgraphite2-3
 libgrilo-0.2-1
+libgroupsock8
 libgs9
 libgs9-common
 libgsf-1-114
@@ -898,6 +906,7 @@ libjson-glib-1.0-common
 libjte1
 libk5crypto3
 libkeyutils1
+libkf5idletime5
 libklibc
 libkmod2
 libkpathsea6
@@ -912,6 +921,8 @@ liblcms2-2
 liblcms2-utils
 libldap-2.4-2
 libldb1
+liblightdm-gobject-1-0
+liblirc-client0
 liblircclient0
 liblist-moreutils-perl
 libllvm3.8
@@ -1358,7 +1369,9 @@ lsb-release
 lshw
 lsof
 ltrace
+lua5.1
 lua5.3
+lxqt-session
 make
 makedev
 man-db
@@ -1380,6 +1393,8 @@ mousetweaks
 mscompress
 mtools
 mtp-server
+mtp-tools
+mtpfs
 mtr-tiny
 multiarch-support
 mutter
@@ -1422,7 +1437,6 @@ openssl
 os-prober
 p11-kit
 p11-kit-modules
-p4vasp
 p7zip-full
 paper-cursor-theme
 paper-gtk-theme
@@ -1598,6 +1612,7 @@ signon-ui
 signon-ui-service
 signon-ui-x11
 signond
+silversearcher-ag
 simple-scan
 sl
 snapd
@@ -1613,6 +1628,7 @@ ssl-cert
 strace
 sublime-text
 sudo
+sumatra
 sunpinyin-utils
 syslinux
 syslinux-common
@@ -1636,8 +1652,7 @@ telepathy-logger
 telepathy-mission-control-5
 telepathy-salut
 telnet
-texlive
-texlive-full
+texstudio
 the-powder-toy
 thefuck
 thunderbird
@@ -1653,6 +1668,7 @@ tree
 ttf-ancient-fonts-symbola
 ttf-mscorefonts-installer
 ttf-ubuntu-font-family
+typecatcher
 tzdata
 ubuntu-core-launcher
 ubuntu-drivers-common
@@ -1665,6 +1681,7 @@ ubuntu-minimal
 ubuntu-release-upgrader-core
 ubuntu-release-upgrader-gtk
 ubuntu-restricted-addons
+ubuntu-restricted-extras
 ubuntu-standard
 ubuntu-system-service
 ucf
@@ -1695,6 +1712,9 @@ usbutils
 uswsusp
 util-linux
 uuid-runtime
+vim
+vim-gnome
+vim-gtk
 vim-youcompleteme
 vinagre
 vino

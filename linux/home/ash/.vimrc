@@ -1,4 +1,5 @@
 "                              YiJun Aix Vim 
+set shell=/bin/zsh
 
 " 2015-07-24
 " @ Source 

@@ -1,11 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 echo 'update: update and autoremove softwares'
 echo 'update ***: update anything including python packages'
 echo 'updating sources'
 sudo apt-fast update #> /dev/null
 echo 'upgrading'
+sleep 1
 sudo apt-fast -y upgrade
 echo 'autoremoving'
+sleep 1
 sudo apt-fast -y autoremove
 if [ $# -ne 0 ]; then
 	echo 'upgrading python packages'

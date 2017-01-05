@@ -1,0 +1,20 @@
+#!/bin/sh
+if [ $# -ne 3 ]; then
+	echo 'USAGE: ./codecombine from_path "pattern" save_path'
+else
+	from_path=$1
+	pattern=$2
+	save_path=$3
+
+	if [ -f $save_path ]; then
+		rm $save_path
+	fi
+	find $from_path -name $pattern\
+    	-exec echo "File: {}" >> $save_path \;\
+    	-exec cat "{}" >> $save_path \;\
+    	-exec echo "" >> $save_path \;\
+    	-exec echo "" >> $save_path \;\
+    	-exec echo "" >> $save_path \;\
+    	-exec echo "" >> $save_path \;
+  wc $save_path
+fi

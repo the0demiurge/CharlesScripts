@@ -1,4 +1,8 @@
 {
+	"added_words":
+	[
+		"bandgaps"
+	],
 	"always_prompt_for_file_reload": false,
 	"always_show_minimap_viewport": false,
 	"animation_enabled": true,
@@ -47,7 +51,7 @@
 	"caret_extra_width": 0,
 	"caret_style": "smooth",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/base16-eighties.dark (SL).tmTheme",
 	"copy_with_empty_selection": true,
 	"create_window_at_startup": true,
 	"default_encoding": "UTF-8",
@@ -114,6 +118,11 @@
 	"ignored_packages":
 	[
 	],
+	"ignored_words":
+	[
+		"author1",
+		"author2"
+	],
 	"indent_guide_options":
 	[
 		"draw_normal"
@@ -157,7 +166,7 @@
 	"show_panel_on_build": true,
 	"show_tab_close_buttons": true,
 	"smart_indent": true,
-	"spell_check": false,
+	"spell_check": true,
 	"spelling_selector": "markup.raw, source string.quoted - punctuation - meta.preprocessor.c.include, source comment - source comment.block.preprocessor, -(source, constant, keyword, storage, support, variable, markup.underline.link, meta.tag)",
 	"tab_completion": true,
 	"tab_size": 4,

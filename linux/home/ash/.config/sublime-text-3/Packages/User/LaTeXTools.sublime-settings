@@ -221,7 +221,7 @@
 		// non-standard location or want to use a particular version of python.
 		// Both Python2 and Python3 are supported, but must have the DBus bindings
 		// installed.
-		"python": "",
+		"python": "python3",
 		// The name of the ST2 or ST3 executable. On Ubuntu, both subl and sublime-text are
 		// available for ST2; adjust as needed for other platforms, and for ST3
 		"sublime": "sublime-text",

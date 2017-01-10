@@ -1,7 +1,9 @@
 {
 	"added_words":
 	[
-		"bandgaps"
+		"bandgaps",
+		"bandgap",
+		"Aiida"
 	],
 	"always_prompt_for_file_reload": false,
 	"always_show_minimap_viewport": false,
@@ -120,6 +122,7 @@
 	],
 	"ignored_words":
 	[
+		"0pt",
 		"author1",
 		"author2"
 	],

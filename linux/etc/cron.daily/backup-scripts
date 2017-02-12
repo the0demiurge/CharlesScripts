@@ -33,7 +33,7 @@ cp -r $__home__/.config/sublime-text-3/Packages/User $b__home__/.config/sublime-
 cp -r $__home__/.profile $b__home__
 cp -r $__home__/.shell* $b__home__
 cp -r $__home__/.userscripts $b__home__
-cp -r $__home__/.vimrc $b__home__
+cp -r $__home__/.vimconfig.vim $b__home__
 
 
 

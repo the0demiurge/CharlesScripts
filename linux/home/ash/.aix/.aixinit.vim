@@ -1,11 +1,8 @@
 " ========================= Normal Setting Start =========================
 
 "Set windows pos and resize
-set lines=32
-set columns=88
-
-" Prefix GTK borders
-set guiheadroom=0
+set lines=38
+set columns=80
 
 " ## Make its Gvim Like Windows behave ##
 " So you can use
@@ -102,9 +99,9 @@ set splitbelow
 " set Undo file
 set undofile
 if(has('win32'))
-	set undodir=$VIM/vimfiles/undo
+	set undodir=$VIM/vimfiles/undo/
 else
-	set undodir=~/.vim/undo
+	set undodir=~/.vim/undo/
 endif
 set viminfo+=!
 
@@ -130,6 +127,8 @@ if has("gui_running")
 	"set guifont=IBM\ 3270\ Narrow\ Medium\ 10
 	if(has('win32')) 
 		set guifont=Consolas_for_Powerline_FixedD:h10:cANSI
+	elseif(has('osx'))
+		set guifont=Aix:h14
 	else
 		set guifont=Aix\ 9
 	endif

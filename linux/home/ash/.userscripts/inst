@@ -1,0 +1,20 @@
+#!/bin/sh
+APPS_BACKUP_PATH=/home/ash/Documents/Backup/MyScripts/apps/ubuntu.list
+
+for app in $@;do
+	if [ -n "$app" ]; then
+		sudo apt install -y $app
+		if [ $? = 0 ]; then
+			echo $app >> $APPS_BACKUP_PATH
+		fi
+	fi
+done
+
+sort -u $APPS_BACKUP_PATH > /tmp/backuplist4apps
+content=$(cat /tmp/backup4apps)
+
+if [ -n "$content" ]; then
+	mv /tmp/backuplist4apps $APPS_BACKUP_PATH
+fi
+
+cat $APPS_BACKUP_PATH

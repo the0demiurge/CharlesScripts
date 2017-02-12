@@ -1,0 +1,7 @@
+[4mPlugins[30m(B[m
+apt		bang-bang	docker-machine	git-flow	peco
+argu		cd		export		gityaw		proxy
+balias		config		fish-spec	omf		thefuck
+
+[4mThemes[30m(B[m
+agnoster	default		pastfish

@@ -8,7 +8,6 @@ set -x MY_HOME /home/ash
 #PATHES
 set -x PATH /home/ash/Software/anaconda3/bin $PATH
 set -x PATH $MY_HOME/.userscripts $PATH
-set -x GOPATH ~/.local/share/golang
 
 #ALIASES
 alias ...='cd ../..'
@@ -17,13 +16,14 @@ abbr c 'clear; and cd'
 abbr cl 'cd ..;ls'
 alias eg='grep -E'
 abbr g 'git add -A; and git commit -m'
+abbr gaa 'git add -A'
 abbr gc 'git checkout'
 abbr gl 'git log'
 abbr gp 'git push'
 abbr gpl 'git pull'
 abbr gst 'git status'
 abbr histg 'history | grep'
-abbr i 'ipython'
+abbr i 'ipython --no-confirm-exit --no-banner --pprint -i --pylab=auto'
 alias l='ls --color=auto'
 alias la='ls --almost-all --color=auto'
 alias le='ls --almost-all --color=auto|egrep'
@@ -68,4 +68,3 @@ function sdl
     eval command sudo $history[1]
 end
 
-clear

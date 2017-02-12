@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"AdvancedNewFile",
 		"Alignment",
 		"All Autocomplete",
@@ -24,6 +25,7 @@
 		"Git",
 		"GitGutter",
 		"Google Spell Check",
+		"Gulp",
 		"HTML5",
 		"LaTeX Snippets",
 		"LaTeX-cwl",
@@ -38,6 +40,7 @@
 		"Package Control",
 		"PlainTasks",
 		"PyDOC",
+		"SFTP",
 		"SideBarEnhancements",
 		"Solarized Color Scheme",
 		"Solarized Toggle",
@@ -57,7 +60,6 @@
 		"Theme - Solarized Space",
 		"Theme - Spacegray",
 		"VintageES",
-		"Zen Tabs",
-		"zz File Icons"
+		"Zen Tabs"
 	]
 }

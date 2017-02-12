@@ -1,0 +1,6 @@
+#!/bin/sh
+PPA_BACKUP_PATH=/home/ash/Documents/Backup/MyScripts/ppa
+
+echo $1 >> $PPA_BACKUP_PATH
+cat $PPA_BACKUP_PATH|sort|uniq|tee $PPA_BACKUP_PATH 
+sudo apt-add-repository -y $1

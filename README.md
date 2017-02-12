@@ -1,10 +1,13 @@
 #MyScripts#
 我的自用的脚本云备份，里面包含一些配置文件  
 感兴趣的朋友们可以下载下来使用  
-具体介绍见操作系统目录中的README  
+具体介绍见操作系统目录中的README 
+
 **自动更新hosts翻墙脚本直达：**  
-[linux](https://github.com/the0demiurge/MyScripts/tree/master/linux/etc) 把/etc/hosts.add, /etc/hosts.list, /etc/cron.daily/update-hosts放在相应位置即可  
-[windows](https://github.com/the0demiurge/MyScripts/tree/master/windows/update-hosts) 一个安装与一个卸载脚本，hosts源在install.bat里面设置好了
+[linux](https://github.com/the0demiurge/MyScripts/tree/master/linux/etc): 把/etc/hosts.add, /etc/hosts.list, /etc/cron.daily/update-hosts放在相应位置即可  
+
+**下面的Windows翻墙方法不适用于win7，win7及以下请使用[laoD介绍的软件](https://github.com/racaljk/hosts/tree/master/tools)**：[Windows版链接](https://github.com/HostsTools/Windows)，以及[下载链接](https://git.io/vX1Pz)  
+[windows](https://github.com/the0demiurge/MyScripts/tree/master/windows/update-hosts): 一个安装与一个卸载脚本，hosts源在install.bat里面设置好了
   
 **adblock.list**: chrome中的AdBlock广告过滤里面的自定义部分  
 **pac**: 记录了我收集的一部分pac自动配置脚本  
@@ -15,6 +18,8 @@
 
 
 #不完整目录：
+#tools#
+我自己写的小工具系列
 #linux#
 ##etc/##
 包含了系统设置更改以及hosts自动更新，脚本自动备份  

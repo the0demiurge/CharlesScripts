@@ -12,3 +12,5 @@ openssh-server
 ssh
 thefuck
 zsh
+ssh
+autojump

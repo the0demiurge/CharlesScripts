@@ -1,6 +1,8 @@
+ppa:graphics-drivers/ppa
 ppa:jonathonf/vim
+ppa:kernel-ppa/ppa
 ppa:noobslab/themes
 ppa:numix/ppa
 ppa:saiarcot895/myppa
-ppa:ubuntu-wine/ppa
 ppa:webupd8team/sublime-text-3
+ppa:wine/wine-builds

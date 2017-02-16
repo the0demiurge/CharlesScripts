@@ -1,2 +1,2 @@
 #!/bin/sh
-update
+echo 'word ,manual code comment'

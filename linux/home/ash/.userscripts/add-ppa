@@ -10,11 +10,5 @@ for ppa in $@; do
 	fi
 done
 
-sort -u $PPA_BACKUP_PATH > /tmp/backup4ppa
-content=$(cat /tmp/backup4ppa)
-
-if [ -n "$content" ]; then
-	mv /tmp/backup4ppa $PPA_BACKUP_PATH 
-fi
-
+sort -su $PPA_BACKUP_PATH > /tmp/backup4ppa -o $PPA_BACKUP_PATH
 cat $PPA_BACKUP_PATH

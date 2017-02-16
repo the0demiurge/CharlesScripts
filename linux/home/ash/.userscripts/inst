@@ -10,11 +10,5 @@ for app in $@;do
 	fi
 done
 
-sort -u $APPS_BACKUP_PATH > /tmp/backuplist4apps
-content=$(cat /tmp/backup4apps)
-
-if [ -n "$content" ]; then
-	mv /tmp/backuplist4apps $APPS_BACKUP_PATH
-fi
-
+sort -su $APPS_BACKUP_PATH > /tmp/backuplist4apps -o $APPS_BACKUP_PATH
 cat $APPS_BACKUP_PATH

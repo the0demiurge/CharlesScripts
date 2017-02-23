@@ -2,48 +2,66 @@
 APT::NeverAutoRemove
 {
    "^linux-image-4\.4\.0-62-generic$";
-   "^linux-image-4\.4\.14-040414-generic$";
+   "^linux-image-4\.4\.0-63-generic$";
+   "^linux-image-4\.4\.0-64-generic$";
    "^linux-headers-4\.4\.0-62-generic$";
-   "^linux-headers-4\.4\.14-040414-generic$";
+   "^linux-headers-4\.4\.0-63-generic$";
+   "^linux-headers-4\.4\.0-64-generic$";
    "^linux-image-extra-4\.4\.0-62-generic$";
-   "^linux-image-extra-4\.4\.14-040414-generic$";
+   "^linux-image-extra-4\.4\.0-63-generic$";
+   "^linux-image-extra-4\.4\.0-64-generic$";
    "^linux-signed-image-4\.4\.0-62-generic$";
-   "^linux-signed-image-4\.4\.14-040414-generic$";
+   "^linux-signed-image-4\.4\.0-63-generic$";
+   "^linux-signed-image-4\.4\.0-64-generic$";
    "^kfreebsd-image-4\.4\.0-62-generic$";
-   "^kfreebsd-image-4\.4\.14-040414-generic$";
+   "^kfreebsd-image-4\.4\.0-63-generic$";
+   "^kfreebsd-image-4\.4\.0-64-generic$";
    "^kfreebsd-headers-4\.4\.0-62-generic$";
-   "^kfreebsd-headers-4\.4\.14-040414-generic$";
+   "^kfreebsd-headers-4\.4\.0-63-generic$";
+   "^kfreebsd-headers-4\.4\.0-64-generic$";
    "^gnumach-image-4\.4\.0-62-generic$";
-   "^gnumach-image-4\.4\.14-040414-generic$";
+   "^gnumach-image-4\.4\.0-63-generic$";
+   "^gnumach-image-4\.4\.0-64-generic$";
    "^.*-modules-4\.4\.0-62-generic$";
-   "^.*-modules-4\.4\.14-040414-generic$";
+   "^.*-modules-4\.4\.0-63-generic$";
+   "^.*-modules-4\.4\.0-64-generic$";
    "^.*-kernel-4\.4\.0-62-generic$";
-   "^.*-kernel-4\.4\.14-040414-generic$";
+   "^.*-kernel-4\.4\.0-63-generic$";
+   "^.*-kernel-4\.4\.0-64-generic$";
    "^linux-backports-modules-.*-4\.4\.0-62-generic$";
-   "^linux-backports-modules-.*-4\.4\.14-040414-generic$";
+   "^linux-backports-modules-.*-4\.4\.0-63-generic$";
+   "^linux-backports-modules-.*-4\.4\.0-64-generic$";
    "^linux-tools-4\.4\.0-62-generic$";
-   "^linux-tools-4\.4\.14-040414-generic$";
+   "^linux-tools-4\.4\.0-63-generic$";
+   "^linux-tools-4\.4\.0-64-generic$";
 };
 /* Debug information:
 # dpkg list:
-ii  linux-image-4.4.0-62-generic                  4.4.0-62.83                                   amd64        Linux kernel image for version 4.4.0 on 64 bit x86 SMP
-iF  linux-image-4.4.14-040414-generic             4.4.14-040414.201606241434                    amd64        Linux kernel image for version 4.4.14 on 64 bit x86 SMP
-ii  linux-image-extra-4.4.0-62-generic            4.4.0-62.83                                   amd64        Linux kernel extra modules for version 4.4.0 on 64 bit x86 SMP
-ii  linux-image-generic                           4.4.0.62.65                                   amd64        Generic Linux kernel image
+ii  linux-image-4.4.0-62-generic                4.4.0-62.83                                   amd64        Linux kernel image for version 4.4.0 on 64 bit x86 SMP
+ii  linux-image-4.4.0-63-generic                4.4.0-63.84                                   amd64        Linux kernel image for version 4.4.0 on 64 bit x86 SMP
+ii  linux-image-4.4.0-64-generic                4.4.0-64.85                                   amd64        Linux kernel image for version 4.4.0 on 64 bit x86 SMP
+rH  linux-image-extra-4.4.0-62-generic          4.4.0-62.83                                   amd64        Linux kernel extra modules for version 4.4.0 on 64 bit x86 SMP
+ii  linux-image-extra-4.4.0-63-generic          4.4.0-63.84                                   amd64        Linux kernel extra modules for version 4.4.0 on 64 bit x86 SMP
+ii  linux-image-extra-4.4.0-64-generic          4.4.0-64.85                                   amd64        Linux kernel extra modules for version 4.4.0 on 64 bit x86 SMP
+ii  linux-image-generic                         4.4.0.64.68                                   amd64        Generic Linux kernel image
 # list of installed kernel packages:
 4.4.0-62-generic 4.4.0-62.83
-4.4.14-040414-generic 4.4.14-040414.201606241434
+4.4.0-63-generic 4.4.0-63.84
+4.4.0-64-generic 4.4.0-64.85
 # list of different kernel versions:
-4.4.14-040414.201606241434
+4.4.0-64.85
+4.4.0-63.84
 4.4.0-62.83
-# Installing kernel: 4.4.14-040414.201606241434 (4.4.14-040414-generic)
-# Running kernel: 4.4.0-62.83 (4.4.0-62-generic)
-# Last kernel: 4.4.14-040414.201606241434
-# Previous kernel: 4.4.0-62.83
+# Installing kernel: 4.4.0-62.83 (4.4.0-62-generic)
+# Running kernel: 4.4.0-64.85 (4.4.0-64-generic)
+# Last kernel: 4.4.0-64.85
+# Previous kernel: 4.4.0-63.84
 # Kernel versions list to keep:
 4.4.0-62.83
-4.4.14-040414.201606241434
+4.4.0-63.84
+4.4.0-64.85
 # Kernel packages (version part) to protect:
 4\.4\.0-62-generic
-4\.4\.14-040414-generic
+4\.4\.0-63-generic
+4\.4\.0-64-generic
 */

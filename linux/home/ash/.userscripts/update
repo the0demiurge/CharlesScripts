@@ -7,3 +7,4 @@ sudo apt-fast -y upgrade
 echo 'autoremoving'
 sleep 1
 sudo apt-fast -y autoremove
+conda update --all -y

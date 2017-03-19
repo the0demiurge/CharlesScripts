@@ -11,4 +11,5 @@ for app in $@;do
 done
 
 sort -su $APPS_BACKUP_PATH > /tmp/backuplist4apps -o $APPS_BACKUP_PATH
+sleep 3
 cat $APPS_BACKUP_PATH

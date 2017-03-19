@@ -9,6 +9,9 @@ set -x MY_HOME /home/ash
 set -x PATH /home/ash/Software/anaconda3/bin $PATH
 set -x PATH $MY_HOME/.userscripts $PATH
 
+#VARIABLES
+set -x TF_CPP_MIN_LOG_LEVEL 2
+
 #ALIASES
 alias ...='cd ../..'
 abbr a 'sudo apt-fast install'
@@ -32,7 +35,7 @@ alias ll='ls --almost-all -lh --color=auto'
 abbr n 'nautilus .&'
 abbr o 'xdg-open'
 abbr p 'python'
-abbr s 'sudo su -'
+abbr s 'sudo su'
 abbr sd 'sudo shutdown -h 0'
 abbr u 'update'
 abbr v 'vim'
@@ -68,3 +71,4 @@ function sdl
     eval command sudo $history[1]
 end
 
+fifo

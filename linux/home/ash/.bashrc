@@ -167,3 +167,5 @@ xterm*|rxvt*)
     ;;
 esac
 source ~/.shell.d/init.shell
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

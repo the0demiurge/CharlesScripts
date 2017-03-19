@@ -163,14 +163,12 @@ nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>b :buffers<CR>
 
 " Buftabline Config Manager
-nnoremap <C-l> :bnext<CR>
-nnoremap <C-h> :bprev<CR>
+nnoremap <C-k> :bnext<CR>
+nnoremap <C-j> :bprev<CR>
 nnoremap <C-x> :bdelete<CR>
 
 " Check Vim Syntax name Fn
 nnoremap <leader>yi :call <SID>SynStack()<CR>
-nnoremap <leader>w  :w!<CR>
-nnoremap <leader>q  :q<CR>
 nnoremap <C-v> <ESC>"+gpa
 cnoremap <C-v> <C-R>+
 
@@ -247,22 +245,6 @@ nmap <Space>m <Plug>(quickhl-manual-this)
 xmap <Space>m <Plug>(quickhl-manual-this)
 nmap <Space>M <Plug>(quickhl-manual-reset)
 xmap <Space>M <Plug>(quickhl-manual-reset)
-
-" Sneak
-" replace 'f' with 1-char Sneak
-nmap f <Plug>Sneak_f
-nmap F <Plug>Sneak_F
-xmap f <Plug>Sneak_f
-xmap F <Plug>Sneak_F
-omap f <Plug>Sneak_f
-omap F <Plug>Sneak_F
-" replace 't' with 1-char Sneak
-nmap t <Plug>Sneak_t
-nmap T <Plug>Sneak_T
-xmap t <Plug>Sneak_t
-xmap T <Plug>Sneak_T
-omap t <Plug>Sneak_t
-omap T <Plug>Sneak_T
 
 "Emmet
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")

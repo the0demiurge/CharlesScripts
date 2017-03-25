@@ -7,6 +7,7 @@ autojump
 btrfs-tools
 build-essential
 calibre
+chinese-calendar
 clang
 cmake
 cpufreqd
@@ -41,6 +42,7 @@ liblua5.3-dev
 libsdl2-dev
 libyaml-dev
 lua5.3
+lunar
 make
 matlab-support
 mono-xbuild

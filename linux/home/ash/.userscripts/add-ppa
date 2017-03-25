@@ -11,4 +11,5 @@ for ppa in $@; do
 done
 
 sort -su $PPA_BACKUP_PATH > /tmp/backup4ppa -o $PPA_BACKUP_PATH
+sudo rm /etc/apt/sources.list.d/*.save
 cat $PPA_BACKUP_PATH

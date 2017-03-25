@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ $(ls /home/ash/Desktop/|grep APPDATA) ]; then
+	rm -rf /home/ash/Desktop/\%APPDATA\%/
+fi

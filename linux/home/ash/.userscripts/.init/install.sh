@@ -1,5 +1,5 @@
 #!/bin/sh
-SETTING_PATH = ~/.userscripts/.init
+SETTING_PATH=~/.userscripts/.init
 cd $SETTING_PATH
 
 ./get-oh-my-fish

@@ -167,5 +167,4 @@ xterm*|rxvt*)
     ;;
 esac
 source ~/.shell.d/init.shell
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+. /home/ash/.local/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh

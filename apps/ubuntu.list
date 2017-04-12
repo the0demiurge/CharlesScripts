@@ -8,6 +8,7 @@ btrfs-tools
 build-essential
 calibre
 chinese-calendar
+chrome-gnome-shell
 clang
 cmake
 cpufreqd
@@ -38,6 +39,7 @@ lib32stdc++6
 libav-tools
 libclang1
 libclang-dev
+libinput-tools
 libjpeg-turbo8-dev
 liblua5.3-dev
 libsdl2-dev

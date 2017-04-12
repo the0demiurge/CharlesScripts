@@ -45,6 +45,7 @@
             "json (settings)": "json", 
             "json (stylelint)": "json", 
             "json (sublime)": "json", 
+            "json (tern js)": "json", 
             "magicpython": "python", 
             "php": "html", 
             "python django": "python", 

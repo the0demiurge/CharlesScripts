@@ -1,0 +1,6 @@
+#!/bin/sh
+IPY_CONFIG_PATH=$(locate .ipython|grep $USER|grep conf|grep -E '\.py$')
+echo "from powerline.bindings.ipython.since_5 import PowerlinePrompts" >> $IPY_CONFIG_PATH
+echo "c = get_config()" >> $IPY_CONFIG_PATH
+echo "c.TerminalInteractiveShell.simple_prompt = False" >> $IPY_CONFIG_PATH
+echo "c.TerminalInteractiveShell.prompts_class = PowerlinePrompts" >> $IPY_CONFIG_PATH

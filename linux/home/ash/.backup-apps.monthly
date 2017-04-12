@@ -11,6 +11,7 @@ albert
 alsa-base
 alsa-utils
 anacron
+android-tools-adb
 apg
 app-install-data
 app-install-data-partner
@@ -69,6 +70,8 @@ ca-certificates
 calibre
 cheese
 cheese-common
+chinese-calendar
+chrome-gnome-shell
 clang
 cmake
 colord
@@ -127,8 +130,7 @@ dmidecode
 dns-root-data
 dnsmasq-base
 dnsutils
-docker
-docker.io
+docker-engine
 dosfstools
 dpkg
 duplicity
@@ -146,6 +148,7 @@ empathy-common
 enchant
 eog
 espeak-data
+ethtool
 evince
 evince-common
 evolution
@@ -361,7 +364,6 @@ gnome-mahjongg
 gnome-maps
 gnome-menus
 gnome-mines
-gnome-music
 gnome-online-accounts
 gnome-online-miners
 gnome-orca
@@ -1355,6 +1357,7 @@ lshw
 lsof
 ltrace
 lua5.3
+lunar
 macbuntu-os-icons-lts-v7
 macbuntu-os-ithemes-lts-v7
 make
@@ -1428,6 +1431,11 @@ pcmciautils
 perl
 perl-base
 perl-modules-5.22
+php
+php-bcmath
+php-curl
+php-xml
+php7.0-cli
 pidgin-data
 pinentry-curses
 pinentry-gnome3
@@ -1570,6 +1578,7 @@ rsyslog
 rtkit
 ruby
 ruby-all-dev
+samba
 samba-libs
 sane-utils
 sbsigntool
@@ -1702,6 +1711,7 @@ vim-common
 vim-nox
 vino
 vlc
+vnc4server
 w3m
 w3m-img
 wamerican
@@ -1709,7 +1719,7 @@ wbritish
 wget
 whiptail
 whoopsie
-wine-qq7.8-longeneteam
+wine-qq-gxin
 wine-staging
 wine-tm2013-longeneteam
 winehq-staging

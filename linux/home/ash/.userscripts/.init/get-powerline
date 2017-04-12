@@ -1,0 +1,3 @@
+#!/usr/bin/env fish
+pip install --user powerline-status
+sudo su -c "pip install -U powerline-status"

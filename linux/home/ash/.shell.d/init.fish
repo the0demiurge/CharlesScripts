@@ -1,6 +1,5 @@
 #INIT
 numlockx
-source /usr/share/autojump/autojump.fish
 
 #PATHES
 set -x PATH $HOME/Software/anaconda3/bin $PATH
@@ -9,36 +8,41 @@ set -x PATH $HOME/.userscripts $PATH
 #VARIABLES
 set -x TF_CPP_MIN_LOG_LEVEL 2
 
-#ALIASES
-alias ...='cd ../..'
-alias a='sudo apt-fast install'
-alias c='clear; cd'
-alias cl='cd ..;ls'
-alias eg='grep -E'
-alias g='git add -A;git commit -m'
-alias gaa='git add -A'
-alias gc='git checkout'
-alias gl='git log'
-alias gp='git push'
-alias gpl='git pull'
-alias gst='git status'
-alias histg='history | grep'
-alias i='ipython --no-confirm-exit --no-banner --pprint -i --pylab=auto'
-alias l='ls --color=auto'
-alias la='ls --almost-all --color=auto'
-alias le='ls --almost-all --color=auto|egrep'
-alias lg='ls --almost-all --color=auto|grep'
-alias ll='ls --almost-all -lh --color=auto'
-alias n='nautilus .&'
-alias o='xdg-open'
-alias p='python'
-alias pdb='python -mpowerline.bindings.pdb'
-alias s='sudo su'
-alias sd='sudo shutdown -h 0'
-alias u='update'
-alias v='vim'
-alias x='exit'
-alias t='tensorboard --logdir="."'
+#BOBTHEFISH
+set -g theme_date_format "+%A, %B %d, %l:%M%P"
+set -g theme_nerd_fonts yes
+set -g theme_title_display_process yes
+set -g theme_title_display_path yes
+set -g theme_title_display_user yes
+set -g theme_title_use_abbreviated_path yes
+set -g theme_color_scheme dark # dark, light, solarized, solarized-dark, solarized-light, base16, zenburn, gruvbox
+
+#BALIASES
+balias ... 'cd ...'
+balias c 'clear; cd'
+balias cl 'cd ..;ls'
+balias eg 'grep -E'
+balias g 'git add -A;git commit -m'
+balias gaa 'git add -A'
+balias gc 'git checkout'
+balias gl 'git log'
+balias gp 'git push'
+balias gpl 'git pull'
+balias gst 'git status'
+balias histg 'history | grep'
+balias i 'ipython --no-confirm-exit --no-banner --pprint -i --pylab=auto'
+balias l 'ls --color=auto'
+balias la 'ls --almost-all --color=auto'
+balias le 'ls --almost-all --color=auto|egrep'
+balias lg 'ls --almost-all --color=auto|grep'
+balias ll 'ls --almost-all -lh --color=auto'
+balias n 'nautilus .&'
+balias o 'xdg-open'
+balias p 'python'
+balias pdb 'python -mpowerline.bindings.pdb'
+balias su 'sudo su'
+balias u 'update'
+balias t 'tensorboard --logdir="."'
 
 #FUNCTIONS
 

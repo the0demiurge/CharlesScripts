@@ -119,6 +119,9 @@
 	"hot_exit": true,
 	"ignored_packages":
 	[
+		"All Autocomplete",
+		"Material Theme",
+		"SublimeLinter"
 	],
 	"ignored_words":
 	[

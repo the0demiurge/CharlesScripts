@@ -12,7 +12,6 @@ export TF_CPP_MIN_LOG_LEVEL=2
 #ALIASES
 alias ..='cd ..'
 alias ...='cd ../..'
-alias a='sudo apt-fast install'
 alias c='clear; cd'
 alias cl='cd ..;ls'
 alias eg='grep -E'
@@ -35,11 +34,9 @@ alias n='nautilus .&'
 alias o='xdg-open'
 alias p='python'
 alias pdb='python -mpowerline.bindings.pdb'
-alias s='sudo su'
+alias su='sudo su'
 alias sd='sudo shutdown -h 0'
 alias u='update'
-alias v='vim'
-alias x='exit'
 alias t='tensorboard --logdir="."'
 
 #FUNCTIONS

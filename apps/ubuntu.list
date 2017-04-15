@@ -20,6 +20,7 @@ elinks
 ethtool
 exfat-fuse
 exfat-utils
+fasd
 ffmpeg
 figlet
 fish
@@ -28,6 +29,7 @@ fortune
 gdebi
 gimp
 gir1.2-lunar-date-2.0
+git-flow
 gnome-tweak-tool
 golang
 gparted
@@ -35,6 +37,7 @@ hfsplus
 hfsprogs
 hfsutils
 indicator-cpufreq
+jq
 lib32stdc++6
 libav-tools
 libclang1

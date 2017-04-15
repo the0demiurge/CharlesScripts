@@ -1,8 +1,4 @@
-#INIT
-numlockx
-
 #PATHES
-set -x PATH $HOME/Software/anaconda3/bin $PATH
 set -x PATH $HOME/.userscripts $PATH
 
 #VARIABLES

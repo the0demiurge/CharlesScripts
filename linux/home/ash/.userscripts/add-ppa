@@ -1,5 +1,6 @@
 #!/bin/sh
-PPA_BACKUP_PATH=/home/ash/Documents/Backup/MyScripts/ppa
+PPA_BACKUP_PATH=~/.backup/ppa
+mkdir -p ~/.backup
 
 for ppa in $@; do
 	if [ $ppa ]; then

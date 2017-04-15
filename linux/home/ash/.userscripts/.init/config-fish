@@ -1,2 +1,0 @@
-#!/bin/bash
-echo "source ~/.shell.d/init.fish" >> ~/.config/fish/config.fish

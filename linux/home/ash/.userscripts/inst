@@ -1,5 +1,6 @@
 #!/bin/sh
-APPS_BACKUP_PATH=/home/ash/Documents/Backup/MyScripts/apps/ubuntu.list
+APPS_BACKUP_PATH=~/.backup/apps/ubuntu.list
+mkdir -p ~/.backup/apps
 
 for app in $@;do
 	if [ -n "$app" ]; then

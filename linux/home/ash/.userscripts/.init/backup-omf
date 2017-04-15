@@ -1,2 +1,0 @@
-#!/usr/bin/fish
-omf list -a|sed ':a ; N;s/\n/ / ; t a ; '>~/.userscripts/.init/.omflist

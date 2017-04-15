@@ -51,7 +51,7 @@ shell 初始化脚本，主要包括alias等
 **syslog-clean**: 日志莫名其妙占据大量空间时谨慎使用，清除系统日志以释放空间，需要root权限，通常不需要用  
 **update**: 自动更新所有软件，实际上就是 *sudo apt update; sudo apt upgrade -y; sudo apt autoremove -y*  
 **adduser**: 为系统增加用户，并记录何时、为谁添加的账户，比如*adduser san 张三*  
-### .init/###
+### .init/ ###
 通过运行install.py安装并配置docker、powerline、oh-my-fish，其中每个项目都是可选的
 
 

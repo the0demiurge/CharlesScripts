@@ -10,7 +10,8 @@ cp -p ./linux/ash/* ~/
 sudo add-apt-repository $(cat ~/.backup/ppa)
 sudo apt update
 sudo apt install $(cat ~/.backup/apps/ubuntu.list)
-python3 ~/.userscripts/install.py
+sudo apt install -y python3
+python3 ~/.userscripts/.init/install.py
 chsh -s /usr/bin/fish
 echo 'all done!'
 echo 'please manually edit and place ./linux/etc/cron.daily/backup-scripts to /etc/cron.daily/'

@@ -1,4 +1,5 @@
 albert
+alpine
 android-tools-adb
 apt-fast
 arc-flatabulous-theme
@@ -11,6 +12,7 @@ chinese-calendar
 chrome-gnome-shell
 clang
 cmake
+cmus
 cpufreqd
 dictd
 dict-gcide
@@ -53,6 +55,7 @@ mono-xbuild
 mtools
 mysql-client
 mysql-server
+neovim
 nmap
 nmon
 npm
@@ -68,6 +71,8 @@ plank
 powertop
 python3-dev
 python3-pip
+python-dev
+python-pip
 python-powerline
 redshift-gtk
 reiser4progs
@@ -80,6 +85,7 @@ screenfetch
 shadowsocks
 shadowsocks-qt5
 sl
+software-properties-common
 ssh
 sshfs
 stellarium
@@ -101,6 +107,7 @@ w3m-img
 winehq-staging
 wine-staging
 winetricks
+wordgrinder
 xbuilder
 xdotool
 xorg-dev

@@ -52,7 +52,7 @@ function cls
     cd "$argv"; ls;
 end
 
-function d
+function dict
     dict "$argv[1]"|less
 end
 

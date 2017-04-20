@@ -1,3 +1,4 @@
 #!/usr/bin/fish
+sudo apt install curl -y --force-yes
 curl -L https://get.oh-my.fish | fish
 

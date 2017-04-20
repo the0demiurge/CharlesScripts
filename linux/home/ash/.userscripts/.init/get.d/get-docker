@@ -1,3 +1,4 @@
 #!/bin/sh
+sudo apt install curl -y --force-yes
 curl -sSL https://get.docker.com/ | sh
 

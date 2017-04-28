@@ -52,10 +52,6 @@ function cls
     cd "$argv"; ls;
 end
 
-function dict
-    dict "$argv[1]"|less
-end
-
 function mcd
     mkdir -p "$argv"; cd "$argv";
 end

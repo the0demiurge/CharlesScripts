@@ -44,8 +44,6 @@ backup() { cp "$1"{,.bak};}
 
 cls() { cd "$1"; ls;}
 
-d() { dict "$1"|less; }
-
 mcd() { mkdir -p "$1"; cd "$1";}
 
 md5check() { md5sum "$1" | grep "$2";}

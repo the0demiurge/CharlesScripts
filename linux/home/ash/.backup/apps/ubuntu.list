@@ -4,7 +4,10 @@ android-tools-adb
 apt-fast
 arc-flatabulous-theme
 aria2
+at
 autojump
+aview
+axel
 btrfs-tools
 build-essential
 calibre
@@ -17,12 +20,15 @@ cpufreqd
 dictd
 dict-gcide
 dosfstools
+dot2tex
 elinks
 exfat-fuse
 exfat-utils
 fasd
+fbi
 ffmpeg
 figlet
+fim
 fish
 fonts-powerline
 fortune
@@ -37,6 +43,7 @@ hfsplus
 hfsprogs
 hfsutils
 indicator-cpufreq
+inkscape
 jq
 lib32stdc++6
 libav-tools
@@ -47,6 +54,7 @@ libjpeg-turbo8-dev
 liblua5.3-dev
 libsdl2-dev
 libyaml-dev
+lolcat
 lua5.3
 lunar
 make
@@ -68,6 +76,7 @@ openssh-server
 p7zip
 pandoc
 plank
+plantuml
 powertop
 python3-dev
 python3-pip
@@ -90,6 +99,7 @@ ssh
 sshfs
 stellarium
 swig
+sysstat
 texlive-full
 thefuck
 the-powder-toy

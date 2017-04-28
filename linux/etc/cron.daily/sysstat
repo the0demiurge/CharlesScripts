@@ -1,0 +1,18 @@
+#!/bin/sh
+# Generate a daily summary of process accounting.  Since this will probably
+# get kicked off in the morning, it is run against the previous day data.
+
+#  our configuration file
+DEFAULT=/etc/default/sysstat
+#  default settings, overriden in the above file
+ENABLED=false
+
+[ ! -x /usr/lib/sysstat/sa2 ] && exit 0
+
+# read our config
+[ -r "$DEFAULT" ] && . "$DEFAULT" 
+
+[ "$ENABLED" = "true" ]  || exit 0
+
+exec /usr/lib/sysstat/sa2 -A
+

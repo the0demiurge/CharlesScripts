@@ -19,10 +19,9 @@ balias ... 'cd ...'
 balias c 'clear; cd'
 balias cl 'cd ..;ls'
 balias eg 'grep -E'
-balias g 'git add -A;git commit -m'
 balias gaa 'git add -A'
 balias gc 'git checkout'
-balias gl 'git log'
+balias gl 'git l'
 balias gp 'git push'
 balias gpl 'git pull'
 balias gst 'git status'
@@ -51,6 +50,15 @@ end
 
 function cls
     cd "$argv"; ls;
+end
+
+function g
+    git add -A
+    git status
+    echo "type the commits or cancel with Ctrl+C"
+    read COMMIT
+    git commit -m "$COMMIT"
+    git push
 end
 
 function mcd

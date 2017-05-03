@@ -58,6 +58,7 @@ function g
     echo "type the commits or cancel with Ctrl+C"
     read COMMIT
     git commit -m "$COMMIT"
+    git log -1 HEAD
     git push
 end
 

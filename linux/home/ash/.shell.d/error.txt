@@ -1,0 +1,3 @@
+14:17:32 load lua file config.lua error: can not open file!
+
+PANIC: unprotected error in call to Lua API (attempt to index a nil value)

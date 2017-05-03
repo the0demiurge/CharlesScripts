@@ -11,5 +11,5 @@
 #
 # By default this script does nothing.
 powertop --auto-tune&
-fusuma&
+#fusuma&
 exit 0

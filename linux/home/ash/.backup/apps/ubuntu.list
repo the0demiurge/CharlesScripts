@@ -119,6 +119,7 @@ wine-staging
 winetricks
 wordgrinder
 xbuilder
+xdot
 xdotool
 xorg-dev
 xvfb

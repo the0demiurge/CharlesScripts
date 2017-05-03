@@ -1,5 +1,6 @@
 #PATHES
 set -x PATH $HOME/.userscripts $PATH
+set -x PATH  /home/ash/Software/games/links $PATH
 
 #VARIABLES
 set -x TF_CPP_MIN_LOG_LEVEL 2
@@ -59,3 +60,8 @@ end
 function md5check
     md5sum "$argv[1]" | grep "$argv[2]";
 end
+
+function viz
+    dot -T $argv[2] -o $argv[1].$argv[2] $argv[1].dot
+end
+

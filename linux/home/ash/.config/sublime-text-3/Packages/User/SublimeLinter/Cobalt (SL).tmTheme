@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>comment</key>
-	<string>Created by Jacob Rus.  Based on ‘Slate’ by Wilson Miner</string>
 	<key>author</key>
 	<string>Jacob Rus</string>
+	<key>comment</key>
+	<string>Created by Jacob Rus.  Based on ‘Slate’ by Wilson Miner</string>
 	<key>name</key>
 	<string>Cobalt</string>
 	<key>settings</key>
@@ -31,7 +31,7 @@
 			<key>name</key>
 			<string>Punctuation</string>
 			<key>scope</key>
-			<string>punctuation - (punctuation.definition.string || punctuation.definition.comment)</string>
+			<string>punctuation - (punctuation.definition.string | punctuation.definition.comment)</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -554,13 +554,13 @@
 		</dict>
 	<dict>
             <key>name</key>
-            <string>SublimeLinter Warning</string>
+            <string>SublimeLinter Error</string>
             <key>scope</key>
-            <string>sublimelinter.mark.warning</string>
+            <string>sublimelinter.mark.error</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#DDB700</string>
+                <string>#D02000</string>
             </dict>
         </dict><dict>
             <key>name</key>
@@ -574,13 +574,13 @@
             </dict>
         </dict><dict>
             <key>name</key>
-            <string>SublimeLinter Error</string>
+            <string>SublimeLinter Warning</string>
             <key>scope</key>
-            <string>sublimelinter.mark.error</string>
+            <string>sublimelinter.mark.warning</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#D02000</string>
+                <string>#DDB700</string>
             </dict>
         </dict></array>
 	<key>uuid</key>

@@ -1,4 +1,5 @@
 #!/bin/sh
+read -p "这个脚本只是测试用途，有很多bug，不要使用，按Ctrl+C退出" a
 echo 'installing the linux scripts'
 
 read -p 'install hosts?[Y/n]:' PROMPT

@@ -4,6 +4,7 @@ set -x PATH  /home/ash/Software/games/links $PATH
 
 #VARIABLES
 set -x TF_CPP_MIN_LOG_LEVEL 2
+set -x EDITOR vim
 
 #BOBTHEFISH
 set -g theme_date_format "+%A, %B %d, %l:%M%P"
@@ -71,6 +72,12 @@ function md5check
 end
 
 function viz
-    dot -T $argv[2] -o $argv[1].$argv[2] $argv[1].dot
+    switch $argv[2]
+        case "eps"
+            dot -T $argv[2] -o (echo $argv[1]|sed 's/\..*//g').png $argv[1]
+            convert (echo $argv[1]|sed 's/\..*//g').png (echo $argv[1]|sed 's/\..*//g').eps
+        case "*"
+            dot -T $argv[2] -o (echo $argv[1]|sed 's/\..*//g').$argv[2] $argv[1]
+    end
 end
 

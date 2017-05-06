@@ -11,11 +11,14 @@ axel
 btrfs-tools
 build-essential
 calibre
+chameleon-cursor-theme
 chinese-calendar
 chrome-gnome-shell
 clang
 cmake
 cmus
+conky
+copyq
 cpufreqd
 dictd
 dict-gcide
@@ -71,10 +74,12 @@ ntfs-3g
 numix-icon-theme-circle
 nvidia-prime
 octave
+oneko
 openssh-client
 openssh-server
 p7zip
 pandoc
+pinta
 plank
 plantuml
 powertop

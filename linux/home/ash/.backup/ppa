@@ -2,6 +2,7 @@ ppa:aacebedo/fasd
 ppa:docky-core/stable
 ppa:fish-shell/release-2
 ppa:graphics-drivers/ppa
+ppa:hluk/copyq
 ppa:hzwhuang/ss-qt5
 ppa:jonathonf/vim
 ppa:neovim-ppa/stable
@@ -11,6 +12,7 @@ ppa:noobslab/macbuntu
 ppa:noobslab/themes
 ppa:numix/ppa
 ppa:saiarcot895/myppa
+ppa:teejee2008/ppa
 ppa:ubuntu-toolchain-r/test
 ppa:webupd8team/sublime-text-3
 ppa:wine/wine-builds

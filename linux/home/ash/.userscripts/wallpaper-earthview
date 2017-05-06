@@ -1,12 +1,15 @@
 #!/bin/sh
 
 #定义位置与用户
-PaperFolder=/home/ash/Pictures/wallpapers
-__user__=ash
+PaperFolder=~/.cache/wallpaper/
+if [ ! -d $PaperFolder ]; then
+    mkdir -p $PaperFolder
+fi
+
 #定义起始与终止地址
 ADDRESS=$(date +%s%N)
 START=1003
-END=8000
+END=7023
 PaperIndex=$((ADDRESS % ($START - $END + 1) + $START))
 
 #内部定义
@@ -17,7 +20,7 @@ PaperPath=$PaperFolder/background-image.jpg
 if [ -r $(cat $IndexPath) ]; then
     echo $PaperIndex > $IndexPath
 fi
-#generate the wallpaper address
+# generate the wallpaper address
 ADDRESS=$(date +%s%N)
 PaperIndex=$((($(cat $IndexPath)  + $ADDRESS +1 ) % ($START - $END + 1) + $START ))
 echo $PaperIndex > $IndexPath
@@ -46,9 +49,6 @@ done
 #gsettings set org.gnome.desktop.background picture-uri "$PaperUrl"
 #sleep 1
 mv $PaperPathTmp $PaperPath	#Only change background image when a valid one has been downloaded
-chown $__user__ $PaperFolder/* -R
-chgrp $__user__ $PaperFolder/* -R
-chmod +rw $PaperFolder/*
 gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
 # gconftool-2  -s /desktop/gnome/background/picture_filename -t string "$PaperPath" -s
 #gsettings set org.gnome.settings-daemon.plugins.background active true

@@ -74,7 +74,7 @@
 	"fallback_encoding": "Western (Windows 1252)",
 	"file_exclude_patterns":
 	[
-			"*~*",
+		"*~*",
 		"*.7z",
 		"*.a",
 		"*.aux",
@@ -94,6 +94,7 @@
 		"*.exe",
 		"*.gif",
 		"*.gz",
+		"*.fls",
 		"*.ico",
 		"*.idb",
 		"*.jar",
@@ -116,6 +117,7 @@
 		"*.so",
 		"*.sublime-workspace",
 		"*.suo",
+		"*.svg",
 		"*.swf",
 		"*.swp",
 		"*.tar.*",
@@ -123,9 +125,9 @@
 		"*.tgz",
 		"*.toc",
 		"*.ttf",
+		"*.xoj",
 		"*.xz",
-		"*.zip",
-
+		"*.zip"
 	],
 	"find_selected_text": true,
 	"fold_buttons": true,

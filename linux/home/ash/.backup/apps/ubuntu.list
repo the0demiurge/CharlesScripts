@@ -39,6 +39,7 @@ gdebi
 gimp
 gir1.2-lunar-date-2.0
 git-flow
+gnome-raw-thumbnailer
 gnome-tweak-tool
 golang
 gparted
@@ -66,6 +67,12 @@ mono-xbuild
 mtools
 mysql-client
 mysql-server
+nautilus-admin
+nautilus-columns
+nautilus-compare
+nautilus-filename-repairer
+nautilus-owncloud
+nautilus-terminal
 neovim
 nmap
 nmon
@@ -88,6 +95,7 @@ python3-pip
 python-dev
 python-pip
 python-powerline
+rabbitvcs-nautilus
 redshift-gtk
 reiser4progs
 rsnapshot

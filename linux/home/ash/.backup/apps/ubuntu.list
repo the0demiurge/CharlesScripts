@@ -49,6 +49,7 @@ hfsutils
 indicator-cpufreq
 inkscape
 jq
+latex2html
 lib32stdc++6
 libav-tools
 libclang1
@@ -82,6 +83,7 @@ numix-icon-theme-circle
 nvidia-prime
 octave
 oneko
+onscripter
 openssh-client
 openssh-server
 p7zip
@@ -125,6 +127,7 @@ ultra-flat-icons
 unrar
 unzip
 vim-nox
+virtualbox
 w3m
 w3m-img
 winehq-staging

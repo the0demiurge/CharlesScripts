@@ -145,7 +145,7 @@
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 10,
+	"font_size": 12,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
 	"highlight_line": true,
@@ -216,7 +216,7 @@
 	"show_panel_on_build": true,
 	"show_tab_close_buttons": true,
 	"smart_indent": true,
-	"spell_check": true,
+	"spell_check": false,
 	"spelling_selector": "markup.raw, source string.quoted - punctuation - meta.preprocessor.c.include, source comment - source comment.block.preprocessor, -(source, constant, keyword, storage, support, variable, markup.underline.link, meta.tag)",
 	"tab_completion": true,
 	"tab_size": 4,

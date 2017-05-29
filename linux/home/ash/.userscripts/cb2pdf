@@ -1,4 +1,5 @@
 #!/bin/bash
+# convert comic CBR/CBZ file into pdf file
 if [ $# -eq 0 ]
 then
     echo "需要提供一个要转换的cbr/cbz文件"

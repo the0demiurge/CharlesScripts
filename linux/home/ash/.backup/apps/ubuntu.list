@@ -25,6 +25,7 @@ dict-gcide
 dosfstools
 dot2tex
 elinks
+espeak
 exfat-fuse
 exfat-utils
 fasd
@@ -124,10 +125,12 @@ transmission-cli
 tree
 uget
 ultra-flat-icons
+unar
 unrar
 unzip
 vim-nox
 virtualbox
+virtualbox-guest-additions-iso
 w3m
 w3m-img
 winehq-staging

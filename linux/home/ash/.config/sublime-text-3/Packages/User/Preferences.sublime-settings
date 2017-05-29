@@ -50,12 +50,12 @@
 		"*.zip"
 	],
 	"bold_folder_labels": true,
-	"caret_extra_bottom": 0,
-	"caret_extra_top": 0,
-	"caret_extra_width": 0,
-	"caret_style": "smooth",
+	"caret_extra_bottom": 4,
+	"caret_extra_top": 4,
+	"caret_extra_width": 1,
+	"caret_style": "phase",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Predawn/predawn.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Bittersweet (SL).tmTheme",
 	"copy_with_empty_selection": true,
 	"create_window_at_startup": true,
 	"default_encoding": "UTF-8",
@@ -139,13 +139,13 @@
 		"CVS",
 		"__pycache__"
 	],
-	"font_face": "DejaVu sans",
+	"font_face": "SourceHanSansSC",
 	"font_options":
 	[
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 12,
+	"font_size": 11,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
 	"highlight_line": true,

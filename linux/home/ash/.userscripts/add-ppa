@@ -1,4 +1,5 @@
 #!/bin/sh
+# This script adds ppa and backup the ppa list automatically to ~/.backup
 PPA_BACKUP_PATH=~/.backup/ppa
 mkdir -p ~/.backup
 

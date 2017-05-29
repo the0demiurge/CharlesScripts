@@ -1,4 +1,5 @@
 #!/bin/sh
+# this script automatically install an app using APT and backup the software list to ~/.backup/
 APPS_BACKUP_PATH=~/.backup/apps/ubuntu.list
 mkdir -p ~/.backup/apps
 

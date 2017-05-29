@@ -7,8 +7,8 @@
 
 懒是人类进步的第一动力，经过几年Ubuntu的使用，我写了一些很方便的小脚本，但因为我是初学者，早期代码风格很糟糕。而且当时写这些脚本主要为了自己用，只追求functional...因为水平有限，我把它们开源出来请大家多多指教，共同完善：）
 
-* **支持的操作系统：**Ubuntu Gnome 最新LTS版（其他Linux发行版甚至WSL、Linux on Android等也能用，只不过部分功能需要hack一下脚本）。
-* **读者须知：**使用此脚本需要一定（较低）的英文和bash脚本阅读能力，由于本项目不够完善，有的脚本可能迁移到您的电脑之前需要小小地修改。
+* ** 支持的操作系统： **Ubuntu Gnome 最新LTS版（其他Linux发行版甚至WSL、Linux on Android等也能用，只不过部分功能需要hack一下脚本）。
+* ** 读者须知： **使用此脚本需要一定（较低）的英文和bash脚本阅读能力，由于本项目不够完善，有的脚本可能迁移到您的电脑之前需要小小地修改。
 
 **内容简介：**（每个链接都指向我写的配置脚本）
 
@@ -42,6 +42,7 @@
 >>win7及以下请使用[laoD介绍的软件](https://github.com/racaljk/hosts/tree/master/tools)：[Windows版项目地址](https://github.com/HostsTools/Windows)，以及[下载链接](https://git.io/vX1Pz)
 
 # 项目目录： #
+目录更新日期：2017年5月29日
 ```
 MyScripts/
 ├── configs

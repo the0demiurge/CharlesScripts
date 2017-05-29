@@ -28,10 +28,10 @@
 # 安装指南 #
 
 1. [Linux安装：](https://github.com/the0demiurge/MyScripts/blob/master/install-linux.sh)
-> 1.1. [点击这里](https://github.com/the0demiurge/MyScripts/archive/master.zip)下载本项目，解压之后在该目录下运行 *./install-linux.sh*
-> 1.2. 安装[SpaceVim](https://spacevim.org/)
-> 1.3. 安装[Nerd字体](https://github.com/ryanoasis/nerd-fonts)
-> 1.4. 安装语音合成引擎espeak `sudo apt-get install espeak`
+> 1.1. [点击这里](https://github.com/the0demiurge/MyScripts/archive/master.zip)下载本项目，解压之后在该目录下运行 *./install-linux.sh*  
+> 1.2. 安装[SpaceVim](https://spacevim.org/)  
+> 1.3. 安装[Nerd字体](https://github.com/ryanoasis/nerd-fonts)  
+> 1.4. 安装语音合成引擎espeak `sudo apt-get install espeak`  
 
 2. [linux无障碍上网：](https://github.com/the0demiurge/MyScripts/blob/master/install-hosts.sh)
 > [点击这里](https://github.com/the0demiurge/MyScripts/archive/master.zip)下载本项目，解压之后在该目录下运行 *./install-hosts.sh*

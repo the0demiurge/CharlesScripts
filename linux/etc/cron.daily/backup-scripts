@@ -31,4 +31,46 @@ cp -r $__home__/.shell* $b__home__
 cp -r $__home__/.userscripts $b__home__
 cp -r $__home__/.vimconfig.vim $b__home__
 
+# Cleaning useless files
+rm $b__etc__/cron.d/anacron
+rm $b__etc__/cron.d/php
+rm $b__etc__/cron.d/php5
+rm $b__etc__/cron.d/.placeholder
+rm $b__etc__/cron.d/popularity-contest
+rm $b__etc__/cron.d/rsnapshot
+rm $b__etc__/cron.d/sysstat
+rm $b__etc__/cron.daily/0anacron
+rm $b__etc__/cron.daily/apport
+rm $b__etc__/cron.daily/apt
+rm $b__etc__/cron.daily/apt-compat
+rm $b__etc__/cron.daily/aptitude
+rm $b__etc__/cron.daily/bsdmainutils
+rm $b__etc__/cron.daily/cracklib-runtime
+rm $b__etc__/cron.daily/dpkg
+rm $b__etc__/cron.daily/exim4-base
+rm $b__etc__/cron.daily/google-chrome
+rm $b__etc__/cron.daily/google-earth
+rm $b__etc__/cron.daily/google-musicmanager
+rm $b__etc__/cron.daily/logrotate
+rm $b__etc__/cron.daily/man-db
+rm $b__etc__/cron.daily/man-db.dpkg-old
+rm $b__etc__/cron.daily/mlocate
+rm $b__etc__/cron.daily/passwd
+rm $b__etc__/cron.daily/.placeholder
+rm $b__etc__/cron.daily/popularity-contest
+rm $b__etc__/cron.daily/samba
+rm $b__etc__/cron.daily/sysstat
+rm $b__etc__/cron.daily/update-notifier-common
+rm $b__etc__/cron.daily/upstart
+rm $b__etc__/cron.daily/upstart.dpkg-old
+rm $b__etc__/cron.hourly/.placeholder
+rm $b__etc__/cron.monthly/0anacron
+rm $b__etc__/cron.monthly/.placeholder
+rm $b__etc__/cron.weekly/0anacron
+rm $b__etc__/cron.weekly/apt-xapian-index
+rm $b__etc__/cron.weekly/fstrim
+rm $b__etc__/cron.weekly/man-db
+rm $b__etc__/cron.weekly/.placeholder
+rm $b__etc__/cron.weekly/update-notifier-common
+
 chown -R $__user__: $__backup_path__

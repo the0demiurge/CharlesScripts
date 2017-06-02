@@ -14,8 +14,10 @@ rm -rf $b__root__
 mkdir -p $b__root__ 
 mkdir -p $b__etc__
 mkdir -p $b__home__
+mkdir -p $b__home__/.cache/albert
 mkdir -p $b__home__/.config 
 mkdir -p $b__home__/.config/sublime-text-3/Packages
+mkdir -p $b__home__/.local/share 
 
 # Backups
 cp -r /etc/cron.* $b__etc__
@@ -24,8 +26,11 @@ cp -r /etc/hosts.* $b__etc__
 
 cp -r $__home__/.backup $b__home__
 cp -r $__home__/.bash_logout $b__home__
+cp -r $__home__/.cache/albert/*.png $b__home__/.cache/albert
 cp -r $__home__/.config/fusuma $b__home__/.config
+cp -r $__home__/.config/albert.conf $b__home__/.config
 cp -r $__home__/.config/sublime-text-3/Packages/User $b__home__/.config/sublime-text-3/Packages
+cp -r $__home__/.local/share/albert/ $b__home__/.local/share
 cp -r $__home__/.profile $b__home__
 cp -r $__home__/.shell* $b__home__
 cp -r $__home__/.userscripts $b__home__

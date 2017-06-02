@@ -1,5 +1,4 @@
 albert
-alpine
 android-tools-adb
 apt-fast
 arc-flatabulous-theme
@@ -38,6 +37,7 @@ fonts-powerline
 fortune
 gdebi
 gimp
+gimp-dcraw
 gir1.2-lunar-date-2.0
 git-flow
 gnome-raw-thumbnailer
@@ -89,6 +89,7 @@ openssh-client
 openssh-server
 p7zip
 pandoc
+pandoc-citeproc
 pinta
 plank
 plantuml
@@ -99,6 +100,7 @@ python-dev
 python-pip
 python-powerline
 rabbitvcs-nautilus
+rawtherapee
 redshift-gtk
 reiser4progs
 rsnapshot
@@ -109,6 +111,7 @@ samba
 screenfetch
 shadowsocks
 shadowsocks-qt5
+shotwell
 sl
 software-properties-common
 ssh
@@ -123,6 +126,7 @@ tmux
 toilet
 transmission-cli
 tree
+ufraw
 uget
 ultra-flat-icons
 unar

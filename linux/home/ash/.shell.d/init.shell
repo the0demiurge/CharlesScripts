@@ -4,6 +4,7 @@ source /usr/share/autojump/autojump.sh
 #PATHES
 export PATH=$HOME/Software/anaconda3/bin:$PATH
 export PATH=$HOME/.userscripts:$PATH
+export PATH=/home/ash/.cabal/bin/:$PATH
 
 #VARIABLES
 export TF_CPP_MIN_LOG_LEVEL=2

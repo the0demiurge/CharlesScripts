@@ -1,6 +1,7 @@
 #PATHES
 set -x PATH $HOME/.userscripts $PATH
-set -x PATH  /home/ash/Software/games/links $PATH
+set -x PATH $HOME/.cabal/bin $PATH
+set -x PATH /home/ash/Software/games/links $PATH
 
 #VARIABLES
 set -x TF_CPP_MIN_LOG_LEVEL 2

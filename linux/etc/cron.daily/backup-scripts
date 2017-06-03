@@ -1,7 +1,7 @@
 #!/bin/sh
 # configuration
-__user__=ash
-__backup_path__=/home/ash/Documents/Backup/MyScripts
+__user__=charles
+__backup_path__=/home/charles/Gits/MyScripts
 
 # presettings
 __home__=/home/$__user__
@@ -25,6 +25,7 @@ cp -r /etc/rc.local $b__etc__
 cp -r /etc/hosts.* $b__etc__
 
 cp -r $__home__/.backup $b__home__
+cp -r $__home__/.tmux.conf $b__home__
 cp -r $__home__/.bash_logout $b__home__
 cp -r $__home__/.cache/albert/*.png $b__home__/.cache/albert
 cp -r $__home__/.config/fusuma $b__home__/.config

@@ -1,0 +1,17 @@
+#!/bin/sh
+# this script automatically install an app using APT and backup the software list to ~/.backup/
+APPS_BACKUP_PATH=~/.backup/apps/ubuntu.list
+mkdir -p ~/.backup/apps
+
+for app in $@;do
+	if [ -n "$app" ]; then
+		sudo apt install -y $app --allow-unauthenticated
+		if [ $? = 0 ]; then
+			echo $app >> $APPS_BACKUP_PATH
+		fi
+	fi
+done
+
+sort -su $APPS_BACKUP_PATH > /tmp/backuplist4apps -o $APPS_BACKUP_PATH
+sleep 3
+cat $APPS_BACKUP_PATH

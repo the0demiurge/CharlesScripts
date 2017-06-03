@@ -10,6 +10,5 @@
 # bits.
 #
 # By default this script does nothing.
-#powertop --auto-tune&
-#fusuma&
+
 exit 0

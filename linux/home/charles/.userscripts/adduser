@@ -1,8 +1,0 @@
-#!/bin/bash
-sudo useradd $1 -s /bin/bash -m 
-echo $1 $2 $(date) >> ~/.userscripts/.users
-sudo cp ~/.userscripts/.users /root/.config
-(echo 'password'
-sleep 1
-echo 'password')|sudo passwd $1 
-echo "使用passwd改密码，初始密码为password"

@@ -1,0 +1,22 @@
+#!/bin/sh
+gsettings set org.gnome.nautilus.preferences click-policy 'single'
+gsettings set org.gtk.Settings.FileChooser show-hidden false
+gsettings set org.gtk.Settings.FileChooser clock-format '12h'
+gsettings set org.gnome.desktop.interface clock-format '12h'
+gsettings set org.gnome.desktop.interface clock-show-date true
+
+PaperFolder=~/.cache/wallpaper
+gsettings set org.gnome.desktop.background picture-uri "file://$PaperPath"
+gsettings set org.gnome.desktop.screensaver picture-uri "file://$PaperPath"
+#gsettings set org.gnome.settings-daemon.plugins.background active true
+
+# Setting Theme to Arc Flatabulous Dark
+gsettings set org.gnome.desktop.interface gtk-theme Arc-Flatabulous-Dark
+
+# Setting for lunar calendar plugin for english users
+sudo cp /usr/share/locale/zh_CN/LC_MESSAGES/lunar-date.mo /usr/share/locale/en/LC_MESSAGES/
+
+echo "export XMODIFIERS=@im=fcitx"|tee ~/.xprofile
+echo "export QT4_IM_MODULE=fcitx"|tee -a ~/.xprofile
+echo "export QT_IM_MODULE=fcitx"|tee -a ~/.xprofile
+echo "export GTK_IM_MODULE=fcitx"|tee -a ~/.xprofile

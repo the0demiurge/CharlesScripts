@@ -1,0 +1,6 @@
+#!/usr/bin/fish
+if [ `which fish|wc -l` == 0 ];then sudo apt install -y --force-yes fish;fi
+if [ `which curl|wc -l` == 0 ];then sudo apt install -y --force-yes curl;fi
+
+curl -L https://get.oh-my.fish | fish
+

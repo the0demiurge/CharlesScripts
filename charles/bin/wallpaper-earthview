@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Wallpaper Downloading Directory
+PaperFolder=~/.cache/wallpaper
+if [ ! -d $PaperFolder ]; then mkdir -p $PaperFolder; fi
+
+# Paper Downloading Path
+PaperPathTmp=$PaperFolder/background-image-temp.jpg
+PaperPath=$PaperFolder/background-image.jpg
+if [ -e $PaperPathTmp ];then rm $PaperPathTmp;fi
+
+# Paper downloading range
+START=1000
+END=7024
+
+# Download wallpaper till successful
+TIMES=0
+false
+while [ $? != 0 ]; do
+    TIMES=$[TIMES+1]
+    if [ $TIMES -gt 10 ]; then exit 1;fi
+    false
+    RANDOM_NUMBER=$(date +%s%N)
+    PaperIndex=$((RANDOM_NUMBER % ($START - $END + 1) + $START))
+    PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
+    wget $PaperUrl -O $PaperPathTmp
+done
+mv $PaperPathTmp $PaperPath
+

@@ -1,0 +1,3 @@
+#!/usr/bin/fish
+omf list -a|sed 's/\s/\n/g'|sort -biu|tail -n +2>$CHARLES_BACKUP/omf.list
+cat $CHARLES_BACKUP/omf.list

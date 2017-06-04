@@ -1,3 +1,0 @@
-#!/bin/bash
-POWERLINE_ROOT_PATH=$(pip show powerline-status|grep Location|sed 's/Location: //')
-echo ". $POWERLINE_ROOT_PATH/powerline/bindings/bash/powerline.sh" >> ~/.bashrc

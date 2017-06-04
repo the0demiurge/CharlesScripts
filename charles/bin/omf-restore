@@ -1,0 +1,4 @@
+#!/usr/bin/fish
+omf install (cat $CHARLES_BACKUP/omf.list)
+omf theme bobthefish
+

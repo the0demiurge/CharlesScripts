@@ -1,2 +1,0 @@
-#!/usr/bin/fish
-omf list -a|sed 's/\s/\n/g'|sort -u>~/.backup/omf.list

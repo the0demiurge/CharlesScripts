@@ -1,8 +1,0 @@
-#!/bin/sh
-# this script should be edited by calling "ef"
-# this is an FIFO(first in first out) script, you can write down notes or command here and you can just call "fifo" to run it.
-echo '神经网络参数+启发式算法'
-echo '强化学习+遗传算法同时优化:寻找最优值'
-echo '如何描述状态'
-echo '强化学习来学习是否应该跳出局部最优'
-

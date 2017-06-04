@@ -1,5 +1,0 @@
- {
- "renderer_options-MarkdownRenderer": {
- "extensions": ["tables", "fenced_code", "codehilite"]
- }
- }

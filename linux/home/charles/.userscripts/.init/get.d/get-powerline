@@ -1,5 +1,0 @@
-#!/bin/sh
-sudo apt install python3-pip
-pip install --user powerline-status
-sudo su -c "pip install -U pip"
-sudo su -c "pip install -U powerline-status"

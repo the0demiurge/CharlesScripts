@@ -1,3 +1,0 @@
-#!/bin/sh
-#echo 'source $HOME/.vimconfig.vim' >> ~/.vimrc
-echo 'nothing here'

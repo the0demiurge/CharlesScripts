@@ -1,4 +1,0 @@
-#!/bin/bash
-sudo apt install -y --force-yes curl
-curl -sLf https://spacevim.org/install.sh | bash
-

@@ -1,6 +1,0 @@
-#!/bin/bash
-POWERLINE_ROOT_PATH=$(pip show powerline-status|grep Location|sed 's/Location: //')
-
-echo 'setw -g mode-keys vi' >> ~/.tmux.conf
-echo 'run-shell "powerline-daemon -q"' >> ~/.tmux.conf
-echo "source $POWERLINE_ROOT_PATH/powerline/bindings/tmux/powerline.conf" >> ~/.tmux.conf

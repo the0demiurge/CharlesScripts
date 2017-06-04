@@ -1,4 +1,0 @@
-#!/usr/bin/fish
-omf install (cat ~/.backup/omf.list)
-omf theme bobthefish
-

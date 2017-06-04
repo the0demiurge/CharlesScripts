@@ -1,0 +1,3 @@
+#!/bin/sh
+# edit fifo
+$EDITOR ~/.local/share/CharlesScripts/charles/bin/fifo

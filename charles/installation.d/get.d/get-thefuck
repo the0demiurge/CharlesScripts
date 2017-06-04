@@ -1,0 +1,18 @@
+#!/bin/bash
+if [ `which thefuck|wc -l` == 0 ];then sudo apt install -y --force-yes thefuck;fi
+
+echo 'function fuck -d "Correct your previous console command"' |tee ~/.config/fish/conf.d/thefuck.fish
+echo '    set -l exit_code $status' |tee -a ~/.config/fish/conf.d/thefuck.fish
+echo '    set -x TF_ALIAS fuck' |tee -a ~/.config/fish/conf.d/thefuck.fish
+echo '    set -l fucked_up_command $history[1]' |tee -a ~/.config/fish/conf.d/thefuck.fish
+echo '    thefuck $fucked_up_command | read -l unfucked_command' |tee -a ~/.config/fish/conf.d/thefuck.fish
+echo '    if [ "$unfucked_command" != "" ]' |tee -a ~/.config/fish/conf.d/thefuck.fish
+echo '        eval $unfucked_command' |tee -a ~/.config/fish/conf.d/thefuck.fish
+echo '        if test $exit_code -ne 0' |tee -a ~/.config/fish/conf.d/thefuck.fish
+echo '            history --delete $fucked_up_command' |tee -a ~/.config/fish/conf.d/thefuck.fish
+echo '            history --merge ^ /dev/null' |tee -a ~/.config/fish/conf.d/thefuck.fish
+echo '            return 0' |tee -a ~/.config/fish/conf.d/thefuck.fish
+echo '        end' |tee -a ~/.config/fish/conf.d/thefuck.fish
+echo '    end' |tee -a ~/.config/fish/conf.d/thefuck.fish
+echo 'end' |tee -a ~/.config/fish/conf.d/thefuck.fish
+

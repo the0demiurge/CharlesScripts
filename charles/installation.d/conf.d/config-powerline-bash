@@ -1,0 +1,12 @@
+#!/bin/bash
+POWERLINE_ROOT_PATH=$(sudo pip show powerline-status|grep Location|sed 's/Location: //')
+
+if [ ! -z "$POWERLINE_ROOT_PATH" ];then
+    echo ". $POWERLINE_ROOT_PATH/powerline/bindings/bash/powerline.sh" >> ~/.bashrc
+else
+    echo 'There is no powerline installation found!'
+    echo 'You should manually add powerline installation path to the ~/.bashrc file. i. e.:'
+    echo ". \$POWERLINE_ROOT_PATH/powerline/bindings/bash/powerline.sh"
+    read -p 'press Enter to continue:'
+    exit 1
+fi

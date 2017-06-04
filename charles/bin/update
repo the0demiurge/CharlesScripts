@@ -1,0 +1,10 @@
+#!/bin/bash
+echo 'updating sources'
+sudo apt-fast update #> /dev/null
+apt list --upgradable
+echo 'upgrading'
+sleep 1
+sudo apt-fast -y upgrade
+echo 'autoremoving'
+sleep 1
+sudo apt-fast -y autoremove

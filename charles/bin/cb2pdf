@@ -1,0 +1,46 @@
+#!/bin/bash
+# convert comic CBR/CBZ file into pdf file
+if [ $# -eq 0 ]
+then
+    echo "需要提供一个要转换的cbr/cbz文件"
+else
+    for i in "$@"
+    do
+        file=$i
+        filetype=${i: -3}
+ 
+        if [[ "$filetype" == "cbr" ]]
+            then
+                filename=${file%.cbr}
+                rarfile="$filename.rar"
+                pdffile="$filename.pdf"
+ 
+                mkdir .cbr/
+                cp "$file" "$rarfile"
+ 
+                unrar e "$rarfile" .cbr/
+ 
+                convert .cbr/*.jpg "$pdffile"
+ 
+                rm "$rarfile"
+                rm -rf .cbr/
+        fi
+ 
+        if [[ "$filetype" == "cbz" ]]
+            then
+            filename=${file%.cbz}
+            zipfile="$filename.zip"
+            pdffile="$filename.pdf"
+ 
+            mkdir .cbz/
+            cp "$file" "$zipfile"
+ 
+            unzip -j "$zipfile" -d .cbz/
+ 
+            convert .cbz/*.jpg "$pdffile"
+ 
+            rm "$zipfile"
+            rm -rf .cbz/
+        fi
+    done
+fi

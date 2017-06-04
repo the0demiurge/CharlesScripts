@@ -1,0 +1,4 @@
+#!/bin/bash
+killall TM.exe
+killall wineserver
+rm ~/%APPDATA%/ -r

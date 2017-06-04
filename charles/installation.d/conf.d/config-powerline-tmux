@@ -1,0 +1,15 @@
+#!/bin/bash
+POWERLINE_ROOT_PATH=$(sudo pip show powerline-status|grep Location|sed 's/Location: //')
+
+if [ ! -z "$POWERLINE_ROOT_PATH" ];then
+    echo 'run-shell "powerline-daemon -q"' >> ~/.tmux.conf
+    echo "source $POWERLINE_ROOT_PATH/powerline/bindings/tmux/powerline.conf" >> ~/.tmux.conf
+else
+    echo 'There is no powerline installation found!'
+    echo 'You should manually add powerline installation path to the ~/.tmux.conf file. i. e.:'
+    echo 'run-shell "powerline-daemon -q"'
+    echo "source \$POWERLINE_ROOT_PATH/powerline/bindings/tmux/powerline.conf"
+    read -p 'press Enter to continue:'
+    exit 1
+fi
+

@@ -35,7 +35,21 @@ function g
     read COMMIT
     git commit -m "$COMMIT"
     git log -1 HEAD
-    git push
+    if git push
+        espeak push
+        espeak -vzh 成功
+        notify-send 'push成功'
+        sl
+    else
+        espeak push
+        espeak -vzh 失败！
+        espeak push
+        espeak -vzh 失败！
+        espeak push
+        espeak -vzh 失败！
+        notify-send "push失败！！！请重新push！！！"
+        notify-send -u critical $PWD
+    end
 end
 
 function mcd

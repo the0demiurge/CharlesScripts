@@ -40,7 +40,7 @@ function g
         notify-send 'push成功'
         sl
         clear
-        fortune|cowsay -f duck push成功～
+        fortune|cowsay -f duck
     else
         for i in (seq 3)
             espeak -vzh push失败！

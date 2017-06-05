@@ -37,18 +37,19 @@ function g
     git log -1 HEAD
     if git push
         espeak -vzh push成功
-        notify-send 'push成功'
+        notify-send 'push成功' -a Charles
         sl
-        clear
+        for i in (seq 30);echo "";end
         fortune|cowsay -f duck
     else
         for i in (seq 3)
             espeak -vzh push失败！
         end
+        notify-send "push失败！！！请重新push！！！" -a Charles
+        notify-send -u critical $PWD -a Charles
+        for i in (seq 30);echo "";end
         cowsay -f bong "push失败！！！请重新push！！！"
         oneko -sakura
-        notify-send "push失败！！！请重新push！！！"
-        notify-send -u critical $PWD
     end
 end
 

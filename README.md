@@ -13,8 +13,8 @@
 
 * 支持的操作系统：Ubuntu Gnome 最新LTS版（其他Linux发行版甚至WSL、Linux on Android等也能用，只不过部分功能需要hack一下脚本）。
 * 读者须知：使用此脚本需要一定（较低）的英文和bash脚本阅读能力，由于本项目不够完善，有的脚本可能迁移到您的电脑之前需要小小地修改。
-* 依赖项（需要用户自行安装）： Nerd Fonts, Google Chrome, git
-* 可选项：Anaconda, ipython (>=5.0)
+* 依赖项（需要用户自行安装）： Nerd Fonts, Google Chrome, git, espeak, cowsay, oneko, sl, fortune
+* 可选项：Anaconda, ipython (>=5.0), fortune-zh
 
 **内容简介：**
 

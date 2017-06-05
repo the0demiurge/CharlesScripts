@@ -39,7 +39,8 @@ function g
         espeak -vzh push成功
         notify-send 'push成功'
         sl
-        cowsay -f dragon-and-cow push成功～
+        clear
+        fortune|cowsay -f duck push成功～
     else
         for i in (seq 3)
             espeak -vzh push失败！

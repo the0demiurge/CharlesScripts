@@ -21,6 +21,7 @@ cmake
 cmus
 conky
 copyq
+cowsay
 cpufreqd
 dictd
 dict-gcide
@@ -40,6 +41,7 @@ fim
 fish
 fonts-powerline
 fortune
+fortune-zh
 gdebi
 gimp
 gimp-dcraw
@@ -58,6 +60,7 @@ inkscape
 jq
 latex2html
 lib32stdc++6
+libaa-bin
 libav-tools
 libclang1
 libclang-dev

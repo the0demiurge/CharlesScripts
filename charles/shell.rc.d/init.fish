@@ -40,9 +40,11 @@ function g
         notify-send 'push成功'
         sl
     else
+        cowsay "push失败！！！请重新push！！！"
         for i in (seq 3)
             espeak -vzh push失败！
         end
+        oneko -sakura
         notify-send "push失败！！！请重新push！！！"
         notify-send -u critical $PWD
     end

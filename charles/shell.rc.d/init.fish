@@ -36,17 +36,13 @@ function g
     git commit -m "$COMMIT"
     git log -1 HEAD
     if git push
-        espeak push
-        espeak -vzh 成功
+        espeak -vzh push成功
         notify-send 'push成功'
         sl
     else
-        espeak push
-        espeak -vzh 失败！
-        espeak push
-        espeak -vzh 失败！
-        espeak push
-        espeak -vzh 失败！
+        for i in (seq 3)
+            espeak -vzh push失败！
+        end
         notify-send "push失败！！！请重新push！！！"
         notify-send -u critical $PWD
     end

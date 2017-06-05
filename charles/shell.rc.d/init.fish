@@ -33,13 +33,13 @@ function g
     git status
     echo "type the commits or cancel with Ctrl+C"
     read COMMIT
-    git commit -m "$COMMIT"
+    git commit -m "$argv $COMMIT"
     git log -1 HEAD
     if git push
         espeak -vzh push成功
         notify-send 'push成功' -a Charles
         sl
-        for i in (seq 30);echo "";end
+        for i in (seq 25);echo "";end
         fortune|cowsay -f duck
     else
         for i in (seq 3)
@@ -47,7 +47,7 @@ function g
         end
         notify-send "push失败！！！请重新push！！！" -a Charles
         notify-send -u critical $PWD -a Charles
-        for i in (seq 30);echo "";end
+        for i in (seq 25);echo "";end
         cowsay -f bong "push失败！！！请重新push！！！"
         oneko -sakura
     end

@@ -39,11 +39,12 @@ function g
         espeak -vzh push成功
         notify-send 'push成功'
         sl
+        cowsay -f dragon-and-cow push成功～
     else
-        cowsay "push失败！！！请重新push！！！"
         for i in (seq 3)
             espeak -vzh push失败！
         end
+        cowsay -f bong "push失败！！！请重新push！！！"
         oneko -sakura
         notify-send "push失败！！！请重新push！！！"
         notify-send -u critical $PWD

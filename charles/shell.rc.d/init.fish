@@ -39,16 +39,17 @@ function g
         espeak -vzh push成功
         notify-send 'push成功'
         sl
-        clear
+        for i in (seq 30);echo;end
         fortune|cowsay -f duck
     else
         for i in (seq 3)
             espeak -vzh push失败！
         end
+        for i in (seq 30);echo;end
         cowsay -f bong "push失败！！！请重新push！！！"
-        oneko -sakura
-        notify-send "push失败！！！请重新push！！！"
-        notify-send -u critical $PWD
+        notify-send "push失败！！！请重新push！！！" > /dev/null
+        notify-send -u critical $PWD > /dev/null
+        oneko -sakura > /dev/null
     end
 end
 

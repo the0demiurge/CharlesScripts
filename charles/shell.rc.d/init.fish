@@ -38,7 +38,7 @@ function g
     if git push
         espeak -vzh push成功
         notify-send 'push成功' -a Charles
-        sl
+        sl -e
         for i in (seq 25);echo "";end
         fortune|cowsay -f duck
     else

@@ -38,6 +38,11 @@
 1. 下载本项目：`git clone https://github.com/the0demiurge/CharlesScripts.git ~/.local/share/CharlesScripts`
 2. `cd ~/.local/share/CharlesScripts/charles/installation.d`
 3. 逐个阅读并运行安装脚本。
+
+# 效果图： #
+![](fig/1.png)
+![](fig/2.png)
+![](fig/3.png)
 # 项目目录： #
 目录更新日期：2017年6月4日
 ```

@@ -28,28 +28,46 @@ function cls
     cd "$argv"; ls;
 end
 
+function dict
+    command dict $argv|more
+end
+
 function g
     git add -A
     git status
     echo "type the commits or cancel with Ctrl+C"
     read COMMIT
-    git commit -m "$COMMIT"
+    git commit -m "$argv $COMMIT"
     git log -1 HEAD
     if git push
         espeak -vzh push成功
+<<<<<<< HEAD
         notify-send 'push成功'
         sl
         for i in (seq 30);echo;end
+=======
+        notify-send 'push成功' -a Charles
+        sl -e
+        for i in (seq 25);echo "";end
+>>>>>>> backup
         fortune|cowsay -f duck
     else
         for i in (seq 3)
             espeak -vzh push失败！
         end
+<<<<<<< HEAD
         for i in (seq 30);echo;end
         cowsay -f bong "push失败！！！请重新push！！！"
         notify-send "push失败！！！请重新push！！！" > /dev/null
         notify-send -u critical $PWD > /dev/null
         oneko -sakura > /dev/null
+=======
+        notify-send "push失败！！！请重新push！！！" -a Charles
+        notify-send -u critical $PWD -a Charles
+        for i in (seq 25);echo "";end
+        cowsay -f bong "push失败！！！请重新push！！！"
+        oneko -sakura
+>>>>>>> backup
     end
 end
 

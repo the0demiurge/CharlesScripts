@@ -1,10 +1,12 @@
 #!/bin/bash
 echo 'updating sources'
 sudo apt-fast update #> /dev/null
-apt list --upgradable
-echo 'upgrading'
-sleep 1
-sudo apt-fast -y upgrade
+if [ `apt list --upgradable|wc -l` -gt 1 ];then
+    apt list --upgradable
+    echo 'upgrading'
+    sleep 1
+    sudo apt-fast -y upgrade
+fi
 echo 'autoremoving'
 sleep 1
 sudo apt-fast -y autoremove

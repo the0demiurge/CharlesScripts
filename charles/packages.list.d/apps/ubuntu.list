@@ -55,6 +55,7 @@ guake
 hfsplus
 hfsprogs
 hfsutils
+htop
 indicator-cpufreq
 inkscape
 jq
@@ -104,7 +105,10 @@ plank
 plantuml
 powertop
 python3-dev
+python3-matplotlib
+python3-pandas
 python3-pip
+python3-seaborn
 python-dev
 python-pip
 python-powerline

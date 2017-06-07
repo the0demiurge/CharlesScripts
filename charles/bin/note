@@ -4,9 +4,14 @@
 # i.e.: type "note 4m 'go to see a movie with my gf'", and it'll notify you to "go to see a movie with my gf" after 4 minuts.
 
 sleep $1
-for i in `seq 5`;do
+for i in `seq 3`;do
     espeak -v zh $2
+    sleep 1
     notify-send $2
 done
 
 notify-send --urgency=critical $2
+
+sleep 10m
+espeak -v zh "再不$2就来不及了啊"
+notify-send "再不$2就来不及了啊"

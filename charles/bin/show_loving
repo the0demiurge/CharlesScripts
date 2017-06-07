@@ -1,0 +1,3 @@
+#!/bin/sh
+for i in `seq 25`;do echo "";done
+cowsay -f duck "喜欢你小宝宝～～～"

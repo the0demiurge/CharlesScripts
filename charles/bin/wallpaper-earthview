@@ -18,12 +18,12 @@ TIMES=0
 false
 while [ $? != 0 ]; do
     TIMES=$[TIMES+1]
-    if [ $TIMES -gt 10 ]; then exit 1;fi
+    if [ $TIMES -gt 50 ]; then exit 1;fi
     false
     RANDOM_NUMBER=$(date +%s%N)
     PaperIndex=$((RANDOM_NUMBER % ($START - $END + 1) + $START))
     PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
-    wget $PaperUrl -O $PaperPathTmp
+    axel -n 10 $PaperUrl -o $PaperPathTmp
 done
 mv $PaperPathTmp $PaperPath
 

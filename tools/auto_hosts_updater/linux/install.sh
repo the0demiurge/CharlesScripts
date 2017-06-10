@@ -11,7 +11,7 @@ echo ''|sudo tee -a /etc/cron.daily/update-hosts
 echo 'for item in ${HOSTS_LIST[@]};do'|sudo tee -a /etc/cron.daily/update-hosts
 echo '    false'|sudo tee -a /etc/cron.daily/update-hosts
 echo '    while [ $? != 0 ]; do'|sudo tee -a /etc/cron.daily/update-hosts
-echo '        curl $item|tee /tmp/hosts'|sudo tee -a /etc/cron.daily/update-hosts
+echo '        curl $item|tee -a /tmp/hosts'|sudo tee -a /etc/cron.daily/update-hosts
 echo '    done'|sudo tee -a /etc/cron.daily/update-hosts
 echo 'done'|sudo tee -a /etc/cron.daily/update-hosts
 echo ''|sudo tee -a /etc/cron.daily/update-hosts

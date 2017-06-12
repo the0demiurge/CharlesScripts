@@ -7,7 +7,7 @@ else
 	save_path=$3
 
 	if [ -f $save_path ]; then
-		rm $save_path
+		rm -i $save_path
 	fi
 	find $from_path -name $pattern\
     	-exec echo "File: {}" >> $save_path \;\

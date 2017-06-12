@@ -5,7 +5,10 @@ mkdir -p ~/.local/share/CharlesScripts/charles/packages.list.d/apps
 
 for app in $@;do
 	if [ -n "$app" ]; then
-		sudo apt install -y $app --allow-unauthenticated
+        false
+        while [ $? -ne 0 -a $? -ne 100 ];do
+            sudo apt install -y $app --allow-unauthenticated
+        done
 		if [ $? = 0 ]; then
 			echo $app >> $APPS_BACKUP_PATH
 		fi
@@ -14,5 +17,4 @@ done
 
 sort -su $APPS_BACKUP_PATH > ~/.cache/backuplist4apps -o $APPS_BACKUP_PATH
 rm ~/.cache/backuplist4apps
-sleep 3
 cat $APPS_BACKUP_PATH

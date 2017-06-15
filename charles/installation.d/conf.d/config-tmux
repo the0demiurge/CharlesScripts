@@ -1,46 +1,26 @@
 #!/bin/sh
-echo "# History Config" > ~/.tmux.conf
-echo "set-option -g history-limit 10000" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "# Not see this type for my eye ^_^" >> ~/.tmux.conf
-echo "# auto window rename" >> ~/.tmux.conf
-echo "set-window-option -g automatic-rename" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "# rm mouse mode fail" >> ~/.tmux.conf
-echo "set -g default-terminal \"screen-256color\"" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "# Swicth Vim model delay" >> ~/.tmux.conf
-echo "set -s escape-time 0" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "# Start numbering at 1" >> ~/.tmux.conf
-echo "set -g base-index 1" >> ~/.tmux.conf
-echo "setw -g pane-base-index 1" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "# When Close Window and recount number" >> ~/.tmux.conf
-echo "set -g renumber-windows on" >> ~/.tmux.conf
-echo "setw -g aggressive-resize on" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "# hjkl pane traversal" >> ~/.tmux.conf
-echo "bind h select-pane -L" >> ~/.tmux.conf
-echo "bind j select-pane -D" >> ~/.tmux.conf
-echo "bind k select-pane -U" >> ~/.tmux.conf
-echo "bind l select-pane -R" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "# Reload [.tmux.conf]" >> ~/.tmux.conf
-echo "bind-key r source-file ~/.tmux.conf" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "unbind '\"' # unbind horizontal split" >> ~/.tmux.conf
-echo "unbind %   # unbind vertical split" >> ~/.tmux.conf
-echo "bind-key - split-window -v # split pane horizontally" >> ~/.tmux.conf
-echo "bind-key | split-window -h # split pane vertically" >> ~/.tmux.conf
-echo "bind-key \ split-window -h # split pane vertically" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "# List Tmux panes" >> ~/.tmux.conf
-echo "bind-key Space list-panes" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "# SetColor Prefix" >> ~/.tmux.conf
-echo "set -g pane-border-fg green" >> ~/.tmux.conf
-echo "set -g pane-active-border-fg green" >> ~/.tmux.conf
-echo "" >> ~/.tmux.conf
-echo "setw -g mode-keys vi" >> ~/.tmux.conf
+# oh my tmux
+
+git clone https://github.com/gpakosz/.tmux.git ~/.oh-my-tmux
+ln -s -f ~/.oh-my-tmux/.tmux.conf ~/.tmux.conf
+cp ~/.oh-my-tmux/.tmux.conf.local ~
+
+echo "tmux_conf_theme_left_separator_main=''" >> ~/.tmux.conf.local
+echo "tmux_conf_theme_left_separator_sub=''" >> ~/.tmux.conf.local
+echo "tmux_conf_theme_right_separator_main=''" >> ~/.tmux.conf.local
+echo "tmux_conf_theme_right_separator_sub=''" >> ~/.tmux.conf.local
+
+# tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "# List of plugins" >> ~/.tmux.conf.local
+echo "set -g @plugin 'tmux-plugins/tpm'" >> ~/.tmux.conf.local
+echo "set -g @plugin 'tmux-plugins/tmux-sensible'" >> ~/.tmux.conf.local
+echo "" >> ~/.tmux.conf.local
+echo "# Other examples:" >> ~/.tmux.conf.local
+echo "# set -g @plugin 'github_username/plugin_name'" >> ~/.tmux.conf.local
+echo "# set -g @plugin 'git@github.com/user/plugin'" >> ~/.tmux.conf.local
+echo "# set -g @plugin 'git@bitbucket.com/user/plugin'" >> ~/.tmux.conf.local
+echo "" >> ~/.tmux.conf.local
+echo "set -g @plugin 'tmux-plugins/tmux-pain-control'" >> ~/.tmux.conf.local
+echo "# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)" >> ~/.tmux.conf.local
+echo "run '~/.tmux/plugins/tpm/tpm'" >> ~/.tmux.conf.local

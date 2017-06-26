@@ -35,6 +35,7 @@ end
 function g
     git add -A
     git status
+    git diff --cached
     echo "type the commits or cancel with Ctrl+C"
     read COMMIT
     git commit -m "$argv $COMMIT"

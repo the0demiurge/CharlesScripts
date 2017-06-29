@@ -122,6 +122,8 @@ rsnapshot
 rsync
 ruby
 ruby-all-dev
+ruby-full
+rubygems
 samba
 screenfetch
 shadowsocks

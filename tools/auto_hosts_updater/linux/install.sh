@@ -4,8 +4,10 @@ echo '#!/bin/bash'|sudo tee /etc/cron.daily/update-hosts
 echo 'Automatic Hosts Updater'|sudo tee -a /etc/cron.daily/update-hosts
 echo ''|sudo tee -a /etc/cron.daily/update-hosts
 echo 'HOSTS_LIST=('|sudo tee -a /etc/cron.daily/update-hosts
-echo '"https://raw.githubusercontent.com/racaljk/hosts/master/hosts"'|sudo tee -a /etc/cron.daily/update-hosts
-echo '"https://coding.net/u/Elaine_ni/p/hosts/git/raw/master/hosts.txt"'|sudo tee -a /etc/cron.daily/update-hosts
+# echo '"https://raw.githubusercontent.com/racaljk/hosts/master/hosts"'|sudo tee -a /etc/cron.daily/update-hosts
+# echo '"https://coding.net/u/Elaine_ni/p/hosts/git/raw/master/hosts.txt"'|sudo tee -a /etc/cron.daily/update-hosts
+echo '"https://raw.githubusercontent.com/Lerist/Go-Hosts/master/hosts"'|sudo tee -a /etc/cron.daily/update-hosts
+echo '"https://raw.githubusercontent.com/Lerist/Go-Hosts/master/hosts-ad"'|sudo tee -a /etc/cron.daily/update-hosts
 echo ')'|sudo tee -a /etc/cron.daily/update-hosts
 echo ''|sudo tee -a /etc/cron.daily/update-hosts
 echo 'for item in ${HOSTS_LIST[@]};do'|sudo tee -a /etc/cron.daily/update-hosts

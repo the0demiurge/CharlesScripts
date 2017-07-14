@@ -10,7 +10,7 @@ help = '''东北大学IP网关登陆器
     {name} query 查询状态
     {name} login username password 登陆网关
     {name} logout username password 退出网关
-'''.format(name=__file__)
+'''.format(name=os.path.split(__file__)[-1])
 
 
 def connect(payload={}, url='http://ipgw.neu.edu.cn/srun_portal_pc.php'):

@@ -57,9 +57,9 @@ def login(username='', password=''):
     if re.findall('5分钟', str(soup.p)):
         return 'sleep', str(soup.p)
     if str(soup.p)[3:7] == '1. 请':
-        return 'True', str(soup.p)
+        return str(soup.p)
     else:
-        return str(soup.p)[3:8], str(soup.p)
+        return soup.p
 
 
 def logout(username='', password=''):

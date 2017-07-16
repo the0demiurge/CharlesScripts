@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import requests
 import time
-import re
 import os
 import bs4
 
@@ -54,12 +53,7 @@ def login(username='', password=''):
         'save_me': '0'}
     r = connect(payload)
     soup = bs4.BeautifulSoup(r.content.decode('utf-8'), 'html.parser')
-    if re.findall('5分钟', str(soup.p)):
-        return  str(soup.p)
-    if str(soup.p)[3:7] == '1. 请':
-        return str(soup.p)
-    else:
-        return soup.p
+    return str(soup.p)
 
 
 def logout(username='', password=''):

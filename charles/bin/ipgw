@@ -1,46 +1,59 @@
 #!/usr/bin/env python
-import requests
-import time
-import os
-import bs4
+import requests as _requests
+import os as _os
+import bs4 as _bs4
 
-help = '''东北大学IP网关登陆器
+
+def help():
+    print('''东北大学IP网关登陆器
 用法：
     {name} status 查询状态
     {name} login username password 登陆网关
     {name} logout username password 退出网关
-'''.format(name=os.path.split(__file__)[-1])
+'''.format(name=_os.path.split(__file__)[-1]) )
 
 
-def connect(payload={}, url='http://ipgw.neu.edu.cn/srun_portal_pc.php'):
+def _connect(payload={}, url='http://ipgw.neu.edu.cn/srun_portal_pc.php'):
     not_connetced = True
     while not_connetced:
         try:
-            response = requests.post(url, data=payload)
+            response = _requests.post(url, data=payload)
             not_connetced = False
-        except requests.exceptions.ConnectionError:
+        except _requests.exceptions.ConnectionError:
             ...
     return response
 
 
 def status():
-    # 查询状态
+    """
+    查询当前网关状态
+    """
+    print('当前状态为：')
     payload = {
         'action': 'get_online_info',
     }
-    r = connect(payload, 'http://ipgw.neu.edu.cn/include/auth_action.php')
-    return r.content.decode('utf-8')
+    r = _connect(payload, 'http://ipgw.neu.edu.cn/include/auth_action.php')
+    if r.text == 'not_online':
+        return "不在线"
+    else:
+        content_list = r.text.split(',')
+        print('当前流量：', round(int(content_list[0])/1e+9), 'GB\n',
+              '账户余额：￥', content_list[2], '\n',
+              '当 前 IP：', content_list[-1], sep='')
 
 
 def login(username='', password=''):
-    # 登陆
-    # E2531 用户不存在
-    # E2553 密码错误
-    # E2606 用户被禁用
-    # E2616 已欠费
-    # E2620 已经在线
+    """
+    登陆
+    E2531 用户不存在
+    E2553 密码错误
+    E2606 用户被禁用
+    E2616 已欠费
+    E2620 已经在线
 
-    # '1. 请' 成功登陆
+    '1. 请' 成功登陆
+    """
+    print('登陆网关')
     payload = {
         'action': 'login',
         'ac_id': '1',
@@ -51,21 +64,25 @@ def login(username='', password=''):
         'username': '{}'.format(username),
         'password': '{}'.format(password),
         'save_me': '0'}
-    r = connect(payload)
-    soup = bs4.BeautifulSoup(r.content.decode('utf-8'), 'html.parser')
+    r = _connect(payload)
+    soup = _bs4.BeautifulSoup(r.content.decode('utf-8'), 'html.parser')
+    status()
     return str(soup.p)
 
 
 def logout(username='', password=''):
-    # 断开连接
+    """
+    断开连接
+    """
+    print('注销帐号')
     payload = {
         'action': 'logout',
         'ajax': '1',
         'username': '{}'.format(username),
         'password': '{}'.format(password)}
-    r = connect(payload)
+    r = _connect(payload)
     return r.text
 
 if __name__ == '__main__':
-    import fire
-    fire.Fire()
+    import fire as _fire
+    _fire.Fire()

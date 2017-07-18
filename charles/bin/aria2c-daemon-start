@@ -1,0 +1,2 @@
+#!/usr/bin/fish
+aria2c --conf-path=$CHARLES_HOME/bin/.aria2c.conf $argv

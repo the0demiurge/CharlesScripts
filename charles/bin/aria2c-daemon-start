@@ -1,2 +1,6 @@
 #!/usr/bin/fish
+echo "download into $HOME/Downloads/"
+echo "press Ctrl+C to stop"
+sleep 1
+cd $HOME
 aria2c --conf-path=$CHARLES_HOME/bin/.aria2c.conf $argv

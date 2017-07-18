@@ -81,7 +81,7 @@ def logout(username='', password=''):
         'username': '{}'.format(username),
         'password': '{}'.format(password)}
     r = _connect(payload)
-    return r.text
+    return r.content.decode('utf-8')
 
 if __name__ == '__main__':
     import fire as _fire

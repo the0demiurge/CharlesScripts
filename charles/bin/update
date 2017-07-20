@@ -1,12 +1,60 @@
 #!/bin/bash
-echo 'updating sources'
-sudo apt-fast update #> /dev/null
-if [ `apt list --upgradable|wc -l` -gt 1 ];then
-    apt list --upgradable
-    echo 'upgrading'
-    sleep 1
-    sudo apt-fast -y upgrade
+set -e
+help='using apt to update/upgrade/autoremove packages in one command\n
+Usage:\n
+\tupdate help: show help message\n
+\tupdate apt: update using normal apt\n
+\tupdate fast: update using apt-fast\n
+\tupdate socks: update using apt and socks proxy by tsocks\n
+'
+
+if [ $# == 1 ]; then
+    if [ $1 == 'help' ];then
+        echo -e $help
+    elif [ $1 == 'socks' ];then
+        echo "running with ShadowSocks"
+        echo 'updating sources'
+        sudo tsocks apt update #> /dev/null
+        if [ `apt list --upgradable|wc -l` -gt 1 ];then
+            apt list --upgradable
+            echo 'upgrading'
+            sleep 1
+            sudo tsocks apt -y upgrade
+        fi
+        echo 'autoremoving'
+        sleep 1
+        sudo apt-fast -y autoremove
+
+    elif [ $1 == "fast" ];then
+        echo "running with apt-fast"
+        echo 'updating sources'
+        sudo apt-fast update #> /dev/null
+        if [ `apt list --upgradable|wc -l` -gt 1 ];then
+            apt list --upgradable
+            echo 'upgrading'
+            sleep 1
+            sudo apt-fast -y upgrade
+        fi
+        echo 'autoremoving'
+        sleep 1
+        sudo apt-fast -y autoremove
+
+    else
+        echo "running with normal apt"
+        echo 'updating sources'
+        sudo apt-fast update #> /dev/null
+        if [ `apt list --upgradable|wc -l` -gt 1 ];then
+            apt list --upgradable
+            echo 'upgrading'
+            sleep 1
+            sudo apt-fast -y upgrade
+
+        fi
+        echo 'autoremoving'
+        sleep 1
+        sudo apt-fast -y autoremove
+    fi
+else
+    echo -e $help
 fi
-echo 'autoremoving'
-sleep 1
-sudo apt-fast -y autoremove
+

@@ -12,14 +12,15 @@ def main():
         new_mac = ":".join(new_mac)
         return new_mac
 
+    mac = random_mac()
+    input('Change your Mac addr temporarily to {}, press Enter to continue:\n'.format(mac))
     os.system('sudo ifconfig eth0 down')
-    os.system('sudo ifconfig eth0 hw ether {}'.format(random_mac()))
+    os.system('sudo ifconfig eth0 hw ether {}'.format(mac))
     os.system('sudo ifconfig eth0 up')
 
 
 if __name__ == '__main__':
     try:
-        input('Change your Mac addr temporarily, press Enter to continue')
         main()
     except:
         print('Mac address has not changed')

@@ -1,19 +1,29 @@
 #!/bin/bash
 help() {
     echo ShadowSocksR python client tool
-    echo -e please run '\n`git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git /usr/local/share/shadowsocksr/`'
-    echo if you have not install ssr
+    echo -e if you have not install ssr, please run \"ssr install\"
     echo Usage:
     echo -e "\t" ssr help
     echo -e "\t" ssr config : edit config.json
+    echo -e "\t" ssr install : install shadowsocksr client
+    echo -e "\t" ssr uninstall : uninstall shadowsocksr client
     echo -e "\t" ssr start : start the shadowsocks service
     echo -e "\t" ssr stop : stop the shadowsocks service
     echo -e "\t" ssr log : cat the log of shadowsocks
 }
+install_path=/usr/local/share/shadowsocksr/
 if [ $# == 0 ];then
     help
 elif [ $1 == "help" ];then
     help
+elif [ $1 == "install" ];then
+    sudo git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git $install_path
+elif [ $1 == "uninstall" ];then
+    echo "Danger! are you to remove $install_path forever?(y/N)"
+    read doit
+    if [ $doit == 'y' ];then
+        sudo rm -rvf $install_path
+    fi
 elif [ $1 == "config" ];then
     sudo $EDITOR /usr/local/share/shadowsocksr/config.json
 elif [ $1 == "start" ];then

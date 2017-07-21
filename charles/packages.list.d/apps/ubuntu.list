@@ -91,6 +91,7 @@ nautilus-terminal
 neovim
 nmap
 nmon
+nodejs-legacy
 npm
 ntfs-3g
 numix-icon-theme-circle
@@ -127,8 +128,6 @@ ruby-full
 rubygems
 samba
 screenfetch
-shadowsocks
-shadowsocks-qt5
 shotwell
 sl
 software-properties-common

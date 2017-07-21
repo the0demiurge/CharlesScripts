@@ -1,0 +1,25 @@
+#!/bin/bash
+help() {
+    echo ShadowSocksR python client tool
+    echo -e please run '\n`git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git /usr/local/share/shadowsocksr/`'
+    echo if you have not install ssr
+    echo Usage:
+    echo -e "\t" ssr help
+    echo -e "\t" ssr config : edit config.json
+    echo -e "\t" ssr start : start the shadowsocks service
+    echo -e "\t" ssr stop : stop the shadowsocks service
+    echo -e "\t" ssr log : cat the log of shadowsocks
+}
+if [ $# == 0 ];then
+    help
+elif [ $1 == "help" ];then
+    help
+elif [ $1 == "config" ];then
+    sudo $EDITOR /usr/local/share/shadowsocksr/config.json
+elif [ $1 == "start" ];then
+    sudo python /usr/local/share/shadowsocksr/shadowsocks/local.py -d start
+elif [ $1 == "stop" ];then
+    sudo python /usr/local/share/shadowsocksr/shadowsocks/local.py -d stop
+elif [ $1 == "log" ];then
+    tail -f /var/log/shadowsocks.log
+fi

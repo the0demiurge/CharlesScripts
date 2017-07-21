@@ -27,9 +27,14 @@ elif [ $1 == "uninstall" ];then
 elif [ $1 == "config" ];then
     sudo $EDITOR /usr/local/share/shadowsocksr/config.json
 elif [ $1 == "start" ];then
-    sudo python /usr/local/share/shadowsocksr/shadowsocks/local.py -d start
+    cd /usr/local/share/shadowsocksr/shadowsocks/
+    sudo python local.py -d start
 elif [ $1 == "stop" ];then
-    sudo python /usr/local/share/shadowsocksr/shadowsocks/local.py -d stop
+    cd /usr/local/share/shadowsocksr/shadowsocks/
+    sudo python local.py -d stop
 elif [ $1 == "log" ];then
     tail -f /var/log/shadowsocks.log
+elif [ $1 == "shell" ];then
+    cd /usr/local/share/shadowsocksr/shadowsocks/
+    sudo python local.py $@
 fi

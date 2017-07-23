@@ -28,7 +28,7 @@ def status():
     """
     查询当前网关状态
     """
-    print('当前状态为：')
+    print('当前状态为：', end='')
     payload = {
         'action': 'get_online_info',
     }
@@ -37,7 +37,7 @@ def status():
         return "不在线"
     else:
         content_list = r.text.split(',')
-        print('当前流量：', round(int(content_list[0])/1e+9), 'GB\n',
+        print('在线\n当前流量：{:2.2f}'.format(int(content_list[0])/1e+9), ' GB\n',
               '账户余额：￥', content_list[2], '\n',
               '当 前 IP：', content_list[-1], sep='')
 

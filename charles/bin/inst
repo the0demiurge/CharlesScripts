@@ -1,7 +1,7 @@
 #!/bin/bash
 # this script automatically install an app using APT and backup the software list to ~/.backup/
-APPS_BACKUP_PATH=~/.local/share/CharlesScripts/charles/packages.list.d/apps/ubuntu.list
-mkdir -p ~/.local/share/CharlesScripts/charles/packages.list.d/apps
+APPS_BACKUP_PATH=~/.local/share/CharlesScripts/charles/packages.list.d/ubuntu.list
+mkdir -p ~/.local/share/CharlesScripts/charles/packages.list.d
 
 for app in $@;do
 	if [ -n "$app" ]; then

@@ -27,7 +27,10 @@ elif [ $1 == "help" ];then
     help
     
 elif [ $1 == "install" ];then
-    sudo git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git $install_path
+    # sudo git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git $install_path
+    sudo git clone https://github.com/the0demiurge/not-in-use.git $install_path
+    cd $install_path
+    sudo git checkout 4198ec84cecb043eca3a9ffcb5c2a1aae94990ab
     
 elif [ $1 == "uninstall" ];then
     echo "Danger! are you to remove $install_path forever?(y/N)"

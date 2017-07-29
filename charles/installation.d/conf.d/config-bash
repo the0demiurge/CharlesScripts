@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "export CHARLES_HOME=$HOME/.local/share/CharlesScripts/charles"|tee -a ~/.bashrc
-echo 'export CHARLES_BACKUP=$CHARLES_HOME/packages.list.d' >> ~/.bashrc
+echo "export CHARLES_HOME $HOME/.local/share/CharlesScripts/charles"|tee -a ~/.bashrc
+echo 'export CHARLES_BACKUP $CHARLES_HOME/packages.list.d' >> ~/.bashrc
 echo 'source $CHARLES_HOME/shell.rc.d/init.shell' >> ~/.bashrc

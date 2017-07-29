@@ -5,7 +5,9 @@
 #输入ssr uninstall卸载
 #输入ssr help 现实帮助信息
 set -e
-EDITOR=vi
+if [ -z $EDITOR ];then
+    EDITOR=vi
+fi
 
 help() {
     echo ShadowSocksR python client tool

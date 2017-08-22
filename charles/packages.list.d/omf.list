@@ -11,6 +11,7 @@ default
 export
 fasd
 fish-spec
+foreign-env
 fzf
 fzf-autojump
 gi
@@ -25,5 +26,6 @@ pbcopy
 proxy
 python
 spark
+sudope
 tab
 weather

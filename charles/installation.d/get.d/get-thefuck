@@ -1,6 +1,7 @@
 #!/bin/bash
-if [ `which thefuck|wc -l` == 0 ];then sudo apt install -y --force-yes thefuck;fi
+if [ `which thefuck|wc -l` == 0 ];then sudo apt install -y --allow thefuck;fi
 
+mkdir -p ~/.config/fish/conf.d
 echo 'function fuck -d "Correct your previous console command"' |tee ~/.config/fish/conf.d/thefuck.fish
 echo '    set -l exit_code $status' |tee -a ~/.config/fish/conf.d/thefuck.fish
 echo '    set -x TF_ALIAS fuck' |tee -a ~/.config/fish/conf.d/thefuck.fish

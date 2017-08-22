@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 git config --global core.editor "vim"
 git config --global color.ui true
 git config --global core.quotepath false

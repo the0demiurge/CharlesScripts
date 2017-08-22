@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 gsettings set org.gnome.nautilus.preferences click-policy 'single'
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 gsettings set org.gtk.Settings.FileChooser show-hidden false

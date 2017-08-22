@@ -16,11 +16,12 @@ else
     read -p 'press Enter to continue:'
 fi
 
-if [ `which autojump|wc -l` == 0 ];then sudo apt install -y --force-yes autojump;fi
+if [ `which autojump|wc -l` == 0 ];then sudo apt install -y --allow autojump;fi
 echo "source /usr/share/autojump/autojump.fish" >> $CONF_PATH
 
 echo "source \$CHARLES_HOME/shell.rc.d/init.fish" >> $CONF_PATH
 
+echo "source \$HOME/.config/fish/conf.d/*" >> $HOME/.config/fish/config.fish
 
 #ABBRS
 fish -c "abbr ... 'cd ...'"

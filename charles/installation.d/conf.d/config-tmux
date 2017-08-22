@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # oh my tmux
 
 git clone https://github.com/gpakosz/.tmux.git ~/.oh-my-tmux

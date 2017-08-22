@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #IPY_CONFIG_PATH=$(locate .ipython|grep $USER|grep conf|grep -E '\.py$')
 pip install -U powerline-status
 IPY_CONFIG_PATH=~/.ipython/profile_default/ipython_config.py

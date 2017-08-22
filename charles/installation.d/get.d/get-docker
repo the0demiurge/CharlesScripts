@@ -1,4 +1,4 @@
-#!/bin/sh
-if [ `which curl|wc -l` == 0 ];then sudo apt install -y --force-yes curl;fi
+#!/bin/bash
+if [ `which curl|wc -l` == 0 ];then sudo apt install -y --allow curl;fi
 curl -sSL https://get.docker.com/ | sh
 

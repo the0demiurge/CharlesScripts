@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 echo "deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free" | sudo tee /etc/apt/sources.list.d/resilio-sync.list
-if [ `which curl|wc -l` == 0 ];then sudo apt install -y --force-yes curl;fi
-if [ `which wget|wc -l` == 0 ];then sudo apt install -y --force-yes wget;fi
+if [ `which curl|wc -l` == 0 ];then sudo apt install -y --allow curl;fi
+if [ `which wget|wc -l` == 0 ];then sudo apt install -y --allow wget;fi
 wget -qO - https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add -
 curl -LO https://linux-packages.resilio.com/resilio-sync/key.asc && sudo apt-key add ./key.asc
 sudo apt-get update

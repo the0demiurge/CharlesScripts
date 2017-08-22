@@ -1,4 +1,4 @@
-#!/bin/sh
-if [ `which git|wc -l` == 0 ];then sudo apt install -y --force-yes git;fi
+#!/bin/bash
+if [ `which git|wc -l` == 0 ];then sudo apt install -y --allow git;fi
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 

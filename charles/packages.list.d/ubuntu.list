@@ -50,9 +50,11 @@ gimp-dcraw
 gir1.2-lunar-date-2.0
 git-flow
 gnome-raw-thumbnailer
+gnome-screensaver
 gnome-tweak-tool
 golang
 gparted
+gtkpod
 guake
 haskell-platform
 haskell-stack

@@ -54,7 +54,7 @@ elif [ $1 == "stop" ];then
     sudo python local.py -d stop
     
 elif [ $1 == "log" ];then
-    tail -f /var/log/shadowsocks.log
+    less /var/log/shadowsocksr.log
     
 elif [ $1 == "shell" ];then
     cd $install_path/shadowsocks/

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import requests as _requests
 import os as _os
 import bs4 as _bs4

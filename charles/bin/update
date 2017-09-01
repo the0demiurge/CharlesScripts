@@ -42,12 +42,12 @@ if [ $# == 1 ]; then
     else
         echo "running with normal apt"
         echo 'updating sources'
-        sudo apt-fast update #> /dev/null
+        sudo apt update #> /dev/null
         if [ `apt list --upgradable|wc -l` -gt 1 ];then
             apt list --upgradable
             echo 'upgrading'
             sleep 1
-            sudo apt-fast -y upgrade
+            sudo apt -y upgrade
 
         fi
         echo 'autoremoving'

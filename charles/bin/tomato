@@ -1,0 +1,16 @@
+#!/bin/sh
+# set an reminder and it'll remind you of doing something.
+# note time something
+# i.e.: type "note 4m 'go to see a movie with my gf'", and it'll notify you to "go to see a movie with my gf" after 4 minuts.
+
+while [ true ]; do
+    echo "\rWorking\t"
+    notify-send --urgency=critical 'Go To Work'
+    sleep 25m
+    for i in `seq 10`; do echo -e '\a\r'; sleep .1s; done
+
+    echo "\rResting\t"
+    notify-send --urgency=critical 'Rest'
+    sleep 5m
+    for i in `seq 10`; do echo -e '\a\r'; sleep .1s; done
+done

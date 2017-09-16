@@ -1,0 +1,4 @@
+#!/usr/bin/fish
+cd $HOME/.local/share/gnome-shell/
+zip -r /tmp/gnome-shell-extensions.zip extensions/
+mv /tmp/gnome-shell-extensions.zip $CHARLES_BACKUP

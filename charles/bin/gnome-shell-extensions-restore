@@ -4,3 +4,5 @@ cp gnome-shell-extensions.zip $HOME/.local/share/gnome-shell/
 cd $HOME/.local/share/gnome-shell/
 unzip gnome-shell-extensions.zip
 rm gnome-shell-extensions.zip
+
+echo 'You should restart the gnome-shell(alt+f2 -> r -> enter), and enable extension in gnome-tweak-tool'

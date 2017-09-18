@@ -10,7 +10,7 @@ def help():
     {name} status 查询状态
     {name} login username password 登陆网关
     {name} logout username password 退出网关
-'''.format(name=_os.path.split(__file__)[-1]) )
+'''.format(name=_os.path.split(__file__)[-1]))
 
 
 def _connect(payload={}, url='http://ipgw.neu.edu.cn/srun_portal_pc.php'):
@@ -37,7 +37,7 @@ def status():
         return "不在线"
     else:
         content_list = r.text.split(',')
-        print('在线\n当前流量：{:2.2f}'.format(int(content_list[0])/1e+9), ' GB\n',
+        print('在线\n当前流量：{:2.2f}'.format(int(content_list[0]) / 1e+9), ' GB\n',
               '账户余额：￥', content_list[2], '\n',
               '当 前 IP：', content_list[-1], sep='')
 
@@ -67,7 +67,7 @@ def login(username='', password=''):
     r = _connect(payload)
     soup = _bs4.BeautifulSoup(r.content.decode('utf-8'), 'html.parser')
     status()
-    return str(soup.p)
+    return str(soup.p.text)
 
 
 def logout(username='', password=''):
@@ -82,6 +82,7 @@ def logout(username='', password=''):
         'password': '{}'.format(password)}
     r = _connect(payload)
     return r.content.decode('utf-8')
+
 
 if __name__ == '__main__':
     import fire as _fire

@@ -1,13 +1,19 @@
 # CharlesScripts #
-**发布记录：**
+
+### 你为什么要安装本项目？ ###
+- 自动安装配置**powerline**
+- 使用`add-ppa`和`inst`命令安装软件的同时**备份软件和ppa列表**（建议**fork**本项目，**fork**后可以将备份的列表上传到自己的github。**电脑坏掉之后可以迅速安装好软件并恢复原样**）
+- 使用`gnome-shell-extensions-backup`,`omf-backup`和`gnome-shell-extensions-restore`,`omf-restore`**备份、恢复gnome/omf插件**（同样建议**fork**本项目）
+
+### 发布记录： ###
 
 * version: r0.1: 该版本将之前所有的代码合并到一起，并将结构大改，大大方便了安装和使用。并没有安装程序，需要自己手动安装。文档还有待完善。
 
-**使用说明：**
+### 使用说明： ###
 
 请配合我的博客：[**Ubuntu Gnome 酷炫完整指南系列**](https://the0demiurge.blogspot.jp/2017/02/ubuntu-gnome.html)（需翻墙，且hosts无效，可以先用[lantern](https://github.com/getlantern/lantern)翻出去再看）使用。
 
-**项目说明：**
+### 项目说明： ###
 
 懒是人类进步的第一动力，经过几年Ubuntu的使用，我写了一些很方便的小脚本，但因为我是初学者，早期代码风格很糟糕。而且当时写这些脚本主要为了自己用，只追求functional...因为水平有限，我把它们开源出来请大家多多指教，共同完善：）
 
@@ -18,9 +24,10 @@
 
 **内容简介：**
 
-* 自动化安装、配置、配置tmux、配置ipython、配置pdb，的powerline
+* 使用`add-ppa`功能可以备份 ppa 列表，使用`inst`命令可以备份安装文件列表。
+* `charles/installation.d/`文件夹内的脚本可以自动化安装、配置、配置tmux、配置ipython、配置pdb，的powerline
+* `update`命令更新源和软件，类似于`pacman -Syyu`
 * 自动更新hosts实现无缝科学上网、自动备份系统信息。
-* 更新源和软件，类似于`pacman -Syyu`
 
 **本项目建立目的：**
 

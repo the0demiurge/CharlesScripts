@@ -34,9 +34,9 @@ end
 
 function g
     git add -A
-    git status
     git diff --cached
     echo "type the commits or cancel with Ctrl+C"
+    git status
     read COMMIT
     git commit -m "$argv $COMMIT"
     git log -1 HEAD

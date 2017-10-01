@@ -1,3 +1,6 @@
+acpi
+acpid
+acpi-support
 adb
 albert
 android-tools-adb
@@ -33,6 +36,7 @@ elinks
 espeak
 exfat-fuse
 exfat-utils
+exuberant-ctags
 fasd
 fastboot
 fbi
@@ -113,6 +117,7 @@ papirus-icon-theme
 pinta
 plank
 plantuml
+powermgmt-base
 powertop
 python3-dev
 python3-matplotlib
@@ -160,6 +165,7 @@ ultra-flat-icons
 unar
 unrar
 unzip
+vim-autopep8
 vim-nox
 virtualbox
 virtualbox-guest-additions-iso

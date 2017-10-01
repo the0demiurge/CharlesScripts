@@ -1,6 +1,9 @@
-#!/bin/bash
-BACKUP_HOME=~/.local/share/CharlesScripts/data/home
+#!/usr/bin/fish
+set -g BACKUP_HOME $CHARLES_HOME/../data/home
 
 rm $BACKUP_HOME/.config/sublime-text-3 -rf
 mkdir -p $BACKUP_HOME/.config/sublime-text-3/Packages/
 cp ~/.config/sublime-text-3/Packages/User/ -r $BACKUP_HOME/.config/sublime-text-3/Packages/
+
+omf-backup
+gnome-shell-extensions-backup

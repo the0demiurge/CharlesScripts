@@ -51,25 +51,42 @@
 ![](figs/2.png)
 ![](figs/3.png)
 # 项目目录： #
-目录更新日期：2017年6月4日
-```
+目录更新日期：Mon Oct  9 16:31:59 CST 2017
+
+24 directories, 57 files
+
 CharlesScripts/
+├── accessories
+│   ├── arc-darker-theme for Google Chrome.crx
+│   ├── cows.txt                                    # cowsay 所有动物的名称和图像
+│   └── tux_cursors.tar.xz
 ├── charles
 │   ├── bin
-│   │   ├── add-ppa              # 可批量增加ppa，并备份ppa列表到~/.backup/ppa
-│   │   ├── adduser              # 为系统增加用户，并记录何时、为谁添加的账户，比如adduser san 张三（管理服务器的时候方便）
-│   │   ├── apt-unlock           # apt-get异常终止之后可以用它来去掉lock文件
+│   │   ├── add-ppa                                 # 可批量增加ppa，并备份ppa列表到~/.backup/ppa
+│   │   ├── adduser                                 # 为系统增加用户，并记录何时、为谁添加的账户，比如adduser san 张三（管理服务器的时候方便）
+│   │   ├── apt-unlock                              # apt-get异常终止之后可以用它来去掉lock文件
+│   │   ├── ef                                      # 编辑fifo命令
+│   │   ├── fifo                                    # 先入先出队列，用来暂时放一些准备一会再跑的脚本命令
+│   │   ├── inst                                    # 安装软件并备份软件列表到$CHARLES_BACKUP
+│   │   ├── note                                    # 提醒，用法为note <time> <to-do>,作用为在<time>之后提醒我做<to-do>,如 note 10m '回家' 为提醒我十分钟之后回家（需要输入sudo apt install espeak安装语音合成引擎）
+│   │   ├── .aria2c.conf
+│   │   ├── aria2c-daemon-start                     # 开启aria2c的服务，使用.aria2c.conf作为配置文件，文件自动下载到`~/Downloads`文件夹
 │   │   ├── cb2pdf
-│   │   ├── ef                   # 编辑fifo命令
-│   │   ├── fifo                 # 先入先出队列，用来暂时放一些准备一会再跑的脚本命令
-│   │   ├── inst                 # 安装软件并备份软件列表到$CHARLES_BACKUP
-│   │   ├── note                 # 提醒，用法为note <time> <to-do>,作用为在<time>之后提醒我做<to-do>,如 note 10m '回家' 为提醒我十分钟之后回家（需要输入sudo apt install espeak安装语音合成引擎）
-│   │   ├── omf-backup
+│   │   ├── charles-backup                          # 自动备份 gnome-shell-extensions, oh-my-fish 插件到$CHARLES_BACKUP，备份sublime-text3的所有配置到$BACKUP_HOME/.config里面
+│   │   ├── get-path                                # 获取某文件的路径，放到剪贴板。比如`get-path .local/share/CharlesScripts`
+│   │   ├── gnome-shell-extensions-backup           # 备份gnome-shell插件（会被charles-backup调用）
+│   │   ├── gnome-shell-extensions-restore          # 恢复之后需要手动到gnome-tweak中启用插件
+│   │   ├── ipgw                                    # 东北大学校园网关登陆器
+│   │   ├── macaddr-rand
+│   │   ├── omf-backup                              # 备份oh-my-fish插件（会被charles-backup调用）
 │   │   ├── omf-restore
-│   │   ├── quit-qq              # 完全退出Longene TM2013版的TM.exe和wineserver
-│   │   ├── star-wars-one
-│   │   ├── update               # 类似于pacman -Syyu，自动更新所有软件，实际上就是 sudo apt update; sudo apt upgrade -y; sudo apt autoremove -y
-│   │   └── wallpaper-earthview  # 自动抓取Google Earthview作为Gnome桌面壁纸（其他桌面也能用，需要调整里面修改壁纸的命令）
+│   │   ├── quit-qq                                 # 完全退出Longene TM2013版的TM.exe和wineserver
+│   │   ├── update                                  # 类似于pacman -Syyu，自动更新所有软件，实际上就是 sudo apt update; sudo apt upgrade -y; sudo apt autoremove -y
+│   │   ├── show_loving
+│   │   ├── ssr                                     # ShadowSocksR 客户端一键安装配置和使用脚本（具体用法见脚本注释）
+│   │   ├── tomato                                  # 蕃茄钟
+│   │   ├── wallpaper-earthview                     # 自动抓取Google Earthview作为Gnome桌面壁纸（其他桌面也能用，需要调整里面修改壁纸的命令）
+│   │   └── wechat                                  # 使用 google-chrome 打开网页版的微信
 │   ├── installation.d
 │   │   ├── conf.d
 │   │   │   ├── config-bash
@@ -83,30 +100,37 @@ CharlesScripts/
 │   │   ├── get.d
 │   │   │   ├── get-calibre
 │   │   │   ├── get-docker
+│   │   │   ├── get-fasd
 │   │   │   ├── get-oh-my-fish
 │   │   │   ├── get-powerline
-│   │   │   ├── get-resilio_sync.sh
+│   │   │   ├── get-resilio_sync
 │   │   │   ├── get-spacemacs
 │   │   │   ├── get-spacevim
-│   │   │   ├── get-sublime-text-3.sh
-│   │   │   └── get-xsh.sh
-│   │   ├── install.py                      # 安装我备份的所有软件，并进行配置的一键部署脚本(警告：这个还未完成，功能有bug)
+│   │   │   ├── get-sublime-text-3
+│   │   │   ├── get-thefuck
+│   │   │   └── get-xsh
+│   │   ├── install.py                              # 安装我备份的所有软件，并进行配置的一键部署脚本(警告：这个还未完成，功能有bug)
 │   │   ├── omf-backup -> ../bin/omf-backup
 │   │   └── omf-restore -> ../bin/omf-restore
-│   ├── install.sh                      # 安装我备份的所有软件，并进行配置的一键部署脚本(警告：这个还未完成，功能有bug)
-│   ├── packages.list.d
-│   │   ├── apps
-│   │   │   └── ubuntu.list
+│   ├── install.sh                                  # 安装我备份的所有软件，并进行配置的一键部署脚本(警告：这个还未完成，功能有bug)
+│   ├── packages.list.d                             # 该文件夹是安装本工具后自动设置的$CHARLES_BACKUP路径，现在想要修改$CHARLES_BACKUP还不是太容易，将在遥远的未来把配置挪到`~/.config`下面。里面是备份的软件列表等资料
+│   │   ├── gnome-shell-extensions.zip
 │   │   ├── omf.list
-│   │   └── ppa
-│   └── shell.rc.d                 # shell 初始化脚本，主要包括alias等
+│   │   ├── ppa
+│   │   └── ubuntu.list
+│   └── shell.rc.d                                  # shell 初始化脚本，主要包括alias等，还包括许多实用函数，建议阅读一下
 │       ├── init.fish
 │       └── init.shell
-├── data
+├── data                                            # 对系统其他软件的配置
 │   ├── home
 │   │   ├── .cache
 │   │   │   └── albert
-│   │   ├── .config                  # 我的配置文件
+│   │   │       ├── core.db
+│   │   │       ├── org.albert.extension.files.txt
+│   │   │       └── running
+│   │   ├── .config                                 # 我的配置文件
+│   │   │   ├── albert
+│   │   │   │   └── org.albert.extension.websearch.json
 │   │   │   ├── albert.conf
 │   │   │   ├── fusuma
 │   │   │   │   └── config.yml
@@ -117,14 +141,17 @@ CharlesScripts/
 │   │           └── albert
 │   │               ├── last_used_version
 │   │               └── org.albert.extension.files.txt
-│   ├── pac                               # 记录了我收集的一部分pac自动配置脚本
+│   ├── pac
 │   ├── tampermonkey_backup.zip
 │   └── ublock_origin                               # chrome中的AdBlock广告过滤里面的自定义部分
 │       ├── my-ublock-backup.txt
 │       └── my-ublock-static-filters.txt
+├── figs
+├── notebook
+│   └── setup-gnome-extensions
 ├── README.md
 └── tools
-    ├── auto_hosts_updater              # 自动更新hosts以供解除部分网页的使用限制，有windows和linux版。
+    ├── auto_hosts_updater                          # 自动更新hosts以供解除部分网页的使用限制，有windows和linux版。
     │   ├── linux
     │   │   ├── install.sh
     │   │   └── uninst.sh
@@ -133,10 +160,11 @@ CharlesScripts/
     │       ├── install.bat
     │       ├── README.md
     │       └── uninst.bat
-    ├── codecombine
+    ├── codecombine                                 # 将某个文件夹及子文件夹里面所有符合给定筛选条件的文本放到一个文件里，并进行字（行）数统计
     └── README.md
 
-24 directories, 57 files
+27 directories, 79 files
+
 
 
 ```

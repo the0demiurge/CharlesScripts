@@ -1,6 +1,6 @@
 #!/bin/bash
 #使用方法：把该脚本放到$PATH里面并加入可执行权限就行（比如说放到/usr/local/bin）
-#首次使用输入ssr install后安装时会自动安装到/usr/local/share/shadowsocksr
+#首次使用输入ssr install后安装时会自动安装到$install_path
 #输入ssr config进行配置，输入JSON格式的配置文件
 #输入ssr uninstall卸载
 #输入ssr help 现实帮助信息
@@ -21,7 +21,7 @@ help() {
     echo -e "\t" ssr stop : stop the shadowsocks service
     echo -e "\t" ssr log : cat the log of shadowsocks
 }
-install_path=/usr/local/share/shadowsocksr
+install_path=$HOME/.local/share/shadowsocksr
 if [ $# == 0 ];then
     help
     

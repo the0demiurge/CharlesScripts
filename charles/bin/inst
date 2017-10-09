@@ -3,6 +3,8 @@
 APPS_BACKUP_PATH=~/.local/share/CharlesScripts/charles/packages.list.d/ubuntu.list
 mkdir -p ~/.local/share/CharlesScripts/charles/packages.list.d
 
+if [ $# = 0 ]; then cat $APPS_BACKUP_PATH;fi
+
 for app in $@;do
 	if [ -n "$app" ]; then
         false
@@ -17,4 +19,3 @@ done
 
 sort -su $APPS_BACKUP_PATH > ~/.cache/backuplist4apps -o $APPS_BACKUP_PATH
 rm ~/.cache/backuplist4apps
-cat $APPS_BACKUP_PATH

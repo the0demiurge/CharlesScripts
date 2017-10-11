@@ -53,6 +53,7 @@
 # 项目目录： #
 目录更新日期：Mon Oct  9 16:31:59 CST 2017
 
+```
 24 directories, 57 files
 
 CharlesScripts/
@@ -76,7 +77,7 @@ CharlesScripts/
 │   │   ├── get-path                                # 获取某文件的路径，放到剪贴板。比如`get-path .local/share/CharlesScripts`
 │   │   ├── gnome-shell-extensions-backup           # 备份gnome-shell插件（会被charles-backup调用）
 │   │   ├── gnome-shell-extensions-restore          # 恢复之后需要手动到gnome-tweak中启用插件
-│   │   ├── ipgw                                    # 东北大学校园网关登陆器
+│   │   ├── ipgw                                    # 东北大学校园IP网关登陆器
 │   │   ├── macaddr-rand
 │   │   ├── omf-backup                              # 备份oh-my-fish插件（会被charles-backup调用）
 │   │   ├── omf-restore

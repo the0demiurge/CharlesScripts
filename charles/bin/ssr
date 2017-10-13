@@ -22,16 +22,16 @@ ssr_help() {
     echo ShadowSocksR python client tool
     echo -e if you have not install ssr, please run \"ssr install\"
     echo Usage:
-    echo -e "\t" ssr help
-    echo -e "\t" ssr install      install shadowsocksr client
-    echo -e "\t" ssr uninstall    uninstall shadowsocksr client
-    echo -e "\t" ssr config       edit config.json
-    echo -e "\t" ssr xclip        paste configs from clipboard to config.json
-    echo -e "\t" ssr start        start the shadowsocks service
-    echo -e "\t" ssr stop         stop the shadowsocks service
-    echo -e "\t" ssr restart      restart the shadowsocks service
-    echo -e "\t" ssr test         get ip from ip.cn using socks5 proxy
-    echo -e "\t" ssr log          cat the log of shadowsocks
+    echo -e "\t" "ssr help"
+    echo -e "\t" "ssr install      install shadowsocksr client"
+    echo -e "\t" "ssr uninstall    uninstall shadowsocksr client"
+    echo -e "\t" "ssr config       edit config.json"
+    echo -e "\t" "ssr xclip        paste configs from clipboard to config.json"
+    echo -e "\t" "ssr start        start the shadowsocks service"
+    echo -e "\t" "ssr stop         stop the shadowsocks service"
+    echo -e "\t" "ssr restart      restart the shadowsocks service"
+    echo -e "\t" "ssr test         get ip from ip.cn using socks5 proxy"
+    echo -e "\t" "ssr log          cat the log of shadowsocks"
 }
 
 ssr_install() {

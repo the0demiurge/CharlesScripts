@@ -5,6 +5,7 @@
 - 使用`add-ppa`和`inst`命令安装软件的同时**备份软件和ppa列表**（建议**fork**本项目，**fork**后可以将备份的列表上传到自己的github。**电脑坏掉之后可以迅速安装好软件并恢复原样**）
 - 使用`gnome-shell-extensions-backup`,`omf-backup`和`gnome-shell-extensions-restore`,`omf-restore`**备份、恢复gnome/omf插件**（同样建议**fork**本项目）
 
+
 ### 发布记录： ###
 
 * version: r0.1: 该版本将之前所有的代码合并到一起，并将结构大改，大大方便了安装和使用。并没有安装程序，需要自己手动安装。文档还有待完善。
@@ -12,6 +13,12 @@
 ### 使用说明： ###
 
 请配合我的博客：[**Ubuntu Gnome 酷炫完整指南系列**](https://the0demiurge.blogspot.jp/2017/02/ubuntu-gnome.html)（需翻墙，且hosts无效，可以先用[lantern](https://github.com/getlantern/lantern)翻出去再看）使用。
+
+Fork本项目之后，可以
+1. `git remote add backup <your git repository url>`添加您的git仓库地址
+2. 然后`git push -u backup own-backup`备份并设置以后都备份到您自己的git仓库的own-backup分支。
+3. 以后如果对备份内容做出了修改，可以使用`g <本次更新描述>`，将本次备份的内容自动推送到您自己的git仓库。
+4. 如果您没有修改过本项目仓库中的文件（包括备份的信息），可以使用`git pull`更新（以后会添加一个设置选项，可以把备份文件挪走，这样就可以避免合并冲突了）。
 
 ### 项目说明： ###
 

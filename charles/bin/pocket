@@ -1,0 +1,2 @@
+#!/bin/bash
+google-chrome --app=https://getpocket.com/a/queue/

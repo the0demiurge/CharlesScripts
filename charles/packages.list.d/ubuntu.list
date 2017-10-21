@@ -178,7 +178,9 @@ virtualbox-guest-additions-iso
 vlc
 w3m
 w3m-img
+wine-gecko
 winehq-staging
+wine-mono
 wine-staging
 winetricks
 wordgrinder

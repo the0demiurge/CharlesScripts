@@ -85,5 +85,8 @@ def logout(username='', password=''):
 
 
 if __name__ == '__main__':
-    import fire as _fire
-    _fire.Fire()
+    try:
+        import fire as _fire
+        _fire.Fire()
+    except Exception as e:
+        print(e)

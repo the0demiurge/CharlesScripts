@@ -6,6 +6,7 @@
 while [ true ]; do
     echo "\rWorking\t\r"
     notify-send --urgency=critical 'Go To Work'
+    fifo
     sleep 25m
     for i in `seq 10`; do echo -ne '\a\r\t\r'; sleep .1s; done
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 # 作者：老徐
-# SSR免费分享网站（所有帐号均来源于网上别人的分享）：http://ssr.pythonic.life
+# SSR免费分享网站（所有帐号均来源于网上别人的分享）：http://ss.pythonic.life
 # 源代码主页：https://github.com/the0demiurge
 # 访问https://github.com/the0demiurge/CharlesScripts/blob/master/charles/bin/ssr获取本脚本的最新版
 # 使用方法：把该脚本放到$PATH里面并加入可执行权限就行（比如说放到/usr/local/bin）
@@ -14,28 +14,37 @@ if [ -z $EDITOR ];then
     EDITOR=vi
 fi
 
+WEBSITE=http://ss.pythonic.life
 BRANCH=manyuser
 GIT_REPO=https://github.com/shadowsocksr-backup/shadowsocksr.git
 INSTALL_PATH=$HOME/.local/share/shadowsocksr
 
 ssr_help() {
     echo ShadowSocksR python client tool
-    echo -e if you have not install ssr, please run \"ssr install\"
+    echo -e if you have not installed ssr, run \`ssr install\` first
     echo Usage:
     echo -e "\t" "ssr help"
+    echo -e "\n" "Install/Uninstall"
     echo -e "\t" "ssr install      install shadowsocksr client"
     echo -e "\t" "ssr uninstall    uninstall shadowsocksr client"
+    echo -e "\n" "Config and Subscribe"
+    echo -e "\t" "ssr update       update subscription from $WEBSITE"
     echo -e "\t" "ssr config       edit config.json"
     echo -e "\t" "ssr xclip        paste configs from clipboard to config.json"
+    echo -e "\n" "Start/Stop/Restart"
     echo -e "\t" "ssr start        start the shadowsocks service"
     echo -e "\t" "ssr stop         stop the shadowsocks service"
     echo -e "\t" "ssr restart      restart the shadowsocks service"
+    echo -e "\n" "Testing and Maintenance"
     echo -e "\t" "ssr test         get ip from ip.cn using socks5 proxy"
     echo -e "\t" "ssr log          cat the log of shadowsocks"
+    echo -e "\t" "ssr shell        cd into ssr installation dir"
+    echo -e "\t" "ssr clean        clean ssr configuration backups"
 }
 
 ssr_install() {
     sudo git clone -b $BRANCH $GIT_REPO $INSTALL_PATH
+    echo "Install finished!\nYou can visit my website $WEBSITE to acquire free ssr configs"
 }
 
 ssr_uninstall() {
@@ -71,6 +80,17 @@ ssr_config() {
     ssr_restart
 }
 
+ssr_update() {
+    JSON=$(curl -L $WEBSITE/json)
+    if [[ $? != 0 ]]; then exit $?;fi
+    if [[ -z $JSON ]]; then exit 2;fi
+    if [[ $JSON == {} ]]; then exit 3;fi
+    # echo -e "$JSON"
+    sudo mv $INSTALL_PATH/config.json $INSTALL_PATH/config.json.bak.`date +%y-%m-%d-%T`
+    echo -e "$JSON"|sudo tee $INSTALL_PATH/config.json
+    echo "Updated from $WEBSITE"
+}
+
 ssr_xclip() {
     xclip -o|sudo tee $INSTALL_PATH/config.json
     ssr_restart
@@ -80,11 +100,21 @@ ssr_log() {
     tail -f /var/log/shadowsocksr.log
 }
 
+ssr_shell() {
+    cd $INSTALL_PATH
+    $SHELL
+}
+
+ssr_clean() {
+    sudo rm -ri $INSTALL_PATH/config.json.bak.*
+}
+
 ssr_main() {
     case $1 in
         help)           ssr_help        ;;
         install)        ssr_install     ;;
         uninstall)      ssr_uninstall   ;;
+        update)         ssr_update      ;;
         config)         ssr_config      ;;
         xclip)          ssr_xclip       ;;
         start)          ssr_start       ;;
@@ -92,6 +122,8 @@ ssr_main() {
         restart)        ssr_restart     ;;
         test)           ssr_test        ;;
         log)            ssr_log         ;;
+        shell)          ssr_shell       ;;
+        clean)          ssr_clean       ;;
         *)              ssr_help        ;;
     esac
 }

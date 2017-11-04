@@ -90,7 +90,6 @@ ssr_update() {
     sudo mv $INSTALL_PATH/config.json $INSTALL_PATH/config.json.bak.`date +%y-%m-%d-%T`
     echo -e "$JSON"|sudo tee $INSTALL_PATH/config.json
     ssr_restart
-    ssr_test
     echo -e "Updated from $WEBSITE"
 }
 

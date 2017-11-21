@@ -37,6 +37,7 @@ espeak
 exfat-fuse
 exfat-utils
 exuberant-ctags
+fakeroot
 fasd
 fastboot
 fbi
@@ -92,6 +93,7 @@ lunar
 make
 mldonkey-gui
 mono-xbuild
+mplayer
 mtools
 mysql-client
 mysql-server
@@ -122,6 +124,8 @@ p7zip
 pandoc
 pandoc-citeproc
 papirus-icon-theme
+php
+pi
 pinta
 plank
 plantuml
@@ -139,6 +143,7 @@ rabbitvcs-nautilus
 rawtherapee
 redshift-gtk
 reiser4progs
+rig
 rsnapshot
 rsync
 ruby
@@ -187,6 +192,7 @@ wine-staging
 winetricks
 wordgrinder
 xbuilder
+xcowsay
 xdot
 xdotool
 xorg-dev

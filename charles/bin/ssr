@@ -81,12 +81,34 @@ ssr_config() {
     ssr_restart
 }
 
+BLOCKED='
+
+Update failed! For more information, see
+
+https://github.com/the0demiurge/ShadowSocksShare-OpenShift/issues/17
+
+And edit `$WEBSITE` in this script.'
+
+ISSUE='
+
+The response was empty, try it 10 mins later or report it on
+
+https://github.com/the0demiurge/CharlesScripts/issues'
+
 ssr_update() {
     JSON=$(curl -L $WEBSITE/json)
-    if [[ $? != 0 ]]; then exit $?;fi
-    if [[ -z $JSON ]]; then exit 2;fi
-    if [[ $JSON == {} ]]; then exit 3;fi
-    # echo -e "$JSON"
+    # If failed
+    case $? in
+        0) ;;
+        *) echo -e $BLOCKED;exit $?;;
+    esac
+    
+    # If json is empty
+    case $JSON in
+        'Not Found') echo -e $BLOCKED;exit $?;;
+        ''|'{}') echo $ISSUE;exit 2;;
+    esac
+
     sudo mv $INSTALL_PATH/config.json $INSTALL_PATH/config.json.bak.`date +%y-%m-%d-%T`
     echo -e "$JSON"|sudo tee $INSTALL_PATH/config.json
     ssr_restart

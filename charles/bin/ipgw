@@ -23,7 +23,12 @@ status(){
 }
 
 login(){
-    INFO=$(curl -s $URL --data action=login --data username=$1 --data password=$2)
+    if [[ -z $2 ]]; then
+        read -sp 请输入密码： PASSWORD
+    else
+        PASSWORD=$2
+    fi
+    INFO=$(curl -s $URL --data action=login --data username=$1 --data password=$PASSWORD)
     SUCC=$(echo $INFO|xargs|grep -oP  '(?<=td height=40 style=font-weight:bold;color:orange;> ).*?(?=</td)')
     FAIL=$(echo $INFO|xargs|grep -oP  '(?<=<p>).*?(?=</p)'|head -1)
     if [[ -z $SUCC ]]; then
@@ -35,7 +40,12 @@ login(){
 }
 
 logout(){
-    INFO=$(curl -s $URL --data action=logout --data username=$1 --data password=$2)
+    if [[ -z $2 ]]; then
+        read -sp 请输入密码： PASSWORD
+    else
+        PASSWORD=$2
+    fi
+    INFO=$(curl -s $URL --data action=logout --data username=$1 --data password=$PASSWORD)
     SUCC=$(echo $INFO|xargs|grep -oP  '(?<=td height=40 style=font-weight:bold;color:orange;> ).*?(?=</td)')
     FAIL=$(echo $INFO|xargs|grep -oP  '(?<=<p>).*?(?=</p)'|head -1)
     if [[ -z $SUCC ]]; then

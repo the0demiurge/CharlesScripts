@@ -3,6 +3,7 @@ acpid
 acpi-support
 adb
 albert
+android-file-transfer
 android-tools-adb
 apt-fast
 arc-flatabulous-theme
@@ -33,6 +34,7 @@ dosfstools
 dot2tex
 elinks
 espeak
+ethtool
 exfat-fuse
 exfat-utils
 exuberant-ctags
@@ -54,6 +56,7 @@ gimp
 gimp-dcraw
 gir1.2-lunar-date-2.0
 git-flow
+glibc-doc
 gnome-raw-thumbnailer
 gnome-screensaver
 gnome-tweak-tool
@@ -85,11 +88,15 @@ libinput-tools
 libjpeg-turbo8-dev
 liblua5.3-dev
 libsdl2-dev
+libstdc++-5-doc
+libstdc++-6-doc
 libyaml-dev
 lolcat
 lua5.3
 lunar
 make
+manpages-zh
+maybe
 mldonkey-gui
 mono-xbuild
 mplayer
@@ -117,6 +124,7 @@ octave-nan
 octave-signal
 oneko
 onscripter
+openra
 openssh-client
 openssh-server
 p7zip
@@ -130,6 +138,7 @@ plank
 plantuml
 powermgmt-base
 powertop
+pv
 python3-dev
 python3-matplotlib
 python3-pandas
@@ -159,12 +168,14 @@ sshfs
 stellarium
 swig
 sysstat
+termsaver
 texlive-full
 thefuck
 the-powder-toy
 thunderbird
 tmux
 toilet
+translate-shell
 transmission-cli
 tree
 tsocks
@@ -197,4 +208,5 @@ xdotool
 xorg-dev
 xvfb
 ycmd
+zeal
 zsh

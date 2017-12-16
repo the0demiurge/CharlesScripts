@@ -5,9 +5,9 @@ URL='ipgw.neu.edu.cn/srun_portal_pc.php?ac_id=1'
 help(){
     echo 东北大学IP网关登陆器
     echo 用法：
-    echo -e '\t' ipgw status 查询状态
-    echo -e '\t' ipgw login username password 登陆网关
-    echo -e '\t' ipgw logout username password 退出网关
+    echo -e '\t' ipgw status '\t\t\t' 查询状态
+    echo -e '\t' ipgw login username password '\t' 登陆网关
+    echo -e '\t' ipgw logout username password '\t' 退出网关
 }
 
 status(){

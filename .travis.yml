@@ -1,2 +1,2 @@
 script:
-  - ./install.sh
+  - 'yes|bash install.sh debug'

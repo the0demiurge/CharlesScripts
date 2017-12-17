@@ -41,13 +41,14 @@ get(){
             # get-sublime-text-3
             # get-xsh)
 
-    cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
     
     for Y in ${Y_LIST[@]}; do
+        cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
         prompty $Y
     done
     
     for N in ${N_LIST[@]}; do
+        cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
         prompty $N
     done
 }
@@ -62,13 +63,14 @@ conf(){
 
     N_LIST=(config-powerline-ipython)
 
-    cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
     
     for Y in ${Y_LIST[@]}; do
+        cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
         prompty $Y
     done
     
     for N in ${N_LIST[@]}; do
+        cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
         prompty $N
     done
 }

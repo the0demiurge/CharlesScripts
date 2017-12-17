@@ -1,2 +1,3 @@
+sudo: required
 script:
   - 'yes|bash install.sh debug'

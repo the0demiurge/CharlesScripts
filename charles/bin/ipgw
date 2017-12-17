@@ -64,5 +64,6 @@ case $1 in
     status ) status ;;
     login ) login $2 $3 ;;
     logout ) logout $2 $3 ;;
+    easter-agg ) echo '老徐的对象是小胖儿 XD' ;;
     * ) help ;;
 esac

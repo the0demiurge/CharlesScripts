@@ -22,6 +22,7 @@ dependency(){
 }
 
 gitclone(){
+    if [[ ! -x "~/.local/share/" ][; then mkdir "~/.local/share/" fi 
     git clone https://github.com/the0demiurge/CharlesScripts.git ~/.local/share/CharlesScripts
 }
 
@@ -85,8 +86,7 @@ restore(){
         prompty $Y
     done
 }
-
-dependency
+if [[ $1 != 'debug' ]]; then dependency ;fi
 gitclone
 get
 conf

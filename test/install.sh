@@ -65,12 +65,12 @@ conf(){
 
     
     for Y in ${Y_LIST[@]}; do
-        cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
+        cd ~/.local/share/CharlesScripts/charles/installation.d/conf.d/
         prompty $Y
     done
     
     for N in ${N_LIST[@]}; do
-        cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
+        cd ~/.local/share/CharlesScripts/charles/installation.d/conf.d/
         prompty $N
     done
 }

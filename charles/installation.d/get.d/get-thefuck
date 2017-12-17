@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ `which thefuck|wc -l` == 0 ];then sudo apt install -y --allow thefuck;fi
+if [ `which thefuck|wc -l` == 0 ];then sudo apt install thefuck;fi
 
 mkdir -p ~/.config/fish/conf.d
 echo 'function fuck -d "Correct your previous console command"' |tee ~/.config/fish/conf.d/thefuck.fish

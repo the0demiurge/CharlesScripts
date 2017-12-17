@@ -1,5 +1,7 @@
 #!/bin/bash
-set -e
+if [[ $0 != 'debug' ]]; then
+    set -e
+fi
 
 promptn(){
     read -p 'Will you run '$1'?[y/N]' PMT
@@ -86,7 +88,7 @@ restore(){
         prompty $Y
     done
 }
-if [[ $1 != 'debug' ]]; then dependency ;fi
+dependency
 gitclone
 get
 conf

@@ -34,12 +34,12 @@ get(){
             #get-oh-my-fish
             # get-thefuck)
 
-    N_LIST=(get-calibre
-            get-docker
-            get-spacemacs
-            get-spacevim
-            get-sublime-text-3
-            get-xsh)
+    # N_LIST=(get-calibre
+            # get-docker
+            # get-spacemacs
+            # get-spacevim
+            # get-sublime-text-3
+            # get-xsh)
 
     cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
     

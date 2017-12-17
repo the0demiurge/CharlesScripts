@@ -1,10 +1,8 @@
-<div style="text-align: center;">
-    <h1>CharlesScripts</h1>
-    Master: <img src="https://travis-ci.org/the0demiurge/CharlesScripts.svg?branch=master" alt="">
-    <br>
-    可以配合我的博客：<a href="https://the0demiurge.blogspot.jp/2017/02/ubuntu-gnome.html">Ubuntu Gnome 酷炫完整指南系列</a>使用。
-</div>
+<h1 align="center">CharlesScripts</h1>
+<p align="center">可以配合我的博客：<a href="https://the0demiurge.blogspot.jp/2017/02/ubuntu-gnome.html">Ubuntu Gnome 酷炫完整指南系列</a>使用。</p>
 
+
+[![Build Status](https://travis-ci.org/the0demiurge/CharlesScripts.svg?branch=master)](https://travis-ci.org/the0demiurge/CharlesScripts)
 
 
 ## 你为什么要安装本项目？ ##
@@ -154,12 +152,16 @@ conf.d/
 - 依赖项（需要用户自行安装）： Nerd Fonts, Google Chrome, git, espeak, cowsay, oneko, sl, fortune
 - 可选项：Anaconda, ipython (>=5.0), fortune-zh
 
-安装流程：
+逐步安装：
 
 1. 安装依赖
 2. 下载本项目：`git clone https://github.com/the0demiurge/CharlesScripts.git ~/.local/share/CharlesScripts`
 3. `cd ~/.local/share/CharlesScripts/charles/installation.d`
 4. 阅读并运行相关软件安装脚本和配置脚本。
+
+安装脚本（测试中）：
+
+`curl -L https://git.io/get-charles|bash`
 
 # 效果图： #
 

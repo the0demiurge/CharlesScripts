@@ -1,3 +1,3 @@
 sudo: required
 script:
-  - 'yes|bash install.sh debug'
+  - 'yes|bash test/install.sh debug'

@@ -22,7 +22,7 @@ dependency(){
 }
 
 gitclone(){
-    if [[ ! -x "~/.local/share/" ][; then mkdir "~/.local/share/" fi 
+    if [ ! -d ~/.local/share ]; then mkdir ~/.local/share; fi
     git clone https://github.com/the0demiurge/CharlesScripts.git ~/.local/share/CharlesScripts
 }
 

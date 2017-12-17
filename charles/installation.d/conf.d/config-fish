@@ -1,6 +1,9 @@
 #!/bin/bash
 
 CONF_PATH=~/.config/fish/conf.d/charles.fish
+if [[ ! -d ~/.config/fish/conf.d ]]; then
+    mkdir -p ~/.config/fish/conf.d
+fi
 echo '# This is the Charles Scripts Configuration.'|tee $CONF_PATH
 echo 'set -g CHARLES_HOME ~/.local/share/CharlesScripts/charles' >> $CONF_PATH
 echo 'set -g CHARLES_BACKUP $CHARLES_HOME/packages.list.d' >> $CONF_PATH

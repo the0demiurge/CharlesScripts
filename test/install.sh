@@ -20,11 +20,11 @@ prompty(){
 dependency(){
     echo 'Installing part of the dependencies...'
     sudo apt update
-    sudo apt install git espeak cowsay oneko sl fortune
+    sudo apt install git espeak cowsay oneko sl fortune fish
 }
 
 gitclone(){
-    if [ ! -d ~/.local/share ]; then mkdir ~/.local/share; fi
+    if [ ! -d ~/.local/share ]; then mkdir -p ~/.local/share; fi
     git clone https://github.com/the0demiurge/CharlesScripts.git ~/.local/share/CharlesScripts
 }
 

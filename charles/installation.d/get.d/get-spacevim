@@ -1,4 +1,4 @@
 #!/bin/bash
-if [ `which curl|wc -l` == 0 ];then sudo apt install -y --allow curl;fi
+if [ `which curl|wc -l` == 0 ];then sudo apt install curl;fi
 curl -sLf https://spacevim.org/install.sh | bash
 

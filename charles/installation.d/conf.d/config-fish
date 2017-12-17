@@ -16,7 +16,7 @@ else
     read -p 'press Enter to continue:'
 fi
 
-if [ `which autojump|wc -l` == 0 ];then sudo apt install -y --allow autojump;fi
+if [ `which autojump|wc -l` == 0 ];then sudo apt install autojump;fi
 echo "source /usr/share/autojump/autojump.fish" >> $CONF_PATH
 
 echo "source \$CHARLES_HOME/shell.rc.d/init.fish" >> $CONF_PATH

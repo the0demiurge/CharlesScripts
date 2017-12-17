@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ `sudo which pip|wc -l` == 0 ];then sudo apt install -y --allow python3-pip;fi
+if [ `sudo which pip|wc -l` == 0 ];then sudo apt install python3-pip;fi
 
 sudo apt install python3-pip
 /usr/local/bin/pip install --user powerline-status

@@ -1,6 +1,11 @@
-# CharlesScripts #
+<div style="text-align: center;">
+    <h1>CharlesScripts</h1>
+    Master: <img src="https://travis-ci.org/the0demiurge/CharlesScripts.svg?branch=master" alt="">
+    <br>
+    可以配合我的博客：<a href="https://the0demiurge.blogspot.jp/2017/02/ubuntu-gnome.html">Ubuntu Gnome 酷炫完整指南系列</a>使用。
+</div>
 
-可以配合我的博客：[**Ubuntu Gnome 酷炫完整指南系列**](https://the0demiurge.blogspot.jp/2017/02/ubuntu-gnome.html)使用。
+
 
 ## 你为什么要安装本项目？ ##
 

@@ -6,6 +6,20 @@ set -x PATH $HOME/.cabal/bin $PATH
 set -x TF_CPP_MIN_LOG_LEVEL 2
 set -x EDITOR vim
 
+#COLOR_LESS
+set -x PAGER "less"
+set -x LESS "-R -i -g -c -W"
+set -x LESSOPEN '|/usr/bin/lesspipe %s'
+set -x LESSCLOSE '/usr/bin/lesspipe %s %s'
+#COLOR MAN
+set -x LESS_TERMCAP_mb (printf "\033[01;31m")
+set -x LESS_TERMCAP_md (printf "\033[01;31m")
+set -x LESS_TERMCAP_me (printf "\033[0m")
+set -x LESS_TERMCAP_se (printf "\033[0m")
+set -x LESS_TERMCAP_so (printf "\033[01;44;33m")
+set -x LESS_TERMCAP_ue (printf "\033[0m")
+set -x LESS_TERMCAP_us (printf "\033[01;32m")
+
 #BOBTHEFISH
 set -g theme_date_format "+%A, %B %d, %l:%M%P"
 set -g theme_nerd_fonts yes

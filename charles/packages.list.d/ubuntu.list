@@ -19,10 +19,12 @@ build-essential
 byobu
 cabal-install
 calibre
+ccache
 chameleon-cursor-theme
 chinese-calendar
 chrome-gnome-shell
 clang
+cloc
 cmake
 cmus
 copyq
@@ -74,6 +76,7 @@ htop
 hugs
 indicator-cpufreq
 inkscape
+iotop
 ircii
 jq
 latex2html
@@ -92,6 +95,7 @@ libstdc++-5-doc
 libstdc++-6-doc
 libyaml-dev
 lolcat
+lrzsz
 lua5.3
 lunar
 make
@@ -101,6 +105,7 @@ mldonkey-gui
 mono-xbuild
 mplayer
 mtools
+mycli
 mysql-client
 mysql-server
 nautilus-admin
@@ -110,6 +115,7 @@ nautilus-filename-repairer
 nautilus-owncloud
 nautilus-terminal
 neovim
+nload
 nmap
 nmon
 nodejs-legacy
@@ -148,6 +154,7 @@ python-dev
 python-pip
 python-powerline
 rabbitvcs-nautilus
+radiance
 rawtherapee
 redshift-gtk
 reiser4progs
@@ -160,7 +167,9 @@ ruby-full
 rubygems
 samba
 screenfetch
+shellcheck
 shotwell
+silversearcher-ag
 sl
 software-properties-common
 ssh
@@ -173,6 +182,7 @@ texlive-full
 thefuck
 the-powder-toy
 thunderbird
+tig
 tmux
 toilet
 translate-shell
@@ -208,5 +218,6 @@ xdotool
 xorg-dev
 xvfb
 ycmd
+youtube-dl
 zeal
 zsh

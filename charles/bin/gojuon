@@ -20,7 +20,7 @@ r = {'ra': ['ら', 'ラ'], 'ri': ['り', 'リ'], 'ru': ['る', 'ル'], 're': ['�
 w = {'wa': ['わ', 'ワ'], 'wi': ['ゐ', 'ヰ'], 'we': ['ゑ', 'ヱ'], 'wo': ['を', 'ヲ']}
 
 
-data = [a, k, s]  # +[t,n,h,m,y,r,w]
+data = [a, k, s] + [t, n, h, m, y, r, w]
 
 
 def test():
@@ -61,10 +61,15 @@ def search():
 def table():
     sort_dict = {'a': 1, 'i': 2, 'u': 3, 'e': 4, 'o': 5}
     for i in data:
-        chars = sorted(i.keys(), key=lambda x: sort_dict[x[-1]])
+        tmp = sorted(i.keys(), key=lambda x: sort_dict[x[-1]])
+        chars = list()
         japan = list()
-        for key in chars:
-            japan.append(', '.join(i[key]))
+        for char in tmp:
+            while len(chars) < sort_dict[char[-1]] - 1:
+                chars.append(' ')
+                japan.append(' ' * 8)
+            chars.append(char)
+            japan.append(', '.join(i[char]))
         print(('{:^6}' * 5).format(*japan))
         print(('{:^8}' * 5).format(*chars))
         print()

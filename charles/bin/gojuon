@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+import random
+import sys
+help_messages = '''gajuon learning helper
+Usage:
+    gajuon test katakana/hepburn    do a test
+    gajuon search                   search for given character
+    gajuon table                    show gajuon table
+    gajuon help                     show this helping message
+'''
+a = {'a': ['あ', 'ア'], 'i': ['い', 'イ'], 'u': ['う', 'ウ'], 'e': ['え', 'エ'], 'o': ['お', 'オ']}
+k = {'ka': ['か', 'カ'], 'ki': ['き', 'キ'], 'ku': ['く', 'ク'], 'ke': ['け', 'ケ'], 'ko': ['こ', 'コ']}
+s = {'sa': ['さ', 'サ'], 'shi': ['し', 'シ'], 'su': ['す', 'ス'], 'se': ['せ', 'セ'], 'so': ['そ', 'ソ']}
+t = {'ta': ['た', 'タ'], 'chi': ['ち', 'チ'], 'tsu': ['つ', 'ツ'], 'te': ['て', 'テ'], 'to': ['と', 'ト']}
+n = {'na': ['な', 'ナ'], 'ni': ['に', 'ニ'], 'nu': ['ぬ', 'ヌ'], 'ne': ['ね', 'ネ'], 'no': ['の', 'ノ']}
+h = {'ha': ['は', 'ハ'], 'hi': ['ひ', 'ヒ'], 'fu': ['ふ', 'フ'], 'he': ['へ', 'ヘ'], 'ho': ['ほ', 'ホ']}
+m = {'ma': ['ま', 'マ'], 'mi': ['み', 'ミ'], 'mu': ['む', 'ム'], 'me': ['め', 'メ'], 'mo': ['も', 'モ']}
+y = {'ya': ['や', 'ヤ'], 'yu': ['ゆ', 'ユ'], 'yo': ['よ', 'ヨ']}
+r = {'ra': ['ら', 'ラ'], 'ri': ['り', 'リ'], 'ru': ['る', 'ル'], 're': ['れ', 'レ'], 'ro': ['ろ', 'ロ']}
+w = {'wa': ['わ', 'ワ'], 'wi': ['ゐ', 'ヰ'], 'we': ['ゑ', 'ヱ'], 'wo': ['を', 'ヲ']}
+
+
+data = [a, k, s]  # +[t,n,h,m,y,r,w]
+
+
+def test():
+    if len(sys.argv) < 3:
+        index = [0, 1]
+    elif sys.argv[2][0].lower() == 'h':
+        index = [0]
+    elif sys.argv[2][0].lower() == 'k':
+        index = [1]
+    else:
+        index = [0, 1]
+    while(True):
+        line = random.sample(data, 1)[0]
+        key = random.sample(line.keys(), 1)[0]
+        result = input('{}: '.format(line[key][random.sample(index, 1)[0]]))
+        if not (result == key or result in line[key]):
+            print('{}: {}, {}'.format(key, line[key][0], line[key][1]))
+
+
+def search():
+    while True:
+        found = False
+        char = input('Searching for:')
+        for line in data:
+            if char in line:
+                key = char
+                found = line[key]
+                break
+            else:
+                for key in line:
+                    if char in line[key]:
+                        found = line[key]
+                        break
+        if found:
+            print('{}: {}, {}'.format(key, found[0], found[1]))
+
+
+def table():
+    sort_dict = {'a': 1, 'i': 2, 'u': 3, 'e': 4, 'o': 5}
+    for i in data:
+        chars = sorted(i.keys(), key=lambda x: sort_dict[x[-1]])
+        japan = list()
+        for key in chars:
+            japan.append(', '.join(i[key]))
+        print(('{:^6}' * 5).format(*japan))
+        print(('{:^8}' * 5).format(*chars))
+        print()
+
+
+def main():
+    if len(sys.argv) >= 2:
+        mode = sys.argv[1]
+    else:
+        mode = 'help'
+
+    funs = {
+        'test': test,
+        'search': search,
+        'table': table,
+    }
+
+    if mode in funs:
+        try:
+            funs[mode]()
+        except (EOFError, KeyboardInterrupt):
+            exit()
+    else:
+        print(help_messages)
+
+
+if __name__ == '__main__':
+    main()
+()

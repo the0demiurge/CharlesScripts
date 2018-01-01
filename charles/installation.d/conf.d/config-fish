@@ -27,7 +27,7 @@ echo "source \$CHARLES_HOME/shell.rc.d/init.fish" >> $CONF_PATH
 echo "source \$HOME/.config/fish/conf.d/*" >> $HOME/.config/fish/config.fish
 
 #ABBRS
-fish -c "abbr ... 'cd ...'"
+fish -c "abbr ... 'cd ../..'"
 fish -c "abbr c 'clear; cd'"
 fish -c "abbr cl 'cd ..;ls'"
 fish -c "abbr eg 'grep -E'"

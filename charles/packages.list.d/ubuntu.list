@@ -27,6 +27,7 @@ clang
 cloc
 cmake
 cmus
+command-not-found
 copyq
 cowsay
 cpufreqd
@@ -73,6 +74,7 @@ hfsplus
 hfsprogs
 hfsutils
 htop
+httpie
 hugs
 indicator-cpufreq
 inkscape
@@ -103,6 +105,7 @@ manpages-zh
 maybe
 mldonkey-gui
 mono-xbuild
+moreutils
 mplayer
 mtools
 mycli
@@ -185,6 +188,7 @@ thunderbird
 tig
 tmux
 toilet
+tpp
 translate-shell
 transmission-cli
 tree

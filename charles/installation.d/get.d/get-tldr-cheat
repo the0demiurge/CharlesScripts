@@ -1,0 +1,3 @@
+#!/bin/bash
+if [ `which pip|wc -l` == 0 ];then sudo apt install python-pip;fi
+sudo pip install -U cheat tldr

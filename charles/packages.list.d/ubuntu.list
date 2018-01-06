@@ -89,6 +89,7 @@ libav-tools
 libclang1
 libclang-dev
 libgtk2.0-0:i386
+libgtkmathview-bin
 libinput-tools
 libjpeg-turbo8-dev
 liblua5.3-dev

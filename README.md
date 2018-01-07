@@ -161,7 +161,7 @@ conf.d/
 
 安装脚本（测试中）：
 
-`curl -L https://git.io/get-charles|bash`
+`bash <(curl -L https://git.io/get-charles)`
 
 # 效果图： #
 

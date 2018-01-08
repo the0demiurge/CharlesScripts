@@ -36,7 +36,7 @@ ssr_help() {
     echo -e "\t" "ssr stop         stop the shadowsocks service"
     echo -e "\t" "ssr restart      restart the shadowsocks service"
     echo -e "\n" "Testing and Maintenance"
-    echo -e "\t" "ssr test         get ip from ip.cn using socks5 proxy"
+    echo -e "\t" "ssr test         get ip from cip.cc using socks5 proxy"
     echo -e "\t" "ssr log          cat the log of shadowsocks"
     echo -e "\t" "ssr shell        cd into ssr installation dir"
     echo -e "\t" "ssr clean        clean ssr configuration backups"
@@ -55,8 +55,8 @@ ssr_uninstall() {
 
 ssr_test(){
     echo Testing Connection...
-    curl ip.cn --socks5 'localhost:1080'
-    if [ $? == 0 ]; then echo -e '\nChecking delay...'; tsocks ping -c 5 ip.cn; fi
+    curl cip.cc --socks5 'localhost:1080'
+    if [ $? == 0 ]; then echo -e '\nChecking delay...'; tsocks ping -c 5 cip.cc; fi
 }
 
 ssr_start() {

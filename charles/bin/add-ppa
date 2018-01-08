@@ -2,8 +2,8 @@
 # This script adds ppa and backup the ppa list automatically to ~/.backup
 OS=$(cat /etc/issue|cut -f 1 -d ' ')
 if [[ $OS = 'Ubuntu' ]]; then
-    PPA_BACKUP_PATH=~/.local/share/CharlesScripts/charles/packages.list.d/ppa
-    mkdir -p ~/.local/share/CharlesScripts/charles/packages.list.d
+    PPA_BACKUP_PATH=~/.config/CharlesBackup/ppa
+    mkdir -p ~/.config/CharlesBackup
 
     for ppa in $@; do
     	if [ $ppa ]; then

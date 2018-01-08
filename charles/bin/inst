@@ -1,8 +1,8 @@
 #!/bin/bash
 # this script automatically install an app using APT and backup the software list to ~/.backup/
 OS=$(cat /etc/issue|cut -f 1 -d ' ')
-APPS_BACKUP_PATH=~/.local/share/CharlesScripts/charles/packages.list.d/$OS.list
-mkdir -p ~/.local/share/CharlesScripts/charles/packages.list.d
+APPS_BACKUP_PATH=~/.config/CharlesBackup/$OS.list
+mkdir -p ~/.config/CharlesBackup
 
 if [ $# = 0 ]; then cat $APPS_BACKUP_PATH;fi
 

@@ -5,13 +5,13 @@ if [[ ! -d ~/.config/fish/conf.d ]]; then
     mkdir -p ~/.config/fish/conf.d
 fi
 echo '# This is the Charles Scripts Configuration.'|tee $CONF_PATH
-echo 'set -g CHARLES_HOME ~/.local/share/CharlesScripts/charles' >> $CONF_PATH
-echo 'set -g CHARLES_BACKUP ~/.config/CharlesBackup' >> $CONF_PATH
+echo 'set -g CHARLES_HOME ~/.local/share/CharlesScripts/charles' |tee -a $CONF_PATH
+echo 'set -g CHARLES_BACKUP ~/.config/CharlesBackup' |tee -a $CONF_PATH
 
 
 ANACONDA_PATH=$(locate anaconda3|grep -E 'anaconda3/bin$'|grep $USER)
 if [ ! -z "$ANACONDA_PATH" ];then
-    echo set -x PATH $ANACONDA_PATH \$PATH>> $CONF_PATH
+    echo set -x PATH $ANACONDA_PATH \$PATH|tee -a $CONF_PATH
 else
     echo 'There is no anaconda found!'
     echo 'You should manually add anaconda path to the fish config file. i. e.:'
@@ -20,11 +20,11 @@ else
 fi
 
 if [ `which autojump|wc -l` == 0 ];then sudo apt install autojump;fi
-echo "source /usr/share/autojump/autojump.fish" >> $CONF_PATH
+echo "source /usr/share/autojump/autojump.fish" |tee -a $CONF_PATH
 
-echo "source \$CHARLES_HOME/shell.rc.d/init.fish" >> $CONF_PATH
+echo "source \$CHARLES_HOME/shell.rc.d/init.fish" |tee -a $CONF_PATH
 
-echo "source \$HOME/.config/fish/conf.d/*" >> $HOME/.config/fish/config.fish
+echo "source \$HOME/.config/fish/conf.d/*" |tee -a $HOME/.config/fish/config.fish
 
 #ABBRS
 fish -c "abbr ... 'cd ../..'"

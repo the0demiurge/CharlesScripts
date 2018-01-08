@@ -1,5 +1,5 @@
 #!/bin/bash
-
+OS=$(cat /etc/issue|cut -f 1 -d ' ')
 CONF_PATH=~/.config/fish/conf.d/charles.fish
 if [[ ! -d ~/.config/fish/conf.d ]]; then
     mkdir -p ~/.config/fish/conf.d
@@ -54,5 +54,9 @@ fish -c "abbr o 'xdg-open'"
 fish -c "abbr p 'python'"
 fish -c "abbr pdb 'python -mpowerline.bindings.pdb'"
 fish -c "abbr su 'sudo su'"
-fish -c "abbr u 'update fast'"
+
+case $OS in
+    'Ubuntu') fish -c "abbr u 'apt-upgrade'";;
+    'Arch') fish -c "abbr u 'pacman -Syyu;pacman -Rs $(pacman -Qtdq)";;
+esac
 

@@ -2,10 +2,10 @@
 set -e
 help='using apt to update/upgrade/autoremove packages in one command\n
 Usage:\n
-\tupdate help: show help message\n
-\tupdate apt: update using normal apt\n
-\tupdate fast: update using apt-fast\n
-\tupdate socks: update using apt and socks proxy by tsocks\n
+\tapt-upgrade help: show help message\n
+\tapt-upgrade apt: update using normal apt\n
+\tapt-upgrade fast: update using apt-fast\n
+\tapt-upgrade socks: update using apt and socks proxy by tsocks\n
 '
 
 if [ $# == 1 ]; then

@@ -1,15 +1,22 @@
 #!/bin/bash
 # this script automatically install an app using APT and backup the software list to ~/.backup/
-APPS_BACKUP_PATH=~/.local/share/CharlesScripts/charles/packages.list.d/ubuntu.list
+OS=$(cat /etc/issue|cut -f 1 -d ' ')
+APPS_BACKUP_PATH=~/.local/share/CharlesScripts/charles/packages.list.d/$OS.list
 mkdir -p ~/.local/share/CharlesScripts/charles/packages.list.d
 
 if [ $# = 0 ]; then cat $APPS_BACKUP_PATH;fi
+
+case $OS in
+    'Arch')    INSTALL() { sudo pacman -S --yes $1; }                                        ;;
+    'Ubuntu')  INSTALL() { sudo apt install $1 -y --allow-unauthenticated; }                 ;;
+    *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
+esac
 
 for app in $@;do
 	if [ -n "$app" ]; then
         false
         while [ $? -ne 0 -a $? -ne 100 ];do
-            sudo apt install -y $app --allow-unauthenticated
+            INSTALL $app
         done
 		if [ $? = 0 ]; then
 			echo $app >> $APPS_BACKUP_PATH

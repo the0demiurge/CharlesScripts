@@ -100,6 +100,7 @@ restore(){
             omf-restore)
     
     for Y in ${Y_LIST[@]}; do
+        echo $Y
         prompty $Y
     done
 }

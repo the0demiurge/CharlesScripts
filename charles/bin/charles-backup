@@ -1,5 +1,5 @@
 #!/usr/bin/fish
-set -g BACKUP_HOME $CHARLES_HOME/../data/home
+set -g BACKUP_HOME ~/.config/CharlesBackup/home
 
 rm $BACKUP_HOME/.config/sublime-text-3 -rf
 mkdir -p $BACKUP_HOME/.config/sublime-text-3/Packages/

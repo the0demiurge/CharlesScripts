@@ -4,5 +4,5 @@ case $(cat /etc/issue|cut -f 1 -d ' ') in
     'Ubuntu')  INSTALL() { sudo apt install $1 -y --allow-unauthenticated; }                 ;;
     *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
 esac
-if [ `sudo whereis pip|grep /usr|wc -l` == 0 ];then INSTALL python3-pip;fi
-sudo pip install --user powerline-status
+if [ `sudo whereis pip3|grep /usr|wc -l` == 0 ];then INSTALL python3-pip;fi
+sudo pip3 install --user powerline-status

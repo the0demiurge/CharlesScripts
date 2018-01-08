@@ -1,4 +1,6 @@
 #!/bin/bash
-sudo add-apt-repository ppa:aacebedo/fasd -y
-sudo apt-get update
-sudo apt-get install fasd
+if [[ $(cat /etc/issue|cut -f 1 -d ' ') = 'Ubuntu' ]]; then
+    sudo add-apt-repository ppa:aacebedo/fasd -y
+    sudo apt-get update
+    sudo apt-get install fasd
+fi

@@ -1,5 +1,10 @@
 #!/bin/bash
-if [ `which curl|wc -l` == 0 ];then sudo apt install curl -y; done
+case $(cat /etc/issue|cut -f 1 -d ' ') in
+    'Arch')    INSTALL() { sudo pacman -S --yes $1; }                                        ;;
+    'Ubuntu')  INSTALL() { sudo apt install $1 -y --allow-unauthenticated; }                 ;;
+    *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
+esac
+if [ `which curl|wc -l` == 0 ];then INSTALL curl -y; done
 curl -L https://xiki.com/install_xsh -o ~/install_xsh; bash ~/install_xsh
 rm ~/install_xsh
 echo "set -x PATH ~/xiki-project/bin/ \$PATH" > ~/.config/fish/conf.d/xsh.fish

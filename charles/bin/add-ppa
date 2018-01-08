@@ -1,21 +1,26 @@
-#!/bin/sh
+#!/bin/bash
 # This script adds ppa and backup the ppa list automatically to ~/.backup
-PPA_BACKUP_PATH=~/.local/share/CharlesScripts/charles/packages.list.d/ppa
-mkdir -p ~/.local/share/CharlesScripts/charles/packages.list.d
+OS=$(cat /etc/issue|cut -f 1 -d ' ')
+if [[ $OS = 'Ubuntu' ]]; then
+    PPA_BACKUP_PATH=~/.local/share/CharlesScripts/charles/packages.list.d/ppa
+    mkdir -p ~/.local/share/CharlesScripts/charles/packages.list.d
 
-for ppa in $@; do
-	if [ $ppa ]; then
-		sudo apt-add-repository -y $ppa
-		if [ $? = 0 ]; then
-			echo $ppa >> $PPA_BACKUP_PATH
-		fi
-	fi
-done
+    for ppa in $@; do
+    	if [ $ppa ]; then
+    		sudo apt-add-repository -y $ppa
+    		if [ $? = 0 ]; then
+    			echo $ppa >> $PPA_BACKUP_PATH
+    		fi
+    	fi
+    done
 
-sort -su $PPA_BACKUP_PATH > ~/.cache/backup4ppa -o $PPA_BACKUP_PATH
-rm ~/.cache/backup4ppa
+    sort -su $PPA_BACKUP_PATH > ~/.cache/backup4ppa -o $PPA_BACKUP_PATH
+    rm ~/.cache/backup4ppa
 
-if [ `ls /etc/apt/sources.list.d/|grep .save$|wc -l` >0 ];then
-    sudo rm /etc/apt/sources.list.d/*.save
+    if [ `ls /etc/apt/sources.list.d/|grep .save$|wc -l` >0 ];then
+        sudo rm /etc/apt/sources.list.d/*.save
+    fi
+    cat $PPA_BACKUP_PATH
+else
+    echo 'Your distribution has not implementd yet, please modify this command'
 fi
-cat $PPA_BACKUP_PATH

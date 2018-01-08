@@ -20,7 +20,8 @@ prompty(){
 dependency(){
     echo 'Installing part of the dependencies...'
     sudo apt update
-    sudo apt install git espeak cowsay oneko sl fortune fish
+    sudo apt install git espeak cowsay oneko sl fortune fish mlocate
+    sudo updatedb
 }
 
 gitclone(){

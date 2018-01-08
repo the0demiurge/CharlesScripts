@@ -1,4 +1,9 @@
 #!/bin/bash
-if [ `which git|wc -l` == 0 ];then sudo apt install git;fi
+case $(cat /etc/issue|cut -f 1 -d ' ') in
+    'Arch')    INSTALL() { sudo pacman -S --yes $1; }                                        ;;
+    'Ubuntu')  INSTALL() { sudo apt install $1 -y --allow-unauthenticated; }                 ;;
+    *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
+esac
+if [ `which git|wc -l` == 0 ];then INSTALL git;fi
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 

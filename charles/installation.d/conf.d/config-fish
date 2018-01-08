@@ -6,7 +6,7 @@ if [[ ! -d ~/.config/fish/conf.d ]]; then
 fi
 echo '# This is the Charles Scripts Configuration.'|tee $CONF_PATH
 echo 'set -g CHARLES_HOME ~/.local/share/CharlesScripts/charles' >> $CONF_PATH
-echo 'set -g CHARLES_BACKUP $CHARLES_HOME/packages.list.d' >> $CONF_PATH
+echo 'set -g CHARLES_BACKUP ~/.config/CharlesBackup' >> $CONF_PATH
 
 
 ANACONDA_PATH=$(locate anaconda3|grep -E 'anaconda3/bin$'|grep $USER)

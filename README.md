@@ -21,7 +21,7 @@
 
 #### 1. 备份/恢复 ####
 
-本项目会将所有资料备份到 `$CHARLES_BACKUP` 即 `.local/share/CharlesScripts/charles/packages.list.d`，因此 Fork 本项目之后可以用 git 将这些资料上传到网上。
+本项目会将所有资料备份到 `$CHARLES_BACKUP` 即 `~/.config/CharlesBackup`，可以使用网盘或git自动上传备份（git备份已经集成在`charles-update`命令中）
 
 下面是是相关命令介绍：
 
@@ -30,6 +30,7 @@
 - `gnome-shell-extensions-backup` 和 `gnome-shell-extensions-restore`: 备份和恢复 `Gnome` 桌面的插件
 - `omf-backup` 和 `omf-restore`: 备份和恢复 `oh-my-fish`(`fish-shell` 的包管理器)的插件列表
 - `charles-backup`: 调用上述部分命令备份各种插件（可以放到 `cronjob` 里面实现自动备份）
+- `charles-update`: 更新本项目及相关依赖；自动使用git上传备份
 
 #### 2. 小工具 ####
 
@@ -52,6 +53,7 @@
 - `ssr`： ShadowSocksR 的一键安装、配置、使用客户端
 - `aria2c-daemon-start`： 启动 `aria2` 的下载服务
 - `gh-md-toc`： Forked from [gh-md-toc](https://github.com/ekalinin/github-markdown-toc), 为 GitHub 的 Markdown 文件加入目录
+- `gojuon`: 日语五十音学习小工具
 - `ipgw` `ipgw_py`： 命令行版的东北大学校园网登录器
 
 
@@ -148,7 +150,7 @@ conf.d/
 装前必读：
 
 - 本项目并未经过大量测试，需要读者有基本的 Linux 问题处理能力
-- 支持的操作系统：Ubuntu Gnome 最新LTS版
+- 支持的操作系统：Arch Linux 或 Ubuntu Gnome 最新LTS版
 - 依赖项（需要用户自行安装）： Nerd Fonts, Google Chrome, git, espeak, cowsay, oneko, sl, fortune
 - 可选项：Anaconda, ipython (>=5.0), fortune-zh
 

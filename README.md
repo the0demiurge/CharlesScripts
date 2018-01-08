@@ -151,7 +151,7 @@ conf.d/
 
 - 本项目并未经过大量测试，需要读者有基本的 Linux 问题处理能力
 - 支持的操作系统：Arch Linux 或 Ubuntu Gnome 最新LTS版
-- 依赖项（需要用户自行安装）： Nerd Fonts, Google Chrome, git, espeak, cowsay, oneko, sl, fortune
+- 依赖项（需要用户自行安装）： Nerd Fonts, Google Chrome, curl
 - 可选项：Anaconda, ipython (>=5.0), fortune-zh
 
 逐步安装：

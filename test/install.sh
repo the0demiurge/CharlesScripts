@@ -94,15 +94,15 @@ restore(){
         cp -rvi ~/.local/share/CharlesScripts/data/home/.* ~/
     fi
     
-    cd ~/.local/share/CharlesScripts/charles/bin
+    # cd ~/.local/share/CharlesScripts/charles/bin
     
-    Y_LIST=(
-            omf-restore)
+    # Y_LIST=(
+    #         omf-restore)
     
-    for Y in ${Y_LIST[@]}; do
-        echo $Y
-        prompty $Y
-    done
+    # for Y in ${Y_LIST[@]}; do
+    #     echo $Y
+    #     prompty $Y
+    # done
 }
 dependency
 gitclone

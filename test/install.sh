@@ -28,16 +28,17 @@ gitclone(){
     if [ ! -d ~/.local/share ]; then mkdir -p ~/.local/share; fi
     git clone https://github.com/the0demiurge/CharlesScripts.git ~/.local/share/CharlesScripts
     read -p 'Please type your backup git repo address. If you do not have one, you may create it on GitHub.com.\nPress Enter to skip\n' REPO
-    git clone $REPO ~/.config/CharlesBackup
-    if [[ $? != 0 ]]; then
+    git clone $REPO $CHARLES_BACKUP||true
+    if [[ ! -x $CHARLES_BACKUP ]]; then
         echo 'Clone failed! Default CharlesBackup will be cloned!'
-        git clone https://github.com/the0demiurge/CharlesScripts.git ~/.config/CharlesBackup
-        echo 'You may modify ~/.config/CharlesBackup, and type:'
-        echo 'cd ~/.config/CharlesBackup'
+        git clone https://github.com/the0demiurge/CharlesScripts.git $CHARLES_BACKUP
+        echo 'You may modify $CHARLES_BACKUP, and type:'
+        echo 'cd $CHARLES_BACKUP'
         echo 'git remote set-url origin <your-git-url>'
         echo 'git add -A; git commit -m "init commit";git push -u origin master'
     fi
 }
+
 
 get(){
     Y_LIST=(get-fasd

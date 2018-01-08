@@ -67,7 +67,7 @@ get(){
 
 conf(){
     Y_LIST=(config-bash
-            config-fish
+            # config-fish
             config-git
             config-gnome
             config-powerline-bash

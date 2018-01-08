@@ -96,7 +96,7 @@ restore(){
     
     cd ~/.local/share/CharlesScripts/charles/bin
     
-    Y_LIST=(gnome-shell-extensions-restore
+    Y_LIST=(
             omf-restore)
     
     for Y in ${Y_LIST[@]}; do

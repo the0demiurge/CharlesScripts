@@ -1,5 +1,5 @@
 #!/usr/bin/fish
-cd $CHARLES_BACKUP
+cd ~/.config/CharlesBackup
 cp gnome-shell-extensions.zip $HOME/.local/share/gnome-shell/
 cd $HOME/.local/share/gnome-shell/
 unzip gnome-shell-extensions.zip

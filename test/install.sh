@@ -69,7 +69,6 @@ conf(){
     Y_LIST=(config-bash
             # config-fish
             config-git
-            config-gnome
             config-powerline-bash
             config-tmux)
 

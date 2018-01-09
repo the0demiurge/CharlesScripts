@@ -28,7 +28,11 @@ prompty(){
 dependency(){
     echo 'Installing part of the dependencies...'
     UPDATE
-    INSTALL git espeak cowsay oneko sl fortune fish mlocate
+    case $OS in
+        'Arch')    INSTALL git espeak cowsay sl fish mlocate fortune-mod                                     ;;
+        'Ubuntu')  INSTALL git espeak cowsay oneko sl fortune fish mlocate                       ;;
+        *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
+    esac
     sudo updatedb
 }
 

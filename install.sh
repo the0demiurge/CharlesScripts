@@ -40,8 +40,11 @@ gitclone(){
     if [ ! -d ~/.local/share ]; then mkdir -p ~/.local/share;fi
     if [[ -x ~/.local/share/CharlesScripts ]]; then rm -rf ~/.local/share/CharlesScripts;fi
     git clone https://github.com/the0demiurge/CharlesScripts.git ~/.local/share/CharlesScripts
-    echo 'Please type your backup git repo address. If you do not have one, you may create it on GitHub.com.'
-    if [[ ! -x $CHARLES_BACKUP ]]; then read -p 'Press Enter to skip' REPO;git clone $REPO $CHARLES_BACKUP||true;fi
+    if [[ ! -x $CHARLES_BACKUP ]]; then
+        echo 'Please type your backup git repo address. If you do not have one, you may create it on GitHub.com.'
+        read -p 'Press Enter to skip' REPO
+        git clone $REPO $CHARLES_BACKUP||true
+    fi
     if [[ ! -x $CHARLES_BACKUP ]]; then
         echo 'Clone failed! Default CharlesBackup will be cloned!'
         git clone https://github.com/the0demiurge/CharlesScripts.git $CHARLES_BACKUP
@@ -73,7 +76,7 @@ get(){
     
     for N in ${N_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
-        prompty $N
+        promptn $N
     done
 }
 
@@ -95,7 +98,7 @@ conf(){
     
     for N in ${N_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/installation.d/conf.d/
-        prompty $N
+        promptn $N
     done
 }
 

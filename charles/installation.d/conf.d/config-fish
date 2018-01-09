@@ -1,5 +1,10 @@
 #!/bin/bash
 OS=$(cat /etc/issue|cut -f 1 -d ' ')
+case $OS in
+    'Arch')    INSTALL() { sudo pacman -S $@; }                                        ;;
+    'Ubuntu')  INSTALL() { sudo apt install $@ -y --allow-unauthenticated; }                 ;;
+    *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
+esac
 CONF_PATH=~/.config/fish/conf.d/charles.fish
 if [[ ! -d ~/.config/fish/conf.d ]]; then
     mkdir -p ~/.config/fish/conf.d
@@ -19,7 +24,7 @@ else
     read -p 'press Enter to continue:'
 fi
 
-if [ `which autojump|wc -l` == 0 ];then sudo apt install autojump;fi
+if [ `which autojump|wc -l` == 0 ];then INSTALL autojump;fi
 echo "source /usr/share/autojump/autojump.fish" |tee -a $CONF_PATH
 
 echo "source \$CHARLES_HOME/shell.rc.d/init.fish" |tee -a $CONF_PATH

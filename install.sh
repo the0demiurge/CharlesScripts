@@ -2,7 +2,7 @@
 OS=$(cat /etc/issue|cut -f 1 -d ' ')
 CHARLES_BACKUP=~/.config/CharlesBackup
 case $OS in
-    'Arch')    INSTALL() { sudo pacman -S $@; };UPDATE() { sudo pacman -Syy; }                       ;;
+    'Arch')    INSTALL() { sudo pacman -S --needed $@; };UPDATE() { sudo pacman -Syy; }                       ;;
     'Ubuntu')  INSTALL() { sudo apt install $@ -y --allow-unauthenticated; };UPDATE() { sudo apt update; } ;;
     *)         echo 'Your distribution has not implementd yet, please modify this command'                 ;;
 esac
@@ -20,7 +20,7 @@ promptn(){
 
 prompty(){
     read -p 'Will you run '$1'?[Y/n]' PMT
-    if [[ $PMT != 'n' || $PMT != 'N' ]]; then
+    if [[ $PMT != 'n' && $PMT != 'N' ]]; then
         . ./$1
     fi
 }
@@ -39,7 +39,8 @@ dependency(){
 gitclone(){
     if [ ! -d ~/.local/share ]; then mkdir -p ~/.local/share; fi
     git clone https://github.com/the0demiurge/CharlesScripts.git ~/.local/share/CharlesScripts
-    read -p 'Please type your backup git repo address. If you do not have one, you may create it on GitHub.com.\nPress Enter to skip\n' REPO
+    echo 'Please type your backup git repo address. If you do not have one, you may create it on GitHub.com.'
+    read -p 'Press Enter to skip' REPO
     git clone $REPO $CHARLES_BACKUP||true
     if [[ ! -x $CHARLES_BACKUP ]]; then
         echo 'Clone failed! Default CharlesBackup will be cloned!'

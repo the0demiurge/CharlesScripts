@@ -7,7 +7,7 @@ mkdir -p ~/.config/CharlesBackup
 if [ $# = 0 ]; then cat $APPS_BACKUP_PATH;fi
 
 case $OS in
-    'Arch')    INSTALL() { sudo pacman -S $@; }                                        ;;
+    'Arch')    INSTALL() { sudo pacman -S --needed $@; }                                        ;;
     'Ubuntu')  INSTALL() { sudo apt install $@ -y --allow-unauthenticated; }                 ;;
     *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
 esac

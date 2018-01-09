@@ -9,6 +9,7 @@ CONF_PATH=~/.config/fish/conf.d/charles.fish
 if [[ ! -d ~/.config/fish/conf.d ]]; then
     mkdir -p ~/.config/fish/conf.d
 fi
+mkdir -p ~/.cabal/bin
 echo '# This is the Charles Scripts Configuration.'|tee $CONF_PATH
 echo 'set -g CHARLES_HOME ~/.local/share/CharlesScripts/charles' |tee -a $CONF_PATH
 echo 'set -g CHARLES_BACKUP ~/.config/CharlesBackup' |tee -a $CONF_PATH

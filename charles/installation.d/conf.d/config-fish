@@ -63,6 +63,6 @@ fish -c "abbr su 'sudo su'"
 
 case $OS in
     'Ubuntu') fish -c "abbr u 'apt-upgrade'";;
-    'Arch') fish -c "abbr u 'pacman -Syyu;pacman -Rs $(pacman -Qtdq)";;
+    'Arch') fish -c "abbr u 'pacman -Syu;pacman -Rs (pacman -Qtdq)'";;
 esac
 

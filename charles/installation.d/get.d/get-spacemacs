@@ -1,7 +1,7 @@
 #!/bin/bash
 case $(cat /etc/issue|cut -f 1 -d ' ') in
-    'Arch')    INSTALL() { sudo pacman -S $1; }                                        ;;
-    'Ubuntu')  INSTALL() { sudo apt install $1 -y --allow-unauthenticated; }                 ;;
+    'Arch')    INSTALL() { sudo pacman -S $@; }                                        ;;
+    'Ubuntu')  INSTALL() { sudo apt install $@ -y --allow-unauthenticated; }                 ;;
     *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
 esac
 if [ `which git|wc -l` == 0 ];then INSTALL git;fi

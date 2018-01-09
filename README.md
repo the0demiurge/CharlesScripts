@@ -42,7 +42,7 @@
 
 系统操作：
 
-- `update`： 相当于 `pacman -Syyu --yes`，更新所有软件
+- `update`： 相当于 `pacman -Syyu`，更新所有软件
 - `apt-unlock`： 删除 `apt` 因为异常退出而没有删掉的文件锁
 - `get-path`： 获得选定的文件绝对路径，并放到剪贴板内
 - `mac-addr-flush`： 重置 MAC 地址（重启失效）

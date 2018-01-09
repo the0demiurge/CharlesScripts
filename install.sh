@@ -2,7 +2,7 @@
 OS=$(cat /etc/issue|cut -f 1 -d ' ')
 CHARLES_BACKUP=~/.config/CharlesBackup
 case $OS in
-    'Arch')    INSTALL() { sudo pacman -S --yes $1; };UPDATE() { sudo pacman -Syy; }                       ;;
+    'Arch')    INSTALL() { sudo pacman -S $1; };UPDATE() { sudo pacman -Syy; }                       ;;
     'Ubuntu')  INSTALL() { sudo apt install $1 -y --allow-unauthenticated; };UPDATE() { sudo apt update; } ;;
     *)         echo 'Your distribution has not implementd yet, please modify this command'                 ;;
 esac

@@ -4,6 +4,7 @@ PUSH_DIR=(~/.config/CharlesBackup
 PULL_DIR=(~/.local/share/CharlesScripts
           ~/.emacs.d
           ~/.SpaceVim
+          ~/.oh-my-tmux
           )
 msg=$@
 echo 'Updating CharlesScripts and dependencies...'

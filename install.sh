@@ -2,7 +2,7 @@
 OS=$(cat /etc/issue|cut -f 1 -d ' ')
 CHARLES_BACKUP=~/.config/CharlesBackup
 case $OS in
-    'Arch')    INSTALL() { sudo pacman -S --needed $@; };UPDATE() { sudo pacman -Syy; }                       ;;
+    'Arch')    INSTALL() { sudo pacman -S --needed $@; };UPDATE() { sudo pacman -Sy; }                       ;;
     'Ubuntu')  INSTALL() { sudo apt install $@ -y --allow-unauthenticated; };UPDATE() { sudo apt update; } ;;
     *)         echo 'Your distribution has not implementd yet, please modify this command'                 ;;
 esac
@@ -47,7 +47,7 @@ gitclone(){
     fi
     if [[ ! -x $CHARLES_BACKUP ]]; then
         echo 'Clone failed! Default CharlesBackup will be cloned!'
-        git clone https://github.com/the0demiurge/CharlesScripts.git $CHARLES_BACKUP
+        git clone https://github.com/the0demiurge/CharlesBackup.git $CHARLES_BACKUP
         echo 'You may modify $CHARLES_BACKUP, and type:'
         echo 'cd $CHARLES_BACKUP'
         echo 'git remote set-url origin <your-git-url>'
@@ -58,8 +58,8 @@ gitclone(){
 get(){
     Y_LIST=(get-fasd
             get-powerline
-            #get-oh-my-fish
-            get-thefuck)
+            get-thefuck
+            get-oh-my-fish)
 
     N_LIST=(get-calibre
             get-docker
@@ -105,15 +105,15 @@ conf(){
 restore(){
     read -p 'DANGER! Restore dotfiles from ~/.local/share/CharlesScripts/data/home/.* ?[y/N]' PMT
     if [[ $PMT == 'y' || $PMT == 'Y' ]]; then
-        cp -rvi ~/.local/share/CharlesScripts/data/home/.* ~/
+        cp -rv ~/.local/share/CharlesScripts/data/home/.* ~/
     fi
     
-    cd ~/.local/share/CharlesScripts/charles/bin
     
     Y_LIST=(gnome-shell-extensions-restore
-            omf-restore)
+            )
     
     for Y in ${Y_LIST[@]}; do
+        cd ~/.local/share/CharlesScripts/charles/bin
         prompty $Y
     done
 }
@@ -125,3 +125,7 @@ restore
 
 cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
 prompty get-oh-my-fish
+
+cd ~/.local/share/CharlesScripts/charles/bin
+prompty omf-restore
+echo 'Finished!'

@@ -6,7 +6,7 @@ PULL_DIR=(~/.local/share/CharlesScripts
           ~/.SpaceVim
           ~/.oh-my-tmux
           )
-msg=$@
+msg="$@"
 echo 'Updating CharlesScripts and dependencies...'
 for i in ${PULL_DIR[@]};do cd $i;echo Pulling $i;git pull;done
 echo 'Uploading Backups'

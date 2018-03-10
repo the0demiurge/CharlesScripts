@@ -55,7 +55,10 @@ ssr_uninstall() {
 
 ssr_test(){
     echo Testing Connection...
-    curl cip.cc --socks5 'localhost:1080'
+    if [[ -z $(which tsocks) ]]; then
+        echo "tsocks is needed for \`ssr test\`! Install it now!"
+    fi
+    curl cip.cc --socks5 localhost:$(jq ".local_port" $INSTALL_PATH/config.json)
     if [ $? == 0 ]; then echo -e '\nChecking delay...'; tsocks ping -c 5 cip.cc; fi
 }
 
@@ -102,7 +105,7 @@ ssr_update() {
         0) ;;
         *) echo -e $BLOCKED;exit $?;;
     esac
-    
+
     # If json is empty
     case $JSON in
         'Not Found') echo -e $BLOCKED;exit $?;;

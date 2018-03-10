@@ -1,5 +1,6 @@
 #PATHES
 set -x PATH $CHARLES_HOME/bin $PATH
+set -x PATH $HOME/.local/bin $PATH
 set -x PATH $HOME/.cabal/bin $PATH
 
 #VARIABLES

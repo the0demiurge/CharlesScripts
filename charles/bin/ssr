@@ -58,7 +58,7 @@ ssr_test(){
     if [[ -z $(which tsocks) ]]; then
         echo "tsocks is needed for \`ssr test\`! Install it now!"
     fi
-    curl cip.cc --socks5 localhost:$(jq ".local_port" $INSTALL_PATH/config.json)
+    curl ipinfo.io --socks5 localhost:$(jq ".local_port" $INSTALL_PATH/config.json)
     if [ $? == 0 ]; then echo -e '\nChecking delay...'; tsocks ping -c 5 cip.cc; fi
 }
 

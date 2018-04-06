@@ -59,7 +59,10 @@ get(){
     Y_LIST=(get-fasd
             get-powerline
             get-thefuck
-            get-oh-my-fish)
+            get-oh-my-fishi
+            get-albert
+            get-playdeb
+            get-typora)
 
     N_LIST=(get-calibre
             get-docker
@@ -68,12 +71,12 @@ get(){
             get-sublime-text-3
             get-xsh)
 
-    
+
     for Y in ${Y_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
         prompty $Y
     done
-    
+
     for N in ${N_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
         promptn $N
@@ -90,12 +93,12 @@ conf(){
 
     N_LIST=(config-powerline-ipython)
 
-    
+
     for Y in ${Y_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/installation.d/conf.d/
         prompty $Y
     done
-    
+
     for N in ${N_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/installation.d/conf.d/
         promptn $N
@@ -107,11 +110,11 @@ restore(){
     if [[ $PMT == 'y' || $PMT == 'Y' ]]; then
         cp -rv ~/.local/share/CharlesScripts/data/home/.* ~/
     fi
-    
-    
+
+
     Y_LIST=(gnome-shell-extensions-restore
             )
-    
+
     for Y in ${Y_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/bin
         prompty $Y

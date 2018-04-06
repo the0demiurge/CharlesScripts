@@ -16,6 +16,9 @@ for app in $@;do
 	if [ -n "$app" ]; then
         false
         while [ $? -ne 0 -a $? -ne 100 ];do
+          if [ $? -ne 0 ]; then
+            echo $? $app $(date) >> ~/.cache/inst.err.log
+          fi
             INSTALL $app
         done
 		if [ $? = 0 ]; then

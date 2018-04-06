@@ -17,7 +17,7 @@ if [[ $OS = 'Ubuntu' ]]; then
     sort -su $PPA_BACKUP_PATH > ~/.cache/backup4ppa -o $PPA_BACKUP_PATH
     rm ~/.cache/backup4ppa
 
-    if [ `ls /etc/apt/sources.list.d/|grep .save$|wc -l` >0 ];then
+    if [ `ls /etc/apt/sources.list.d/|grep .save$|wc -l` -gt 0 ];then
         sudo rm /etc/apt/sources.list.d/*.save
     fi
     cat $PPA_BACKUP_PATH

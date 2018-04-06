@@ -5,6 +5,6 @@ if [[ $(cat /etc/issue|cut -f 1 -d ' ') = 'Ubuntu' ]]; then
     echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
     sudo apt update
     sudo apt install sublime-text
-else:
+else
     echo 'This script is for Ubuntu only!'
 fi

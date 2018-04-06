@@ -7,9 +7,20 @@ mkdir -p ~/.config/CharlesBackup
 if [ $# = 0 ]; then cat $APPS_BACKUP_PATH;fi
 
 case $OS in
-    'Arch')    INSTALL() { sudo pacman -S --needed $@; }                                        ;;
-    'Ubuntu')  INSTALL() { sudo apt install $@ -y --allow-unauthenticated; }                 ;;
-    *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
+    'Arch')    INSTALL() { sudo pacman -S --needed $@; };;
+    'Ubuntu')  INSTALL() {
+        if [[ ${app%-} = $app ]]; then
+            dpkg -s $@ > /dev/null 2>&1
+        else
+            false
+        fi
+        if [[ $? = 0 ]]; then
+            echo $@ already installed
+        else
+            echo -e '\nInstalling' $@
+            sudo apt install $@ -y --allow-unauthenticated
+        fi };;
+    *)         echo 'Your distribution has not implementd yet, please modify this command';;
 esac
 
 for app in $@;do

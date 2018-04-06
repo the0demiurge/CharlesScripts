@@ -7,7 +7,20 @@ PULL_DIR=(~/.local/share/CharlesScripts
           ~/.oh-my-tmux
           )
 msg="$@"
+
 echo 'Updating CharlesScripts and dependencies...'
 for i in ${PULL_DIR[@]};do cd $i;echo Pulling $i;git pull;done
+
 echo 'Uploading Backups'
-for i in ${PUSH_DIR[@]};do cd $i;echo Pushing $i;git add -A;if [ -z $msg ];then read -p 'Message:' msg;if [ -z $msg ];then msg='update';fi;fi;git status;git commit -m $msg;git push;done
+for i in ${PUSH_DIR[@]};do
+    cd $i
+    echo Pushing $i
+    git add -A
+    if [ -z $msg ];then
+        read -p 'Message:' msg
+        if [ -z $msg ];then msg='update';fi
+    fi
+    git status
+    git commit -m "$msg"
+    git push
+done

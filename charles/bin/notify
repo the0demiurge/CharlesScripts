@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 # set an reminder and it'll remind you of doing something.
 # note time something
 # i.e.: type "note 4m 'go to see a movie with my gf'", and it'll notify you to "go to see a movie with my gf" after 4 minuts.
 
-if [ -z $2 ]; then
+if [[ -z $2 ]]; then
     echo Remind you to do something 
     echo Usage: notify time thing, i.e. type \`'notify 4m "Attend the meeting"'\`
 else

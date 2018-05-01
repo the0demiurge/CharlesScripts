@@ -7,7 +7,7 @@ mkdir -p ~/.config/CharlesBackup
 if [ $# = 0 ]; then cat $APPS_BACKUP_PATH;fi
 
 case $OS in
-    'Arch')    INSTALL() { sudo pacman -S --needed $@; };;
+    'Arch')    INSTALL() { sudo pacman -S --noconfirm --needed $@; };;
     'Ubuntu')  INSTALL() {
         if [[ ${app%-} = $app ]]; then
             dpkg -s $@ > /dev/null 2>&1
@@ -26,9 +26,10 @@ esac
 for app in $@;do
 	if [ -n "$app" ]; then
         false
-        while [ $? -ne 0 -a $? -ne 100 ];do
+        while [ $? -ne 0 -a $? -ne 100 -a $? -ne 130 ];do
           if [ $? -ne 0 ]; then
             echo $? $app $(date) >> ~/.cache/inst.err.log
+            sleep 3
           fi
             INSTALL $app
         done

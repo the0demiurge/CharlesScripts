@@ -1,5 +1,5 @@
 #INIT
-source /usr/share/autojump/autojump.sh
+source /usr/share/autojump/autojump.bash
 
 #PATHES
 export CHARLES_HOME=$HOME/.local/share/CharlesScripts/charles

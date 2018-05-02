@@ -17,6 +17,9 @@ gsettings set org.gnome.desktop.interface gtk-theme Arc-Flatabulous-Dark
 # Setting for lunar calendar plugin for english users
 sudo cp /usr/share/locale/zh_CN/LC_MESSAGES/lunar-date.mo /usr/share/locale/en/LC_MESSAGES/
 
+# Fixing bug for Nautilus in xdg-open
+xdg-mime default org.gnome.Nautilus.desktop  inode/directory 
+
 echo "export XMODIFIERS=@im=fcitx"|tee ~/.xprofile
 echo "export QT4_IM_MODULE=fcitx"|tee -a ~/.xprofile
 echo "export QT_IM_MODULE=fcitx"|tee -a ~/.xprofile

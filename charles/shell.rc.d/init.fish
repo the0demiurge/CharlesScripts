@@ -59,7 +59,8 @@ function g
         espeak -vzh push成功
         notify-send 'push成功' -a Charles
         sl -e
-        for i in (seq 25);echo "";end
+        clear
+        for i in (seq 40);echo;end
         fortune|cowsay -f duck
     else
         for i in (seq 3)
@@ -67,7 +68,8 @@ function g
         end
         notify-send "push失败！！！请重新push！！！" -a Charles
         notify-send -u critical $PWD -a Charles
-        for i in (seq 25);echo "";end
+        clear
+        for i in (seq 25);echo;end
         cowsay -f bong "push失败！！！请重新push！！！"
         oneko -sakura
     end

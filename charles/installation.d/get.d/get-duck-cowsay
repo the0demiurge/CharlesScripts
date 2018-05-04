@@ -1,0 +1,7 @@
+#!/bin/bish
+ echo '$the_cow = <<"EOC";
+ $thoughts
+  $thoughts
+   $thoughts >()_
+      (__)__ _
+EOC' |sudo tee /usr/share/cows/duck.cow

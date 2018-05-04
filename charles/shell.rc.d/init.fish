@@ -56,7 +56,7 @@ function g
     git commit -m "$argv $COMMIT"
     git log -1 HEAD
     if git push
-        espeak -vzh push成功
+        espeak -vzh push成功 > /dev/null 2>&1
         notify-send 'push成功' -a Charles
         sl -e
         clear
@@ -64,7 +64,7 @@ function g
         fortune|cowsay -f duck
     else
         for i in (seq 3)
-            espeak -vzh push失败！
+            espeak -vzh push失败！ > /dev/null 2>&1
         end
         notify-send "push失败！！！请重新push！！！" -a Charles
         notify-send -u critical $PWD -a Charles

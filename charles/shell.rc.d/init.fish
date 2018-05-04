@@ -60,7 +60,7 @@ function g
         notify-send 'push成功' -a Charles
         sl -e
         clear
-        for i in (seq 40);echo;end
+        for i in (seq 25);echo;end
         fortune|cowsay -f duck
     else
         for i in (seq 3)

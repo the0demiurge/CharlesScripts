@@ -31,6 +31,7 @@ help() {
     echo "  prj-sync -h, --help help    show this help message"
     echo
     echo "configuration file: $CONFIG_PATH"
+    echo "exclude pattern list: $EXCLUDE_PATH"
 }
 
 input() {

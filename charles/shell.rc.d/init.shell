@@ -1,5 +1,11 @@
 #INIT
-source /usr/share/autojump/autojump.bash
+SOURCES_LIST=(
+    /usr/share/autojump/autojump.bash
+    /usr/share/pinyin-completion/shell/pinyin-comp.bash
+)
+for filename in ${SOURCES_LIST[@]};do
+    if [ -f $filename ];then source $filename;fi
+done
 
 #PATHES
 export CHARLES_HOME=$HOME/.local/share/CharlesScripts/charles
@@ -28,6 +34,7 @@ alias ...='cd ../..'
 alias c='clear; cd'
 alias cl='cd ..;ls'
 alias eg='grep -E'
+alias emacsc='emacs --no-window-system'
 alias histg='history | grep'
 alias i='ipython --no-confirm-exit --no-banner --pprint -i --pylab=auto'
 alias l='ls --color=auto'

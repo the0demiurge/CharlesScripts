@@ -55,11 +55,24 @@ ssr_uninstall() {
 
 ssr_test(){
     echo Testing Connection...
-    if [[ -z $(which tsocks) ]]; then
-        echo "tsocks is needed for \`ssr test\`! Install it now!"
+    if [[ ! -z $(which jq 2>/dev/null) ]]; then
+        echo 'jq in use'
+        PORT=$(jq .local_port $INSTALL_PATH/config.json)
+    else
+        PORT=$(sed -s 's/\/\/.*$//g' $INSTALL_PATH/config.json|sed 's/\s//g'|grep -oP '(?<!//)(?<="local_port":)\d+')
+        echo "local_port is $PORT; if any exceptions orrured, please install jq"
     fi
-    curl ipinfo.io --socks5 localhost:$(jq ".local_port" $INSTALL_PATH/config.json)
-    if [ $? == 0 ]; then echo -e '\nChecking delay...'; tsocks ping -c 5 cip.cc; fi
+
+    echo 'connection information:'
+    curl ipinfo.io --socks5 localhost:$PORT
+
+    if [ $? == 0 ]; then
+        if [[ -z $(which tsocks 2>/dev/null) ]]; then
+            echo "You may install tsocks and configure it properly to test net delay"
+        else
+            echo -e '\nChecking delay...'; tsocks ping -c 5 cip.cc
+        fi
+    fi
 }
 
 ssr_start() {

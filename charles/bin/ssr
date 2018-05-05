@@ -59,7 +59,7 @@ ssr_test(){
         echo 'jq in use'
         PORT=$(jq .local_port $INSTALL_PATH/config.json)
     else
-        PORT=$(sed -s 's/\/\/.*$//g' $INSTALL_PATH/config.json|sed 's/\s//g'|grep -oP '(?<!//)(?<="local_port":)\d+')
+        PORT=$(sed -r 's/\/\/.*$|\s+//g' $INSTALL_PATH/config.json|grep -oP '(?<!//)(?<="local_port":)\d+')
         echo "local_port is $PORT; if any exceptions orrured, please install jq"
     fi
 

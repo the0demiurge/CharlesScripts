@@ -1,2 +1,2 @@
 #!/bin/bash
-google-chrome --app=https://getpocket.com/a/queue/
+google-chrome-stable --app=https://getpocket.com/a/queue/

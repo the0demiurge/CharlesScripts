@@ -1,2 +1,2 @@
 #!/bin/bash
-google-chrome --app=https://www.shanbay.com/bdc/review/
+google-chrome-stable --app=https://www.shanbay.com/bdc/review/

@@ -1,2 +1,2 @@
 #!/bin/bash
-google-chrome --app=https://wx.qq.com
+google-chrome-stable --app=https://wx.qq.com

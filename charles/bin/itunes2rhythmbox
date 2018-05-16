@@ -49,6 +49,9 @@ skip_list = [
 source_itunes_music_folder = None
 # End of configuration
 
+__author__ = "Charles Xu"
+__github__ = "https://github.com/the0demiurge"
+__girlfriend__ = "pang"
 import os
 import json
 from xml.etree import ElementTree

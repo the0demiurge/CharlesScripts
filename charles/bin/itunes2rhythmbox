@@ -7,7 +7,7 @@ import the playlist to Rhythmbox directly.
 
 Before using this script, you should have:
 - an iTunes folder copied directly from your Windows/Mac computer(with the
-  iTunes files already consolidated: in iTunes, click File -> Library -> 
+  iTunes files already consolidated: in iTunes, click File -> Library ->
   Organize Library -> Consolidate files -> OK), or just the `iTunes Media`
   Folder located at `iTunes/`
 - a copy of `iTunes Music Library.xml`, which usually located at `iTunes/`

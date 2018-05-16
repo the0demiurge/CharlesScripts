@@ -1,0 +1,158 @@
+#!/usr/bin/env python3
+help_message = '''Usage: Close Rhythmbox, then type: itunes2rhythmbox
+
+If you are to move or sync your whole iTunes library to Rhythmbox, This script
+will help you to convert iTunes playlist to Rhythmbox style playlist, and
+import the playlist to Rhythmbox directly.
+
+Before using this script, you should have:
+- an iTunes folder copied directly from your Windows/Mac computer(with the
+  iTunes files already consolidated: in iTunes, click File -> Library -> 
+  Organize Library -> Consolidate files -> OK), or just the `iTunes Media`
+  Folder located at `iTunes/`
+- a copy of `iTunes Music Library.xml`, which usually located at `iTunes/`
+
+You should modify this script configurations at start of the script, and the
+meaning of entries will be described as follows:
+
+- target_location: The `iTunes Media` folder path
+- rhythmbox_playlist: The rhythmbox playlist xml path
+- iTunes_db: `iTunes Music Library.xml` path
+- skip_list: playlists which you do not want to convert to your Rhythmbox
+- source_itunes_music_folder: do not modify it
+'''
+# Configurations
+target_location = '~/Music/iTunes/iTunes Media/'
+
+rhythmbox_playlist = '~/.local/share/rhythmbox/playlists.xml'
+
+itunes_db = '~/Music/iTunes/iTunes Music Library.xml'
+
+skip_list = [
+    'Library',
+    'Downloaded',
+    'Music',
+    'Movies',
+    'TV Shows',
+    'Podcasts',
+    'Audiobooks',
+    'Languages',
+    'Special',
+    'Dislike',
+    'Not Classified',
+    'Not Favorate',
+    'Not Rated',
+    'Pomodoro',
+    'Voice Memos',
+]
+
+source_itunes_music_folder = None
+# End of configuration
+
+import os
+import json
+from xml.etree import ElementTree
+import sys
+try:
+    from urllib import quote, unquote
+except ImportError:
+    from urllib.parse import quote, unquote
+
+
+if not (target_location.startswith('http://') or target_location.startswith('file://') or target_location.startswith('https://')):
+    target_location = 'file://' + \
+        quote(os.path.abspath(os.path.expanduser(target_location)))
+    if not target_location.endswith('/'):
+        target_location += '/'
+rhythmbox_playlist, itunes_db = os.path.abspath(os.path.expanduser(rhythmbox_playlist)), os.path.abspath(os.path.expanduser(itunes_db))
+
+
+def xml2dict(xml_path):
+    xml_obj = ElementTree.parse(xml_path)
+    root = xml_obj.getroot()
+
+    def traverse(root):
+        children = root.getchildren()
+        return {root.tag: {'children': [traverse(child) for child in children], 'attrib': root.attrib, 'text': root.text}}
+
+    return traverse(root)
+
+
+def parse_itunesdb(xml_path):
+    xml_obj = ElementTree.parse(xml_path)
+    root = xml_obj.getroot().getchildren()[0]
+
+    def traverse(root):
+        children = root.getchildren()
+
+        handlers = {
+            'dict': lambda root, children: {traverse(key): traverse(value) for key, value in zip(children[::2], children[1::2])} if len(children) % 2 == 0 else ValueError('dict must be paired'),
+            'key': lambda root, children: root.text,
+            'string': lambda root, children: root.text,
+            'date': lambda root, children: root.text,
+            'data': lambda root, children: root.text,
+            'integer': lambda root, children: root.text,
+            'true': lambda root, children: True,
+            'false': lambda root, children: False,
+            'array': lambda root, children: [traverse(child) for child in children],
+        }
+
+        if root.tag in handlers:
+            return handlers[root.tag](root, children)
+        else:
+            raise KeyError(root.tag)
+
+    return traverse(root)
+
+
+def playlist2rbxml(playlists, destination):
+    '''
+    Arguments:
+        playlists [{'name': str, 'item': [str]}]
+    '''
+    head = '<?xml version="1.0"?>\n<rhythmdb-playlists>\n'
+    playlist_head = '<playlist name="{}" show-browser="true" browser-position="180" search-type="search-match" type="static">\n'
+    song = '<location>{}</location>\n'
+    playlist_tail = '</playlist>\n'
+    tail = '<playlist name="Play Queue" show-browser="false" browser-position="180" search-type="search-match" type="queue"/>\n</rhythmdb-playlists>\n'
+    with open(destination, 'w') as f:
+        f.write(head)
+        for playlist in playlists:
+            f.write(playlist_head.format(playlist['name']))
+            for track in playlist['item']:
+                f.write(song.format(track))
+            f.write(playlist_tail)
+        f.write(tail)
+
+
+def convert_music_path(music_location, source_itunes_music_folder, target_location):
+    data = music_location.replace(
+        source_itunes_music_folder, target_location, 1).split(':', 1)
+    if len(data) == 1:
+        return quote(unquote(data[0]))
+    else:
+        return ':'.join((data[0], quote(unquote(data[1]))))
+
+
+def get_playlist(itunes_dict, skip_list=skip_list, convert_function=convert_music_path, **convert_args):
+    tracks, playlists = itunes_dict['Tracks'], itunes_dict['Playlists']
+    return [{'name': playlist['Name'], 'item': [convert_function(tracks[track['Track ID']]['Location'], **convert_args) for track in playlist['Playlist Items']]} for playlist in playlists if playlist['Name'] not in skip_list]
+
+
+def main():
+    itunes_dict = parse_itunesdb(itunes_db)
+    global source_itunes_music_folder
+    if not source_itunes_music_folder:
+        source_itunes_music_folder = itunes_dict['Music Folder']
+    playlists = get_playlist(
+        itunes_dict, skip_list=skip_list,
+        convert_function=convert_music_path,
+        source_itunes_music_folder=source_itunes_music_folder, target_location=target_location)
+    playlist2rbxml(playlists, rhythmbox_playlist)
+
+
+if __name__ == '__main__':
+    if len(sys.argv) > 1 or not os.path.isfile(itunes_db):
+        print(help_message)
+    else:
+        main()

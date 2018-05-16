@@ -4,7 +4,7 @@ set -x PATH $HOME/.local/bin $PATH
 
 #VARIABLES
 set -x TF_CPP_MIN_LOG_LEVEL 2
-set -x EDITOR vim
+set -x EDITOR nvim
 
 #COLOR_LESS
 set -x PAGER "less"

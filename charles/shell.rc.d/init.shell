@@ -1,7 +1,6 @@
 #INIT
 SOURCES_LIST=(
     /usr/share/autojump/autojump.bash
-    /usr/share/pinyin-completion/shell/pinyin-comp.bash
 )
 for filename in ${SOURCES_LIST[@]};do
     if [ -f $filename ];then source $filename;fi

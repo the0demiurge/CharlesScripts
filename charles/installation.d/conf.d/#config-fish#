@@ -35,8 +35,9 @@ echo "source \$HOME/.config/fish/conf.d/*" |tee -a $HOME/.config/fish/config.fis
 #ABBRS
 fish -c "abbr ... 'cd ../..'"
 fish -c "abbr c 'clear; cd'"
-fish -c "abbr cl 'cd ..;ls'"
-fish -c "abbr du. 'du . --max-depth 1 -h'"
+fish -c "abbr cl '
+cd ..;ls'"
+fish -c "abbr du. '
 fish -c "abbr eg 'grep -E'"
 fish -c "abbr emacsc 'emacs --no-window-system'"
 fish -c "abbr ftps 'python3 -m http.server 8080'"

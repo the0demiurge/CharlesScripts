@@ -6,7 +6,7 @@ mkdir -p ~/.config/CharlesBackup
 if [ $# = 0 ]; then cat $APPS_BACKUP_PATH;fi
 
 
-INSTALL() { yaourt -S $@; }
+INSTALL() { yaourt -S $@ --needed; }
 
 
 for app in $@;do

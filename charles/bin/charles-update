@@ -16,11 +16,12 @@ for i in ${PUSH_DIR[@]};do
     cd $i
     echo Pushing $i
     git add -A
+    git status
+    git diff HEAD
     if [ -z $msg ];then
         read -p 'Message:' msg
         if [ -z $msg ];then msg='update';fi
     fi
-    git status
     git commit -m "$msg"
     git push
 done

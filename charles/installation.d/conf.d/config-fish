@@ -34,6 +34,7 @@ echo "source \$HOME/.config/fish/conf.d/*" |tee -a $HOME/.config/fish/config.fis
 
 #ABBRS
 fish -c "abbr ... 'cd ../..'"
+fish -c "abbr autoremove 'pacman -Qtdq|xargs sudo pacman -Rsn --noconfirm'"
 fish -c "abbr c 'clear; cd'"
 fish -c "abbr cl 'cd ..;ls'"
 fish -c "abbr du. 'du . --max-depth 1 -h'"

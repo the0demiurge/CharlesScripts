@@ -31,6 +31,7 @@ itunes_db = '~/Music/iTunes/iTunes Music Library.xml'
 skip_list = [
     'Library',
     'Downloaded',
+    'Favorates',
     'Music',
     'Movies',
     'TV Shows',
@@ -143,6 +144,22 @@ def get_playlist(itunes_dict, skip_list=skip_list, convert_function=convert_musi
 
 
 def main():
+    rhythmbox_pid = list(map(eval, os.popen("ps -A|grep rhythmbox|awk '{print $1}'").readlines()))
+    if rhythmbox_pid:
+        if '-f' in sys.argv or '--force' in sys.argv:
+            prompt = 'y'
+        else:
+            prompt = input('rhyhtmbox process found: {}, kill it?[Y/n]:'.format(rhythmbox_pid)).lower()
+        if prompt == 'n':
+            exit()
+        elif prompt == 'y' or prompt == '':
+            for pid in rhythmbox_pid:
+                os.kill(pid, 3)
+                print('rhythmbox quitted')
+        else:
+            print('You should input "y" or "n"')
+            exit(1)
+
     itunes_dict = parse_itunesdb(itunes_db)
     global source_itunes_music_folder
     if not source_itunes_music_folder:
@@ -152,10 +169,11 @@ def main():
         convert_function=convert_music_path,
         source_itunes_music_folder=source_itunes_music_folder, target_location=target_location)
     playlist2rbxml(playlists, rhythmbox_playlist)
+    print(len(playlists), 'playlists imported')
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 1 or not os.path.isfile(itunes_db):
+    if 'help' in sys.argv or '-h' in sys.argv or '--help' in sys.argv or not os.path.isfile(itunes_db):
         print(help_message)
     else:
         main()

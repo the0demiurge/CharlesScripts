@@ -154,7 +154,7 @@ def main():
             exit()
         elif prompt == 'y' or prompt == '':
             for pid in rhythmbox_pid:
-                os.kill(pid, 3)
+                os.kill(pid, 2)
                 print('rhythmbox quitted')
         else:
             print('You should input "y" or "n"')

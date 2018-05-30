@@ -25,13 +25,15 @@ help() {
     echo -e "prj-sync:\nSync your project repository to multiple remote servers using rsync and ssh"
     echo
     echo "Usage:"
-    echo "  prj-sync                    push to server"
-    echo "  prj-sync test               print debug info without push"
-    echo "  prj-sync dry-run            dry-run rsync to print debug message"
-    echo "  prj-sync -h, --help help    show this help message"
+    echo "  prj-sync                   push to server"
+    echo "  prj-sync config            edit the config file, you need to set \$EDITOR first"
+    echo "  prj-sync test              print debug info without push"
+    echo "  prj-sync dry-run           dry-run rsync to print debug message"
+    echo "  prj-sync -h, --help help   show this help message"
     echo
     echo "configuration file: $CONFIG_PATH"
     echo "exclude pattern list: $EXCLUDE_PATH"
+    echo "EDITOR: $EDITOR"
 }
 
 input() {
@@ -56,11 +58,17 @@ push() {
     done
 }
 
+config(){
+    $EDITOR $CONFIG_PATH
+    $EDITOR $EXCLUDE_PATH
+}
+
 # running
 case $1 in
     -h)         help;;
     --help)     help;;
     help)       help;;
+    config)     config;;
     test)       push test;;
     dry-run)    push dry;;
     *)          push push;;

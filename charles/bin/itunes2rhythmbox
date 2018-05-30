@@ -47,6 +47,8 @@ skip_list = [
     'Voice Memos',
 ]
 
+quote_safe_char = "()/-'~_.@;!,"
+
 source_itunes_music_folder = None
 # End of configuration
 
@@ -63,9 +65,15 @@ except ImportError:
     from urllib.parse import quote, unquote
 
 
+def itunes_quote(string):
+    string = quote(string, safe=quote_safe_char)
+    string = string.replace('%26', '&amp;')
+    return string
+
+
 if not (target_location.startswith('http://') or target_location.startswith('file://') or target_location.startswith('https://')):
     target_location = 'file://' + \
-        quote(os.path.abspath(os.path.expanduser(target_location)))
+        itunes_quote(os.path.abspath(os.path.expanduser(target_location)))
     if not target_location.endswith('/'):
         target_location += '/'
 rhythmbox_playlist, itunes_db = os.path.abspath(os.path.expanduser(rhythmbox_playlist)), os.path.abspath(os.path.expanduser(itunes_db))
@@ -133,9 +141,9 @@ def convert_music_path(music_location, source_itunes_music_folder, target_locati
     data = music_location.replace(
         source_itunes_music_folder, target_location, 1).split(':', 1)
     if len(data) == 1:
-        return quote(unquote(data[0]))
+        return itunes_quote(unquote(data[0]))
     else:
-        return ':'.join((data[0], quote(unquote(data[1]))))
+        return ':'.join((data[0], itunes_quote(unquote(data[1]))))
 
 
 def get_playlist(itunes_dict, skip_list=skip_list, convert_function=convert_music_path, **convert_args):

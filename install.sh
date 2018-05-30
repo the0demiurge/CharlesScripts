@@ -91,7 +91,8 @@ conf(){
             config-powerline-bash
             config-tmux)
 
-    N_LIST=(config-powerline-ipython)
+    N_LIST=(config-powerline-ipython
+            config-wine32)
 
 
     for Y in ${Y_LIST[@]}; do

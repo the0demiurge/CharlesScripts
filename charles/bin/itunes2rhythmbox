@@ -47,7 +47,7 @@ skip_list = [
     'Voice Memos',
 ]
 
-quote_safe_char = "()/-'~_.@;!,"
+quote_safe_char = "!$'()*+,-/=@_~"
 
 source_itunes_music_folder = None
 # End of configuration

@@ -65,11 +65,11 @@ function g
         for i in (seq 3)
             espeak -vzh push失败！ > /dev/null 2>&1
         end
-        notify-send "push失败！！！请重新push！！！" -a Charles
+        notify-send "push失败!!! 请重新push!!!" -a Charles
         notify-send -u critical $PWD -a Charles
         clear
         for i in (seq 25);echo;end
-        cowsay -f bong "push失败！！！请重新push！！！"
+        cowsay -f bong "push失败!!! 请重新push!!!"
         oneko -sakura
     end
 end

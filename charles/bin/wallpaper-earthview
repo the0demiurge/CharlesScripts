@@ -25,9 +25,10 @@ while [ $? != 0 ]; do
     PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
     # axel is faster
     # axel -n 10 $PaperUrl -o $PaperPathTmp
-    
+
     # curl is more stable in bad network connection
-    if [ `curl -w "%{http_code}" $PaperUrl -o $PaperPathTmp` != "200" ];then
+    echo GET $PaperUrl
+    if [[ ! `curl -sw "%{content_type}" $PaperUrl -o $PaperPathTmp` =~ "image" ]];then
         false
     fi
     # curl done

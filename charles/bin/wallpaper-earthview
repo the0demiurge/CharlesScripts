@@ -23,8 +23,6 @@ while [ $? != 0 ]; do
     RANDOM_NUMBER=$(date +%s%N)
     PaperIndex=$((RANDOM_NUMBER % ($START - $END + 1) + $START))
     PaperUrl=https://www.gstatic.com/prettyearth/assets/full/$((PaperIndex)).jpg
-    # axel is faster
-    # axel -n 10 $PaperUrl -o $PaperPathTmp
 
     # curl is more stable in bad network connection
     echo GET $PaperUrl

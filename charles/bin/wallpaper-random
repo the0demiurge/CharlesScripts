@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Wallpaper Downloading Directory
+PaperFolder=~/.cache/wallpaper
+if [ ! -d $PaperFolder ]; then mkdir -p $PaperFolder; fi
+
+# Paper Downloading Path
+PaperPathTmp=$PaperFolder/background-image-temp.jpg
+PaperPath=$PaperFolder/background-image.jpg
+if [ -e $PaperPathTmp ];then rm $PaperPathTmp;fi
+
+# unsplish.com
+image_api=https://source.unsplash.com/random/1920x1200
+
+# download
+curl -L $image_api -o $PaperPathTmp && mv $PaperPathTmp $PaperPath

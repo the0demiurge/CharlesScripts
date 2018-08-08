@@ -57,7 +57,7 @@ function g
     if git push
         espeak -vzh push成功 > /dev/null 2>&1
         notify-send 'push成功' -a Charles
-        sl -e
+        sl -e|lolcat
         clear
         for i in (seq 25);echo;end
         fortune|cowsay -f duck

@@ -5,4 +5,4 @@ echo '[archlinuxcn]
 SigLevel = Optional TrustAll
 Server   = https://mirrors.ustc.edu.cn/archlinuxcn/$arch'|sudo tee -a /etc/pacman.conf
 
-sudo pacman -Syu yaourt
+sudo pacman -Syu trizen

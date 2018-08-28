@@ -1,12 +1,12 @@
 #!/bin/bash
 # this script automatically install an app using APT and backup the software list to ~/.backup/
-APPS_BACKUP_PATH=~/.config/CharlesBackup/Packages/yaourt.list
+APPS_BACKUP_PATH=~/.config/CharlesBackup/Packages/aur.list
 mkdir -p ~/.config/CharlesBackup
 
 if [ $# = 0 ]; then cat $APPS_BACKUP_PATH;fi
 
 
-INSTALL() { yaourt -S $@ --needed; }
+INSTALL() { trizen -S $@ --needed; }
 
 
 for app in $@;do

@@ -42,9 +42,10 @@ gitclone(){
 
 get(){
     Y_LIST=(get-fasd
-            get-powerline)
+            # get-powerline)
             #get-oh-my-fish
             # get-thefuck)
+            )
 
     # N_LIST=(get-calibre
             # get-docker
@@ -53,12 +54,12 @@ get(){
             # get-sublime-text-3
             # get-xsh)
 
-    
+
     for Y in ${Y_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
         prompty $Y
     done
-    
+
     for N in ${N_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
         prompty $N
@@ -74,13 +75,13 @@ conf(){
 
     N_LIST=(config-powerline-ipython)
 
-    
+
     for Y in ${Y_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/installation.d/conf.d/
         echo $Y
         prompty $Y
     done
-    
+
     for N in ${N_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/installation.d/conf.d/
         echo $N
@@ -93,12 +94,12 @@ restore(){
     if [[ $PMT == 'y' || $PMT == 'Y' ]]; then
         cp -rvi ~/.local/share/CharlesScripts/data/home/.* ~/||true
     fi
-    
+
     cd ~/.local/share/CharlesScripts/charles/bin
-    
+
     # Y_LIST=(
     #         omf-restore)
-    
+
     for Y in ${Y_LIST[@]}; do
         echo $Y
         prompty $Y

@@ -5,8 +5,8 @@ PaperFolder=~/.cache/wallpaper
 if [ ! -d $PaperFolder ]; then mkdir -p $PaperFolder; fi
 
 # Paper Downloading Path
-PaperPathTmp=$PaperFolder/background-image-temp.jpg
-PaperPath=$PaperFolder/background-image.jpg
+PaperPathTmp=$PaperFolder/dialog-image-temp.jpg
+PaperPath=$PaperFolder/dialog-image.jpg
 if [ -e $PaperPathTmp ];then rm $PaperPathTmp;fi
 
 # unsplish.com

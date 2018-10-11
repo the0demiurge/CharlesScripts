@@ -1,8 +1,12 @@
 #!/bin/bash
 OS=$(cat /etc/issue|cut -f 1 -d ' ')
+if [[ $(uname) = 'Darwin' ]]; then
+    OS='Darwin'
+fi
 case $OS in
     'Arch')    INSTALL() { sudo pacman -S $@; }                                        ;;
     'Ubuntu')  INSTALL() { sudo apt install $@ -y --allow-unauthenticated; }                 ;;
+    'Darwin')  INSTALL() { brew install $@; };;
     *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
 esac
 CONF_PATH=~/.config/fish/conf.d/charles.fish

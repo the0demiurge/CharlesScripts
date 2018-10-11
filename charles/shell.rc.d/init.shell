@@ -1,7 +1,4 @@
 #INIT
-SOURCES_LIST=(
-    /usr/share/autojump/autojump.bash
-)
 for filename in ${SOURCES_LIST[@]};do
     if [ -f $filename ];then source $filename;fi
 done

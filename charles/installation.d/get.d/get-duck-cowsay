@@ -1,4 +1,4 @@
-#!/bin/bish
+#!/bin/bash
  echo '$the_cow = <<"EOC";
  $thoughts
   $thoughts

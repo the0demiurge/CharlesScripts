@@ -49,6 +49,10 @@ end
 switch (uname)
     case Linux
         abbr say espeak -vzh
+    ase Darwin
+        function notify-send
+            echo $argv
+        end
 end
 
 function g

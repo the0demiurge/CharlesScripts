@@ -75,7 +75,6 @@ function g
         clear
         for i in (seq 25);echo;end
         cowsay -f bong "push失败!!! 请重新push!!!"
-        oneko -sakura
     end
 end
 

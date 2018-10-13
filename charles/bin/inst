@@ -1,6 +1,8 @@
 #!/bin/bash
 # this script automatically install an app using APT and backup the software list to ~/.backup/
-OS=$(cat /etc/issue|cut -f 1 -d ' ')
+if [[ -f /etc/issue ]]; then
+    OS=$(cat /etc/issue|cut -f 1 -d ' ')
+fi
 if [[ $(uname) = 'Darwin' ]]; then
     OS='Darwin'
 fi

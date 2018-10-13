@@ -1,0 +1,21 @@
+#!/bin/bash
+APPS_BACKUP_PATH=~/.config/CharlesBackup/Packages/Cask.list
+mkdir -p ~/.config/CharlesBackup
+
+if [ $# = 0 ]; then cat $APPS_BACKUP_PATH;fi
+
+
+INSTALL() { brew cask install $@; }
+
+
+for app in $@;do
+	if [ -n "$app" ]; then
+        INSTALL $app
+		if [ $? = 0 ]; then
+			echo $app >> $APPS_BACKUP_PATH
+		fi
+	fi
+done
+
+sort -su $APPS_BACKUP_PATH > ~/.cache/backuplist4apps -o $APPS_BACKUP_PATH
+rm ~/.cache/backuplist4apps

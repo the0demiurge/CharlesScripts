@@ -1,0 +1,6 @@
+#!/bin/bash
+echo 'set -x HOMEBREW_BOTTLE_DOMAIN https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles'|tee ~/.config/fish/conf.d/homebrew.fish
+
+brew tap caskroom/fonts
+
+brew update

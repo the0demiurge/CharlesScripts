@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 echo "download into $HOME/Downloads/"
 echo "press Ctrl+C to stop"
 sleep 1

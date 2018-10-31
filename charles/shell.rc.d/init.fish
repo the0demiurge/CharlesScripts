@@ -48,15 +48,6 @@ function dict
     command dict $argv|more
 end
 
-switch (uname)
-    case Linux
-        abbr say espeak -vzh
-    case Darwin
-        function notify-send
-            echo $argv
-        end
-end
-
 function g
     git add -A
     git diff --cached
@@ -66,18 +57,16 @@ function g
     git commit -m "$argv $COMMIT"
     git log -1 HEAD
     if git push
-        say push成功 > /dev/null 2>&1
-        notify-send 'push成功' -a Charles
+        noti -sb -t push -m 成功
         sl -e|lolcat
         clear
         for i in (seq 25);echo;end
         fortune|cowsay -f duck
     else
         for i in (seq 3)
-            say push失败！ > /dev/null 2>&1
+            noti -s -t push -m 失败
         end
-        notify-send "push失败!!! 请重新push!!!" -a Charles
-        notify-send -u critical $PWD -a Charles
+        noti -t push失败 -m $PWD
         clear
         for i in (seq 25);echo;end
         cowsay -f bong "push失败!!! 请重新push!!!"

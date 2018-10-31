@@ -4,20 +4,18 @@
 # i.e.: type "note 4m 'go to see a movie with my gf'", and it'll notify you to "go to see a movie with my gf" after 4 minuts.
 
 if [[ -z $2 ]]; then
-    echo Remind you to do something 
+    echo Remind you to do something
     echo Usage: notify time thing, i.e. type \`'notify 4m "Attend the meeting"'\`
 else
     sleep $1
     for i in `seq 3`;do
-        espeak -v zh $2
         sleep 1
-        notify-send $2
+        noti -t Notifi -m $2 -sb
     done
 
-    notify-send --urgency=critical $2
+    noti -t Notifi -m $2 -sb
 
     sleep 10m
-    espeak -v zh "再不$2就来不及了啊"
-    notify-send "再不$2就来不及了啊"
+    noti -t '' -m "$2 will be late!" -sb
 fi
 

@@ -1,4 +1,0 @@
-#!/bin/sh
-clear
-for i in {1..40};do echo;done
-cowsay -f duck "喜欢你小宝宝～～～"

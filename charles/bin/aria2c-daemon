@@ -1,0 +1,18 @@
+#!/usr/bin/env fish
+echo "download into $HOME/Downloads/"
+set config_path .config/aria2c.conf
+
+cd $HOME
+touch $HOME/.cache/aria2.session
+switch $argv
+    case start
+        aria2c --conf-path=$config_path -D
+    case stop
+        killall aria2c
+    case run
+        echo "press Ctrl+C to stop"
+        sleep 1
+        aria2c --conf-path=$config_path
+end
+
+echo "Usage: aria2c-daemon [start/stop/run]"

@@ -1,6 +1,8 @@
-enable-rpc=true
+#!/bin/bash
+echo 'enable-rpc=true
+rpc-secret=<SECRET>
 rpc-allow-origin-all=true
-rpc-listen-all=false
+rpc-listen-all=true
 max-concurrent-downloads=15
 continue=true
 max-connection-per-server=16
@@ -15,4 +17,5 @@ file-allocation=prealloc
 input-file=.cache/aria2.session
 save-session=.cache/aria2.session
 save-session-interval=60
-force-save=true
+force-save=true'|tee $HOME/.config/aria2c.conf
+$EDITOR $HOME/.config/aria2c.conf

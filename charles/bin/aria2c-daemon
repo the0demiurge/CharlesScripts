@@ -6,7 +6,7 @@ cd $HOME
 touch $HOME/.cache/aria2.session
 switch $argv
     case start
-        aria2c --conf-path=$config_path -D
+        aria2c --conf-path=$config_path --daemon=true
     case stop
         killall aria2c
     case run

@@ -1,5 +1,5 @@
 #!/bin/bash
-echo 'enable-rpc=true
+echo "enable-rpc=true
 rpc-secret=<SECRET>
 rpc-allow-origin-all=true
 rpc-listen-all=true
@@ -12,10 +12,10 @@ max-overall-download-limit=0
 max-download-limit=0
 max-overall-upload-limit=0
 max-upload-limit=0
-dir=Downloads
+dir=$HOME/Downloads
 file-allocation=prealloc
-input-file=.cache/aria2.session
-save-session=.cache/aria2.session
+input-file=$HOME/.cache/aria2.session
+save-session=$HOME/.cache/aria2.session
 save-session-interval=60
-force-save=true'|tee $HOME/.config/aria2c.conf
+force-save=true"|tee $HOME/.config/aria2c.conf
 $EDITOR $HOME/.config/aria2c.conf

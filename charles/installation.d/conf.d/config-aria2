@@ -1,8 +1,6 @@
 #!/bin/bash
 echo "enable-rpc=true
 rpc-secret=<SECRET>
-rpc-allow-origin-all=true
-rpc-listen-all=true
 max-concurrent-downloads=15
 continue=true
 max-connection-per-server=16
@@ -13,7 +11,7 @@ max-download-limit=0
 max-overall-upload-limit=0
 max-upload-limit=0
 dir=$HOME/Downloads
-file-allocation=prealloc
+file-allocation=none
 input-file=$HOME/.cache/aria2.session
 save-session=$HOME/.cache/aria2.session
 save-session-interval=60

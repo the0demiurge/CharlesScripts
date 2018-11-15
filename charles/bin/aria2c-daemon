@@ -1,12 +1,13 @@
 #!/usr/bin/env fish
 echo "download into $HOME/Downloads/"
-set config_path .config/aria2c.conf
+set config_path $HOME/.config/aria2c.conf
 
 cd $HOME
 touch $HOME/.cache/aria2.session
 switch $argv
     case start
         aria2c --conf-path=$config_path -D
+        echo 'started' $config_path
     case stop
         killall aria2c
     case run

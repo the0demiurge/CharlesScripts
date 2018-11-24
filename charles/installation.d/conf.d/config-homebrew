@@ -1,5 +1,16 @@
 #!/bin/bash
 echo 'set -x HOMEBREW_BOTTLE_DOMAIN https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles'|tee ~/.config/fish/conf.d/homebrew.fish
+echo 'set -x PATH "/usr/local/opt/coreutils/libexec/gnubin" $PATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
+echo 'set -x MANPATH "/usr/local/opt/coreutils/libexec/gnuman" $MANPATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
+echo 'set -x PATH "/usr/local/opt/gnu-tar/libexec/gnubin" $PATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
+echo 'set -x MANPATH "/usr/local/opt/gnu-tar/libexec/gnuman" $MANPATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
+echo 'set -x PATH "/usr/local/opt/gnu-sed/libexec/gnubin" $PATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
+echo 'set -x MANPATH "/usr/local/opt/gnu-sed/libexec/gnuman" $MANPATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
+echo 'set -x PATH "/usr/local/opt/grep/libexec/gnubin" $PATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
+echo 'set -x MANPATH "/usr/local/opt/grep/libexec/gnuman" $MANPATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
+echo 'set -x PATH "/usr/local/opt/gawk/libexec/gnubin" $PATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
+echo 'set -x MANPATH "/usr/local/opt/gawk/libexec/gnuman" $MANPATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
+
 
 brew tap caskroom/fonts
 

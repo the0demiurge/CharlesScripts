@@ -2,6 +2,8 @@
 echo 'set -x HOMEBREW_BOTTLE_DOMAIN https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles'|tee ~/.config/fish/conf.d/homebrew.fish
 echo 'set -x PATH "/usr/local/opt/coreutils/libexec/gnubin" $PATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -x MANPATH "/usr/local/opt/coreutils/libexec/gnuman" $MANPATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
+echo 'set -x PATH "/usr/local/opt/findutils/libexec/gnubin" $PATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
+echo 'set -x MANPATH "/usr/local/opt/findutils/libexec/gnuman" $MANPATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -x PATH "/usr/local/opt/gnu-tar/libexec/gnubin" $PATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -x MANPATH "/usr/local/opt/gnu-tar/libexec/gnuman" $MANPATH'|tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -x PATH "/usr/local/opt/gnu-sed/libexec/gnubin" $PATH'|tee -a ~/.config/fish/conf.d/homebrew.fish

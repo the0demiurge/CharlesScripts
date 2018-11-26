@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# To complete the installation you must enable TLP's services (refer to the TLP FAQ):
+systemctl enable tlp.service
+systemctl enable tlp-sleep.service
+
+# Using the Radio Device Wizard (tlp-rdw) requires an additional service:
+systemctl enable NetworkManager-dispatcher.service
+
+# You should also mask the following services to avoid conflicts and assure proper operation of TLP's radio device switching options:
+systemctl mask systemd-rfkill.service
+systemctl mask systemd-rfkill.socket

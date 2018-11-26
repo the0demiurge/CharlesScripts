@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -e
+cd ~/.mozilla/firefox/
+
+cd *.default
+mkdir chrome
+cd chrome
+
+echo '<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bindings>
+<bindings xmlns="http://www.mozilla.org/xbl">
+    <binding id="tabs-scroll" extends="chrome://global/content/bindings/scrollbox.xml#scrollbox">
+        <handlers>
+            <handler event="wheel"><![CDATA[
+                // Preserve original behaviour if meta (Windows) key is held
+                if (event.metaKey) return;
+                                
+                if (event.deltaY < 0) {
+                    gBrowser.tabContainer.advanceSelectedTab(-1, true);
+                }
+                else {
+                    gBrowser.tabContainer.advanceSelectedTab(1, true);
+                }    
+                event.stopPropagation();
+                event.preventDefault();
+            ]]></handler>
+        </handlers>
+    </binding>
+</bindings>
+'|tee bindings.xml
+echo '.tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
+    /* Place bindings.xml in the same folder as userChrome.css */
+    -moz-binding: url("bindings.xml#tabs-scroll") !important;
+}
+'|tee userChrome.css
+
+echo 'SUCCESS'

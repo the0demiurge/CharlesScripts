@@ -67,6 +67,7 @@ fish -c "abbr mag2torrent 'aria2c --bt-metadata-only=true --bt-save-metadata=tru
 fish -c "abbr n 'open .'"
 fish -c "abbr o 'open'"
 fish -c "abbr p 'python'"
+fish -c "abbr cps 'proxychains'"
 fish -c "abbr pdb 'python -mpowerline.bindings.pdb'"
 fish -c "abbr tmux 'tmux -2'"
 fish -c "abbr su 'sudo su'"

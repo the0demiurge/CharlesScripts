@@ -65,12 +65,14 @@ ssr_test(){
 
     echo 'connection information:'
     curl ipinfo.io --socks5 localhost:$PORT
+    echo
+    curl cip.cc --socks5 localhost:$PORT
 
     if [ $? == 0 ]; then
-        if [[ -z $(which tsocks 2>/dev/null) ]]; then
-            echo "You may install tsocks and configure it properly to test net delay"
+        if [[ -z $(which proxychains4 2>/dev/null) ]]; then
+            echo "You may install proxychains4 and configure it properly to test net delay"
         else
-            echo -e '\nChecking delay...'; tsocks ping -c 5 cip.cc
+            echo -e '\nChecking delay...'; proxychains4 ping -c 5 cip.cc
         fi
     fi
 }

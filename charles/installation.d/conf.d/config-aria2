@@ -3,6 +3,7 @@ echo "enable-rpc=true
 rpc-secret=<SECRET>
 max-concurrent-downloads=15
 continue=true
+load-cookies=true
 max-connection-per-server=16
 min-split-size=10M
 split=100

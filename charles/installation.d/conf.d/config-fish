@@ -18,6 +18,8 @@ echo '# This is the Charles Scripts Configuration.'|tee $CONF_PATH
 echo 'set -g CHARLES_HOME ~/.local/share/CharlesScripts/charles' |tee -a $CONF_PATH
 echo 'set -g CHARLES_BACKUP ~/.config/CharlesBackup' |tee -a $CONF_PATH
 
+echo set -x FZF_DEFAULT_OPTS \"--bind=\'ctrl-o:execute\(subl {}\)+abort\'\"|tee -a $CONF_PATH
+
 
 ANACONDA_PATH=$(locate anaconda3|grep -E 'anaconda3/bin$'|grep $USER||true)
 if [ ! -z "$ANACONDA_PATH" ];then

@@ -10,7 +10,7 @@
 # 输入ssr help 展示帮助信息
 
 set -e
-if [ -z $EDITOR ];then
+if [ -z "$EDITOR" ];then
     EDITOR=vi
 fi
 

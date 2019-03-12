@@ -34,6 +34,8 @@ data = [
 ]
 
 
+characters = sum([list(i.items()) for i in data], list())
+
 def test():
     if len(sys.argv) < 3:
         index = [0, 1]
@@ -44,11 +46,11 @@ def test():
     else:
         index = [0, 1]
     while(True):
-        line = random.sample(data, 1)[0]
-        key = random.sample(line.keys(), 1)[0]
-        result = input('{}: '.format(line[key][random.sample(index, 1)[0]]))
-        if not (result == key or result in line[key]):
-            print('{}: {}, {}'.format(key, line[key][0], line[key][1]))
+        random.shuffle(characters)
+        for character in characters:
+            result = input('{}: '.format(character[1][random.sample(index, 1)[0]]))
+            if not (result == character[0] or result in character[1]):
+                print('{}: {}, {}'.format(character[0], character[1][0], character[1][1]))
 
 
 def search():

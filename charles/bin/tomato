@@ -4,13 +4,13 @@
 # i.e.: type "note 4m 'go to see a movie with my gf'", and it'll notify you to "go to see a movie with my gf" after 4 minuts.
 
 while [ true ]; do
-    echo "\rWorking\t\r"
+    echo -e "\rWorking\t\r"
     notify-send --urgency=critical 'Go To Work'
     fifo
     sleep 25m
     for i in `seq 10`; do echo -ne '\a\r\t\r'; sleep .1s; done
 
-    echo "\rResting\t\r"
+    echo -e "\rResting\t\r"
     notify-send --urgency=critical 'Rest'
     sleep 5m
     for i in `seq 10`; do echo -ne '\a\r\t\r'; sleep .1s; done

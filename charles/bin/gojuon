@@ -50,7 +50,7 @@ def test():
         indexes = random.sample(index * len(characters), len(characters))
         if len(index) == 2:
             indexes += [1 - i for i in indexes]
-        for character, idx in zip(characters, indexes):
+        for character, idx in zip(characters * len(index), indexes):
             result = input('{}: '.format(character[1][idx]))
             if not (result == character[0] or result in character[1]):
                 print('{}: {}, {}'.format(character[0], character[1][0], character[1][1]))

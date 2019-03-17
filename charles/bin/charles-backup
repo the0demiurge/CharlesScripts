@@ -3,10 +3,11 @@ set -g BACKUP_HOME ~/.config/CharlesBackup/home
 
 rm $BACKUP_HOME/.config/sublime-text-3 -rf
 mkdir -p $BACKUP_HOME/.config/sublime-text-3/Packages/
-cp ~/.config/sublime-text-3/Packages/User/ -r $BACKUP_HOME/.config/sublime-text-3/Packages/
 
 omf-backup
 switch (uname)
     case Linux
-        gnome-shell-extensions-backup
+        cp ~/.config/sublime-text-3/Packages/User/ -r $BACKUP_HOME/.config/sublime-text-3/Packages/
+    case Darwin
+        cp '~/Library/Application Support/Sublime Text 3/Packages/User' -r $BACKUP_HOME/.config/sublime-text-3/Packages/
 end

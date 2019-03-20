@@ -1,26 +1,28 @@
 #!/bin/bash
 help="Decodes thunder, flashget, qqdl links to original link.\nUsage: thunderdecode '<link>'"
 
+if [ -z $1 ]; then
+    echo -e $help
+    exit
+fi
 
-
-if [ -z $1 ];then echo -e $help;exit;fi
-
-format=$(echo $1|cut -d ':' -f 1)
+format=$(echo $1 | cut -d ':' -f 1)
 
 case $format in
-    'thunder' )
-        link=$(echo ${1#thunder://}|base64 -d)
-        link=${link#AA};link=${link%ZZ}
+'thunder')
+    link=$(echo ${1#thunder://} | base64 -d)
+    link=${link#AA}
+    link=${link%ZZ}
     ;;
-    'qqdl' )
-        link=$(echo ${1#qqdl://}|base64 -d)
+'qqdl')
+    link=$(echo ${1#qqdl://} | base64 -d)
     ;;
-    'flashget' )
-        link=${1#flashget://}
-        link=${link%'&forece'}
-        link=$(echo $link|base64 -d)
-        link=${link#'[FLASHGET]'}
-        link=${link%'[FLASHGET]'}
+'flashget')
+    link=${1#flashget://}
+    link=${link%'&forece'}
+    link=$(echo $link | base64 -d)
+    link=${link#'[FLASHGET]'}
+    link=${link%'[FLASHGET]'}
     ;;
 esac
 

@@ -2,4 +2,4 @@
 set -x
 brew tap homebrew/command-not-found
 mkdir -p ~/.config/fish/conf.d
-echo 'brew command command-not-found-init > /dev/null 2>&1; and . (brew command-not-found-init)'|tee ~/.config/fish/conf.d/homebrew-command-not-found.fish
+echo 'brew command command-not-found-init > /dev/null 2>&1; and . (brew command-not-found-init)' | tee ~/.config/fish/conf.d/homebrew-command-not-found.fish

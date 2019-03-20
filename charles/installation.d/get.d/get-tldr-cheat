@@ -1,8 +1,8 @@
 #!/bin/bash
-case $(cat /etc/issue|cut -f 1 -d ' ') in
-    'Arch')    INSTALL() { sudo pacman -S $@; }                                        ;;
-    'Ubuntu')  INSTALL() { sudo apt install $@ -y --allow-unauthenticated; }                 ;;
-    *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
+case $(cat /etc/issue | cut -f 1 -d ' ') in
+'Arch') INSTALL() { sudo pacman -S $@; } ;;
+'Ubuntu') INSTALL() { sudo apt install $@ -y --allow-unauthenticated; } ;;
+*) echo 'Your distribution has not implementd yet, please modify this command' ;;
 esac
-if [ `which pip|wc -l` == 0 ];then INSTALL python-pip;fi
+if [ $(which pip | wc -l) == 0 ]; then INSTALL python-pip; fi
 sudo pip install -U cheat tldr

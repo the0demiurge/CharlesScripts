@@ -3,4 +3,4 @@ echo 'export XMODIFIERS=@im=fcitx
 export QT4_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export GTK_IM_MODULE=fcitx
-'|sudo tee -a /etc/environment
+' | sudo tee -a /etc/environment

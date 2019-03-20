@@ -2,7 +2,7 @@
 
 URL='ipgw.neu.edu.cn/srun_portal_pc.php?ac_id=1'
 
-help(){
+help() {
     echo 东北大学IP网关登陆器
     echo 作者：老徐
     echo E-mail: charl3s.xu@gmail.com
@@ -14,27 +14,27 @@ help(){
     echo -e '\t' ipgw logout username password '\t' 退出网关
 }
 
-status(){
-    IFS=, INFO=($(curl -s $URL --data action=get_online_info|xargs|grep -oP '^.*?(?=<html)'))
-    if [[ ${#INFO[@]} = 1 ]]; then
+status() {
+    IFS=, INFO=($(curl -s $URL --data action=get_online_info | xargs | grep -oP '^.*?(?=<html)'))
+    if [[ ${#INFO[@]} == 1 ]]; then
         echo 当前状态： 离线
     else
-    echo 当前状态： 在线
-    echo 当前流量： $((${INFO[0]}/1000000000)) GB
-    echo 账户余额： ￥ ${INFO[2]}
-    echo 当前 IP ： ${INFO[5]}
+        echo 当前状态： 在线
+        echo 当前流量： $((${INFO[0]} / 1000000000)) GB
+        echo 账户余额： ￥ ${INFO[2]}
+        echo 当前 IP ： ${INFO[5]}
     fi
 }
 
-login(){
+login() {
     if [[ -z $2 ]]; then
         read -sp 请输入密码： PASSWORD
     else
         PASSWORD=$2
     fi
     INFO=$(curl -s $URL --data action=login --data username=$1 --data password=$PASSWORD)
-    SUCC=$(echo $INFO|xargs|grep -oP  '(?<=td height=40 style=font-weight:bold;color:orange;> ).*?(?=</td)')
-    FAIL=$(echo $INFO|xargs|grep -oP  '(?<=<p>).*?(?=</p)'|head -1)
+    SUCC=$(echo $INFO | xargs | grep -oP '(?<=td height=40 style=font-weight:bold;color:orange;> ).*?(?=</td)')
+    FAIL=$(echo $INFO | xargs | grep -oP '(?<=<p>).*?(?=</p)' | head -1)
     if [[ -z $SUCC ]]; then
         echo $FAIL
     else
@@ -43,15 +43,15 @@ login(){
     fi
 }
 
-logout(){
+logout() {
     if [[ -z $2 ]]; then
         read -sp 请输入密码： PASSWORD
     else
         PASSWORD=$2
     fi
     INFO=$(curl -s $URL --data action=logout --data username=$1 --data password=$PASSWORD)
-    SUCC=$(echo $INFO|xargs|grep -oP  '(?<=td height=40 style=font-weight:bold;color:orange;> ).*?(?=</td)')
-    FAIL=$(echo $INFO|xargs|grep -oP  '(?<=<p>).*?(?=</p)'|head -1)
+    SUCC=$(echo $INFO | xargs | grep -oP '(?<=td height=40 style=font-weight:bold;color:orange;> ).*?(?=</td)')
+    FAIL=$(echo $INFO | xargs | grep -oP '(?<=<p>).*?(?=</p)' | head -1)
     if [[ -z $SUCC ]]; then
         echo $FAIL
     else
@@ -61,9 +61,9 @@ logout(){
 }
 
 case $1 in
-    status ) status ;;
-    login ) login $2 $3 ;;
-    logout ) logout $2 $3 ;;
-    easter-agg ) echo '老徐的对象是小胖儿 XD' ;;
-    * ) help ;;
+status) status ;;
+login) login $2 $3 ;;
+logout) logout $2 $3 ;;
+easter-agg) echo '老徐的对象是小胖儿 XD' ;;
+*) help ;;
 esac

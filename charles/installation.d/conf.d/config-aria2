@@ -16,5 +16,5 @@ file-allocation=none
 input-file=$HOME/.cache/aria2.session
 save-session=$HOME/.cache/aria2.session
 save-session-interval=60
-force-save=true"|tee $HOME/.config/aria2c.conf
+force-save=true" | tee $HOME/.config/aria2c.conf
 $EDITOR $HOME/.config/aria2c.conf

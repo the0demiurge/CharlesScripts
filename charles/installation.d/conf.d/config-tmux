@@ -5,22 +5,22 @@ git clone https://github.com/gpakosz/.tmux.git ~/.oh-my-tmux
 ln -s -f ~/.oh-my-tmux/.tmux.conf ~/.tmux.conf
 cp ~/.oh-my-tmux/.tmux.conf.local ~
 
-echo "tmux_conf_theme_left_separator_main=''" >> ~/.tmux.conf.local
-echo "tmux_conf_theme_left_separator_sub=''" >> ~/.tmux.conf.local
-echo "tmux_conf_theme_right_separator_main=''" >> ~/.tmux.conf.local
-echo "tmux_conf_theme_right_separator_sub=''" >> ~/.tmux.conf.local
+echo "tmux_conf_theme_left_separator_main=''" >>~/.tmux.conf.local
+echo "tmux_conf_theme_left_separator_sub=''" >>~/.tmux.conf.local
+echo "tmux_conf_theme_right_separator_main=''" >>~/.tmux.conf.local
+echo "tmux_conf_theme_right_separator_sub=''" >>~/.tmux.conf.local
 
 # tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-echo "# List of plugins" >> ~/.tmux.conf.local
-echo "set -g @plugin 'tmux-plugins/tpm'" >> ~/.tmux.conf.local
-echo "set -g @plugin 'tmux-plugins/tmux-sensible'" >> ~/.tmux.conf.local
-echo "" >> ~/.tmux.conf.local
-echo "# Other examples:" >> ~/.tmux.conf.local
-echo "# set -g @plugin 'github_username/plugin_name'" >> ~/.tmux.conf.local
-echo "# set -g @plugin 'git@github.com/user/plugin'" >> ~/.tmux.conf.local
-echo "# set -g @plugin 'git@bitbucket.com/user/plugin'" >> ~/.tmux.conf.local
-echo "" >> ~/.tmux.conf.local
-echo "set -g @plugin 'tmux-plugins/tmux-pain-control'" >> ~/.tmux.conf.local
-echo "# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)" >> ~/.tmux.conf.local
-echo "run '~/.tmux/plugins/tpm/tpm'" >> ~/.tmux.conf.local
+echo "# List of plugins" >>~/.tmux.conf.local
+echo "set -g @plugin 'tmux-plugins/tpm'" >>~/.tmux.conf.local
+echo "set -g @plugin 'tmux-plugins/tmux-sensible'" >>~/.tmux.conf.local
+echo "" >>~/.tmux.conf.local
+echo "# Other examples:" >>~/.tmux.conf.local
+echo "# set -g @plugin 'github_username/plugin_name'" >>~/.tmux.conf.local
+echo "# set -g @plugin 'git@github.com/user/plugin'" >>~/.tmux.conf.local
+echo "# set -g @plugin 'git@bitbucket.com/user/plugin'" >>~/.tmux.conf.local
+echo "" >>~/.tmux.conf.local
+echo "set -g @plugin 'tmux-plugins/tmux-pain-control'" >>~/.tmux.conf.local
+echo "# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)" >>~/.tmux.conf.local
+echo "run '~/.tmux/plugins/tpm/tpm'" >>~/.tmux.conf.local

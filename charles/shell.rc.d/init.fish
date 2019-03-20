@@ -41,11 +41,13 @@ function backup
 end
 
 function cls
-    cd "$argv"; ls;
+    cd "$argv"
+    ls
+
 end
 
 function dict
-    command dict $argv|more
+    command dict $argv | more
 end
 
 function g
@@ -58,27 +60,34 @@ function g
     git log -1 HEAD
     if git push
         noti -sb -t push -m succeeded
-        sl -e|lolcat
+        sl -e | lolcat
         clear
-        for i in (seq 25);echo;end
-        fortune|cowsay -f duck
+        for i in (seq 25)
+            echo
+        end
+        fortune | cowsay -f duck
     else
         for i in (seq 3)
             noti -s -t push -m failed
         end
         noti -t push failed -m $PWD
         clear
-        for i in (seq 25);echo;end
+        for i in (seq 25)
+            echo
+        end
         cowsay -f bong "push failed!!! push again!!!"
     end
 end
 
 function mcd
-    mkdir -p "$argv"; cd "$argv";
+    mkdir -p "$argv"
+    cd "$argv"
+
 end
 
 function md5check
-    md5sum "$argv[1]" | grep "$argv[2]";
+    md5sum "$argv[1]" | grep "$argv[2]"
+
 end
 
 function viz
@@ -90,4 +99,3 @@ function viz
             dot -T $argv[2] -o (echo $argv[1]|sed 's/\..*//g').$argv[2] $argv[1]
     end
 end
-

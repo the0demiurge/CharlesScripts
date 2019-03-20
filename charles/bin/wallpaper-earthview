@@ -7,7 +7,7 @@ if [ ! -d $PaperFolder ]; then mkdir -p $PaperFolder; fi
 # Paper Downloading Path
 PaperPathTmp=$PaperFolder/background-image-temp.jpg
 PaperPath=$PaperFolder/background-image.jpg
-if [ -e $PaperPathTmp ];then rm $PaperPathTmp;fi
+if [ -e $PaperPathTmp ]; then rm $PaperPathTmp; fi
 
 # Paper downloading range
 START=1000
@@ -17,8 +17,8 @@ END=7024
 TIMES=0
 false
 while [ $? != 0 ]; do
-    TIMES=$[TIMES+1]
-    if [ $TIMES -gt 50 ]; then exit 1;fi
+    TIMES=$((TIMES + 1))
+    if [ $TIMES -gt 50 ]; then exit 1; fi
     false
     RANDOM_NUMBER=$(date +%s%N)
     PaperIndex=$((RANDOM_NUMBER % ($START - $END + 1) + $START))
@@ -26,10 +26,9 @@ while [ $? != 0 ]; do
 
     # curl is more stable in bad network connection
     echo GET $PaperUrl
-    if [[ ! `curl -sw "%{content_type}" $PaperUrl -o $PaperPathTmp` =~ "image" ]];then
+    if [[ ! $(curl -sw "%{content_type}" $PaperUrl -o $PaperPathTmp) =~ "image" ]]; then
         false
     fi
     # curl done
 done
 mv $PaperPathTmp $PaperPath
-

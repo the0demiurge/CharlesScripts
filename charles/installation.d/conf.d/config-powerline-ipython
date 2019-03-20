@@ -1,9 +1,9 @@
 #!/bin/bash
 #IPY_CONFIG_PATH=$(locate .ipython|grep $USER|grep conf|grep -E '\.py$')
-pip install -U powerline-status||true
+pip install -U powerline-status || true
 IPY_CONFIG_PATH=~/.ipython/profile_default/ipython_config.py
-if [ ! -e "~/.ipython/profile_default/" ];then mkdir -p ~/.ipython/profile_default/;fi
-echo "from powerline.bindings.ipython.since_5 import PowerlinePrompts" >> $IPY_CONFIG_PATH
-echo "c = get_config()" >> $IPY_CONFIG_PATH
-echo "c.TerminalInteractiveShell.simple_prompt = False" >> $IPY_CONFIG_PATH
-echo "c.TerminalInteractiveShell.prompts_class = PowerlinePrompts" >> $IPY_CONFIG_PATH
+if [ ! -e "~/.ipython/profile_default/" ]; then mkdir -p ~/.ipython/profile_default/; fi
+echo "from powerline.bindings.ipython.since_5 import PowerlinePrompts" >>$IPY_CONFIG_PATH
+echo "c = get_config()" >>$IPY_CONFIG_PATH
+echo "c.TerminalInteractiveShell.simple_prompt = False" >>$IPY_CONFIG_PATH
+echo "c.TerminalInteractiveShell.prompts_class = PowerlinePrompts" >>$IPY_CONFIG_PATH

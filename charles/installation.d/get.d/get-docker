@@ -1,9 +1,8 @@
 #!/bin/bash
-case $(cat /etc/issue|cut -f 1 -d ' ') in
-    'Arch')    INSTALL() { sudo pacman -S $@; }                                        ;;
-    'Ubuntu')  INSTALL() { sudo apt install $@ -y --allow-unauthenticated; }                 ;;
-    *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
+case $(cat /etc/issue | cut -f 1 -d ' ') in
+'Arch') INSTALL() { sudo pacman -S $@; } ;;
+'Ubuntu') INSTALL() { sudo apt install $@ -y --allow-unauthenticated; } ;;
+*) echo 'Your distribution has not implementd yet, please modify this command' ;;
 esac
-if [ `which curl|wc -l` == 0 ];then INSTALL curl;fi
+if [ $(which curl | wc -l) == 0 ]; then INSTALL curl; fi
 curl -sSL https://get.docker.com/ | sh
-

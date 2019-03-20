@@ -1,4 +1,3 @@
 #!/bin/bash
-if [ `which curl|wc -l` == 0 ];then INSTALL curl;fi
+if [ $(which curl | wc -l) == 0 ]; then INSTALL curl; fi
 curl --create-dirs -o ~/.config/fish/conf.d/up.fish https://raw.githubusercontent.com/shannonmoeller/up/master/up.fish
-

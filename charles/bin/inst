@@ -1,49 +1,50 @@
 #!/bin/bash
 # this script automatically install an app using APT and backup the software list to ~/.backup/
 if [[ -f /etc/issue ]]; then
-    OS=$(cat /etc/issue|cut -f 1 -d ' ')
+    OS=$(cat /etc/issue | cut -f 1 -d ' ')
 fi
-if [[ $(uname) = 'Darwin' ]]; then
+if [[ $(uname) == 'Darwin' ]]; then
     OS='Darwin'
 fi
 APPS_BACKUP_PATH=~/.config/CharlesBackup/Packages/$OS.list
 mkdir -p ~/.config/CharlesBackup
 
-if [ $# = 0 ]; then cat $APPS_BACKUP_PATH;fi
+if [ $# = 0 ]; then cat $APPS_BACKUP_PATH; fi
 
 case $OS in
-    'Arch')    INSTALL() { sudo pacman -S --noconfirm --needed $@; };;
-    'Ubuntu')  INSTALL() {
-        if [[ ${app%-} = $app ]]; then
-            dpkg -s $@ > /dev/null 2>&1
-        else
-            false
-        fi
-        if [[ $? = 0 ]]; then
-            echo $@ already installed
-        else
-            echo -e '\nInstalling' $@
-            sudo apt install $@ -y --allow-unauthenticated
-        fi };;
-    'Darwin')  INSTALL() { brew install $@; };;
-    *)         echo 'Your distribution has not implementd yet, please modify this command';;
+'Arch') INSTALL() { sudo pacman -S --noconfirm --needed $@; } ;;
+'Ubuntu') INSTALL() {
+    if [[ ${app%-} == $app ]]; then
+        dpkg -s $@ >/dev/null 2>&1
+    else
+        false
+    fi
+    if [[ $? == 0 ]]; then
+        echo $@ already installed
+    else
+        echo -e '\nInstalling' $@
+        sudo apt install $@ -y --allow-unauthenticated
+    fi
+} ;;
+'Darwin') INSTALL() { brew install $@; } ;;
+*) echo 'Your distribution has not implementd yet, please modify this command' ;;
 esac
 
-for app in $@;do
-	if [ -n "$app" ]; then
+for app in $@; do
+    if [ -n "$app" ]; then
         false
-        while [ $? -ne 0 -a $? -ne 100 -a $? -ne 130 ];do
-          if [ $? -ne 0 ]; then
-            echo $? $app $(date) >> ~/.cache/inst.err.log
-            sleep 3
-          fi
+        while [ $? -ne 0 -a $? -ne 100 -a $? -ne 130 ]; do
+            if [ $? -ne 0 ]; then
+                echo $? $app $(date) >>~/.cache/inst.err.log
+                sleep 3
+            fi
             INSTALL $app
         done
-		if [ $? = 0 ]; then
-			echo $app >> $APPS_BACKUP_PATH
-		fi
-	fi
+        if [ $? = 0 ]; then
+            echo $app >>$APPS_BACKUP_PATH
+        fi
+    fi
 done
 
-sort -su $APPS_BACKUP_PATH > ~/.cache/backuplist4apps -o $APPS_BACKUP_PATH
+sort -su $APPS_BACKUP_PATH -o $APPS_BACKUP_PATH >~/.cache/backuplist4apps
 rm ~/.cache/backuplist4apps

@@ -8,10 +8,16 @@ while [ true ]; do
     notify-send --urgency=critical 'Go To Work'
     fifo
     sleep 25m
-    for i in `seq 10`; do echo -ne '\a\r\t\r'; sleep .1s; done
+    for i in $(seq 10); do
+        echo -ne '\a\r\t\r'
+        sleep .1s
+    done
 
     echo -e "\rResting\t\r"
     notify-send --urgency=critical 'Rest'
     sleep 5m
-    for i in `seq 10`; do echo -ne '\a\r\t\r'; sleep .1s; done
+    for i in $(seq 10); do
+        echo -ne '\a\r\t\r'
+        sleep .1s
+    done
 done

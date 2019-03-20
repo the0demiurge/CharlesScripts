@@ -1,3 +1,3 @@
 #!/bin/bash
-echo  'deb http://archive.getdeb.net/ubuntu zesty-getdeb games' | sudo tee /etc/apt/sources.list.d/playdeb2.list
- wget -q -O- http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
+echo 'deb http://archive.getdeb.net/ubuntu zesty-getdeb games' | sudo tee /etc/apt/sources.list.d/playdeb2.list
+wget -q -O- http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -

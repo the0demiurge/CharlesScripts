@@ -5,12 +5,12 @@ db=$tmp/db
 fs=$tmp/fs
 
 mkdir "$tmp"
-trap  'rm -rf "$tmp"' EXIT
+trap 'rm -rf "$tmp"' EXIT
 
-pacman -Qlq | sort -u > "$db"
+pacman -Qlq | sort -u >"$db"
 
 find /bin /etc /lib /sbin /usr \
   ! -name lost+found \
-  \( -type d -printf '%p/\n' -o -print \) | sort > "$fs"
+  \( -type d -printf '%p/\n' -o -print \) | sort >"$fs"
 
 comm -23 "$fs" "$db"

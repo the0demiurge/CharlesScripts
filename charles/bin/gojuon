@@ -36,6 +36,7 @@ data = [
 
 characters = sum([list(i.items()) for i in data], list())
 
+
 def test():
     if len(sys.argv) < 3:
         index = [0, 1]
@@ -114,4 +115,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

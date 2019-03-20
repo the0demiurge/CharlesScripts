@@ -3,20 +3,18 @@
 APPS_BACKUP_PATH=~/.config/CharlesBackup/Packages/aur.list
 mkdir -p ~/.config/CharlesBackup
 
-if [ $# = 0 ]; then cat $APPS_BACKUP_PATH;fi
-
+if [ $# = 0 ]; then cat $APPS_BACKUP_PATH; fi
 
 INSTALL() { trizen -S $@ --needed --noconfirm; }
 
-
-for app in $@;do
+for app in $@; do
 	if [ -n "$app" ]; then
-        INSTALL $app
+		INSTALL $app
 		if [ $? = 0 ]; then
-			echo $app >> $APPS_BACKUP_PATH
+			echo $app >>$APPS_BACKUP_PATH
 		fi
 	fi
 done
 
-sort -su $APPS_BACKUP_PATH > ~/.cache/backuplist4apps -o $APPS_BACKUP_PATH
+sort -su $APPS_BACKUP_PATH -o $APPS_BACKUP_PATH >~/.cache/backuplist4apps
 rm ~/.cache/backuplist4apps

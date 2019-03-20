@@ -1,7 +1,7 @@
 #!/bin/bash
- echo '$the_cow = <<"EOC";
+echo '$the_cow = <<"EOC";
  $thoughts
   $thoughts
    $thoughts >()_
       (__)__ _
-EOC' |sudo tee /usr/share/cows/duck.cow
+EOC' | sudo tee /usr/share/cows/duck.cow

@@ -1,27 +1,31 @@
 #!/bin/bash
 PUSH_DIR=(~/.config/CharlesBackup
-          )
+)
 PULL_DIR=(~/.local/share/CharlesScripts
-          ~/.config/CharlesBackup
-          ~/.emacs.d
-          ~/.SpaceVim
-          ~/.oh-my-tmux
-          )
+    ~/.config/CharlesBackup
+    ~/.emacs.d
+    ~/.SpaceVim
+    ~/.oh-my-tmux
+)
 msg="$@"
 
 echo 'Updating CharlesScripts and dependencies...'
-for i in ${PULL_DIR[@]};do cd $i;echo Pulling $i;git pull;done
+for i in ${PULL_DIR[@]}; do
+    cd $i
+    echo Pulling $i
+    git pull
+done
 
 echo 'Uploading Backups'
-for i in ${PUSH_DIR[@]};do
+for i in ${PUSH_DIR[@]}; do
     cd $i
     echo Pushing $i
     git add -A
     git status
     git diff HEAD
-    if [ -z $msg ];then
+    if [ -z $msg ]; then
         read -p 'Message:' msg
-        if [ -z $msg ];then msg='update';fi
+        if [ -z $msg ]; then msg='update'; fi
     fi
     git commit -m "$msg"
     git push

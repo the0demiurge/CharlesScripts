@@ -1,49 +1,55 @@
 #!/bin/bash
-OS=$(cat /etc/issue|cut -f 1 -d ' ')
+OS=$(cat /etc/issue | cut -f 1 -d ' ')
 CHARLES_BACKUP=~/.config/CharlesBackup
 case $OS in
-    'Arch')    INSTALL() { sudo pacman -S --needed $@; };UPDATE() { sudo pacman -Sy; }                       ;;
-    'Ubuntu')  INSTALL() { sudo apt install $@ -y --allow-unauthenticated; };UPDATE() { sudo apt update; } ;;
-    *)         echo 'Your distribution has not implementd yet, please modify this command'                 ;;
+'Arch')
+    INSTALL() { sudo pacman -S --needed $@; }
+    UPDATE() { sudo pacman -Sy; }
+    ;;
+'Ubuntu')
+    INSTALL() { sudo apt install $@ -y --allow-unauthenticated; }
+    UPDATE() { sudo apt update; }
+    ;;
+*) echo 'Your distribution has not implementd yet, please modify this command' ;;
 esac
 
 if [[ $0 != 'debug' ]]; then
     set -e
 fi
 
-promptn(){
+promptn() {
     read -p 'Will you run '$1'?[y/N]' PMT
     if [[ $PMT == 'y' || $PMT == 'Y' ]]; then
         . ./$1
     fi
 }
 
-prompty(){
+prompty() {
     read -p 'Will you run '$1'?[Y/n]' PMT
     if [[ $PMT != 'n' && $PMT != 'N' ]]; then
         . ./$1
     fi
 }
 
-dependency(){
+dependency() {
     echo 'Installing part of the dependencies...'
     UPDATE
     case $OS in
-        'Arch')    INSTALL git espeak cowsay sl fish mlocate fortune-mod                                     ;;
-        'Ubuntu')  INSTALL git espeak cowsay oneko sl fortune fish mlocate                       ;;
-        *)         echo 'Your distribution has not implementd yet, please modify this command'   ;;
+    'Arch') INSTALL git espeak cowsay sl fish mlocate fortune-mod ;;
+    'Ubuntu') INSTALL git espeak cowsay oneko sl fortune fish mlocate ;;
+    *) echo 'Your distribution has not implementd yet, please modify this command' ;;
     esac
     sudo updatedb
 }
 
-gitclone(){
-    if [ ! -d ~/.local/share ]; then mkdir -p ~/.local/share;fi
-    if [[ -x ~/.local/share/CharlesScripts ]]; then rm -rf ~/.local/share/CharlesScripts;fi
+gitclone() {
+    if [ ! -d ~/.local/share ]; then mkdir -p ~/.local/share; fi
+    if [[ -x ~/.local/share/CharlesScripts ]]; then rm -rf ~/.local/share/CharlesScripts; fi
     git clone https://github.com/the0demiurge/CharlesScripts.git ~/.local/share/CharlesScripts
     if [[ ! -x $CHARLES_BACKUP ]]; then
         echo 'Please type your backup git repo address. If you do not have one, you may create it on GitHub.com.'
         read -p 'Press Enter to skip' REPO
-        git clone $REPO $CHARLES_BACKUP||true
+        git clone $REPO $CHARLES_BACKUP || true
     fi
     if [[ ! -x $CHARLES_BACKUP ]]; then
         echo 'Clone failed! Default CharlesBackup will be cloned!'
@@ -55,22 +61,21 @@ gitclone(){
     fi
 }
 
-get(){
+get() {
     Y_LIST=(get-fasd
-            get-powerline
-            get-thefuck
-            get-oh-my-fishi
-            get-albert
-            get-playdeb
-            get-typora)
+        get-powerline
+        get-thefuck
+        get-oh-my-fishi
+        get-albert
+        get-playdeb
+        get-typora)
 
     N_LIST=(get-calibre
-            get-docker
-            get-spacemacs
-            get-spacevim
-            get-sublime-text-3
-            get-xsh)
-
+        get-docker
+        get-spacemacs
+        get-spacevim
+        get-sublime-text-3
+        get-xsh)
 
     for Y in ${Y_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/installation.d/get.d/
@@ -83,17 +88,16 @@ get(){
     done
 }
 
-conf(){
+conf() {
     Y_LIST=(config-bash
-            config-fish
-            config-git
-            config-gnome
-            config-powerline-bash
-            config-tmux)
+        config-fish
+        config-git
+        config-gnome
+        config-powerline-bash
+        config-tmux)
 
     N_LIST=(config-powerline-ipython
-            config-wine32)
-
+        config-wine32)
 
     for Y in ${Y_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/installation.d/conf.d/
@@ -106,15 +110,14 @@ conf(){
     done
 }
 
-restore(){
+restore() {
     read -p 'DANGER! Restore dotfiles from ~/.local/share/CharlesScripts/data/home/.* ?[y/N]' PMT
     if [[ $PMT == 'y' || $PMT == 'Y' ]]; then
         cp -rv ~/.local/share/CharlesScripts/data/home/.* ~/
     fi
 
-
     Y_LIST=(gnome-shell-extensions-restore
-            )
+    )
 
     for Y in ${Y_LIST[@]}; do
         cd ~/.local/share/CharlesScripts/charles/bin

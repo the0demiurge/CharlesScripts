@@ -10,7 +10,7 @@
 # 输入ssr help 展示帮助信息
 
 set -e
-if [ -z "$EDITOR" ];then
+if [ -z "$EDITOR" ]; then
     EDITOR=vi
 fi
 
@@ -50,16 +50,16 @@ ssr_install() {
 ssr_uninstall() {
     echo "Danger! are you to remove $INSTALL_PATH forever?(y/N)"
     read doit
-    if [ $doit == 'y' ];then sudo rm -rvf $INSTALL_PATH;fi
+    if [ $doit == 'y' ]; then sudo rm -rvf $INSTALL_PATH; fi
 }
 
-ssr_test(){
+ssr_test() {
     echo Testing Connection...
     if [[ ! -z $(which jq 2>/dev/null) ]]; then
         echo 'jq in use'
         PORT=$(jq .local_port $INSTALL_PATH/config.json)
     else
-        PORT=$(sed -r 's/\/\/.*$|\s+//g' $INSTALL_PATH/config.json|grep -oP '(?<!//)(?<="local_port":)\d+')
+        PORT=$(sed -r 's/\/\/.*$|\s+//g' $INSTALL_PATH/config.json | grep -oP '(?<!//)(?<="local_port":)\d+')
         echo "local_port is $PORT; if any exceptions orrured, please install jq"
     fi
 
@@ -72,7 +72,8 @@ ssr_test(){
         if [[ -z $(which proxychains4 2>/dev/null) ]]; then
             echo "You may install proxychains4 and configure it properly to test net delay"
         else
-            echo -e '\nChecking delay...'; proxychains4 ping -c 5 cip.cc
+            echo -e '\nChecking delay...'
+            proxychains4 ping -c 5 cip.cc
         fi
     fi
 }
@@ -117,24 +118,33 @@ ssr_update() {
     JSON=$(curl -L $WEBSITE/json)
     # If failed
     case $? in
-        0) ;;
-        *) echo -e $BLOCKED;exit $?;;
+    0) ;;
+    *)
+        echo -e $BLOCKED
+        exit $?
+        ;;
     esac
 
     # If json is empty
     case $JSON in
-        'Not Found') echo -e $BLOCKED;exit $?;;
-        ''|'{}') echo $ISSUE;exit 2;;
+    'Not Found')
+        echo -e $BLOCKED
+        exit $?
+        ;;
+    '' | '{}')
+        echo $ISSUE
+        exit 2
+        ;;
     esac
 
-    sudo mv $INSTALL_PATH/config.json $INSTALL_PATH/config.json.bak.`date +%y-%m-%d-%T`
-    echo -e "$JSON"|sudo tee $INSTALL_PATH/config.json
+    sudo mv $INSTALL_PATH/config.json $INSTALL_PATH/config.json.bak.$(date +%y-%m-%d-%T)
+    echo -e "$JSON" | sudo tee $INSTALL_PATH/config.json
     ssr_restart
     echo -e "Updated from $WEBSITE"
 }
 
 ssr_xclip() {
-    xclip -o|sudo tee $INSTALL_PATH/config.json
+    xclip -o | sudo tee $INSTALL_PATH/config.json
     ssr_restart
 }
 
@@ -153,20 +163,20 @@ ssr_clean() {
 
 ssr_main() {
     case $1 in
-        help)           ssr_help        ;;
-        install)        ssr_install     ;;
-        uninstall)      ssr_uninstall   ;;
-        update)         ssr_update      ;;
-        config)         ssr_config      ;;
-        xclip)          ssr_xclip       ;;
-        start)          ssr_start       ;;
-        stop)           ssr_stop        ;;
-        restart)        ssr_restart     ;;
-        test)           ssr_test        ;;
-        log)            ssr_log         ;;
-        shell)          ssr_shell       ;;
-        clean)          ssr_clean       ;;
-        *)              ssr_help        ;;
+    help) ssr_help ;;
+    install) ssr_install ;;
+    uninstall) ssr_uninstall ;;
+    update) ssr_update ;;
+    config) ssr_config ;;
+    xclip) ssr_xclip ;;
+    start) ssr_start ;;
+    stop) ssr_stop ;;
+    restart) ssr_restart ;;
+    test) ssr_test ;;
+    log) ssr_log ;;
+    shell) ssr_shell ;;
+    clean) ssr_clean ;;
+    *) ssr_help ;;
     esac
 }
 

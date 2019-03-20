@@ -3,6 +3,6 @@
 echo '[archlinuxcn]
 #The Chinese Arch Linux communities packages.
 SigLevel = Optional TrustAll
-Server   = https://mirrors.ustc.edu.cn/archlinuxcn/$arch'|sudo tee -a /etc/pacman.conf
+Server   = https://mirrors.ustc.edu.cn/archlinuxcn/$arch' | sudo tee -a /etc/pacman.conf
 
 sudo pacman -Syu trizen

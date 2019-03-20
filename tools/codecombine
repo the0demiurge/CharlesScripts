@@ -9,12 +9,12 @@ else
 	if [ -f $save_path ]; then
 		rm -i $save_path
 	fi
-	find $from_path -name $pattern\
-    	-exec echo "File: {}" >> $save_path \;\
-    	-exec cat "{}" >> $save_path \;\
-    	-exec echo "" >> $save_path \;\
-    	-exec echo "" >> $save_path \;\
-    	-exec echo "" >> $save_path \;\
-    	-exec echo "" >> $save_path \;
-  wc $save_path
+	find $from_path -name $pattern \
+		-exec echo "File: {}" \; \
+		-exec cat "{}" \; \
+		-exec echo "" \; \
+		-exec echo "" \; \
+		-exec echo "" \; \
+		-exec echo "" \; >>$save_path >>$save_path >>$save_path >>$save_path >>$save_path >>$save_path
+	wc $save_path
 fi

@@ -9,13 +9,13 @@ Usage:\n
 '
 
 if [ $# == 1 ]; then
-    if [ $1 == 'help' ];then
+    if [ $1 == 'help' ]; then
         echo -e $help
-    elif [ $1 == 'socks' ];then
+    elif [ $1 == 'socks' ]; then
         echo "running with ShadowSocks"
         echo 'updating sources'
         sudo tsocks apt update #> /dev/null
-        if [ `apt list --upgradable|wc -l` -gt 1 ];then
+        if [ $(apt list --upgradable | wc -l) -gt 1 ]; then
             apt list --upgradable
             echo 'upgrading'
             sleep 1
@@ -25,11 +25,11 @@ if [ $# == 1 ]; then
         sleep 1
         sudo apt-fast -y autoremove
 
-    elif [ $1 == "fast" ];then
+    elif [ $1 == "fast" ]; then
         echo "running with apt-fast"
         echo 'updating sources'
         sudo apt-fast update #> /dev/null
-        if [ `apt list --upgradable|wc -l` -gt 1 ];then
+        if [ $(apt list --upgradable | wc -l) -gt 1 ]; then
             apt list --upgradable
             echo 'upgrading'
             sleep 1
@@ -43,7 +43,7 @@ if [ $# == 1 ]; then
         echo "running with normal apt"
         echo 'updating sources'
         sudo apt update #> /dev/null
-        if [ `apt list --upgradable|wc -l` -gt 1 ];then
+        if [ $(apt list --upgradable | wc -l) -gt 1 ]; then
             apt list --upgradable
             echo 'upgrading'
             sleep 1
@@ -57,4 +57,3 @@ if [ $# == 1 ]; then
 else
     echo -e $help
 fi
-

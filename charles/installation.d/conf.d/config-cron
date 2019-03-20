@@ -6,4 +6,4 @@ PATH=/usr/bin:/usr/local/bin:/bin:/home/$USER/.local/share/CharlesScripts/charle
 0 * * * * charles-backup
 0 * * * * wallpaper-earthview
 0 * * * * wallpaper-random
-"|sudo tee -a /var/spool/cron/$USER
+" | sudo tee -a /var/spool/cron/$USER

@@ -2,22 +2,25 @@
 cd $HOME
 
 # init check
-for cmd in jq rsync;do
-    type $cmd >/dev/null 2>&1 || { echo >&2 "$cmd is required but it's not installed.  Aborting."; exit 1; };
+for cmd in jq rsync; do
+    type $cmd >/dev/null 2>&1 || {
+        echo >&2 "$cmd is required but it's not installed.  Aborting."
+        exit 1
+    }
 done
 
 CONFIG_PATH="$HOME/.config/prj-sync.json"
 EXCLUDE_PATH="$HOME/.config/prj-sync-exclude.list"
 
-if [ ! -e $CONFIG_PATH ];then
+if [ ! -e $CONFIG_PATH ]; then
     echo '{
     //"source":"your/project/path,"
     //"target": ["username1@server-ip1:remote/path1", "username2@server-ip2:remote/path2"],
-}' > $CONFIG_PATH
+}' >$CONFIG_PATH
 fi
 
-if [ ! -e $EXCLUDE_PATH ];then
-    echo  -e '.git\n.svn\n.hg' > $EXCLUDE_PATH
+if [ ! -e $EXCLUDE_PATH ]; then
+    echo -e '.git\n.svn\n.hg' >$EXCLUDE_PATH
 fi
 
 # defining functions
@@ -39,37 +42,41 @@ help() {
 input() {
     # processing input
     src=$(jq -r .source $CONFIG_PATH)
-    if [ $? -ne 0 ];then echo -e 2>&1 "\nError orrured in configuration:\n$CONFIG_PATH\nedit it again";exit 3;fi
+    if [ $? -ne 0 ]; then
+        echo -e "\nError orrured in configuration:\n$CONFIG_PATH\nedit it again" 2>&1
+        exit 3
+    fi
 
     tgt=$(jq -r .target[] $CONFIG_PATH)
 
-    if [ src = null -o tgt = null ];then
-        echo >&2 "target or source in configuration file $CONFIG_PATH not found, edit it"; exit 2;
+    if [ src = null -o tgt = null ]; then
+        echo >&2 "target or source in configuration file $CONFIG_PATH not found, edit it"
+        exit 2
     fi
 }
 
 push() {
     input
-    for path in $tgt;do
-        if [ $1 = dry ];then dry_run="--dry-run";fi
+    for path in $tgt; do
+        if [ $1 = dry ]; then dry_run="--dry-run"; fi
         cmd="rsync -e ssh -rzhu $dry_run --delete-before --info=progress2 --progress --exclude-from=$EXCLUDE_PATH $src $path"
         echo $cmd
-        if [ $1 != test ];then $cmd;fi
+        if [ $1 != test ]; then $cmd; fi
     done
 }
 
-config(){
+config() {
     $EDITOR $CONFIG_PATH
     $EDITOR $EXCLUDE_PATH
 }
 
 # running
 case $1 in
-    -h)         help;;
-    --help)     help;;
-    help)       help;;
-    config)     config;;
-    test)       push test;;
-    dry-run)    push dry;;
-    *)          push push;;
+-h) help ;;
+--help) help ;;
+help) help ;;
+config) config ;;
+test) push test ;;
+dry-run) push dry ;;
+*) push push ;;
 esac

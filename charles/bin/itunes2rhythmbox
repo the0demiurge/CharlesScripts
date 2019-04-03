@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 import os
-import pathlib
 import sys
 from xml.etree import ElementTree
-
-from fuzzywuzzy import fuzz
 
 help_message = '''Usage: Close Rhythmbox, then type: itunes2rhythmbox
 
@@ -67,37 +64,22 @@ __author__ = "Charles Xu"
 __github__ = "https://github.com/the0demiurge"
 __girlfriend__ = "pang"
 try:
-    from urllib import unquote
+    from urllib import quote, unquote
 except ImportError:
-    from urllib.parse import unquote
+    from urllib.parse import quote, unquote
 
 
 def itunes_quote(string):
-    assert string != '/'
-    path = pathlib.Path(string)
-    assert path.is_file()
-    string = path.as_uri()
+    string = quote(string, safe=quote_safe_char)
+    string = string.replace('%26', '&amp;')
     return string
 
 
-def get_music_file_list(path):
-    music_file_list = set()
-    for agent in os.walk(path):
-        for file in agent[2]:
-            if not file.startswith('.') and file.rsplit('.', 1)[-1] not in ['strings']:
-                music_file_list.add(os.path.join(agent[0], file))
-    return sorted(music_file_list)
-
-
-def fuzzy_search(path, music_file_list):
-    result = max(music_file_list, key=lambda x: fuzz.ratio(path, x))
-    return result
-
-
-assert not (target_location.startswith('http://') or target_location.startswith('file://') or target_location.startswith('https://')), 'target location must not be uri'
-target_location = os.path.abspath(os.path.expanduser(target_location))
-if not target_location.endswith('/'):
-    target_location += '/'
+if not (target_location.startswith('http://') or target_location.startswith('file://') or target_location.startswith('https://')):
+    target_location = 'file://' + \
+        itunes_quote(os.path.abspath(os.path.expanduser(target_location)))
+    if not target_location.endswith('/'):
+        target_location += '/'
 rhythmbox_playlist, itunes_db = os.path.abspath(os.path.expanduser(rhythmbox_playlist)), os.path.abspath(os.path.expanduser(itunes_db))
 
 
@@ -159,12 +141,12 @@ def playlist2rbxml(playlists, destination):
         f.write(tail)
 
 
-def convert_music_path(music_location, source_itunes_music_folder, target_location, music_file_list):
-    data = music_location.replace(source_itunes_music_folder, target_location, 1)
-    data = unquote(data)
-    if not os.path.exists(data):
-        data = fuzzy_search(data, music_file_list)
-    return itunes_quote(data)
+def convert_music_path(music_location, source_itunes_music_folder, target_location):
+    data = music_location.replace(source_itunes_music_folder, target_location, 1).split(':', 1)
+    if len(data) == 1:
+        return itunes_quote(unquote(data[0]))
+    else:
+        return ':'.join((data[0], itunes_quote(unquote(data[1]))))
 
 
 def get_playlist(itunes_dict, skip_list=skip_list, convert_function=convert_music_path, **convert_args):
@@ -190,23 +172,20 @@ def main():
             exit(1)
 
     itunes_dict = parse_itunesdb(itunes_db)
-    music_file_list = get_music_file_list(target_location)
     global source_itunes_music_folder
     if not source_itunes_music_folder:
         source_itunes_music_folder = itunes_dict['Music Folder']
-
     playlists = get_playlist(
         itunes_dict,
         skip_list=skip_list,
         convert_function=convert_music_path,
         source_itunes_music_folder=source_itunes_music_folder,
-        target_location=target_location,
-        music_file_list=music_file_list,
+        target_location=target_location
     )
     for playlist in playlists:
         print(len(playlist['item']), playlist['name'], sep='\t')
     playlist2rbxml(playlists, rhythmbox_playlist)
-    print(len(playlists), 'playlists imported,', len(music_file_list), 'songs')
+    print(len(playlists), 'playlists imported')
 
 
 if __name__ == '__main__':

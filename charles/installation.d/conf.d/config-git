@@ -9,6 +9,9 @@ git config --global color.branch auto
 git config --global color.interactive auto
 git config --global alias.l "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 
+git config --global merge.tool meld
+git config --global mergetool.prompt false
+
 # diff-so-fancy
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 git config --global color.ui true

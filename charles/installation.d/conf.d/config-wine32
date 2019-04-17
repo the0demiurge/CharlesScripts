@@ -1,3 +1,19 @@
 #!/bin/bash
-export WINEARCH=win32
-winetricks vcrun2005 corefonts d3dx9 wininet dotnet35 ie6 winxp adobeair glsl-disable mfc42
+# export WINEARCH=win32
+
+winetricks -q adobeair
+winetricks -q cnc_ddraw
+winetricks -q corefonts
+winetricks -q d3dx9
+winetricks -q dotnet35
+winetricks -q dotnet40
+winetricks -q dotnet45
+# winetricks -q dotnet20sp2
+winetricks -q flash
+winetricks -q glsl-disable
+winetricks -q ie6
+winetricks -q mfc42
+winetricks -q vcrun2005
+winetricks -q vulkanrt
+winetricks -q wininet
+winetricks -q winxp

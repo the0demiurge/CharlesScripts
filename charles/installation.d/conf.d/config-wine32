@@ -1,13 +1,13 @@
 #!/bin/bash
-export WINEARCH=win32
+#export WINEARCH=win32
 
+winetricks -q winxp
 winetricks -q adobeair
 winetricks -q cnc_ddraw
 winetricks -q corefonts
 winetricks -q d3dx9
+winetricks -q dotnet40
 winetricks -q dotnet35
-# winetricks -q dotnet40
-# winetricks -q dotnet45
 winetricks -q dotnet20
 winetricks -q flash
 winetricks -q glsl-disable
@@ -15,4 +15,3 @@ winetricks -q ie6
 winetricks -q mfc42
 winetricks -q vcrun2005
 winetricks -q wininet
-winetricks -q winxp

@@ -6,6 +6,7 @@ PULL_DIR=(~/.local/share/CharlesScripts
     ~/.emacs.d
     ~/.SpaceVim
     ~/.oh-my-tmux
+    ~/.tmux/plugins/tpm
 )
 msg="$@"
 

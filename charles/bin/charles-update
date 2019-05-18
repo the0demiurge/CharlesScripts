@@ -5,8 +5,7 @@ PULL_DIR=(~/.local/share/CharlesScripts
     ~/.config/CharlesBackup
     ~/.emacs.d
     ~/.SpaceVim
-    ~/.oh-my-tmux
-    ~/.tmux/plugins/tpm
+    ~/.tmux
 )
 msg="$@"
 

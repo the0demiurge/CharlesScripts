@@ -23,9 +23,9 @@ for i in ${PUSH_DIR[@]}; do
     git add -A
     git status
     git diff HEAD
-    if [ -z $msg ]; then
+    if [[ -z $msg ]]; then
         read -p 'Message:' msg
-        if [ -z $msg ]; then msg='update'; fi
+        if [[ -z $msg ]]; then msg='update'; fi
     fi
     git commit -m "$msg"
     git push

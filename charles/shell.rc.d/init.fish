@@ -93,9 +93,10 @@ end
 function viz
     switch $argv[2]
         case "eps"
-            dot -T $argv[2] -o (echo $argv[1]|sed 's/\..*//g').png $argv[1]
-            convert (echo $argv[1]|sed 's/\..*//g').png (echo $argv[1]|sed 's/\..*//g').eps
+            dot -T $argv[2] -o /tmp/(string trim -r -c dot $argv[1])png $argv[1]
+            convert /tmp/(string trim -r -c dot $argv[1])png (string trim -r -c dot $argv[1])eps
+            rm /tmp/(string trim -r -c dot $argv[1])png
         case "*"
-            dot -T $argv[2] -o (echo $argv[1]|sed 's/\..*//g').$argv[2] $argv[1]
+            dot -T $argv[2] -o (string trim -r -c dot $argv[1])$argv[2] $argv[1]
     end
 end

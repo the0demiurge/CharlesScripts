@@ -35,8 +35,8 @@ dependency() {
     echo 'Installing part of the dependencies...'
     UPDATE
     case $OS in
-    'Arch') INSTALL git espeak cowsay sl fish mlocate fortune-mod ;;
-    'Ubuntu') INSTALL git espeak cowsay oneko sl fortune fish mlocate ;;
+    'Arch') INSTALL git cowsay sl fish mlocate fortune-mod ;;
+    'Ubuntu') INSTALL git cowsay oneko sl fortune fish mlocate ;;
     *) echo 'Your distribution has not implementd yet, please modify this command' ;;
     esac
     sudo updatedb

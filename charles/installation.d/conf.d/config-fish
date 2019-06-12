@@ -72,6 +72,7 @@ fish -c "abbr p 'python'"
 fish -c "abbr cps 'proxychains'"
 fish -c "abbr pdb 'python -mpowerline.bindings.pdb'"
 fish -c "abbr tmux 'tmux -2'"
+fish -c "abbr sshp 'ssh -o ProxyCommand=\'nc -x 127.0.0.1:1080 %h %p\''"
 fish -c "abbr su 'sudo su'"
 
 case $OS in

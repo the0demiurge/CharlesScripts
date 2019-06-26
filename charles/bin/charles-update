@@ -3,8 +3,8 @@ PUSH_DIR=(~/.config/CharlesBackup
 )
 PULL_DIR=(~/.local/share/CharlesScripts
     ~/.config/CharlesBackup
-    ~/.emacs.d
-    ~/.SpaceVim
+    # ~/.emacs.d
+    # ~/.SpaceVim
     ~/.tmux
 )
 msg="$@"

@@ -59,19 +59,17 @@ function g
     git commit -m "$argv $COMMIT"
     git log -1 HEAD
     if git push
-        noti -sb -t push -m succeeded
+        echo push succeeded
         sl -e | lolcat
-        clear
         for i in (seq 25)
             echo
         end
         fortune | cowsay -f duck
     else
         for i in (seq 3)
-            noti -s -t push -m failed
+            echo push failed
         end
-        noti -t push failed -m $PWD
-        clear
+        echo push failed $PWD
         for i in (seq 25)
             echo
         end

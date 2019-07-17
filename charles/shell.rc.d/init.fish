@@ -43,7 +43,6 @@ end
 function cls
     cd "$argv"
     ls
-
 end
 
 function dict
@@ -80,12 +79,14 @@ end
 function mcd
     mkdir -p "$argv"
     cd "$argv"
-
 end
 
-function md5check
-    md5sum "$argv[1]" | grep "$argv[2]"
-
+function md5move
+    for i in (ls $argv[1])
+        set md5 (md5sum $i|string split ' ')[1]
+        set tail (string split -m1 -r '.' $i)[2]
+        mv $i $md5.$tail
+    end
 end
 
 function viz

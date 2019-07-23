@@ -40,7 +40,9 @@ echo "source \$HOME/.config/fish/conf.d/*" | tee -a $HOME/.config/fish/config.fi
 #ABBRS
 fish -c "abbr ... 'cd ../..'"
 fish -c "abbr autoremove 'pacman -Qtdq|xargs sudo pacman -Rsn --noconfirm'"
+fish -c "abbr axel 'axel -acn50'"
 fish -c "abbr c 'clear; cd'"
+fish -c "abbr ccat 'ccat --bg=dark'"
 fish -c "abbr cl 'cd ..;ls'"
 fish -c "abbr du. 'du . --max-depth 1 -h'"
 fish -c "abbr eg 'grep -E'"
@@ -69,7 +71,7 @@ fish -c "abbr mag2torrent 'aria2c --bt-metadata-only=true --bt-save-metadata=tru
 fish -c "abbr n 'open .'"
 fish -c "abbr o 'open'"
 fish -c "abbr p 'python'"
-fish -c "abbr cps 'proxychains'"
+fish -c "abbr pcs 'proxychains -q'"
 fish -c "abbr pdb 'python -mpowerline.bindings.pdb'"
 fish -c "abbr tmux 'tmux -2'"
 fish -c "abbr sshp 'ssh -o ProxyCommand=\'nc -x 127.0.0.1:1080 %h %p\''"

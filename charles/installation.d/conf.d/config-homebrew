@@ -13,6 +13,11 @@ echo 'set -x MANPATH "/usr/local/opt/grep/libexec/gnuman" $MANPATH' | tee -a ~/.
 echo 'set -x PATH "/usr/local/opt/gawk/libexec/gnubin" $PATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -x MANPATH "/usr/local/opt/gawk/libexec/gnuman" $MANPATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
 
-brew tap caskroom/fonts
+brew tap homebrew/bundle
+brew tap homebrew/cask
+brew tap homebrew/cask-drivers
+brew tap homebrew/cask-fonts
+brew tap homebrew/command-not-found
+brew tap homebrew/core
 
 brew update

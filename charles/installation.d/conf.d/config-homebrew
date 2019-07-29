@@ -1,5 +1,6 @@
 #!/bin/bash
 echo 'set -x HOMEBREW_BOTTLE_DOMAIN https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles' | tee ~/.config/fish/conf.d/homebrew.fish
+
 echo 'set -x PATH "/usr/local/opt/coreutils/libexec/gnubin" $PATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -x MANPATH "/usr/local/opt/coreutils/libexec/gnuman" $MANPATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -x PATH "/usr/local/opt/findutils/libexec/gnubin" $PATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
@@ -12,6 +13,14 @@ echo 'set -x PATH "/usr/local/opt/grep/libexec/gnubin" $PATH' | tee -a ~/.config
 echo 'set -x MANPATH "/usr/local/opt/grep/libexec/gnuman" $MANPATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -x PATH "/usr/local/opt/gawk/libexec/gnubin" $PATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -x MANPATH "/usr/local/opt/gawk/libexec/gnuman" $MANPATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
+
+git -C "$(brew --repo)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
+
+## Recover
+# git -C "$(brew --repo)" remote set-url origin https://github.com/Homebrew/brew.git
+# git -C "$(brew --repo homebrew/core)" remote set-url origin https://github.com/Homebrew/homebrew-core
+
 
 brew tap homebrew/bundle
 brew tap homebrew/cask

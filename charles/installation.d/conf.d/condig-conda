@@ -1,0 +1,10 @@
+#!/usr/bin/env fish
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+
+conda install matplotlib numpy sympy pandas seaborn pillow tensorflow  pandoc ipython jupyter spyder --yes
+conda install pytorch-cpu torchvision-cpu --yes #-c pytorch
+conda install cling --yes #-c conda-forge

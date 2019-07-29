@@ -18,16 +18,6 @@ if [[ ! -d $CONF_DIR ]]; then
 fi
 mkdir -p ~/.cabal/bin
 
-ANACONDA_PATH=$(locate conda3 | grep -E 'conda3/bin$' | grep $USER || true)
-if [ ! -z "$ANACONDA_PATH" ]; then
-    echo set -x PATH $ANACONDA_PATH \$PATH | tee $CONF_DIR/anaconda.fish
-else
-    echo 'There is no anaconda found!'
-    echo 'You should manually add anaconda path to the fish config file. i. e.:'
-    echo 'set -x PATH \$ANACONDA_PATH \$PATH'
-    read -p 'press Enter to continue:'
-fi
-
 if [ $(which autojump | wc -l) == 0 ]; then INSTALL autojump; fi
 echo "source /usr/share/autojump/autojump.fish" | tee -a $CONF_DIR/autojump.fish
 

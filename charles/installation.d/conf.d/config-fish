@@ -1,4 +1,7 @@
 #!/bin/bash
+export CHARLES_HOME=$HOME/.local/share/CharlesScripts/charles
+export CHARLES_BACKUP=$HOME/.config/CharlesBackup
+
 OS=$(cat /etc/issue | cut -f 1 -d ' ')
 if [[ $(uname) == 'Darwin' ]]; then
     OS='Darwin'
@@ -9,20 +12,15 @@ case $OS in
 'Darwin') INSTALL() { brew install $@; } ;;
 *) echo 'Your distribution has not implementd yet, please modify this command' ;;
 esac
-CONF_PATH=~/.config/fish/conf.d/charles.fish
-if [[ ! -d ~/.config/fish/conf.d ]]; then
-    mkdir -p ~/.config/fish/conf.d
+CONF_DIR=$HOME/.config/fish/conf.d
+if [[ ! -d $CONF_DIR ]]; then
+    mkdir -p $CONF_DIR
 fi
 mkdir -p ~/.cabal/bin
-echo '# This is the Charles Scripts Configuration.' | tee $CONF_PATH
-echo 'set -g CHARLES_HOME ~/.local/share/CharlesScripts/charles' | tee -a $CONF_PATH
-echo 'set -g CHARLES_BACKUP ~/.config/CharlesBackup' | tee -a $CONF_PATH
-
-echo set -x FZF_DEFAULT_OPTS \"--bind=\'ctrl-o:execute\(subl {}\)+abort\'\" | tee -a $CONF_PATH
 
 ANACONDA_PATH=$(locate conda3 | grep -E 'conda3/bin$' | grep $USER || true)
 if [ ! -z "$ANACONDA_PATH" ]; then
-    echo set -x PATH $ANACONDA_PATH \$PATH | tee -a $CONF_PATH
+    echo set -x PATH $ANACONDA_PATH \$PATH | tee $CONF_DIR/anaconda.fish
 else
     echo 'There is no anaconda found!'
     echo 'You should manually add anaconda path to the fish config file. i. e.:'
@@ -31,11 +29,11 @@ else
 fi
 
 if [ $(which autojump | wc -l) == 0 ]; then INSTALL autojump; fi
-echo "source /usr/share/autojump/autojump.fish" | tee -a $CONF_PATH
+echo "source /usr/share/autojump/autojump.fish" | tee -a $CONF_DIR/autojump.fish
 
-echo "source \$CHARLES_HOME/shell.rc.d/init.fish" | tee -a $CONF_PATH
+echo "source \$HOME/.config/fish/conf.d/*" | tee $HOME/.config/fish/config.fish
 
-echo "source \$HOME/.config/fish/conf.d/*" | tee -a $HOME/.config/fish/config.fish
+ln -sf $CHARLES_HOME/shell.rc.d/init.fish $CONF_DIR/charles.fish
 
 #ABBRS
 fish -c "abbr ... 'cd ../..'"

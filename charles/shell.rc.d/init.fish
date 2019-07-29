@@ -1,3 +1,6 @@
+set -g CHARLES_HOME /home/charles/.local/share/CharlesScripts/charles
+set -g CHARLES_BACKUP /home/charles/.config/CharlesBackup
+
 #PATHES
 set -x PATH $CHARLES_HOME/bin $PATH
 set -x PATH $HOME/.local/bin $PATH
@@ -7,6 +10,7 @@ set -x TF_CPP_MIN_LOG_LEVEL 2
 set -x EDITOR nvim
 set -x LC_ALL en_US.UTF-8
 set -x LANG en_US.UTF-8
+set -x FZF_DEFAULT_OPTS "--bind='ctrl-o:execute(subl {})+abort'"
 
 #COLOR_LESS
 set -x PAGER "less"

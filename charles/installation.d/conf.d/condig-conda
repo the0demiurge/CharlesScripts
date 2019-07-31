@@ -5,6 +5,6 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/f
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
 conda config --set show_channel_urls yes
 
-conda install matplotlib numpy sympy pandas seaborn pillow tensorflow  pandoc ipython jupyter spyder --yes
+conda install matplotlib numpy sympy pandas seaborn pillow tensorflow  pandoc ipython jupyter spyder beautifulsoup4 --yes
 conda install pytorch-cpu torchvision-cpu --yes #-c pytorch
-conda install cling --yes #-c conda-forge
+conda install xeus-cling --yes #-c conda-forge

@@ -1,5 +1,5 @@
 set -g CHARLES_HOME $HOME/.local/share/CharlesScripts/charles
-set -g CHARLES_BACKUP $HOME.config/CharlesBackup
+set -g CHARLES_BACKUP $HOME/.config/CharlesBackup
 
 #PATHES
 set -x PATH $CHARLES_HOME/bin $PATH

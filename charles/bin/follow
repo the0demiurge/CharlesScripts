@@ -2,30 +2,36 @@
 import os
 import sys
 
+command = 'mpv'
+
 sys.argv.append('.')
 path = sys.argv[1]
 if path.startswith('-') or path == 'help':
-    print('Usage:', __file__, '<videos path>')
-    print('Watch videos and record the watching progress. Resume at the progress recorded')
+    print('Watch video series and record the watching progress.\nResume at the progress recorded\n')
+    print('Usage:')
+    print('Before startup, you should keep command `{}` in $PATH'.format(command))
+    print('\tStart     series:', 'follow', '[<series path>]')
+    print('\tInterrupt series: press Ctrl+C in terminal')
+    print('\tNext     episode: close {} window'.format(command))
     exit()
 
 schedule_path = os.path.join(path, 'progress')
 
-videos = sorted([i for i in os.listdir(path) if i.split('.')[-1].lower() in ['mp4', 'mkv', 'rmvb']])
-if len(videos) == 0:
-    print('No video found')
+series = sorted([i for i in os.listdir(path) if i.split('.')[-1].lower() in ['mp4', 'mkv', 'rmvb']])
+if len(series) == 0:
+    print('No video found in `{}`'.format(path))
     exit(0)
 
 if not os.path.exists(schedule_path):
     index = 0
 else:
     current = open(schedule_path, 'r').readline().strip()
-    index = videos.index(current) + 1
+    index = series.index(current) + 1
 
-for video in videos[index:]:
+for video in series[index:]:
     video_path = os.path.join(path, video)
     try:
-        status = os.system('mpv {}'.format(video_path))
+        status = os.system('{} "{}"'.format(command, video_path))
         if status != 0:
             break
         open(schedule_path, 'w').write(video)

@@ -3,6 +3,7 @@ import os
 import sys
 
 command = 'mpv'
+video_formats = {'mp4', 'mkv', 'rmvb', 'flv', 'rm', 'avi'}
 
 sys.argv.append('.')
 path = sys.argv[1]
@@ -19,7 +20,7 @@ if path.startswith('-') or path == 'help':
     exit()
 
 # list videos
-series = sorted([i for i in os.listdir(path) if i.split('.')[-1].lower() in ['mp4', 'mkv', 'rmvb']])
+series = sorted([i for i in os.listdir(path) if i.split('.')[-1].lower() in video_formats])
 if len(series) == 0:
     print('No video found in `{}`'.format(path))
     exit(0)

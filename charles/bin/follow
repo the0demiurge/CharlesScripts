@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import re
 import sys
 
 command = 'mpv'
@@ -20,7 +21,10 @@ if path.startswith('-') or path == 'help':
     exit()
 
 # list videos
-series = sorted([i for i in os.listdir(path) if i.split('.')[-1].lower() in video_formats])
+series = sorted(
+    [i for i in os.listdir(path) if i.split('.')[-1].lower() in video_formats],
+    key=lambda x: [int(i) for i in re.findall('\d+', x)]
+)
 if len(series) == 0:
     print('No video found in `{}`'.format(path))
     exit(0)

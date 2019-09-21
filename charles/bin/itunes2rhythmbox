@@ -165,10 +165,7 @@ def edit_distance(src, target):
         dp[0][j] = j
     for i in range(1, len(src) + 1):
         for j in range(1, len(target) + 1):
-            if src[i - 1] == target[j - 1]:
-                dp[i][j] = dp[i - 1][j - 1]
-            else:
-                dp[i][j] = 1 + min(dp[i - 1][j], dp[i][j - 1])
+            dp[i][j] = min(1 + dp[i - 1][j], 1 + dp[i][j - 1], dp[i - 1][j - 1] + (0 if src[i - 1] == target[j - 1] else 1))
     return dp[-1][-1]
 
 
@@ -218,9 +215,11 @@ def convert_music_path(music_location, source_itunes_music_folder, target_locati
         head = ''
     else:
         music_file_path = unquote(data[1])
-        if not os.path.exists(music_file_path):
-            music_file_path = music_match(music_file_path, music_match_library)
         head = data[0] + '://'
+    if not os.path.exists(music_file_path):
+        music_file_path = music_match(music_file_path, music_match_library)
+    if music_file_path in music_match_library:
+        music_match_library.remove(music_file_path)
     return head + itunes_quote(music_file_path)
 
 

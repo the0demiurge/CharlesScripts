@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
+import heapq
+import multiprocessing
 import os
+import re
 import sys
 from xml.etree import ElementTree
 
@@ -55,6 +58,8 @@ skip_list = [
     'Voice Memos',
 ]
 
+MATCH_JUDGEMENT_THREASHOLD = 13
+MATCH_SELECTIONS = 10
 quote_safe_char = "!$'()*+,-/=@_~"
 
 source_itunes_music_folder = None
@@ -75,6 +80,7 @@ def itunes_quote(string):
     return string
 
 
+target_location_orig = target_location
 if not (target_location.startswith('http://') or target_location.startswith('file://') or target_location.startswith('https://')):
     target_location = 'file://' + \
         itunes_quote(os.path.abspath(os.path.expanduser(target_location)))
@@ -141,12 +147,82 @@ def playlist2rbxml(playlists, destination):
         f.write(tail)
 
 
-def convert_music_path(music_location, source_itunes_music_folder, target_location):
-    data = music_location.replace(source_itunes_music_folder, target_location, 1).split(':', 1)
+def get_all_files_path(path):
+    result = list()
+    path = os.path.abspath(os.path.expanduser(path))
+    for agent in os.walk(path):
+        for file_name in agent[2]:
+            result.append(os.path.join(agent[0], file_name))
+    return result
+
+
+def edit_distance(src, target):
+    dp = [[0 for i in range(len(target) + 1)] for j in range(len(src) + 1)]
+    for i in range(1, len(src) + 1):
+        dp[i][0] = i
+    for j in range(1, len(target) + 1):
+        dp[0][j] = j
+    for i in range(1, len(src) + 1):
+        for j in range(1, len(target) + 1):
+            if src[i - 1] == target[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1]
+            else:
+                dp[i][j] = 1 + min(dp[i - 1][j], dp[i][j - 1])
+    return dp[-1][-1]
+
+
+def edit_distance_wrapper(data):
+    return edit_distance(data[0], data[1])
+
+
+pool = multiprocessing.Pool()
+matched_dict = dict()
+
+
+def music_match(path, music_match_library):
+    if path in matched_dict:
+        return matched_dict[path]
+    distances = pool.map(edit_distance_wrapper, zip((path,) * len(music_match_library), music_match_library))
+    zipper = tuple(zip(distances, music_match_library))
+    distance, matched = min(zipper, key=lambda x: x[0])
+    if distance >= MATCH_JUDGEMENT_THREASHOLD:
+        feature = r'\d*-*[a-zA-Z]*/*\.*'
+        candidates = heapq.nsmallest(MATCH_SELECTIONS, zipper, key=lambda x: x[0])
+        filtered = [i for i in candidates if ''.join(re.findall(feature, path)) == ''.join(re.findall(feature, i[1]))]
+        # features = [(''.join(re.findall(feature, path)), ''.join(re.findall(feature, i[1]))) for i in candidates]
+        # import ipdb
+        # ipdb.set_trace()
+        if len(filtered) == 1:
+            distance, matched = filtered[0]
+        else:
+            print('SONG', path, sep='\t')
+            for i, (d, m) in enumerate(candidates):
+                print(i, m, sep='\t')
+            index = input('Song names are too different, choose a path listed above[0]:')
+            if index == '':
+                index = 0
+            else:
+                index = int(index)
+            distance, matched = candidates[index]
+
+    # matched = min(music_match_library, key=lambda x: edit_distance(x[len(target_location_orig):], path[len(target_location_orig):]))
+    print('Matched with edit distante:', distance)
+    print(path, matched, sep='\n', end='\n\n')
+    matched_dict[path] = matched
+    return matched
+
+
+def convert_music_path(music_location, source_itunes_music_folder, target_location, music_match_library):
+    data = music_location.replace(source_itunes_music_folder, target_location, 1).split('://', 1)
     if len(data) == 1:
-        return itunes_quote(unquote(data[0]))
+        music_file_path = unquote(data[0])
+        head = ''
     else:
-        return ':'.join((data[0], itunes_quote(unquote(data[1]))))
+        music_file_path = unquote(data[1])
+        if not os.path.exists(music_file_path):
+            music_file_path = music_match(music_file_path, music_match_library)
+        head = data[0] + '://'
+    return head + itunes_quote(music_file_path)
 
 
 def get_playlist(itunes_dict, skip_list=skip_list, convert_function=convert_music_path, **convert_args):
@@ -155,6 +231,7 @@ def get_playlist(itunes_dict, skip_list=skip_list, convert_function=convert_musi
 
 
 def main():
+    music_match_library = get_all_files_path(target_location_orig)
     rhythmbox_pid = list(map(eval, os.popen("ps -A|grep rhythmbox|awk '{print $1}'").readlines()))
     if rhythmbox_pid:
         if '-f' in sys.argv or '--force' in sys.argv:
@@ -180,7 +257,8 @@ def main():
         skip_list=skip_list,
         convert_function=convert_music_path,
         source_itunes_music_folder=source_itunes_music_folder,
-        target_location=target_location
+        target_location=target_location,
+        music_match_library=music_match_library
     )
     for playlist in playlists:
         print(len(playlist['item']), playlist['name'], sep='\t')

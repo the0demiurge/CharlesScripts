@@ -4,6 +4,7 @@ import multiprocessing
 import os
 import re
 import sys
+from itertools import zip_longest
 from xml.etree import ElementTree
 
 help_message = '''Usage: Close Rhythmbox, then type: itunes2rhythmbox
@@ -172,7 +173,18 @@ def edit_distance(src, target):
 
 
 def edit_distance_wrapper(data):
-    return edit_distance(data[0], data[1])
+    distance = 0
+    for src, target in zip_longest(data[0].split('/'), data[1].split('/')):
+        if src == target:
+            continue
+        elif None in (src, target):
+            if src is not None:
+                distance += len(src)
+            elif target is not None:
+                distance += len(target)
+        else:
+            distance += edit_distance(src, target)
+    return distance
 
 
 pool = multiprocessing.Pool()

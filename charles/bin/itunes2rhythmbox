@@ -58,7 +58,7 @@ skip_list = [
     'Voice Memos',
 ]
 
-MATCH_JUDGEMENT_THREASHOLD = 13
+MATCH_JUDGEMENT_THREASHOLD = 6
 MATCH_SELECTIONS = 10
 quote_safe_char = "!$'()*+,-/=@_~"
 
@@ -176,12 +176,12 @@ def edit_distance_wrapper(data):
 
 
 pool = multiprocessing.Pool()
-matched_dict = dict()
+music_match_buffer = dict()
 
 
 def music_match(path, music_match_library):
-    if path in matched_dict:
-        return matched_dict[path]
+    if path in music_match_buffer:
+        return music_match_buffer[path]
     distances = pool.map(edit_distance_wrapper, zip((path,) * len(music_match_library), music_match_library))
     zipper = tuple(zip(distances, music_match_library))
     distance, matched = min(zipper, key=lambda x: x[0])
@@ -189,26 +189,14 @@ def music_match(path, music_match_library):
         feature = r'\d*-*[a-zA-Z]*/*\.*'
         candidates = heapq.nsmallest(MATCH_SELECTIONS, zipper, key=lambda x: x[0])
         filtered = [i for i in candidates if ''.join(re.findall(feature, path)) == ''.join(re.findall(feature, i[1]))]
-        # features = [(''.join(re.findall(feature, path)), ''.join(re.findall(feature, i[1]))) for i in candidates]
-        # import ipdb
-        # ipdb.set_trace()
         if len(filtered) == 1:
             distance, matched = filtered[0]
         else:
-            print('SONG', path, sep='\t')
-            for i, (d, m) in enumerate(candidates):
-                print(i, m, sep='\t')
-            index = input('Song names are too different, choose a path listed above[0]:')
-            if index == '':
-                index = 0
-            else:
-                index = int(index)
-            distance, matched = candidates[index]
+            distance, matched = min(candidates, key=lambda x: edit_distance(re.findall(feature, path), re.findall(feature, x[1])))
 
-    # matched = min(music_match_library, key=lambda x: edit_distance(x[len(target_location_orig):], path[len(target_location_orig):]))
     print('Matched with edit distante:', distance)
     print(path, matched, sep='\n', end='\n\n')
-    matched_dict[path] = matched
+    music_match_buffer[path] = matched
     return matched
 
 

@@ -51,10 +51,10 @@ skip_list = [
     'Audiobooks',
     'Languages',
     'Special',
-    'Dislike',
-    'Not Classified',
-    'Not Favorate',
-    'Not Rated',
+    # 'Dislike',
+    # 'Not Classified',
+    # 'Not Favorate',
+    # 'Not Rated',
     'Pomodoro',
     'Voice Memos',
 ]
@@ -206,8 +206,7 @@ def music_match(path, music_match_library):
         else:
             distance, matched = min(candidates, key=lambda x: edit_distance(re.findall(feature, path), re.findall(feature, x[1])))
 
-    print('Matched with edit distante:', distance)
-    print(path, matched, sep='\n', end='\n\n')
+    print('Matched: "{}" -- "{}"'.format(path.split('/')[-1], matched.split('/')[-1]))
     music_match_buffer[path] = matched
     return matched
 

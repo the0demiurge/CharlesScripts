@@ -49,10 +49,6 @@ function cls
     ls
 end
 
-function dict
-    command dict $argv | more
-end
-
 function g
     git add -A
     git diff --cached

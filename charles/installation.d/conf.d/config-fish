@@ -55,7 +55,7 @@ abbr -a -U -- lal 'ls++ --potsf -A'
 abbr -a -U -- la 'ls -a'
 abbr -a -U -- le 'ls|egrep'
 abbr -a -U -- lf 'ls -lah --full-time'
-abbr -a -U -- lg 'ls|grep'
+abbr -a -U -- lg 'ls -a|grep -i'
 abbr -a -U -- ll 'ls++ --potsf'
 abbr -a -U -- l ls
 abbr -a -U -- mag2torrent 'aria2c --bt-metadata-only=true --bt-save-metadata=true'

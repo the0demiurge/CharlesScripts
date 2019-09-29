@@ -13,8 +13,8 @@ export TF_CPP_MIN_LOG_LEVEL=2
 #COLOR_LESS
 export PAGER="less"
 export LESS="-R -i -g -c -W"
-export LESSOPEN='|/usr/bin/lesspipe %s'
-export LESSCLOSE='/usr/bin/lesspipe %s %s'
+export LESSOPEN='|/usr/bin/lesspipe.sh %s'
+export LESSCLOSE='/usr/bin/lesspipe.sh %s %s'
 #COLOR MAN
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'

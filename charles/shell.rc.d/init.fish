@@ -15,8 +15,8 @@ set -x FZF_DEFAULT_OPTS "--bind='ctrl-o:execute(subl {})+abort'"
 #COLOR_LESS
 set -x PAGER "less"
 set -x LESS "-R -i -g -c -W"
-set -x LESSOPEN '|/usr/bin/lesspipe %s'
-set -x LESSCLOSE '/usr/bin/lesspipe %s %s'
+set -x LESSOPEN '|/usr/bin/lesspipe.sh %s'
+set -x LESSCLOSE '/usr/bin/lesspipe.sh %s %s'
 #COLOR MAN
 set -x LESS_TERMCAP_mb (printf "\033[01;31m")
 set -x LESS_TERMCAP_md (printf "\033[01;31m")

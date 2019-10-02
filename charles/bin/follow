@@ -4,7 +4,7 @@ import re
 import sys
 
 command = 'mpv --fs "{}"'
-video_formats = {'mp4', 'mkv', 'rmvb', 'flv', 'rm', 'avi', 'mov'}
+video_formats = {'mp4', 'mkv', 'rmvb', 'flv', 'rm', 'avi', 'mov', 'wmv'}
 
 software = command.split()[0]
 sys.argv.append('.')

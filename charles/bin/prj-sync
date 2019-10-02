@@ -59,7 +59,7 @@ push() {
     input
     for path in $tgt; do
         if [ $1 = dry ]; then dry_run="--dry-run"; fi
-        cmd="rsync -e ssh -rzhu $dry_run --delete-before --info=progress2 --progress --exclude-from=$EXCLUDE_PATH $src $path"
+        cmd="rsync -e ssh -ChKlmrtz --inplace --partial --append $dry_run --delete-before --info=progress2 --progress --exclude-from=$EXCLUDE_PATH $src $path"
         echo $cmd
         if [ $1 != test ]; then $cmd; fi
     done

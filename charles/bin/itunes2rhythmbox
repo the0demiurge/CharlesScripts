@@ -23,18 +23,18 @@ Before using this script, you should have:
 You should modify this script configurations at start of the script, and the
 meaning of entries will be described as follows:
 
-- target_location: The `iTunes Media` folder path
+- library_location: The `iTunes Media` folder path
 - rhythmbox_playlist: The rhythmbox playlist xml path
 - iTunes_db: `iTunes Music Library.xml` path
 - skip_list: playlists which you do not want to convert to your Rhythmbox
 - source_itunes_music_folder: do not modify it
 '''
 # Configurations
-target_location = '~/Music/iTunes/iTunes Media/'
+library_location = '~/Music/Music'
 
 rhythmbox_playlist = '~/.local/share/rhythmbox/playlists.xml'
 
-itunes_db = '~/Music/iTunes/iTunes Library.xml'
+itunes_db = '~/Music/Music/Library.xml'
 
 skip_list = [
     '资料库',
@@ -43,7 +43,7 @@ skip_list = [
     '播客',
     'Library',
     'Downloaded',
-    'Favorates',
+    'Favorites',
     'Music',
     'Movies',
     'TV Shows',
@@ -59,7 +59,7 @@ skip_list = [
     'Voice Memos',
 ]
 
-MATCH_JUDGEMENT_THREASHOLD = 6
+MATCH_JUDGEMENT_THRESHOLD = 6
 MATCH_SELECTIONS = 10
 quote_safe_char = "!$'()*+,-/=@_~"
 
@@ -81,12 +81,12 @@ def itunes_quote(string):
     return string
 
 
-target_location_orig = target_location
-if not (target_location.startswith('http://') or target_location.startswith('file://') or target_location.startswith('https://')):
-    target_location = 'file://' + \
-        itunes_quote(os.path.abspath(os.path.expanduser(target_location)))
-    if not target_location.endswith('/'):
-        target_location += '/'
+library_location_orig = library_location
+if not (library_location.startswith('http://') or library_location.startswith('file://') or library_location.startswith('https://')):
+    library_location = 'file://' + \
+        itunes_quote(os.path.abspath(os.path.expanduser(library_location)))
+    if not library_location.endswith('/'):
+        library_location += '/'
 rhythmbox_playlist, itunes_db = os.path.abspath(os.path.expanduser(rhythmbox_playlist)), os.path.abspath(os.path.expanduser(itunes_db))
 
 
@@ -194,7 +194,7 @@ def music_match(path, music_match_library):
     distances = pool.map(edit_distance_wrapper, zip((path,) * len(music_match_library), music_match_library))
     zipper = tuple(zip(distances, music_match_library))
     distance, matched = min(zipper, key=lambda x: x[0])
-    if distance >= MATCH_JUDGEMENT_THREASHOLD:
+    if distance >= MATCH_JUDGEMENT_THRESHOLD:
         feature = r'\d*-*[a-zA-Z]*/*\.*'
         candidates = heapq.nsmallest(MATCH_SELECTIONS, zipper, key=lambda x: x[0])
         filtered = [i for i in candidates if ''.join(re.findall(feature, path)) == ''.join(re.findall(feature, i[1]))]
@@ -208,8 +208,8 @@ def music_match(path, music_match_library):
     return matched
 
 
-def convert_music_path(music_location, source_itunes_music_folder, target_location, music_match_library):
-    data = music_location.replace(source_itunes_music_folder, target_location, 1).split('://', 1)
+def convert_music_path(music_location, source_itunes_music_folder, library_location, music_match_library):
+    data = music_location.replace(source_itunes_music_folder, library_location, 1).split('://', 1)
     if len(data) == 1:
         music_file_path = unquote(data[0])
         head = ''
@@ -229,7 +229,7 @@ def get_playlist(itunes_dict, skip_list=skip_list, convert_function=convert_musi
 
 
 def main():
-    music_match_library = get_all_files_path(target_location_orig)
+    music_match_library = get_all_files_path(library_location_orig)
     rhythmbox_pid = list(map(eval, os.popen("ps -A|grep rhythmbox|awk '{print $1}'").readlines()))
     if rhythmbox_pid:
         if '-f' in sys.argv or '--force' in sys.argv:
@@ -255,7 +255,7 @@ def main():
         skip_list=skip_list,
         convert_function=convert_music_path,
         source_itunes_music_folder=source_itunes_music_folder,
-        target_location=target_location,
+        library_location=library_location,
         music_match_library=music_match_library
     )
     for playlist in playlists:

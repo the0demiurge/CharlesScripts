@@ -30,7 +30,7 @@ meaning of entries will be described as follows:
 - source_itunes_music_folder: do not modify it
 '''
 # Configurations
-library_location = '~/Music/Music'
+library_location = '~/Music/Music/Media'
 
 rhythmbox_playlist = '~/.local/share/rhythmbox/playlists.xml'
 

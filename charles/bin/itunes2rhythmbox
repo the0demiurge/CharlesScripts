@@ -153,7 +153,8 @@ def get_all_files_path(path):
     path = os.path.abspath(os.path.expanduser(path))
     for agent in os.walk(path):
         for file_name in agent[2]:
-            result.append(os.path.join(agent[0], file_name))
+            if not file_name.startswith('.'):
+                result.append(os.path.join(agent[0], file_name))
     return result
 
 
@@ -203,7 +204,7 @@ def music_match(path, music_match_library):
         else:
             distance, matched = min(candidates, key=lambda x: edit_distance(re.findall(feature, path), re.findall(feature, x[1])))
 
-    print('Matched: "{}" -- "{}"'.format(path.split('/')[-1], matched.split('/')[-1]))
+    print('Dist:', distance, 'Matched: "{}" -- "{}"'.format(path.split('/')[-1], matched.split('/')[-1]))
     music_match_buffer[path] = matched
     return matched
 
@@ -217,10 +218,12 @@ def convert_music_path(music_location, source_itunes_music_folder, library_locat
         music_file_path = unquote(data[1])
         head = data[0] + '://'
     if not os.path.exists(music_file_path):
-        music_file_path = music_match(music_file_path, music_match_library)
+        matched_music_file_path = music_match(music_file_path, music_match_library)
+    else:
+        matched_music_file_path = music_file_path
     if music_file_path in music_match_library:
         music_match_library.remove(music_file_path)
-    return head + itunes_quote(music_file_path)
+    return head + itunes_quote(matched_music_file_path)
 
 
 def get_playlist(itunes_dict, skip_list=skip_list, convert_function=convert_music_path, **convert_args):

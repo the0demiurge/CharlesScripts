@@ -1,4 +1,8 @@
 #!/bin/bash
+if [ -z $(which mountavfs) ];then
+    echo Please install avfs first
+fi
+
 if [ -z $IN_AVFS ];then
     export IN_AVFS=yes
     mountavfs

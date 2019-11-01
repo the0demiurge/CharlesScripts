@@ -1,28 +1,28 @@
 #!/bin/bash
-if [ -z $(which mountavfs) ];then
+if [ -z "$(which mountavfs)" ];then
     echo Please install avfs first
     exit
 fi
 
-if [ -z $IN_AVFS ];then
+if [ -z "$IN_AVFS" ];then
     export IN_AVFS=yes
     mountavfs
-    if [ -z $AVFSBASE ];then
-        AVFS_PWD=$HOME/.avfs/$PWD
+    if [ -z "$AVFSBASE" ];then
+        AVFS_PWD="$HOME""/.avfs/$PWD"
     else
         AVFS_PWD="$AVFSBASE""$PWD"
     fi
 
-    if [ -z $1 ];then
-        cd $AVFS_PWD
-    elif [ -f $1 ];then
-        cd $AVFS_PWD/$1#||exit
-    elif [ -d $1 ];then
-        cd $AVFS_PWD/$1
+    if [ -z "$1" ];then
+        cd "$AVFS_PWD"
+    elif [ -f "$1" ];then
+        cd "$AVFS_PWD"/"$1""#"||exit
+    elif [ -d "$1" ];then
+        cd "$AVFS_PWD"/"$1"
     else
-        cd $AVFS_PWD
+        cd "$AVFS_PWD"
     fi
-    $SHELL
+    "$SHELL"
     umountavfs
 else
     echo Already in AVFS, skipping...

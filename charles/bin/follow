@@ -5,7 +5,7 @@ import sys
 from math import inf
 from itertools import zip_longest
 
-command = 'mpv --fs "{}"'
+command = 'mpv --msg-level=sub=error --fs "{}"'
 subtitle_arg = '--sub-file="{}"'
 
 video_formats = {'mp4', 'mkv', 'rmvb', 'flv', 'rm', 'avi', 'mov', 'wmv'}

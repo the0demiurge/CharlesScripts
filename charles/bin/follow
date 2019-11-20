@@ -2,51 +2,151 @@
 import os
 import re
 import sys
+from math import inf
+from itertools import zip_longest
 
 command = 'mpv --fs "{}"'
+subtitle_arg = '--sub-file="{}"'
+
 video_formats = {'mp4', 'mkv', 'rmvb', 'flv', 'rm', 'avi', 'mov', 'wmv'}
+srt_formats = {'srt', 'ass'}
 
 software = command.split()[0]
 sys.argv.append('.')
 path = sys.argv[1]
 schedule_path = os.path.join(path, 'progress')
 
-# help message
-if path.startswith('-') or path == 'help':
+
+def help_msg():
+    # help message
     print('Watch video series and record the watching progress.\nResume at the progress recorded\n')
     print('Usage:')
     print('Before startup, you should keep command `{}` in $PATH'.format(software))
     print('\tStart     series:', 'follow', '[<series path> [<series index>]]')
     print('\tInterrupt series: press Ctrl+C in terminal or just close terminal')
     print('\tNext     episode: close {} window'.format(software))
+
+
+if path.startswith('-') or path == 'help':
+    help_msg()
     exit()
 
-# list videos
-series = sorted(
-    [i for i in os.listdir(path) if i.split('.')[-1].lower() in video_formats],
-    key=lambda x: [int(i) for i in re.findall('\d+', x)]
-)
-if len(series) == 0:
-    print('No video found in `{}`'.format(path))
-    exit(0)
 
-# decide series index
-if len(sys.argv) == 4:
-    index = int(sys.argv[2]) - 1
-else:
-    if not os.path.exists(schedule_path):
-        index = 0
+class Subtitle_Matcher(object):
+    def __init__(self, series, subtitles):
+        self.pattern = r'\[.*?\]'
+        self.series = series
+        self.subtitles = subtitles
+        self.series_feature = None
+        self.subtitles_feature = None
+        self.feature_selection()
+        self.ready = len(self.subtitles) > 0
+
+    @staticmethod
+    def feature_score(list_of_features):
+        if len(list_of_features) - len(set(list_of_features)) > (len(list_of_features) / 2):
+            return -inf
+        score = 0
+        for i in zip_longest(*list_of_features):
+            score -= len(set(i)) / len(list_of_features)
+        return score
+
+    @staticmethod
+    def edit_distance(src, target):
+        dp = [[0 for i in range(len(target) + 1)] for j in range(len(src) + 1)]
+        for i in range(1, len(src) + 1):
+            dp[i][0] = i
+        for j in range(1, len(target) + 1):
+            dp[0][j] = j
+        for i in range(1, len(src) + 1):
+            for j in range(1, len(target) + 1):
+                dp[i][j] = min(1 + dp[i - 1][j], 1 + dp[i][j - 1], dp[i - 1][j - 1] + (0 if src[i - 1] == target[j - 1] else 1))
+        return dp[-1][-1]
+
+    @staticmethod
+    def num_distance(src, target):
+        numss = reversed(re.findall('\d+', src))
+        numst = reversed(re.findall('\d+', target))
+        score = 0
+        for a, b in zip(numss, numst):
+            score += abs(int(a) - int(b))
+        return score
+
+    def extract_feature(self, filename, n):
+        return re.findall(self.pattern, filename)[n]
+
+    def extract_series_feature(self, filename):
+        if self.series_feature:
+            return self.extract_feature(filename, self.series_feature[0])
+        else:
+            return filename
+
+    def extract_subtitles_feature(self, filename):
+        if self.subtitles_feature:
+            return self.extract_feature(filename, self.subtitles_feature[0])
+        else:
+            return filename
+
+    def feature_selection(self):
+        series_features = list(zip_longest(*[re.findall(self.pattern, i) for i in self.series]))
+        subtitles_features = list(zip_longest(*[re.findall(self.pattern, i) for i in self.subtitles]))
+        if len(series_features) > 0 and len(subtitles_features) > 0:
+            self.series_feature = max(zip(range(len(series_features)), series_features), key=lambda x: self.feature_score(x[1]))
+            self.subtitles_feature = max(zip(range(len(subtitles_features)), subtitles_features), key=lambda x: self.feature_score(x[1]))
+
+    def match_subtitle(self, episode):
+        name = episode.rsplit('.', 1)[0]
+        for subtitle in self.subtitles:
+            if name == subtitle.rsplit('.', 1)[0]:
+                return subtitle
+        if self.subtitles_feature and self.series_feature:
+            feature_episode = self.extract_series_feature(episode)
+            self.subtitles.sort(key=lambda x: self.edit_distance(feature_episode, self.extract_subtitles_feature(x)))
+            self.subtitles.sort(key=lambda x: self.num_distance(feature_episode, self.extract_subtitles_feature(x)))
+            return self.subtitles[0]
+
+    def __call__(self, *args, **kwargs):
+        return self.match_subtitle(*args, **kwargs)
+
+
+def main():
+    # list videos
+    series = sorted(
+        [i for i in os.listdir(path) if i.split('.')[-1].lower() in video_formats],
+        key=lambda x: [int(i) for i in re.findall(r'\d+', x)]
+    )
+    subtitles = [i for i in os.listdir(path) if i.split('.')[-1].lower() in srt_formats]
+    if len(series) == 0:
+        print('No video found in `{}`'.format(path))
+        exit(0)
+
+    sub_matcher = Subtitle_Matcher(series, subtitles)
+
+    # decide series index
+    if len(sys.argv) == 4:
+        index = int(sys.argv[2]) - 1
     else:
-        current = open(schedule_path, 'r').readline().strip()
-        index = series.index(current) + 1
+        if not os.path.exists(schedule_path):
+            index = 0
+        else:
+            current = open(schedule_path, 'r').readline().strip()
+            index = series.index(current) + 1
 
-# play loop
-for video in series[index:]:
-    video_path = os.path.join(path, video)
-    try:
-        status = os.system(command.format(video_path))
-        if status != 0:
+    # play loop
+    for video in series[index:]:
+        video_path = os.path.join(path, video)
+        try:
+            cmd = [command.format(video_path)]
+            if sub_matcher.ready:
+                cmd.append(subtitle_arg.format(os.path.join(path, sub_matcher(video))))
+            print(cmd)
+            status = os.system(' '.join(cmd))
+            if status != 0:
+                break
+            open(schedule_path, 'w').write(video)
+        except (KeyboardInterrupt, EOFError):
             break
-        open(schedule_path, 'w').write(video)
-    except (KeyboardInterrupt, EOFError):
-        break
+
+
+if __name__ == "__main__":
+    main()

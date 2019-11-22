@@ -138,7 +138,9 @@ def main():
         try:
             cmd = [command.format(video_path)]
             if sub_matcher.ready:
-                cmd.append(subtitle_arg.format(os.path.join(path, sub_matcher(video))))
+                sub_path = sub_matcher(video)
+                if sub_path:
+                    cmd.append(subtitle_arg.format(os.path.join(path, sub_path)))
             print(cmd)
             status = os.system(' '.join(cmd))
             if status != 0:

@@ -8,7 +8,7 @@ from itertools import zip_longest
 command = 'mpv --msg-level=sub=error --fs "{}"'
 subtitle_arg = '--sub-file="{}"'
 
-video_formats = {'mp4', 'mkv', 'rmvb', 'flv', 'rm', 'avi', 'mov', 'wmv'}
+video_formats = {'mp4', 'mkv', 'rmvb', 'flv', 'rm', 'avi', 'mov', 'wmv', 'm2ts'}
 srt_formats = {'srt', 'ass'}
 
 software = command.split()[0]
@@ -34,7 +34,7 @@ if path.startswith('-') or path == 'help':
 
 class Subtitle_Matcher(object):
     def __init__(self, series, subtitles):
-        self.pattern = r'\[.*?\]'
+        self.pattern = r'\[.*?\]|(?![\.\s]).*?(?=[\.\s])|\d+'
         self.series = series
         self.subtitles = subtitles
         self.series_feature = None
@@ -65,8 +65,8 @@ class Subtitle_Matcher(object):
 
     @staticmethod
     def num_distance(src, target):
-        numss = reversed(re.findall('\d+', src))
-        numst = reversed(re.findall('\d+', target))
+        numss = re.findall('\d+', src)
+        numst = re.findall('\d+', target)
         score = 0
         for a, b in zip(numss, numst):
             score += abs(int(a) - int(b))

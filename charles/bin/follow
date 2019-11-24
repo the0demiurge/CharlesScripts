@@ -34,7 +34,7 @@ if path.startswith('-') or path == 'help':
 
 class Subtitle_Matcher(object):
     def __init__(self, series, subtitles):
-        self.pattern = r'\[.*?\]|(?![\.\s]).*?(?=[\.\s])|\d+'
+        self.pattern = r'\[.*?\]|(?<=[\.\s]).*?(?=[\.\s])|\d+'
         self.series = series
         self.subtitles = subtitles
         self.series_feature = None

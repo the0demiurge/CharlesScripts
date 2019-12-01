@@ -11,6 +11,7 @@ set -x EDITOR nvim
 set -x LC_ALL en_US.UTF-8
 set -x LANG en_US.UTF-8
 set -x FZF_DEFAULT_OPTS "--bind='ctrl-o:execute(subl {})+abort'"
+set -x SDCV_PAGER less
 
 #COLOR_LESS
 set -x PAGER "less"

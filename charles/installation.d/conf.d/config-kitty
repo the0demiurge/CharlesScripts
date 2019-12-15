@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 'kitty + complete setup fish | source
 function icat
-    kitty +kitten icat $angv
+    kitty +kitten icat $argv
 end
 '|tee $HOME/.config/fish/conf.d/kitten.fish

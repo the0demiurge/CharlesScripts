@@ -50,32 +50,32 @@ function cls
     ls
 end
 
-# function g
-#     git add -A
-#     git diff --cached
-#     echo "type the commits or cancel with Ctrl+C"
-#     git status
-#     read COMMIT
-#     git commit -m "$argv $COMMIT"
-#     git log -1 HEAD
-#     if git push
-#         echo push succeeded
-#         sl -e | lolcat
-#         for i in (seq 25)
-#             echo
-#         end
-#         fortune | cowsay -f duck
-#     else
-#         for i in (seq 3)
-#             echo push failed
-#         end
-#         echo push failed $PWD
-#         for i in (seq 25)
-#             echo
-#         end
-#         cowsay -f bong "push failed!!! push again!!!"
-#     end
-# end
+function g
+    git add -A
+    git diff --cached
+    echo "type the commits or cancel with Ctrl+C"
+    git status
+    read COMMIT
+    git commit -m "$argv $COMMIT"
+    git log -1 HEAD
+    if git push
+        echo push succeeded
+        sl -e | lolcat
+        for i in (seq 25)
+            echo
+        end
+        fortune | cowsay -f duck
+    else
+        for i in (seq 3)
+            echo push failed
+        end
+        echo push failed $PWD
+        for i in (seq 25)
+            echo
+        end
+        cowsay -f bong "push failed!!! push again!!!"
+    end
+end
 
 function mcd
     mkdir -p "$argv"

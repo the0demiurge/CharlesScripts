@@ -8,4 +8,4 @@ if [ $(which curl | wc -l) == 0 ]; then INSTALL curl -y; fi
 curl -L https://xiki.com/install_xsh -o ~/install_xsh
 bash ~/install_xsh
 rm ~/install_xsh
-echo "set -x PATH ~/xiki-project/bin/ \$PATH" >~/.config/fish/conf.d/xsh.fish
+echo "set -x fish_user_paths ~/xiki-project/bin/ \$fish_user_paths" >~/.config/fish/conf.d/xsh.fish

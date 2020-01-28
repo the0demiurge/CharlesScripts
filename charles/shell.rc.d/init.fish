@@ -2,8 +2,8 @@ set -g CHARLES_HOME $HOME/.local/share/CharlesScripts/charles
 set -g CHARLES_BACKUP $HOME/.config/CharlesBackup
 
 #PATHES
-set -x PATH $CHARLES_HOME/bin $PATH
-set -x PATH $HOME/.local/bin $PATH
+set -x fish_user_paths $CHARLES_HOME/bin $fish_user_paths
+set -x fish_user_paths $HOME/.local/bin $fish_user_paths
 
 #VARIABLES
 set -x TF_CPP_MIN_LOG_LEVEL 2

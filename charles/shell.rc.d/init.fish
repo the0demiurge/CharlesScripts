@@ -8,8 +8,6 @@ set -g fish_user_paths $HOME/.local/bin $fish_user_paths
 #VARIABLES
 set -g TF_CPP_MIN_LOG_LEVEL 2
 set -g EDITOR nvim
-set -g LC_ALL en_US.UTF-8
-set -g LANG en_US.UTF-8
 set -g FZF_DEFAULT_OPTS "--bind='ctrl-o:execute(subl {})+abort'"
 set -g SDCV_PAGER less
 

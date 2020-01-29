@@ -1,7 +1,7 @@
 set -x CHARLES_HOME $HOME/.local/share/CharlesScripts/charles
 set -x CHARLES_BACKUP $HOME/.config/CharlesBackup
 
-#PATHES
+#PATHS
 set -x fish_user_paths $CHARLES_HOME/bin $fish_user_paths
 set -x fish_user_paths $HOME/.local/bin $fish_user_paths
 

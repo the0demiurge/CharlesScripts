@@ -1,3 +1,2 @@
 #!/usr/bin/env fish
-
-echo $PWD/$argv[1] | pbcopy
+echo $PWD/$argv[1]

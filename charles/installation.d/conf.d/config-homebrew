@@ -1,6 +1,7 @@
 #!/bin/bash
 echo 'set -g MANPATH "/usr/share/man" $MANPATH' | tee ~/.config/fish/conf.d/homebrew.fish
 echo 'set -g MANPATH "/usr/local/share/man" $MANPATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
+echo 'set -g MANPATH "/Library/Developer/CommandLineTools/usr/share/man" $MANPATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -g fish_user_paths "/usr/local/opt/coreutils/libexec/gnubin" $fish_user_paths' | tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -g MANPATH "/usr/local/opt/coreutils/libexec/gnuman" $MANPATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -g fish_user_paths "/usr/local/opt/findutils/libexec/gnubin" $fish_user_paths' | tee -a ~/.config/fish/conf.d/homebrew.fish

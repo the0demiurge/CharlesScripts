@@ -2,8 +2,9 @@
 import os
 import re
 import sys
-from math import inf
+import warnings
 from itertools import zip_longest
+from math import inf
 
 command = 'mpv --msg-level=sub=error --fs "{}"'
 subtitle_arg = '--sub-file="{}"'
@@ -65,8 +66,8 @@ class Subtitle_Matcher(object):
 
     @staticmethod
     def num_distance(src, target):
-        numss = re.findall('\d+', src)
-        numst = re.findall('\d+', target)
+        numss = re.findall(r'\d+', src)
+        numst = re.findall(r'\d+', target)
         score = 0
         for a, b in zip(numss, numst):
             score += abs(int(a) - int(b))
@@ -148,6 +149,8 @@ def main():
             open(schedule_path, 'w').write(video)
         except (KeyboardInterrupt, EOFError):
             break
+        except PermissionError:
+            warnings.warn('this place is not writeable')
 
 
 if __name__ == "__main__":

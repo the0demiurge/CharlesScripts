@@ -22,7 +22,7 @@ if [ $(which autojump | wc -l) == 0 ]; then INSTALL autojump; fi
 if [ -f /usr/share/autojump/autojump.fish ];then ln -sf /usr/share/autojump/autojump.fish $CONF_DIR/autojump.fish;fi
 if [ -f /usr/local/share/autojump/autojump.fish ];then ln -sf /usr/local/share/autojump/autojump.fish $CONF_DIR/autojump.fish;fi
 
-echo "source \$HOME/.config/fish/conf.d/*" | tee -a $HOME/.config/fish/config.fish
+echo 'source $HOME/.config/fish/conf.d/*' | tee -a $HOME/.config/fish/config.fish
 
 ln -sf $CHARLES_HOME/shell.rc.d/init.fish $CONF_DIR/charles.fish
 

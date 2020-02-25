@@ -2,9 +2,10 @@
 export CHARLES_HOME=$HOME/.local/share/CharlesScripts/charles
 export CHARLES_BACKUP=$HOME/.config/CharlesBackup
 
-OS=$(cat /etc/issue | cut -f 1 -d ' ')
 if [[ $(uname) == 'Darwin' ]]; then
     OS='Darwin'
+else
+    OS=$(cat /etc/issue | cut -f 1 -d ' ')
 fi
 case $OS in
 'Arch') INSTALL() { sudo pacman -S $@; } ;;

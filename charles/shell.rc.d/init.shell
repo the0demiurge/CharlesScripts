@@ -12,7 +12,7 @@ export TF_CPP_MIN_LOG_LEVEL=2
 
 #COLOR_LESS
 export PAGER="less"
-export LESS="-R -i -g -c -W"
+export LESS="-C -M -I -j 10 -# 4 -R -i -g -c -W"
 export LESSOPEN='|/usr/bin/env lesspipe.sh %s'
 export LESSCLOSE='/usr/bin/env lesspipe.sh %s %s'
 #COLOR MAN

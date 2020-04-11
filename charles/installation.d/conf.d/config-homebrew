@@ -1,5 +1,6 @@
 #!/bin/bash
-echo 'set -g MANPATH "/Library/Apple/usr/share/man" $MANPATH' | tee ~/.config/fish/conf.d/homebrew.fish
+echo 'set -g HOMEBREW_NO_AUTO_UPDATE true' | tee ~/.config/fish/conf.d/homebrew.fish
+echo 'set -g MANPATH "/Library/Apple/usr/share/man" $MANPATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -g MANPATH "/Library/Developer/CommandLineTools/usr/share/man" $MANPATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -g MANPATH "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man" $MANPATH' | tee -a ~/.config/fish/conf.d/homebrew.fish
 echo 'set -g MANPATH "/usr/share/man" $MANPATH' | tee -a ~/.config/fish/conf.d/homebrew.fish

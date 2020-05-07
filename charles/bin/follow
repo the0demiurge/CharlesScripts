@@ -132,6 +132,7 @@ def main():
         else:
             current = open(schedule_path, 'r').readline().strip()
             index = series.index(current) + 1
+    print('Started at index:', index + 1)
 
     # play loop
     for video in series[index:]:

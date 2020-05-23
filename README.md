@@ -2,6 +2,8 @@
 <p align="center">可以配合我的博客：<a href="https://the0demiurge.blogspot.jp/2017/02/ubuntu-gnome.html">Ubuntu Gnome 酷炫完整指南系列</a>使用。</p>
 
 
+<a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996.icu" /></a>
+
 [![Build Status](https://travis-ci.org/the0demiurge/CharlesScripts.svg?branch=master)](https://travis-ci.org/the0demiurge/CharlesScripts)
 
 

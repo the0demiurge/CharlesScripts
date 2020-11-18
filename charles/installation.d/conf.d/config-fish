@@ -70,7 +70,6 @@ fish -c "abbr -a -U -- r ranger"
 fish -c "abbr -a -U -- socksp 'export ALL_PROXY=socks5://127.0.0.1:1080'"
 fish -c "abbr -a -U -- sshp ssh\ -o\ ProxyCommand=\'nc\ -x\ 127.0.0.1:1080\ \%h\ \%p\'"
 fish -c "abbr -a -U -- su 'sudo su'"
-fish -c "abbr -a -U -- tmux 'tmux -2'"
 fish -c "abbr -a -U -- wget 'wget -c -nc -t0'"
 
 case $OS in

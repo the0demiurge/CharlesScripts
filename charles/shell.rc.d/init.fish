@@ -58,7 +58,6 @@ function g
     git log -1 HEAD
     if git push
         echo push succeeded
-        sl -e | lolcat
         for i in (seq 25)
             echo
         end

@@ -62,7 +62,7 @@ function g
         for i in (seq 25)
             echo
         end
-        fortune | cowsay -f duck
+        fortune | cowsay -f bunny
     else
         for i in (seq 3)
             echo push failed

@@ -1,6 +1,11 @@
 set -x CHARLES_HOME $HOME/.local/share/CharlesScripts/charles
 set -x CHARLES_BACKUP $HOME/.config/CharlesBackup
 
+#LANG
+set -x LANG UTF-8
+set -x LC_ALL en_US.UTF-8
+set -x LC_CTYPE en_US.UTF-8
+
 #PATHS
 set -x fish_user_paths $CHARLES_HOME/bin $fish_user_paths
 set -x fish_user_paths $HOME/.local/bin $fish_user_paths

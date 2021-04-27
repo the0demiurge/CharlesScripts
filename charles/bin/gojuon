@@ -79,7 +79,7 @@ def test():
             print('\nACCURACY: {}/{}={:0.2f}%'.format(correct, quiz, 100 * (correct / quiz)))
             print('WRONG ANSWERS:')
             for result, character in wrong:
-                print('{}: {}, {} | {}'.format(character[0], character[1][0], character[1][1], result))
+                print('{}: {}, {}\t\\ {}'.format(character[0], character[1][0], character[1][1], result))
 
 
 def search():

@@ -73,7 +73,7 @@ def test():
         finally:
             print('WRONG ANSWERS:')
             for result, character in wrong:
-                print('{}: {}, {}'.format(character[0], character[1][0], character[1][1]))
+                print('{}: {}, {} | {}'.format(character[0], character[1][0], character[1][1], result))
 
 
 def search():

@@ -59,6 +59,8 @@ def test():
     else:
         index = [0, 1]
     wrong = list()
+    quiz = 0
+    correct = 0
     while(True):
         random.shuffle(characters)
         indexes = random.sample(index * len(characters), len(characters))
@@ -70,7 +72,11 @@ def test():
                 if not (result == character[0].strip() or result in character[1]):
                     print('{}: {}, {}'.format(character[0], character[1][0], character[1][1]))
                     wrong.append((result, character))
+                else:
+                    correct += 1
+                quiz += 1
         finally:
+            print('\nACCURACY: {}/{}={:0.2f}%'.format(correct, quiz, 100 * (correct / quiz)))
             print('WRONG ANSWERS:')
             for result, character in wrong:
                 print('{}: {}, {} | {}'.format(character[0], character[1][0], character[1][1], result))

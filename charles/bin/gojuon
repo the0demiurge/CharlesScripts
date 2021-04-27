@@ -66,8 +66,8 @@ def test():
             indexes += [1 - i for i in indexes]
         try:
             for character, idx in zip(characters * len(index), indexes):
-                result = input('{}: '.format(character[1][idx]))
-                if not (result == character[0] or result in character[1]):
+                result = input('{}: '.format(character[1][idx])).strip()
+                if not (result == character[0].strip() or result in character[1]):
                     print('{}: {}, {}'.format(character[0], character[1][0], character[1][1]))
                     wrong.append((result, character))
         finally:

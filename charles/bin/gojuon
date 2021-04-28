@@ -61,7 +61,7 @@ def test():
     else:
         index = [0, 1]
     if sys.argv[-1].isdigit():
-        test_chars = int(sys.argv[-1])
+        test_chars = max(1, int(sys.argv[-1]))
     else:
         test_chars = 1
     wrong = list()
@@ -79,7 +79,7 @@ def test():
                 quiz_list.append((character, idx))
                 if len(quiz_list) < test_chars:
                     continue
-                result = input('{}: '.format(' '.join([quiz_char[1][quiz_idx] for quiz_char, quiz_idx in quiz_list]))).strip().split()
+                result = input('{}:{}'.format(' '.join([quiz_char[1][quiz_idx] for quiz_char, quiz_idx in quiz_list]), ' ' if test_chars == 1 else '\n')).strip().split()
                 for rst, (quiz_char, idx) in zip(result, quiz_list):
                     if not (rst == quiz_char[0].strip() or rst in quiz_char[1]):
                         print('{}: {}, {}'.format(quiz_char[0], quiz_char[1][0], quiz_char[1][1]))
@@ -89,12 +89,13 @@ def test():
                     quiz += 1
                 quiz_list = list()
         finally:
-            end = time.time()
-            print('\nACCURACY: {}/{}={:0.2f}%'.format(correct, quiz, 100 * (correct / quiz)))
-            print('AVERAGE {:0.2f}s/char'.format((end - start) / quiz))
-            print('WRONG ANSWERS:')
-            for result, character in wrong:
-                print('{}: {}, {}\t\\ {}'.format(character[0], character[1][0], character[1][1], result))
+            if quiz:
+                end = time.time()
+                print('\nACCURACY: {}/{}={:0.2f}%'.format(correct, quiz, 100 * (correct / quiz)))
+                print('AVERAGE {:0.2f}s/char'.format((end - start) / quiz))
+                print('WRONG ANSWERS:')
+                for result, character in wrong:
+                    print('{}: {}, {}\t\\ {}'.format(character[0], character[1][0], character[1][1], result))
 
 
 def search():

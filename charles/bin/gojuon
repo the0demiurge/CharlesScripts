@@ -60,6 +60,10 @@ def test():
         index = [1]
     else:
         index = [0, 1]
+    if sys.argv[-1].isdigit():
+        test_chars = int(sys.argv[-1])
+    else:
+        test_chars = 1
     wrong = list()
     quiz = 0
     correct = 0
@@ -70,14 +74,20 @@ def test():
         if len(index) == 2:
             indexes += [1 - i for i in indexes]
         try:
+            quiz_list = list()
             for character, idx in zip(characters * len(index), indexes):
-                result = input('{}: '.format(character[1][idx])).strip()
-                if not (result == character[0].strip() or result in character[1]):
-                    print('{}: {}, {}'.format(character[0], character[1][0], character[1][1]))
-                    wrong.append((result, character))
-                else:
-                    correct += 1
-                quiz += 1
+                quiz_list.append((character, idx))
+                if len(quiz_list) < test_chars:
+                    continue
+                result = input('{}: '.format(' '.join([quiz_char[1][quiz_idx] for quiz_char, quiz_idx in quiz_list]))).strip().split()
+                for rst, (quiz_char, idx) in zip(result, quiz_list):
+                    if not (rst == quiz_char[0].strip() or rst in quiz_char[1]):
+                        print('{}: {}, {}'.format(quiz_char[0], quiz_char[1][0], quiz_char[1][1]))
+                        wrong.append((rst, quiz_char))
+                    else:
+                        correct += 1
+                    quiz += 1
+                quiz_list = list()
         finally:
             end = time.time()
             print('\nACCURACY: {}/{}={:0.2f}%'.format(correct, quiz, 100 * (correct / quiz)))

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import random
 import sys
+import time
+
 help_messages = '''gajuon learning helper
 Usage:
     gajuon test katakana/hepburn    do a test
@@ -46,7 +48,7 @@ data = [
 ]
 
 
-characters = sum([list(i.items()) for i in data], list())
+characters: list = sum([list(i.items()) for i in data], list())
 
 
 def test():
@@ -63,6 +65,7 @@ def test():
     correct = 0
     while(True):
         random.shuffle(characters)
+        start = time.time()
         indexes = random.sample(index * len(characters), len(characters))
         if len(index) == 2:
             indexes += [1 - i for i in indexes]
@@ -76,7 +79,9 @@ def test():
                     correct += 1
                 quiz += 1
         finally:
+            end = time.time()
             print('\nACCURACY: {}/{}={:0.2f}%'.format(correct, quiz, 100 * (correct / quiz)))
+            print('AVERAGE {:0.2f}s/char'.format((end - start) / quiz))
             print('WRONG ANSWERS:')
             for result, character in wrong:
                 print('{}: {}, {}\t\\ {}'.format(character[0], character[1][0], character[1][1], result))

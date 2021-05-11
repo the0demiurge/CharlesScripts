@@ -9,4 +9,5 @@ echo "from powerline.bindings.ipython.since_7 import PowerlinePrompts" >>$IPY_CO
 echo "c = get_config()" >>$IPY_CONFIG_PATH
 echo "c.TerminalInteractiveShell.simple_prompt = False" >>$IPY_CONFIG_PATH
 echo "c.TerminalInteractiveShell.prompts_class = PowerlinePrompts" >>$IPY_CONFIG_PATH
-
+echo "c.InteractiveShellApp.extensions = ['autoreload']" >>$IPY_CONFIG_PATH
+echo "c.InteractiveShellApp.exec_lines = ['%autoreload 2']" >>$IPY_CONFIG_PATH

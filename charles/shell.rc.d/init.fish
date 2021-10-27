@@ -19,8 +19,8 @@ set -x SDCV_PAGER less
 #COLOR_LESS
 set -x PAGER "less"
 set -x LESS "-R -i -g -c -W"
-set -x LESSOPEN '|/usr/bin/env lesspipe.sh %s'
-set -x LESSCLOSE '/usr/bin/env lesspipe.sh %s %s'
+set -x LESSOPEN '|/usr/bin/env lesspipe %s'
+set -x LESSCLOSE '/usr/bin/env lesspipe %s %s'
 #COLOR MAN
 set -x LESS_TERMCAP_mb (printf "\033[01;31m")
 set -x LESS_TERMCAP_md (printf "\033[01;31m")
@@ -54,6 +54,7 @@ function cls
 end
 
 function g
+    git pull
     git add -A
     git diff --cached
     echo "type the commits or cancel with Ctrl+C"
@@ -75,7 +76,7 @@ function g
         for i in (seq 25)
             echo
         end
-        cowsay -f bong "push failed!!! push again!!!"
+        cowsay -f bong -n "push failed!!! push again!!!"
     end
 end
 

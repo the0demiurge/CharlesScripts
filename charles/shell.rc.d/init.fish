@@ -51,8 +51,9 @@ end
 function check-ports
     for port in (netstat -na|grep LISTEN|awk '{print $4}'|grep -Po '\d+$'|sort -nu)
         echo $port
-        set cmd_info (sudo lsof -i :$port|tail -1)
+        set cmd_info (sudo lsof -i :$port|grep LISTEN|tail -1)
         sudo lsof -i :$port
+        ps -p (echo $cmd_info|awk '{print $2}') | tail -1 | awk '{print $4}'
         echo
     end
 end

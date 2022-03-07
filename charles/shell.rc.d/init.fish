@@ -17,7 +17,7 @@ set -x FZF_DEFAULT_OPTS "--bind='ctrl-o:execute(subl {})+abort'"
 set -x SDCV_PAGER less
 
 #COLOR_LESS
-set -x PAGER "less"
+set -x PAGER less
 set -x LESS "-R -i -g -c -W"
 set -x LESSOPEN '|/usr/bin/env lesspipe %s'
 set -x LESSCLOSE '/usr/bin/env lesspipe %s %s'
@@ -45,6 +45,15 @@ set -x theme_color_scheme zenburn # dark, light, solarized, solarized-dark, sola
 function backup
     for i in "$argv"
         cp -r "$i" "$i.bak"
+    end
+end
+
+function check-ports
+    for port in (netstat -na|grep LISTEN|awk '{print $4}'|grep -Po '\d+$'|sort -nu)
+        echo $port
+        set cmd_info (sudo lsof -i :$port|tail -1)
+        sudo lsof -i :$port
+        echo
     end
 end
 
@@ -95,7 +104,7 @@ end
 
 function viz
     switch $argv[2]
-        case "eps"
+        case eps
             dot -T $argv[2] -o /tmp/(string trim -r -c dot $argv[1])png $argv[1]
             convert /tmp/(string trim -r -c dot $argv[1])png (string trim -r -c dot $argv[1])eps
             rm /tmp/(string trim -r -c dot $argv[1])png

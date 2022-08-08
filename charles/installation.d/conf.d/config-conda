@@ -8,4 +8,4 @@
 conda install mamba -c conda-forge --yes
 mamba install matplotlib scikit-learn numpy sympy pandas seaborn pillow pandoc ipython jupyter requests beautifulsoup4 --yes
 #mamba install pytorch-cpu torchvision-cpu --yes #-c pytorch
-mamba install xeus-cling --yes #-c conda-forge
+mamba install xeus-cling --yes -c conda-forge

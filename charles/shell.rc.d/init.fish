@@ -38,8 +38,6 @@ set -x theme_title_display_path yes
 set -x theme_title_display_user yes
 set -x theme_title_use_abbreviated_path yes
 set -x theme_color_scheme zenburn # dark, light, solarized, solarized-dark, solarized-light, base16, zenburn, gruvbox
-set -x theme_display_git_dirty no
-set -x theme_display_git_untracked no
 
 
 #FUNCTIONS

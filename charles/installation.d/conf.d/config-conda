@@ -5,7 +5,6 @@
 #conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
 #conda config --set show_channel_urls yes
 
-conda install mamba -c conda-forge --yes
-mamba install matplotlib scikit-learn numpy sympy pandas seaborn pillow pandoc ipython==8.4.0 jupyter requests beautifulsoup4 selenium --yes
-#mamba install pytorch-cpu torchvision-cpu --yes #-c pytorch
-mamba install xeus-cling --yes -c conda-forge
+conda install matplotlib scikit-learn numpy sympy pandas seaborn pillow pandoc ipython==8.4.0 jupyter requests beautifulsoup4 selenium --yes
+#conda install pytorch-cpu torchvision-cpu --yes #-c pytorch
+conda install xeus-cling --yes -c conda-forge
